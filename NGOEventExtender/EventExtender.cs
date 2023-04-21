@@ -305,47 +305,52 @@ namespace NGOEventExtender
             {
                 foreach (NgoExtEvent extEvent in randomDayExtEvents)
                 {
-                    if (extEvent.ToString().EndsWith("_FH"))
+                    if (extEvent.Id == null || extEvent.Id == "")
                     {
-                        ___FollowerHigh.Add(extEvent.ToString());
+                        Debug.LogError("This event must have an Id!");
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_FL"))
+                    if (extEvent.Id.EndsWith("_FH"))
                     {
-                        ___FollowerLow.Add(extEvent.ToString());
+                        ___FollowerHigh.Add(extEvent.Id);
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_DH"))
+                    if (extEvent.Id.EndsWith("_FL"))
                     {
-                        ___YamiHigh.Add(extEvent.ToString());
+                        ___FollowerLow.Add(extEvent.Id);
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_DL"))
+                    if (extEvent.Id.EndsWith("_DH"))
                     {
-                        ___YamiLow.Add(extEvent.ToString());
+                        ___YamiHigh.Add(extEvent.Id);
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_LH"))
+                    if (extEvent.Id.EndsWith("_DL"))
                     {
-                        ___LoveHigh.Add(extEvent.ToString());
+                        ___YamiLow.Add(extEvent.Id);
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_LL"))
+                    if (extEvent.Id.EndsWith("_LH"))
                     {
-                        ___LoveLow.Add(extEvent.ToString());
+                        ___LoveHigh.Add(extEvent.Id);
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_SH"))
+                    if (extEvent.Id.EndsWith("_LL"))
                     {
-                        ___StressHigh.Add(extEvent.ToString());
+                        ___LoveLow.Add(extEvent.Id);
                         continue;
                     }
-                    if (extEvent.ToString().EndsWith("_SL"))
+                    if (extEvent.Id.EndsWith("_SH"))
                     {
-                        ___StressLow.Add(extEvent.ToString());
+                        ___StressHigh.Add(extEvent.Id);
                         continue;
                     }
-                    ___heijouEvents.Add(extEvent.ToString());
+                    if (extEvent.Id.EndsWith("_SL"))
+                    {
+                        ___StressLow.Add(extEvent.Id);
+                        continue;
+                    }
+                    ___heijouEvents.Add(extEvent.Id);
                 }
             }
 
@@ -355,9 +360,9 @@ namespace NGOEventExtender
         static void StartRandomDayExt(ref string __result)
         {
             string eventName = __result;
-            if (randomDayExtEvents.Exists((NgoExtEvent ext) => ext.ToString() == eventName))
+            if (randomDayExtEvents.Exists((NgoExtEvent ext) => ext.Id == eventName))
             {
-                NgoExtEvent extDayEvent = randomDayExtEvents.Find((NgoExtEvent ext) => ext.ToString() == eventName);
+                NgoExtEvent extDayEvent = randomDayExtEvents.Find((NgoExtEvent ext) => ext.Id == eventName);
 
 
                 bool condition = extDayEvent.SetCondition();
@@ -444,6 +449,7 @@ namespace NGOEventExtender
     /// </summary>
     public abstract class NgoExtEvent : NgoEvent
     {
+        public virtual string Id => null;
         /// <summary>
         ///  The condition for the event. 
         ///  <br/>Event will only start if the condition returns true. 
