@@ -1,11 +1,8 @@
 ﻿using HarmonyLib;
 using ngov3;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NGOTxtExtender

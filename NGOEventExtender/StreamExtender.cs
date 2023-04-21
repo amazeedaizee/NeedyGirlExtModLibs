@@ -4,19 +4,14 @@ using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using HarmonyLib;
 using NGO;
+using NGOTxtExtender;
 using ngov3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using NGOTxtExtender;
-using static System.Collections.Specialized.BitVector32;
-using static UnityEngine.Networking.UnityWebRequest;
 
 namespace NGOEventExtender
 {
@@ -42,7 +37,7 @@ namespace NGOEventExtender
         /// <param name="hChatId">The TenComment.Param's Id used to load the comment.</param>
         /// <param name="animId">The animation that KAngel uses when she speaks.</param>
         /// <returns></returns>
-        public static List<Playing> AngelTalkToHaters(string aChatId, string hChatId, string animId="")
+        public static List<Playing> AngelTalkToHaters(string aChatId, string hChatId, string animId = "")
         {
             string aChat = aChatId == "" || aChatId == null ? "" : NgoEx.TenTalk(aChatId, SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value);
             string hChat = hChatId == "" || hChatId == null ? "" : NgoEx.TenTalk(hChatId, SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value);
@@ -158,7 +153,7 @@ namespace NGOEventExtender
         /// <returns></returns>
         public static Playing SetMobs(string state = "middle")
         {
-            if( !(state == "first" || state == "last" || state == "rainbow" || state == "delete" || state == "deleteAll"))
+            if (!(state == "first" || state == "last" || state == "rainbow" || state == "delete" || state == "deleteAll"))
             {
                 state = "middle";
             }
@@ -263,7 +258,7 @@ namespace NGOEventExtender
         /// <param name="hasScreen">If false, the end screen will not appear after a stream.</param>
         public static void HasEndSplashScreen(bool hasScreen)
         {
-            StreamExtender.withEndScreen =hasScreen;
+            StreamExtender.withEndScreen = hasScreen;
         }
 
         /// <summary>
@@ -350,7 +345,7 @@ namespace NGOEventExtender
             ExtStream stream = Activator.CreateInstance(type) as ExtStream;
 
             StartCustomStream(stream, isDarkUI, isDarkAnim);
-            
+
         }
 
         /// <summary>
@@ -361,14 +356,14 @@ namespace NGOEventExtender
         /// <param name="isDarkAnim">If true, uses the Dark Angel transition before a stream, otherwise uses the default KAngel transition.</param>
         public static void StartCustomStream(ExtStream stream, bool isDarkUI = false, bool isDarkAnim = false)
         {
-          
+
             isCustom = true;
             currentCustomStream = stream;
             isDarkAngel = isDarkAnim;
             if (!(stream.StartingAnim == "" || stream.StartingAnim == null))
             {
                 currentFirstAnim = stream.StartingAnim;
-            }           
+            }
             SingletonMonoBehaviour<EventManager>.Instance.SetShortcutState(false, 0.2f);
             SingletonMonoBehaviour<EventManager>.Instance.alpha = AlphaType.none;
             if (isDarkUI)
@@ -442,7 +437,7 @@ namespace NGOEventExtender
                 return true;
             }
             __instance.title = currentCustomStream.StreamTitle;
-           currentCustomStream.SetStreamSettings();            
+            currentCustomStream.SetStreamSettings();
             Awake_Stub(__instance);
             ___playing.AddRange(currentCustomStream.NowPlaying);
             return false;
@@ -538,10 +533,10 @@ namespace NGOEventExtender
             if (customStreamBG != null)
             {
                 streamBG = StreamBackground.None;
-               __instance.Tenchan._backGround.sprite = customStreamBG;
+                __instance.Tenchan._backGround.sprite = customStreamBG;
                 return;
             }
-            if(streamBG != StreamBackground.None && customStreamBG == null)
+            if (streamBG != StreamBackground.None && customStreamBG == null)
             {
                 if (streamBG == StreamBackground.Black)
                 {
@@ -596,7 +591,7 @@ namespace NGOEventExtender
         }
 
         static void ResetCustomStream()
-        {          
+        {
             currentFirstAnim = "";
             currentReactAnim = "";
             withEndScreen = true;
@@ -718,7 +713,7 @@ namespace NGOEventExtender
                     currentCustomStream = conditionalStreamList[i];
                     isCustom = true;
                     SingletonMonoBehaviour<StatusManager>.Instance.isTodayHaishined = true;
-                    SingletonMonoBehaviour<StatusManager>.Instance.UpdateStatus(StatusType.RenzokuHaishinCount, 1);                  
+                    SingletonMonoBehaviour<StatusManager>.Instance.UpdateStatus(StatusType.RenzokuHaishinCount, 1);
                     __result = __instance.SetScenario<TestScenario>();
                     return false;
                 }
@@ -729,15 +724,16 @@ namespace NGOEventExtender
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Action_HaishinStart), "startEvent", new Type[] { typeof(CancellationToken) })]
         [HarmonyPatch(typeof(Action_HaishinDark), "startEvent", new Type[] { typeof(CancellationToken) })]
-        static void IsConditionValid() { 
-        
+        static void IsConditionValid()
+        {
+
             bool horror = SingletonMonoBehaviour<EventManager>.Instance.isHorror;
             EndingType end = SingletonMonoBehaviour<EventManager>.Instance.nowEnding;
             AlphaType alpha = SingletonMonoBehaviour<EventManager>.Instance.alpha;
             int alphalevel = SingletonMonoBehaviour<EventManager>.Instance.alphaLevel;
             if (currentCustomStream == null && !isCustom)
             {
-                if (end == EndingType.Ending_None && !horror  && actionStreamList.Count != 0)
+                if (end == EndingType.Ending_None && !horror && actionStreamList.Count != 0)
                 {
                     foreach (ExtActionStream ext in actionStreamList)
                     {
@@ -758,7 +754,7 @@ namespace NGOEventExtender
                             {
                                 try
                                 {
-                                    ExtTextManager.AddToExtList<EgosaMaster.Param>(new List<EgosaMaster.Param>() { ext.SearchResult});
+                                    ExtTextManager.AddToExtList<EgosaMaster.Param>(new List<EgosaMaster.Param>() { ext.SearchResult });
                                 }
                                 catch
                                 {
@@ -820,12 +816,13 @@ namespace NGOEventExtender
         static void SetCustomLabel(ref AlphaTypeToData __result, AlphaType NetaType, int level = 0)
         {
             if (StreamExtender.actionStreamList.Count == 0) { return; }
-            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.LabelData.NetaType == NetaType && n.LabelData.level == level);           
-            if (actionList.Count == 0) {
+            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.LabelData.NetaType == NetaType && n.LabelData.level == level);
+            if (actionList.Count == 0)
+            {
 
-                return; 
+                return;
             }
-            foreach(ExtActionStream action in actionList)
+            foreach (ExtActionStream action in actionList)
             {
                 ExtActionStream a = StreamExtender.actionStreamList.Find(ac => ac == action);
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
@@ -842,9 +839,9 @@ namespace NGOEventExtender
                     return;
                 }
                 a.isDiscovered = false;
-              
+
             }
-           
+
         }
 
         [HarmonyPostfix]
@@ -855,10 +852,11 @@ namespace NGOEventExtender
             int alphalevel = SingletonMonoBehaviour<EventManager>.Instance.gotChipAlpha.level;
             if (StreamExtender.actionStreamList.Count == 0) { return; }
             ExtActionStream data = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
-            if (data == null) {
+            if (data == null)
+            {
 
-                return; 
-            }     
+                return;
+            }
             if (alpha == data.LabelData.NetaType && alphalevel == data.LabelData.level && a == data.LabelData.getJouken)
             {
                 SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Add($"{data.Id}Idea");
@@ -886,14 +884,14 @@ namespace NGOEventExtender
         {
             if (StreamExtender.actionStreamId != null && !SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Contains($"_{StreamExtender.actionStreamId}"))
             {
-                SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.Add($"_{StreamExtender.actionStreamId}");              
+                SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.Add($"_{StreamExtender.actionStreamId}");
             }
             StreamExtender.actionStreamId = null;
         }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(NgoEx), "CmdFromType")]
-        static void ApplyCustomStreamCmd( ref CmdMaster.Param __result, CmdType type)
+        static void ApplyCustomStreamCmd(ref CmdMaster.Param __result, CmdType type)
         {
             if (StreamExtender.actionStreamId == null) { return; }
             if (StreamExtender.actionStreamList.Count == 0) { return; }
@@ -901,14 +899,14 @@ namespace NGOEventExtender
             ExtActionStream action = StreamExtender.actionStreamList.Find(n => n.Id == StreamExtender.actionStreamId);
             string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
             if (discovered != null && action.CommandResult != null)
-                {
-                __result = action.CommandResult;    
+            {
+                __result = action.CommandResult;
                 return;
-                }
+            }
         }
 
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(CommandManager), "OnActionHovered", new Type[] {typeof(AlphaType), typeof(int)})]
+        [HarmonyPatch(typeof(CommandManager), "OnActionHovered", new Type[] { typeof(AlphaType), typeof(int) })]
         static bool HighlightCustomStreamCmd(AlphaType alpha, int level)
         {
             if (StreamExtender.actionStreamList.Count == 0) { return true; }
@@ -925,7 +923,7 @@ namespace NGOEventExtender
                     SingletonMonoBehaviour<TooltipManager>.Instance.ShowAction(ActionType.Haishin, action.CommandResult);
                     return false;
                 }
-                
+
             }
             return true;
         }
@@ -980,7 +978,7 @@ namespace NGOEventExtender
         public abstract AlphaTypeToData LabelData { get; }
 
         public virtual EgosaMaster.Param SearchResult { get => null; }
-         
+
         public virtual CmdMaster.Param CommandResult { get => null; }
     }
 }

@@ -2,18 +2,14 @@
 using HarmonyLib;
 using NGO;
 using ngov3;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NSOMediaExtender
 {
-    [HarmonyPatch]   
+    [HarmonyPatch]
     public class PictureExtender
     {
         internal static List<Sprite> SpritePicExtList = new List<Sprite>();
@@ -39,16 +35,16 @@ namespace NSOMediaExtender
             string[] getFileName = path.Split('\\');
             string fileName = getFileName[getFileName.Count() - 1];
             byte[] file = File.ReadAllBytes(path);
-            
-            if 
+
+            if
             (
                 //JPEG
                 ((file[0] == 0xFF && file[1] == 0xD8) && (file[file.LongLength - 2] == 0xFF && file[file.LongLength - 1] == 0xD9))
                 //PNG
                 || (file[0] == 0x89 && file[1] == 0x50 && file[2] == 0x4E && file[3] == 0x47 && file[4] == 0x0D && file[5] == 0x0A && file[6] == 0x1A && file[7] == 0x0A)
-            ) 
-            { 
-                Texture2D tex = new Texture2D(2,2);
+            )
+            {
+                Texture2D tex = new Texture2D(2, 2);
                 ImageConversion.LoadImage(tex, file, false);
                 tex.filterMode = FilterMode.Point;
                 Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
@@ -71,21 +67,21 @@ namespace NSOMediaExtender
                 FileName = address,
                 Path = ""
             };
-            
-                string s;
-                if (index < 10)
-                {
-                    s = $"00{index}";
-                }
-                else if (index < 100)
-                {
-                    s = $"0{index}";
-                }
-                else
-                {
-                    s = index.ToString();
-                }
-              resource.Id = $"EXT{s}";           
+
+            string s;
+            if (index < 10)
+            {
+                s = $"00{index}";
+            }
+            else if (index < 100)
+            {
+                s = $"0{index}";
+            }
+            else
+            {
+                s = index.ToString();
+            }
+            resource.Id = $"EXT{s}";
             customMyPictureList.Add(resource);
         }
 

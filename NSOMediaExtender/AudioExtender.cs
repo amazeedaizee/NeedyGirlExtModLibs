@@ -3,11 +3,8 @@ using HarmonyLib;
 using ngov3;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -26,7 +23,7 @@ namespace NSOMediaExtender
         public static void PlayCustomSound(string Id)
         {
             Sound sound = customSoundList.FirstOrDefault(x => x.Id == Id); ;
-            SetCurrentSound(Id, sound);                   
+            SetCurrentSound(Id, sound);
         }
 
         /// <summary>
@@ -35,13 +32,13 @@ namespace NSOMediaExtender
         /// <param name="clip">The <c>AudioClip</c> used to make the <c>Sound.</c></param>
         public static void NewSoundFromClip(AudioClip clip)
         {
-           
-                Sound sound = CreateSound(clip.name, clip);
-                if (sound != null)
-                {
-                    customSoundList.Add(sound);
-                };
-            
+
+            Sound sound = CreateSound(clip.name, clip);
+            if (sound != null)
+            {
+                customSoundList.Add(sound);
+            };
+
 
         }
 
@@ -62,37 +59,37 @@ namespace NSOMediaExtender
             }
             string[] getFileName = path.Split('\\');
             string fileName = getFileName[getFileName.Count() - 1];
-           
-                try
-                {
-                    using (var audioRequest = UnityWebRequestMultimedia.GetAudioClip(Path.Combine("file://" + path), type))
-                    {
-                        audioRequest.SendWebRequest();
-                        await UniTask.WaitUntil(() => audioRequest.isDone);
-                        DownloadHandlerAudioClip dHandler = (DownloadHandlerAudioClip)audioRequest.downloadHandler;
-                        dHandler.streamAudio = true;
-                        await UniTask.WaitUntil(() => dHandler.isDone);
-                        AudioClip audio = DownloadHandlerAudioClip.GetContent(audioRequest);
-                        if (audio == null)
-                        {
-                            Debug.LogError("Could not load file!");
-                            return;
-                        }
-                        Sound sound = CreateSound(fileName, audio);
-                        if (sound != null)
-                        {
-                            customSoundList.Add(sound);
-                        }
-                    }
-                    
 
-                }
-                catch (Exception ex)
+            try
+            {
+                using (var audioRequest = UnityWebRequestMultimedia.GetAudioClip(Path.Combine("file://" + path), type))
                 {
-                    Debug.LogError("An error has occurred: " + ex);
-                    return;
+                    audioRequest.SendWebRequest();
+                    await UniTask.WaitUntil(() => audioRequest.isDone);
+                    DownloadHandlerAudioClip dHandler = (DownloadHandlerAudioClip)audioRequest.downloadHandler;
+                    dHandler.streamAudio = true;
+                    await UniTask.WaitUntil(() => dHandler.isDone);
+                    AudioClip audio = DownloadHandlerAudioClip.GetContent(audioRequest);
+                    if (audio == null)
+                    {
+                        Debug.LogError("Could not load file!");
+                        return;
+                    }
+                    Sound sound = CreateSound(fileName, audio);
+                    if (sound != null)
+                    {
+                        customSoundList.Add(sound);
+                    }
                 }
-           
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("An error has occurred: " + ex);
+                return;
+            }
+
 
         }
 
@@ -149,7 +146,7 @@ namespace NSOMediaExtender
         [HarmonyPostfix]
         [HarmonyPatch(typeof(AudioManager), "GetCurrentSourceById")]
         static void ApplyCustomSound(ref AudioManager.TargetAudio __result, List<AudioSource> ____audioSources)
-        {          
+        {
             if (__result == null && currentSound != null)
             {
                 string mixerName = currentSound.Category ?? "";

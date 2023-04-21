@@ -4,12 +4,7 @@ using NGO;
 using ngov3;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NGOEventExtender
@@ -81,8 +76,8 @@ namespace NGOEventExtender
 
         }
 
-        public static void HijackOriginalEvent(NgoEvent original, NgoExtEvent replacement) 
-        { 
+        public static void HijackOriginalEvent(NgoEvent original, NgoExtEvent replacement)
+        {
             if (hijackingEventList.ContainsKey(original.ToString()))
             {
                 hijackingEventList[original.ToString()].Add(replacement);
@@ -150,7 +145,7 @@ namespace NGOEventExtender
             {
                 return;
             }
-           AddEvent(ngoEvent);
+            AddEvent(ngoEvent);
 
         }
 
@@ -209,7 +204,7 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(EventManager), "FetchDialog")]
         static bool InitializeSpecialDayExts()
         {
-            if (specialDayExtEvents.Count==0) { return true; }
+            if (specialDayExtEvents.Count == 0) { return true; }
             for (int i = 0; i < specialDayExtEvents.Count; i++)
             {
                 bool condition = specialDayExtEvents[i].SetCondition();
@@ -256,15 +251,15 @@ namespace NGOEventExtender
             if (__result == true) { return; }
             if (SingletonMonoBehaviour<EventManager>.Instance.isHorror)
             {
-                __result= false;
+                __result = false;
                 return;
             }
             if (SingletonMonoBehaviour<EventManager>.Instance.nowEnding == EndingType.Ending_Completed)
             {
-               __result= false;
+                __result = false;
                 return;
             }
-        
+
             for (int i = 0; i < specialMidnightExtEvents.Count; i++)
             {
                 bool condition = specialMidnightExtEvents[i].SetCondition();
@@ -363,15 +358,15 @@ namespace NGOEventExtender
             if (randomDayExtEvents.Exists((NgoExtEvent ext) => ext.ToString() == eventName))
             {
                 NgoExtEvent extDayEvent = randomDayExtEvents.Find((NgoExtEvent ext) => ext.ToString() == eventName);
-                
-                
-                    bool condition = extDayEvent.SetCondition();
-                    if (condition == false)
-                    {
-                        resetDayCustomEvent = true;
-                        __result = getUniqueUzagaramiId(ngoEvent);
-                        return;
-                    }           
+
+
+                bool condition = extDayEvent.SetCondition();
+                if (condition == false)
+                {
+                    resetDayCustomEvent = true;
+                    __result = getUniqueUzagaramiId(ngoEvent);
+                    return;
+                }
                 currentExtDayEvent = extDayEvent;
             }
         }
@@ -389,26 +384,26 @@ namespace NGOEventExtender
             }
             hijackingEventList.TryGetValue(eventOne, out List<NgoExtEvent> extEvents);
             if (extEvents.Count == 0) { return; }
-            for (int i = 0; i< extEvents.Count; i++)
+            for (int i = 0; i < extEvents.Count; i++)
             {
-                
-                    if (i == extEvents.Count - 1)
-                    {
-                        bool finalCondition = extEvents[i].SetCondition();
-                        if (finalCondition == false)
-                        {
-                            return;
-                        }
 
-                    }
-                
-               
-                    bool condition = extEvents[i].SetCondition();
-                    if (condition == false)
+                if (i == extEvents.Count - 1)
+                {
+                    bool finalCondition = extEvents[i].SetCondition();
+                    if (finalCondition == false)
                     {
-                        continue;
+                        return;
                     }
-                          
+
+                }
+
+
+                bool condition = extEvents[i].SetCondition();
+                if (condition == false)
+                {
+                    continue;
+                }
+
                 SingletonMonoBehaviour<EventManager>.Instance.eventQueue.Clear();
                 AddEvent(extEvents[i]);
                 return;
@@ -423,7 +418,7 @@ namespace NGOEventExtender
         }
 
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(EventManager), "AddEventQueue", new Type[] {typeof(string)})]
+        [HarmonyPatch(typeof(EventManager), "AddEventQueue", new Type[] { typeof(string) })]
         static bool SetCustomDayEvent()
         {
             if (currentExtDayEvent != null)

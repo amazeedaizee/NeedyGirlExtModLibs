@@ -1,19 +1,4 @@
-﻿using BepInEx;
-using Cysharp.Threading.Tasks;
-using HarmonyLib;
-using NGO;
-using ngov3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Threading;
-using TMPro;
-using UniRx;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace NSOMediaExtender
+﻿namespace NSOMediaExtender
 {
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInProcess("Windose.exe")]

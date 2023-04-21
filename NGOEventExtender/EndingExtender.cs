@@ -4,12 +4,10 @@ using NGO;
 using ngov3;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine.UI;
-using UnityEngine;
 using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace NGOEventExtender
 {
@@ -178,7 +176,7 @@ namespace NGOEventExtender
             {
                 ___Hint.GetComponent<RectTransform>().anchoredPosition = new Vector2(-574, 478);
                 GameObject.Find("button_picture").GetComponent<RectTransform>().anchoredPosition = new Vector2(-64, 1020);
-            }          
+            }
         }
 
         [HarmonyPostfix]

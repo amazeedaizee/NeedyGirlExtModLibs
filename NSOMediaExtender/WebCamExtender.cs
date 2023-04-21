@@ -1,14 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
 using HarmonyLib;
 using ngov3;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using UnityEngine;
-using static UnityEngine.Networking.UnityWebRequest;
 
 namespace NSOMediaExtender
 {
@@ -74,7 +69,7 @@ namespace NSOMediaExtender
         /// <param name="clip">The <c>AnimationClip</c> to add to the list. </param>
         public static void AddCustomAnimClip(AnimationClip clip)
         {
-           animationClipExtList.Add(clip);
+            animationClipExtList.Add(clip);
         }
 
         /// <summary>
@@ -236,14 +231,14 @@ namespace NSOMediaExtender
         [HarmonyPatch(typeof(LoadWebcamData), "LoadAnimation")]
         static async UniTask<AnimationClip> SetCustomAnim(UniTask<AnimationClip> value, string address)
         {
-           string customId = address.Remove(address.Length - 5, 5);
-           if (animationClipExtList.Count == 0)
+            string customId = address.Remove(address.Length - 5, 5);
+            if (animationClipExtList.Count == 0)
             {
                 return await value;
             }
-                try
-                {
-                AnimationClip customClip = animationClipExtList.FirstOrDefault(x => x.name == customId);              
+            try
+            {
+                AnimationClip customClip = animationClipExtList.FirstOrDefault(x => x.name == customId);
                 if (customClip == null || customClip.ToString() == "")
                 {
                     return await value;
@@ -253,14 +248,14 @@ namespace NSOMediaExtender
                     return await value;
                 }
                 return customClip;
-                }
-                catch
-                {
+            }
+            catch
+            {
             }
             return await value;
         }
 
-        
+
 
     }
 }

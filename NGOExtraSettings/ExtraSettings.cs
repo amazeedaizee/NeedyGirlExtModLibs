@@ -1,6 +1,4 @@
-﻿using BepInEx;
-using HarmonyLib;
-using System;
+﻿using System;
 
 namespace NGOExtraSettings
 {
