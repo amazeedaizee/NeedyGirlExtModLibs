@@ -176,7 +176,7 @@ namespace NGOEventExtender
         /// Sets custom Special Day Events. 
         /// <br/>In-game Special Day Events (fixed/milestones) take priority over your events, so your conditions have to be unique.
         /// </summary>
-        /// <param name="extEventList">The list of custom random day events to load.</param>
+        /// <param name="extEventList">The list of custom special day events to load.</param>
         public static void SetSpecialDayExtEvent(List<NgoExtEvent> extEventList)
         {
             specialDayExtEvents.AddRange(extEventList);
@@ -185,7 +185,7 @@ namespace NGOEventExtender
         /// Sets custom Special Night Events. 
         /// <br/>In-game Special Night Events take priority over your events, so your conditions have to be unique.
         /// </summary>
-        /// <param name="extEventList">The list of custom random day events to load.</param>
+        /// <param name="extEventList">The list of custom special day events to load.</param>
         public static void SetSpecialNightExtEvent(List<NgoExtEvent> extEventList)
         {
             specialNightExtEvents.AddRange(extEventList);
@@ -194,7 +194,7 @@ namespace NGOEventExtender
         /// Sets custom Special Midnight Events. (the time after Sleep To Tomorrow is pressed, but before the day transitions to the next day.) 
         /// <br/>In-game Special Midnight Events take priority over your events, so your conditions have to be unique.
         /// </summary>
-        /// <param name="extEventList">The list of custom random day events to load.</param>
+        /// <param name="extEventList">The list of custom special day events to load.</param>
         public static void SetSpecialMidnightExtEvent(List<NgoExtEvent> extEventList)
         {
             specialMidnightExtEvents.AddRange(extEventList);
