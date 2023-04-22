@@ -949,7 +949,7 @@ namespace NGOEventExtender
         /// <summary>
         /// The starting animation of a stream; only applies if KAngel is the first one talking.
         /// </summary>
-        public abstract string StartingAnim { get; }
+        public virtual string StartingAnim { get => null; }
         /// <summary>
         /// The list that sets up the script of your stream.
         /// </summary>
@@ -984,7 +984,7 @@ namespace NGOEventExtender
         public abstract TweetType TweetId { get; }
         public abstract AlphaTypeToData LabelData { get; }
 
-        public virtual EgosaMaster.Param SearchResult { get => null; }
+        public virtual EgosaMaster.Param SearchResult { get; }
 
         public virtual CmdMaster.Param CommandResult { get => null; }
     }
