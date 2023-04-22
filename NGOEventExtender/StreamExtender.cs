@@ -15,7 +15,7 @@ using UnityEngine;
 
 namespace NGOEventExtender
 {
-    public class StreamList
+    public class PlayingList
     {
 
         /// <summary>
@@ -704,7 +704,11 @@ namespace NGOEventExtender
                 __result = __instance.SetScenario<TestScenario>();
                 return false;
             }
-            if (conditionalStreamList.Count == 0) { return true; }
+            if (conditionalStreamList.Count == 0) 
+            { 
+                ResetCustomStream();
+                return true; 
+            }
             for (int i = 0; i < conditionalStreamList.Count; i++)
             {
                 bool condition = conditionalStreamList[i].SetCondition();
@@ -718,6 +722,7 @@ namespace NGOEventExtender
                     return false;
                 }
             }
+            ResetCustomStream();
             return true;
         }
 
@@ -815,6 +820,8 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(LoadNetaData), "ReadNetaContent")]
         static void SetCustomLabel(ref AlphaTypeToData __result, AlphaType NetaType, int level = 0)
         {
+            AlphaLevel gotAlpha = SingletonMonoBehaviour<NetaManager>.Instance.GotAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
+            AlphaLevel usedAlpha = SingletonMonoBehaviour<NetaManager>.Instance.usedAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             if (StreamExtender.actionStreamList.Count == 0) { return; }
             List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.LabelData.NetaType == NetaType && n.LabelData.level == level);
             if (actionList.Count == 0)
@@ -832,7 +839,7 @@ namespace NGOEventExtender
                     __result = action.LabelData;
                     return;
                 }
-                if (action.SetCondition())
+                if (action.SetCondition() && gotAlpha == null)
                 {
                     a.isDiscovered = true;
                     __result = action.LabelData;
@@ -854,12 +861,12 @@ namespace NGOEventExtender
             ExtActionStream data = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
             if (data == null)
             {
-
                 return;
             }
             if (alpha == data.LabelData.NetaType && alphalevel == data.LabelData.level && a == data.LabelData.getJouken)
             {
                 SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Add($"{data.Id}Idea");
+                Debug.Log($"{data.Id} discovered.");
             }
 
 
@@ -971,7 +978,7 @@ namespace NGOEventExtender
 
     public abstract class ExtActionStream : ExtStream
     {
-        public bool isDiscovered = false;
+        protected internal bool isDiscovered = false;
         public abstract string Id { get; }
 
         public abstract TweetType TweetId { get; }

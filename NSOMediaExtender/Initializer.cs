@@ -1,4 +1,7 @@
-﻿namespace NSOMediaExtender
+﻿using BepInEx;
+using HarmonyLib;
+
+namespace NSOMediaExtender
 {
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInProcess("Windose.exe")]
