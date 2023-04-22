@@ -1054,13 +1054,14 @@ namespace NGOEventExtender
     {
         protected internal bool isDiscovered = false;
         public abstract string Id { get; }
+        public abstract AlphaTypeToData LabelData { get; }
 
         public abstract TweetType TweetResult { get; }
-        public abstract AlphaTypeToData LabelData { get; }
 
         public virtual EgosaMaster.Param SearchResult { get; }
 
         public virtual CmdMaster.Param CommandResult { get => null; }
+
     }
 
 }
