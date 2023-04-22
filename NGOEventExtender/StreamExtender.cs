@@ -204,6 +204,16 @@ namespace NGOEventExtender
         }
     }
 
+    /// <summary>
+    /// Different behaviour of how stream chat comments show in a stream.
+    /// <br/><c>Normal:</c> Comments can be selected and deleted.
+    /// <br/><c>Uncontrollable:</c> Comments are unselectable and are grayed out.
+    /// <br/><c>Celebration:</c> Comments are unselectable and are either super chats or grayed out randomly.
+    /// </summary>
+    public enum StreamChatType
+    {
+        Normal, Uncontrollable, Celebration
+    }
 
     /// <summary>
     /// The states used to load in a border effect.
@@ -241,6 +251,29 @@ namespace NGOEventExtender
 
     public class StreamSettings
     {
+        /// <summary>
+        /// Sets the behaviour of stream chat comments in a stream.
+        /// </summary>
+        /// <param name="chatType">The StreamChatType of the stream.</param>
+        public static void SetStreamChatType(StreamChatType chatType)
+        {
+            switch (chatType)
+            {
+                case StreamChatType.Uncontrollable:
+                    SingletonMonoBehaviour<Live>.Instance.isUncontrollable = true;
+                    SingletonMonoBehaviour<Live>.Instance.isOiwai = false;
+                    break;
+                    case StreamChatType.Celebration:
+                    SingletonMonoBehaviour<Live>.Instance.isOiwai = true;
+                    SingletonMonoBehaviour<Live>.Instance.isUncontrollable = false;
+                    break;
+                default:
+                    SingletonMonoBehaviour<Live>.Instance.isOiwai = false;
+                    SingletonMonoBehaviour<Live>.Instance.isUncontrollable = false;
+                    return;
+            }
+        }
+
         /// <summary>
         /// Sets the animation for when KAngel starts reading super chat comments.
         /// </summary>
