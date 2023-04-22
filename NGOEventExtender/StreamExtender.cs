@@ -835,7 +835,7 @@ namespace NGOEventExtender
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
                 if (discovered != null)
                 {
-                    a.isDiscovered = false;
+
                     __result = action.LabelData;
                     return;
                 }
@@ -867,6 +867,7 @@ namespace NGOEventExtender
             {
                 SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Add($"{data.Id}Idea");
                 Debug.Log($"{data.Id} discovered.");
+                data.isDiscovered = false;
             }
 
 
