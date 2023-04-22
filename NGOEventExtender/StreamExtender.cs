@@ -460,6 +460,24 @@ namespace NGOEventExtender
 
         }
 
+        /// <summary>
+        /// Ends a custom stream. Calculates stats if an ExtActionStream is playing, otherwise just closes the Stream window.
+        /// </summary>
+        public static void EndCustomStream()
+        {
+            if (isCustom)
+            {
+                if (actionStreamId != null)
+                {
+                    SingletonMonoBehaviour<Live>.Instance.EndHaishin();
+                    return;
+                }
+                SingletonMonoBehaviour<Live>.Instance.HaishinClean();
+                return;
+            }
+            Debug.LogError("No custom stream is currently playing.");
+        }
+
         //Sets any settings and NowPlaying Lists
         [HarmonyPrefix]
         [HarmonyPatch(typeof(TestScenario), "Awake")]
@@ -859,7 +877,6 @@ namespace NGOEventExtender
             List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.LabelData.NetaType == NetaType && n.LabelData.level == level);
             if (actionList.Count == 0)
             {
-
                 return;
             }
             foreach (ExtActionStream action in actionList)
@@ -868,7 +885,6 @@ namespace NGOEventExtender
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
                 if (discovered != null)
                 {
-
                     __result = action.LabelData;
                     return;
                 }
@@ -926,6 +942,7 @@ namespace NGOEventExtender
             if (StreamExtender.actionStreamId != null && !SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Contains($"_{StreamExtender.actionStreamId}"))
             {
                 SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.Add($"_{StreamExtender.actionStreamId}");
+                Debug.Log($"Added {StreamExtender.actionStreamId} to the Actions History.");
             }
             StreamExtender.actionStreamId = null;
         }
@@ -1022,4 +1039,5 @@ namespace NGOEventExtender
 
         public virtual CmdMaster.Param CommandResult { get => null; }
     }
+
 }
