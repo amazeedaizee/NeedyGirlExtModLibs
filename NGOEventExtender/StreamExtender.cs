@@ -9,9 +9,11 @@ using ngov3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Networking.UnityWebRequest;
 
 namespace NGOEventExtender
 {
@@ -898,6 +900,23 @@ namespace NGOEventExtender
 
             }
 
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(EventManager), "getHintedChip")]
+        static void ApplyDiscovered()
+        {
+            if (StreamExtender.actionStreamList.Count == 0)
+            {
+                return;
+            }
+                ExtActionStream a = StreamExtender.actionStreamList.Find(n => n.isDiscovered == true);
+                if (a.SetCondition())
+                {
+                    a.isDiscovered = true;
+                    return;
+                }
+                a.isDiscovered = false;
         }
 
         [HarmonyPostfix]
