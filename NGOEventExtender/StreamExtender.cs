@@ -903,15 +903,19 @@ namespace NGOEventExtender
         }
 
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(EventManager), "getHintedChip")]
+        [HarmonyPatch(typeof(EventManager), "ExecuteActionConfirmed")]
         static void ApplyDiscovered()
         {
             if (StreamExtender.actionStreamList.Count == 0)
             {
                 return;
             }
-                ExtActionStream a = StreamExtender.actionStreamList.Find(n => n.isDiscovered == true);
-                if (a.SetCondition())
+                ExtActionStream a = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
+            if (a == null)
+            {
+                return;
+            }
+            if (a.SetCondition())
                 {
                     a.isDiscovered = true;
                     return;
