@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using TMPro;
 using UnityEngine;
@@ -1007,6 +1008,182 @@ namespace NGOEventExtender
 
             }
             return true;
+        }
+
+        [HarmonyTranspiler]
+        [HarmonyPatch(typeof(StatusManager), "AddDiffToDelta", new Type[] { typeof(StatusDiff), typeof(CmdMaster.Param) })]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        static IEnumerable<CodeInstruction> ApplySymbolsAsArgs_Execute(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            Label gameLabel = generator.DefineLabel();
+            Label yamiLabel = generator.DefineLabel();
+            Label movieLabel = generator.DefineLabel();
+            Label sexyLabel = generator.DefineLabel();
+            int labelCount = 0;
+            for (int i = 0; i < codes.Count; i++)
+            {                                                
+                if (codes[i].opcode == OpCodes.Ldstr)
+                {
+                    if ((string)codes[i].operand == "Game")
+                    {
+                        codes.InsertRange(i + 3, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_2),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "@"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, gameLabel)
+                        });
+                        labelCount++;
+                        continue;
+                    }
+                    if ((string)codes[i].operand == "AnimeTalk")
+                    {
+                        codes.InsertRange(i + 3, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_2),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "#"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, movieLabel)
+                        });
+                        labelCount++;
+                        continue;
+                    }
+                    if ((string)codes[i].operand == "Darkness")
+                    {
+                        codes.InsertRange(i + 3, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_2),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "!"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, yamiLabel)
+                        });
+                        labelCount++;
+                        continue;
+                    }
+                    if ((string)codes[i].operand == "Hnahaisin")
+                    {
+                        codes.InsertRange(i + 3, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_2),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "$"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, sexyLabel)
+                        });
+                        labelCount++;
+                        continue;
+                    }
+                }
+                if (codes[i].opcode == OpCodes.Ldarg_0)
+                {           
+                    switch (labelCount)
+                    {
+                        case 1:
+                            codes[i].labels.Add(gameLabel);
+                            break;
+                        case 2:
+                            codes[i].labels.Add(movieLabel);
+                            break;
+                        case 3:
+                            codes[i].labels.Add(yamiLabel);
+                            break;
+                        case 4:
+                            codes[i].labels.Add(sexyLabel);
+                            labelCount++;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            return codes.AsEnumerable();
+        }
+
+        [HarmonyTranspiler]
+        [HarmonyPatch(typeof(FollowerDiffComponent2D), "SetBonus")]
+        [HarmonyPatch(typeof(FollowerDiffComponent), "SetBonus")]
+        static IEnumerable<CodeInstruction> ApplySymbolsAsArgs_ShowTooltip(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);          
+            Label yamiLabel = generator.DefineLabel();
+            Label movieLabel = generator.DefineLabel();
+            Label sexyLabel = generator.DefineLabel();
+            Label gameLabel = generator.DefineLabel();
+            Label gameFalse = generator.DefineLabel();
+            for (int i = 0; i < codes.Count; i++)
+            {
+                if (codes[i].opcode == OpCodes.Ldstr)
+                {
+                    
+                    if ((string)codes[i].operand == "AnimeTalk")
+                    {
+                        codes[i + 3].labels.Add(movieLabel);
+                        codes.InsertRange(i - 2, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "#"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, movieLabel)
+                        });
+                                         
+                        i += 6;
+                        continue;
+                    }
+                    if ((string)codes[i].operand == "Darkness")
+                    {
+                        codes[i + 3].labels.Add(yamiLabel);
+                        codes.InsertRange(i - 2, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param), nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "!"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, yamiLabel)
+                        });
+                        i += 6;
+                        continue;
+                    }
+                    if ((string)codes[i].operand == "Hnahaisin")
+                    {
+                        codes[i + 3].labels.Add(sexyLabel);
+                        codes.InsertRange(i - 2, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "$"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brtrue, sexyLabel)
+                        });
+                        break;
+                    }
+                    if ((string)codes[i].operand == "Game") 
+                    {
+                        codes[i + 22].labels.Add(gameFalse);
+                        codes[i + 3].labels.Add(gameLabel);
+                        codes[i + 2].opcode= OpCodes.Brtrue;
+                        codes[i + 2].operand = gameLabel;
+                        codes.InsertRange(i + 3, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(CmdMaster.Param),nameof(CmdMaster.Param.Id))),
+                            new CodeInstruction(OpCodes.Ldstr, "@"),
+                            new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
+                            new CodeInstruction(OpCodes.Brfalse, gameFalse)
+                        });                      
+                        i += 6;
+                        continue;
+                    }
+                }
+
+            }
+          
+            return codes.AsEnumerable();
         }
     }
 
