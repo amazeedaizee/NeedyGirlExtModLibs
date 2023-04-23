@@ -801,13 +801,13 @@ namespace NGOEventExtender
                         {
                             continue;
                         }
-                        if (discovered != null && alpha == ext.LabelData.NetaType && alphalevel == ext.LabelData.level)
+                        if (discovered != null && alpha == ext.HintData.NetaType && alphalevel == ext.HintData.level)
                         {
                             isCustom = true;
                             currentCustomStream = ext;
                             currentFirstAnim = ext.StartingAnim;
                             actionStreamId = ext.Id;
-                            actionTweetType = ext.TweetId;
+                            actionTweetType = ext.TweetResult;
                             if (ext.SearchResult != null)
                             {
                                 try
@@ -876,7 +876,7 @@ namespace NGOEventExtender
             AlphaLevel gotAlpha = SingletonMonoBehaviour<NetaManager>.Instance.GotAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             AlphaLevel usedAlpha = SingletonMonoBehaviour<NetaManager>.Instance.usedAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             if (StreamExtender.actionStreamList.Count == 0) { return; }
-            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.LabelData.NetaType == NetaType && n.LabelData.level == level);
+            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == NetaType && n.HintData.level == level);
             if (actionList.Count == 0)
             {
                 return;
@@ -887,13 +887,13 @@ namespace NGOEventExtender
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
                 if (discovered != null)
                 {
-                    __result = action.LabelData;
+                    __result = action.HintData;
                     return;
                 }
                 if (action.SetCondition() && gotAlpha == null)
                 {
                     a.isDiscovered = true;
-                    __result = action.LabelData;
+                    __result = action.HintData;
                     return;
                 }
                 a.isDiscovered = false;
@@ -935,7 +935,7 @@ namespace NGOEventExtender
             {
                 return;
             }
-            if (alpha == data.LabelData.NetaType && alphalevel == data.LabelData.level && a == data.LabelData.getJouken)
+            if (alpha == data.HintData.NetaType && alphalevel == data.HintData.level && a == data.HintData.getJouken)
             {
                 SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Add($"{data.Id}Idea");
                 Debug.Log($"{data.Id} discovered.");
@@ -991,7 +991,7 @@ namespace NGOEventExtender
         static bool HighlightCustomStreamCmd(AlphaType alpha, int level)
         {
             if (StreamExtender.actionStreamList.Count == 0) { return true; }
-            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.LabelData.NetaType == alpha && n.LabelData.level == level);
+            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == alpha && n.HintData.level == level);
             if (actionList.Count == 0)
             {
                 return true;
