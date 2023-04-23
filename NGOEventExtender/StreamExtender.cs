@@ -1054,7 +1054,7 @@ namespace NGOEventExtender
     {
         protected internal bool isDiscovered = false;
         public abstract string Id { get; }
-        public abstract AlphaTypeToData LabelData { get; }
+        public abstract AlphaTypeToData HintData { get; }
 
         public abstract TweetType TweetResult { get; }
 
