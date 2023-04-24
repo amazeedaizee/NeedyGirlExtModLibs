@@ -1200,7 +1200,7 @@ namespace NGOEventExtender
         /// <summary>
         /// The starting animation of a stream; only applies if KAngel is the first one talking.
         /// </summary>
-        public virtual string StartingAnim { get => null; }
+        public virtual string StartingAnim { get => "stream_cho_akaruku"; }
         /// <summary>
         /// The list that sets up the script of your stream.
         /// </summary>
