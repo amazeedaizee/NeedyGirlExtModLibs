@@ -350,7 +350,7 @@ namespace NGOEventExtender
         internal static Sprite customStreamBG = null;
 
         internal static string actionStreamId = null;
-        internal static TweetType actionTweetType = TweetType.None;
+        internal static List<TweetType> actionTweetType = null;
 
         static ExtStream currentCustomStream;
         internal static List<ExtActionStream> actionStreamList = new List<ExtActionStream>();
@@ -949,13 +949,16 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(NgoEvent), "tweetFromTip")]
         static bool AddCustomTweetResult()
         {
-            if (StreamExtender.actionTweetType != TweetType.None)
+            if (StreamExtender.actionTweetType != null)
             {
-                SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(StreamExtender.actionTweetType);
-                StreamExtender.actionTweetType = TweetType.None;
+                foreach(TweetType tweet in StreamExtender.actionTweetType)
+                {
+                    SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(tweet);
+                }
+                StreamExtender.actionTweetType = null;
                 return false;
             }
-            StreamExtender.actionTweetType = TweetType.None;
+            StreamExtender.actionTweetType = null;
             return true;
         }
 
@@ -1233,7 +1236,7 @@ namespace NGOEventExtender
         public abstract string Id { get; }
         public abstract AlphaTypeToData HintData { get; }
 
-        public abstract TweetType TweetResult { get; }
+        public abstract List<TweetType> TweetResult { get; }
 
         public virtual EgosaMaster.Param SearchResult { get; }
 
