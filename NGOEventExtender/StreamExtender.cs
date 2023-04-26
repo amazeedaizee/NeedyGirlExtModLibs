@@ -375,7 +375,7 @@ namespace NGOEventExtender
         /// <typeparam name="T">The <c>ExtStream</c> data used to load your custom stream.</typeparam>
         /// <param name="isDarkUI"> If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.</param>
         /// <param name="isDarkAnim">If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.</param>
-        public static void StartCustomStream<T>(bool isDarkUI = false, bool isDarkAnim = false)
+        public static void StartCustomStream<T>(bool isDarkUI = false, bool isDarkAnim = false) where T : ExtStream
         {
             Type type = typeof(T);
             ExtStream stream = Activator.CreateInstance(type) as ExtStream;
