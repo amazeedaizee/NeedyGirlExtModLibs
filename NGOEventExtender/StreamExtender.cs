@@ -374,7 +374,7 @@ namespace NGOEventExtender
         /// </summary>
         /// <typeparam name="T">The <c>ExtStream</c> data used to load your custom stream.</typeparam>
         /// <param name="isDarkUI"> If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.</param>
-        /// <param name="isDarkAnim">If true, uses the Dark Angel transition before a stream, otherwise uses the default KAngel transition.</param>
+        /// <param name="isDarkAnim">If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.</param>
         public static void StartCustomStream<T>(bool isDarkUI = false, bool isDarkAnim = false)
         {
             Type type = typeof(T);
@@ -385,11 +385,52 @@ namespace NGOEventExtender
         }
 
         /// <summary>
+        /// Saves a custom stream to be used later when the Broadcast window is opened. 
+        /// Useful if you want to start a stream without the transformation playing.
+        /// </summary>
+        /// <remarks>Will only be saved for one upcoming stream only. (it will reset after a stream)</remarks>
+        /// <typeparam name="T"> The custom stream to load later on.</typeparam>
+        /// <returns></returns>
+        public static async UniTask AwaitCustomStream<T>() where T : ExtStream
+        {
+            Type type = typeof(T);
+            ExtStream stream = Activator.CreateInstance(type) as ExtStream;
+            await AwaitCustomStream(stream);
+        }
+
+        /// <summary>
+        /// Saves a custom stream to be used later when the Broadcast window is opened. 
+        /// Useful if you want to start a stream without the transformation playing.
+        /// </summary>
+        /// <remarks>Will only be saved for one upcoming stream only. (it will reset after a stream)</remarks>
+        /// <param name="stream"> The custom stream to load later on.</param>
+        /// <returns></returns>
+        public static async UniTask AwaitCustomStream(ExtStream stream)
+        {
+            isCustom = true;
+            currentCustomStream = stream;
+            if (!(stream.StartingAnim == "" || stream.StartingAnim == null))
+            {
+                currentFirstAnim = stream.StartingAnim;
+            }
+            await HaishinFirstAnimation.LoadHaishinFirstAnimation();
+        }
+
+        /// <summary>
+        /// Sets the Dark Angel transformation scene to play instead of the normal transformation scene the next time the Transform! window appears.
+        /// </summary>
+        /// <remarks>Will only play for one upcoming Transform! scene only. (it will reset after a stream)</remarks>
+        public static void AwaitDarkAngelTransform()
+        {
+            isDarkAngel = true;
+        }
+
+        /// <summary>
         /// Starts a custom stream, based on the contents from your <c>ExtStream.</c> <br/>Make sure the <c>ExtStream</c> you use isn't static.
         /// </summary>
         /// <param name="stream">The <c>ExtStream</c> data used to load your custom stream. Make sure the <c>ExtStream</c> you use isn't static.</param>
         /// <param name="isDarkUI"> If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.</param>
-        /// <param name="isDarkAnim">If true, uses the Dark Angel transition before a stream, otherwise uses the default KAngel transition.</param>
+        /// <param name="isDarkAnim">If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.</param>
         public static void StartCustomStream(ExtStream stream, bool isDarkUI = false, bool isDarkAnim = false)
         {
 
