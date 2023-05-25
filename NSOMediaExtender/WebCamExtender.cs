@@ -179,7 +179,7 @@ namespace NSOMediaExtender
         [HarmonyPatch(typeof(WebCamManager), "GetStatusFace")]
         static void SetCustomIdleAnim(ref string[] ___horror, ref string[] ___normal, ref string[] ___normalStress, ref string[] ___suki4, ref string[] ___suki4Stress, ref string[] ___suki5, ref string[] ___suki5Stress, ref string[] ___yami4, ref string[] ___yami4Stress, ref string[] ___yami5, ref string[] ___yami5Stress, ref string[] ___yamisuki5, ref string[] ___yamisuki5Stress)
         {
-            if (addToNormalAnim.Count == 0)
+            if (originalNormalAnim.Count == 0)
             {
                 originalNormalAnim.AddRange(___normal.ToList());
                 originalStressedAnim.AddRange(___normalStress.ToList());
@@ -229,6 +229,7 @@ namespace NSOMediaExtender
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(LoadWebcamData), "LoadAnimation")]
+        [HarmonyPatch(typeof(LoadLiveViewData), "LoadAnimation")]
         static async UniTask<AnimationClip> SetCustomAnim(UniTask<AnimationClip> value, string address)
         {
             string customId = address.Remove(address.Length - 5, 5);

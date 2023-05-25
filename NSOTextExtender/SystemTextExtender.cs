@@ -12,6 +12,7 @@ namespace NGOTxtExtender
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtSystemText.json"));
         public static List<SystemTextMaster.Param> ExtList = new List<SystemTextMaster.Param>();
         static List<SystemTextMaster.Param> originalList = new List<SystemTextMaster.Param>();
+        static List<SystemTextMaster.Param> combinedList = new List<SystemTextMaster.Param>();
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(NgoEx), "getSystemTexts")]
@@ -20,6 +21,11 @@ namespace NGOTxtExtender
             if (originalList.Count == 0)
             {
                 originalList = __result;
+            }
+            if (ExtList.Count != 0 && combinedList.Count == 0)
+            {
+                combinedList.AddRange(originalList);
+                combinedList.AddRange(ExtList);
             }
             List<SystemTextMaster.Param> newMobs = new List<SystemTextMaster.Param>();
             newMobs.AddRange(originalList);

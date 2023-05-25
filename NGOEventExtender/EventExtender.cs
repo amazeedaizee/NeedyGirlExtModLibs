@@ -16,6 +16,8 @@ namespace NGOEventExtender
         public static bool isEventing = false;
         public static bool resetDayCustomEvent = false;
 
+        static bool isHeadPat = true;
+
         public static NgoEvent currentExtDayEvent;
 
 
@@ -132,6 +134,16 @@ namespace NGOEventExtender
 
             hijackingEventList.Add(original.ToString(), replacements);
 
+        }
+
+        /// <summary>
+        /// Enables or disables the ability to headpat Ame's head. Useful if you don't want Ame's head to be interactable during events.
+        /// </summary>
+        /// <remarks> Ability to pat will be reset to true during the boot screen, reloading a day or going to the next day.</remarks>
+        /// <param name="isPat">Can Ame's head be patted or not?</param>
+        public static void CanHeadpat(bool isPat)
+        {
+            isHeadPat = isPat;
         }
 
         /// <summary>
@@ -421,6 +433,23 @@ namespace NGOEventExtender
             await UniTask.Delay(1, false, PlayerLoopTiming.Update, default(CancellationToken));
             await SingletonMonoBehaviour<EventManager>.Instance.StartEvent();
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(App_Webcam), nameof(App_Webcam.Nade))]
+        static bool ConfirmHeadpat()
+        {
+            return isHeadPat;
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(Boot), "Awake")]
+        [HarmonyPatch(typeof(EventManager), "Load")]
+        [HarmonyPatch(typeof(DayPassing), "startEvent", new Type[] { typeof(CancellationToken) })]
+        static void ResetHeadPat()
+        {
+            isHeadPat = true;
+        }
+
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(EventManager), "AddEventQueue", new Type[] { typeof(string) })]

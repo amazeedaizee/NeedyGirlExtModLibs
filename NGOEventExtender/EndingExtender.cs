@@ -113,13 +113,13 @@ namespace NGOEventExtender
             {
                 try
                 {
-                    var parse = JsonConvert.DeserializeObject<List<EndingType>>(File.ReadAllText(s));
+                    var parse = JsonConvert.DeserializeObject<List<EndingType>>(File.ReadAllText(s)).Distinct();                   
                     extEndHistory.AddRange(parse);
                 }
                 catch
                 {
                     Debug.LogError("This is not a valid JSON file!");
-                    return;
+                    continue;
                 }
 
             }

@@ -367,7 +367,7 @@ namespace NGOEventExtender
         {
             isCustom = true;
             currentFirstAnim = anim;
-            await HaishinFirstAnimation.LoadHaishinFirstAnimation();
+            HaishinFirstAnimation.LoadHaishinFirstAnimation().Forget();
         }
         /// <summary>
         /// Starts a custom stream, based on the contents from your <c>ExtStream.</c> <br/>Make sure the <c>ExtStream</c> you use isn't static.
@@ -413,7 +413,7 @@ namespace NGOEventExtender
             {
                 currentFirstAnim = stream.StartingAnim;
             }
-            await HaishinFirstAnimation.LoadHaishinFirstAnimation();
+            HaishinFirstAnimation.LoadHaishinFirstAnimation().Forget();
         }
 
         /// <summary>
@@ -1007,8 +1007,11 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(Action_HaishinEnd), "startEvent", new Type[] { typeof(CancellationToken) })]
         static void AddActionExtToHistory()
         {
-            if (StreamExtender.actionStreamId != null && !SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Contains($"_{StreamExtender.actionStreamId}"))
+            AlphaType alpha = SingletonMonoBehaviour<EventManager>.Instance.alpha;
+            int alphaLevel = SingletonMonoBehaviour<EventManager>.Instance.alphaLevel;
+            if (StreamExtender.actionStreamId != null && !SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.Contains($"_{StreamExtender.actionStreamId}"))
             {
+                SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.Remove($"{alpha}_{alphaLevel}");
                 SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.Add($"_{StreamExtender.actionStreamId}");
                 Debug.Log($"Added {StreamExtender.actionStreamId} to the Actions History.");
             }
