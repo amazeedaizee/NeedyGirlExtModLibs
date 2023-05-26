@@ -76,7 +76,7 @@ namespace NGOTxtExtender
         }
 
         /// <summary>
-        /// Sends one custom user-made Jine message from P-chan based on the option chosen from <c>StartExtPiOptionList</c>.
+        /// Sends one custom user-made Jine message from P-chan based on the option chosen from <c>StartExtPiOptionList</c>. Using async methods for the <c>Action</c> parameters are recommended.
         /// </summary>
         /// <param name="id">The LineMaster.Param's Id used to load the message.</param>
         /// <param name="action">The <c>Action</c> method after this message is sent.</param>
@@ -212,7 +212,6 @@ namespace NGOTxtExtender
             startEvent(__instance, cancellationToken);
             if (SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Stress) >= 60)
             {
-
                 endEvent(__instance);
             }
             IEnumerable<JineType> jineMainList = SetNotNoonJineList().Except(getJineHistory());
@@ -224,17 +223,7 @@ namespace NGOTxtExtender
                 jineExContinue(jine);
                 return false;
             }
-            __instance.eventName = jine.ToString();
-            if (__instance.eventName.StartsWith("LineWeekDay"))
-            {
-                jineOrigContinue();
-            }
-            else
-            {
-                SingletonMonoBehaviour<EventManager>.Instance.AddEventQueue(__instance.eventName);
-            }
-            endEvent(__instance);
-            return false;
+            return true;
 
             async void jineExContinue(JineType jt)
             {
@@ -243,14 +232,6 @@ namespace NGOTxtExtender
                 await NgoEvent.DelaySkippable(Constants.MIDDLE);
                 SingletonMonoBehaviour<JineManager>.Instance.StartStamp();
                 endEvent(__instance);
-            }
-
-            async void jineOrigContinue()
-            {
-                SingletonMonoBehaviour<JineManager>.Instance.addEventSeparator(JineType.Jine_Label_days);
-                await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory((JineType)Enum.Parse(typeof(JineType), __instance.eventName));
-                await NgoEvent.DelaySkippable(Constants.MIDDLE);
-                SingletonMonoBehaviour<JineManager>.Instance.StartStamp();
             }
 
         }
