@@ -64,7 +64,7 @@ namespace NGOTxtExtender
         /// <param name="tweetId"> The TweetMaster.Param's Id used to load the tweet.</param>
         /// <param name="kusoRepParId">The KRepMaster.Param's <c>ParentID</c> that's used to find matching params.</param>
         /// <exception cref="NullReferenceException"></exception>
-        public static void StartExtTweetWithCustomKReps(string tweetId, string kusoRepParId)
+        public static void StartExtTweetWithCustomReps(string tweetId, string kusoRepParId)
         {
             TweetMaster.Param tweet = ExtList.Find((TweetMaster.Param t) => t.Id == tweetId);
             TweetType twIndex = ExtTextManager.GetUniqueIdNum<TweetType>(tweet.Id);

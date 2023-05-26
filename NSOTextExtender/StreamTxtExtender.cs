@@ -18,7 +18,7 @@ namespace NGOTxtExtender
         [HarmonyPatch(typeof(NgoEx), "getMobs")]
         static void InitializeExtMobs(ref MobCommentMaster __result)
         {
-            if (originalMobs.Count == 0)
+            if (ExtList.Count != 0 && !__result.param.Exists(m => m.Id == ExtList[0].Id))
             {
                 originalMobs = __result.param;
             }

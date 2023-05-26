@@ -21,15 +21,10 @@ namespace NGOTxtExtender
         [HarmonyPatch(typeof(NgoEx), "getEgosas")]
         static void InitializeExtEgosa(ref List<EgosaMaster.Param> __result)
         {
-            if (originalEgosa.Count == 0)
+            if (ExtList.Count != 0 && !__result.Exists(e => e.Id == ExtList[0].Id))
             {
-                originalEgosa = __result;
+                __result.AddRange(ExtList);
             }
-            List<EgosaMaster.Param> newList = new List<EgosaMaster.Param>();
-            newList.AddRange(originalEgosa);
-            newList.AddRange(ExtList);
-            __result = newList;
-
         }
 
         static bool isCustomReply = false;
@@ -164,7 +159,7 @@ namespace NGOTxtExtender
         {
             if (isCustomReply && customType != "")
             {
-                List<EgosaMaster.Param> customEgosas = EgosaExtender.ExtList.FindAll((EgosaMaster.Param e) => e.Type == customType);
+                List<EgosaMaster.Param> customEgosas = ExtList.FindAll((EgosaMaster.Param e) => e.Type == customType);
                 for (int i = 0; i < customEgosas.Count; i++)
                 {
                     EgosaRepView2D kusoRepView = UnityEngine.Object.Instantiate<EgosaRepView2D>(___kusoPrefab, ___kusoParent);

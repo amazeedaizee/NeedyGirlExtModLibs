@@ -83,28 +83,20 @@ namespace NGOTxtExtender
         [HarmonyPatch(typeof(NgoEx), "getKitunes")]
         static void SetExtKitsunes(ref List<KituneMaster.Param> __result)
         {
-            if (originalKitune.Count == 0)
+            if (ExtList.Count != 0 && !__result.Exists(k => k.Id == ExtList[0].Id))
             {
-                originalKitune = __result;
+               __result.AddRange(ExtList);
             }
-            List<KituneMaster.Param> newList = new List<KituneMaster.Param>();
-            newList.AddRange(originalKitune);
-            newList.AddRange(KitsuneExtender.ExtList);
-            __result = newList;
         }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(NgoEx), "getSuretais")]
         static void SetExtKitsune(ref List<KituneSuretaiMaster.Param> __result)
         {
-            if (originalKituneTitles.Count == 0)
+            if (ExtList_Title.Count != 0 && !__result.Exists(kt => kt.Id == ExtList_Title[0].Id))
             {
-                originalKituneTitles = __result;
+                __result.AddRange(ExtList_Title);
             }
-            List<KituneSuretaiMaster.Param> newList = new List<KituneSuretaiMaster.Param>();
-            newList.AddRange(originalKituneTitles);
-            newList.AddRange(KitsuneExtender.ExtList_Title);
-            __result = newList;
         }
 
         [HarmonyPrefix]

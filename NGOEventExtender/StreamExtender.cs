@@ -854,7 +854,7 @@ namespace NGOEventExtender
                             {
                                 try
                                 {
-                                    ExtTextManager.AddToExtList<EgosaMaster.Param>(new List<EgosaMaster.Param>() { ext.SearchResult });
+                                    ExtTextManager.AddToExtList(new List<EgosaMaster.Param>() { ext.SearchResult });
                                 }
                                 catch
                                 {

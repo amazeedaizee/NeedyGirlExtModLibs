@@ -120,14 +120,10 @@ namespace NSOMediaExtender
         [HarmonyPatch(typeof(ImageViewerHelper), "LoadResourcesList")]
         static void InitializeExtMyPictures(ref List<ResourceLocal> __result)
         {
-            if (originalMyPictureList.Count == 0)
+            if (customMyPictureList.Count != 0 && !__result.Exists(r => r.Id == customMyPictureList[0].Id))
             {
-                originalMyPictureList.AddRange(__result);
+               __result.AddRange(customMyPictureList);
             }
-            List<ResourceLocal> newList = new List<ResourceLocal>();
-            newList.AddRange(originalMyPictureList);
-            newList.InsertRange(128, customMyPictureList);
-            __result = newList;
         }
 
         [HarmonyPostfix]

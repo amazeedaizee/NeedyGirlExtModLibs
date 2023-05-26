@@ -17,7 +17,7 @@ namespace NGOEventExtender
     {
         public static List<EndingMaster.Param> ExtEndList = new List<EndingMaster.Param>();
         static List<EndingType> originalList = new List<EndingType>()
-        {EndingType.Ending_Grand, EndingType.Ending_Happy, EndingType.Ending_Meta, EndingType.Ending_Normal, EndingType.Ending_Bad, EndingType.Ending_Work, EndingType.Ending_Needy, EndingType.Ending_Yami, EndingType.Ending_Av, EndingType.Ending_Healthy, EndingType.Ending_Lust, EndingType.Ending_Ntr, EndingType.Ending_Sukisuki, EndingType.Ending_Stressful, EndingType.Ending_Sucide, EndingType.Ending_Jine, EndingType.Ending_KowaiInternet, EndingType.Ending_Yarisute, EndingType.Ending_Kyouso, EndingType.Ending_Jisatu, EndingType.Ending_Jikka, EndingType.Ending_Ginga, EndingType.Ending_DarkAngel, EndingType.Ending_Ideon       };
+        {EndingType.Ending_Grand, EndingType.Ending_Happy, EndingType.Ending_Meta, EndingType.Ending_Normal, EndingType.Ending_Bad, EndingType.Ending_Work, EndingType.Ending_Needy, EndingType.Ending_Yami, EndingType.Ending_Av, EndingType.Ending_Healthy, EndingType.Ending_Lust, EndingType.Ending_Ntr, EndingType.Ending_Sukisuki, EndingType.Ending_Stressful, EndingType.Ending_Sucide, EndingType.Ending_Jine, EndingType.Ending_KowaiInternet, EndingType.Ending_Yarisute, EndingType.Ending_Kyouso, EndingType.Ending_Jisatu, EndingType.Ending_Jikka, EndingType.Ending_Ginga, EndingType.Ending_DarkAngel, EndingType.Ending_Ideon};
         static List<EndingType> extEndHistory = new List<EndingType>();
         static List<string> exEndHistoryPaths = new List<string>();
 
@@ -183,7 +183,7 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(Boot), "Start")]
         static void ReqEndingsOnly(Button ___Data0)
         {
-            List<EndingType> endHistory = SingletonMonoBehaviour<Settings>.Instance.mitaEnd.Distinct<EndingType>().ToList<EndingType>();
+            List<EndingType> endHistory = SingletonMonoBehaviour<Settings>.Instance.mitaEnd.Distinct().ToList();
             List<EndingType> exHistory = extEndHistory.Distinct().ToList();
             List<EndingType> extReqEndings = GetRequiredEndings();
             List<EndingType> conditionList = new List<EndingType>();
@@ -235,12 +235,12 @@ namespace NGOEventExtender
                 }
                 if (extEndHistory.Exists((EndingType gotend) => gotend == type))
                 {
-                    GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(____achievedBlock, ___endingParent);
+                    GameObject gameObject = UnityEngine.Object.Instantiate(____achievedBlock, ___endingParent);
                     gameObject.GetComponent<TooltipCaller>().isShowTooltip = true;
                     gameObject.GetComponent<TooltipCaller>().textNakami = text + "\n" + text2;
                     continue;
                 }
-                GameObject gameObject2 = UnityEngine.Object.Instantiate<GameObject>(____unachievedBlock, ___endingParent);
+                GameObject gameObject2 = UnityEngine.Object.Instantiate(____unachievedBlock, ___endingParent);
                 gameObject2.GetComponent<TooltipCaller>().isShowTooltip = true;
                 gameObject2.GetComponent<TooltipCaller>().textNakami = text + "\n" + text2;
                 continue;
@@ -257,11 +257,11 @@ namespace NGOEventExtender
             {
                 if (extEndHistory.Exists((EndingType gotend) => gotend == type))
                 {
-                    UnityEngine.Object.Instantiate<GameObject>(____achievedBlock, ___parent);
+                    UnityEngine.Object.Instantiate(____achievedBlock, ___parent);
                 }
                 else
                 {
-                    UnityEngine.Object.Instantiate<GameObject>(____unachievedBlock, ___parent);
+                    UnityEngine.Object.Instantiate(____unachievedBlock, ___parent);
                 }
             }
         }
@@ -277,15 +277,15 @@ namespace NGOEventExtender
             {
                 if (___end == type)
                 {
-                    UnityEngine.Object.Instantiate<GameObject>(____achievingBlock, transform);
+                    UnityEngine.Object.Instantiate(____achievingBlock, transform);
                 }
                 else if (exHistory.Exists((EndingType gotend) => gotend == type))
                 {
-                    UnityEngine.Object.Instantiate<GameObject>(____achievedBlock, transform);
+                    UnityEngine.Object.Instantiate(____achievedBlock, transform);
                 }
                 else
                 {
-                    UnityEngine.Object.Instantiate<GameObject>(____unachievedBlock, transform);
+                    UnityEngine.Object.Instantiate(____unachievedBlock, transform);
                 }
             }
             IsOptionalEnding(___end);

@@ -18,19 +18,10 @@ namespace NGOTxtExtender
         [HarmonyPatch(typeof(NgoEx), "getSystemTexts")]
         static void InitializeExtSysTxt(ref List<SystemTextMaster.Param> __result)
         {
-            if (originalList.Count == 0)
+            if (ExtList.Count != 0 && !__result.Exists(s => s.Id == ExtList[0].Id))
             {
-                originalList = __result;
+               __result.AddRange(ExtList);
             }
-            if (ExtList.Count != 0 && combinedList.Count == 0)
-            {
-                combinedList.AddRange(originalList);
-                combinedList.AddRange(ExtList);
-            }
-            List<SystemTextMaster.Param> newMobs = new List<SystemTextMaster.Param>();
-            newMobs.AddRange(originalList);
-            newMobs.AddRange(ExtList);
-            __result = newMobs;
 
         }
 
