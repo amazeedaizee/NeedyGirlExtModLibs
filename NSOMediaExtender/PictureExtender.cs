@@ -43,6 +43,9 @@ namespace NSOMediaExtender
                 ((file[0] == 0xFF && file[1] == 0xD8) && (file[file.LongLength - 2] == 0xFF && file[file.LongLength - 1] == 0xD9))
                 //PNG
                 || (file[0] == 0x89 && file[1] == 0x50 && file[2] == 0x4E && file[3] == 0x47 && file[4] == 0x0D && file[5] == 0x0A && file[6] == 0x1A && file[7] == 0x0A)
+
+            // checking an image file by bytes first came from this StackOverflow post: https://stackoverflow.com/questions/670546/determine-if-file-is-an-image
+
             )
             {
                 Texture2D tex = new Texture2D(2, 2);
