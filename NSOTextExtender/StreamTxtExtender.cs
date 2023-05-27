@@ -20,13 +20,8 @@ namespace NGOTxtExtender
         {
             if (ExtList.Count != 0 && !__result.param.Exists(m => m.Id == ExtList[0].Id))
             {
-                originalMobs = __result.param;
+               __result.param.AddRange(ExtList);
             }
-            MobCommentMaster newMobs = ScriptableObject.CreateInstance<MobCommentMaster>();
-            newMobs.param.AddRange(originalMobs);
-            newMobs.param.AddRange(ExtList);
-            __result = newMobs;
-
         }
 
         [HarmonyTranspiler]
@@ -62,15 +57,10 @@ namespace NGOTxtExtender
         [HarmonyPatch(typeof(NgoEx), "getTenComments")]
         static void InitializeExtTenCom(ref List<TenCommentMaster.Param> __result)
         {
-            if (originalTenCom.Count == 0)
+            if (ExtList.Count != 0 && !__result.Exists(t => t.Id == ExtList[0].Id))
             {
-                originalTenCom = __result;
+                __result.AddRange(ExtList);
             }
-            List<TenCommentMaster.Param> newMobs = new List<TenCommentMaster.Param>();
-            newMobs.AddRange(originalTenCom);
-            newMobs.AddRange(ExtList);
-            __result = newMobs;
-
         }
     }
 
@@ -85,15 +75,10 @@ namespace NGOTxtExtender
         [HarmonyPatch(typeof(NgoEx), "getKusoComments")]
         static void InitializeExtKusoCom(ref List<KusoCommentMaster.Param> __result)
         {
-            if (originalKusoCom.Count == 0)
+            if (ExtList.Count != 0 && !__result.Exists(k => k.Id == ExtList[0].Id))
             {
-                originalKusoCom = __result;
+                __result.AddRange(ExtList);
             }
-            List<KusoCommentMaster.Param> newMobs = new List<KusoCommentMaster.Param>();
-            newMobs.AddRange(originalKusoCom);
-            newMobs.AddRange(ExtList);
-            __result = newMobs;
-
         }
     }
 }

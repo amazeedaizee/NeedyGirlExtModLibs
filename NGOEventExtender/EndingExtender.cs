@@ -203,36 +203,23 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(Boot), "ShowEnds")]
         static void AddReqEndingsToList_Login(GameObject ____achievedBlock, GameObject ____unachievedBlock, Transform ___endingParent)
         {
+            var lang = SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value;
             List<EndingType> typeList = GetRequiredEndings();
             foreach (EndingType type in typeList)
             {
-                EndingMaster.Param param = NgoEx.EndingFromType(type);
+                EndingMaster.Param param = GetCustomEndingName(type);
                 string id = param.Id;
-                string name;
-                string description;
-                switch (SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value)
-                {
-                    case LanguageType.JP:
-                        name = param.EndingNameJp;
-                        description = param.JissekiJp;
-                        break;
-                    case LanguageType.CN:
-                        name = param.EndingNameCn;
-                        description = param.JissekiCn;
-                        break;
-                    case LanguageType.KO:
-                        name = param.EndingNameKo;
-                        description = param.JissekiKo;
-                        break;
-                    case LanguageType.TW:
-                        name = param.EndingNameTw;
-                        description = param.JissekiTw;
-                        break;
-                    default:
-                        name = param.EndingNameEn;
-                        description = param.JissekiEn;
-                        break;
-                }
+                Dictionary<LanguageType,(string, string)> endingInfo = new Dictionary<LanguageType,(string, string)>
+                { 
+                    {LanguageType.JP, (param.EndingNameJp ,param.JissekiJp) },
+                    {LanguageType.EN, (param.EndingNameEn ,param.JissekiEn) },
+                    {LanguageType.CN, (param.EndingNameCn ,param.JissekiCn) },
+                    {LanguageType.KO, (param.EndingNameKo ,param.JissekiKo) },
+                    {LanguageType.TW, (param.EndingNameTw ,param.JissekiTw) }
+
+                };
+                string name = endingInfo.GetValueSafe(lang).Item1;
+                string description = endingInfo.GetValueSafe(lang).Item2;
                 if (extEndHistory.Exists((EndingType gotend) => gotend == type))
                 {
                     GameObject gameObject = UnityEngine.Object.Instantiate(____achievedBlock, ___endingParent);
