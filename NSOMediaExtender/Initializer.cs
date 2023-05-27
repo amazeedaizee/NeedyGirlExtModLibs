@@ -24,6 +24,11 @@ namespace NSOMediaExtender
         {
             ///Add some code or whatever
         }
+
+        private void OnApplicationQuit()
+        {
+            AddressableExtender.DeleteAddressBundlesFromPath();
+        }
     }
 
 }

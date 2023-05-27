@@ -1,9 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
 using HarmonyLib;
 using ngov3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace NSOMediaExtender
 {
@@ -19,6 +21,7 @@ namespace NSOMediaExtender
     public class WebCamExtender
     {
         internal static List<AnimationClip> animationClipExtList = new List<AnimationClip>();
+        internal static bool originalAnim = true;
 
         static List<string> addToNormalAnim = new List<string>();
         static List<string> addToStressedAnim = new List<string>();
@@ -235,6 +238,7 @@ namespace NSOMediaExtender
             string customId = address.Remove(address.Length - 5, 5);
             if (animationClipExtList.Count == 0)
             {
+                originalAnim = false;
                 return await value;
             }
             try
@@ -242,10 +246,12 @@ namespace NSOMediaExtender
                 AnimationClip customClip = animationClipExtList.FirstOrDefault(x => x.name == customId);
                 if (customClip == null || customClip.ToString() == "")
                 {
+                    originalAnim = false;
                     return await value;
                 }
                 if (ThatOneLongListOfAnimationsOriginallyInTheGame.list.Exists(x => x == customClip.name))
                 {
+                    originalAnim = false;
                     return await value;
                 }
                 return customClip;
@@ -253,10 +259,17 @@ namespace NSOMediaExtender
             catch
             {
             }
+            originalAnim = false;
             return await value;
         }
 
-
-
+        [HarmonyFinalizer]
+        [HarmonyPatch(typeof(LoadWebcamData), "LoadAnimation")]
+        [HarmonyPatch(typeof(LoadLiveViewData), "LoadAnimation")]
+        static InvalidKeyException WhatInvalidKey()
+        { if (originalAnim) { return new InvalidKeyException(); }
+            originalAnim = true;
+            return null;
+        }
     }
 }

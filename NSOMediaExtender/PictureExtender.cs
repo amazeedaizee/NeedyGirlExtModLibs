@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace NSOMediaExtender
 {
@@ -147,6 +148,13 @@ namespace NSOMediaExtender
             {
             }
             return await value;
+        }
+
+        [HarmonyFinalizer]
+        [HarmonyPatch(typeof(LoadPictures), "LoadPictureAsync")]
+        static InvalidKeyException WhatInvalidKey()
+        {
+            return null;
         }
     }
 }
