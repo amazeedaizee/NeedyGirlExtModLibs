@@ -208,41 +208,41 @@ namespace NGOEventExtender
             {
                 EndingMaster.Param param = NgoEx.EndingFromType(type);
                 string id = param.Id;
-                string text;
-                string text2;
+                string name;
+                string description;
                 switch (SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value)
                 {
                     case LanguageType.JP:
-                        text = param.EndingNameJp;
-                        text2 = param.JissekiJp;
+                        name = param.EndingNameJp;
+                        description = param.JissekiJp;
                         break;
                     case LanguageType.CN:
-                        text = param.EndingNameCn;
-                        text2 = param.JissekiCn;
+                        name = param.EndingNameCn;
+                        description = param.JissekiCn;
                         break;
                     case LanguageType.KO:
-                        text = param.EndingNameKo;
-                        text2 = param.JissekiKo;
+                        name = param.EndingNameKo;
+                        description = param.JissekiKo;
                         break;
                     case LanguageType.TW:
-                        text = param.EndingNameTw;
-                        text2 = param.JissekiTw;
+                        name = param.EndingNameTw;
+                        description = param.JissekiTw;
                         break;
                     default:
-                        text = param.EndingNameEn;
-                        text2 = param.JissekiEn;
+                        name = param.EndingNameEn;
+                        description = param.JissekiEn;
                         break;
                 }
                 if (extEndHistory.Exists((EndingType gotend) => gotend == type))
                 {
                     GameObject gameObject = UnityEngine.Object.Instantiate(____achievedBlock, ___endingParent);
                     gameObject.GetComponent<TooltipCaller>().isShowTooltip = true;
-                    gameObject.GetComponent<TooltipCaller>().textNakami = text + "\n" + text2;
+                    gameObject.GetComponent<TooltipCaller>().textNakami = name + "\n" + description;
                     continue;
                 }
                 GameObject gameObject2 = UnityEngine.Object.Instantiate(____unachievedBlock, ___endingParent);
                 gameObject2.GetComponent<TooltipCaller>().isShowTooltip = true;
-                gameObject2.GetComponent<TooltipCaller>().textNakami = text + "\n" + text2;
+                gameObject2.GetComponent<TooltipCaller>().textNakami = name + "\n" + description;
                 continue;
             }
 
