@@ -33,6 +33,11 @@ namespace NGOTxtExtender
 
         }
 
+        public static async UniTask StartExtAmeJine(JineType jineData)
+        {
+            await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(jineData);
+        }
+
         /// <summary>
         /// Creates a list of chooseable options on Jine. Use <c>SetExtPiOption</c> after based on the options listed.
         /// </summary>
@@ -75,6 +80,39 @@ namespace NGOTxtExtender
             }
         }
 
+
+        public static void StartExtPiOptionList(JineType optionOne, JineType optionTwo = JineType.None, JineType optionThree = JineType.None, JineType optionFour = JineType.None, JineType optionFive = JineType.None)
+        {
+            try
+            {
+                List<JineType> piList = new List<JineType>();
+                AddToOptionList(optionOne, piList);
+                if (optionTwo != JineType.None)
+                {
+                    AddToOptionList(optionTwo, piList);
+                }
+                if (optionThree != JineType.None)
+                {
+                    AddToOptionList(optionThree, piList);
+                }
+                if (optionFour != JineType.None)
+                {
+                    AddToOptionList(optionFour, piList);
+                }
+                if (optionFive != JineType.None)
+                {
+                    AddToOptionList(optionFive, piList);
+                }
+                SingletonMonoBehaviour<JineManager>.Instance.StartOption(piList);
+            }
+            catch { Debug.LogError("Enumeration Test: One of these Jines do not exist!"); }
+
+            void AddToOptionList(JineType jineData, List<JineType> list)
+            {
+                list.Add(jineData);
+            }
+        }
+
         /// <summary>
         /// Sends one custom user-made Jine message from P-chan based on the option chosen from <c>StartExtPiOptionList</c>. Using async methods for the <c>Action</c> parameters are recommended.
         /// </summary>
@@ -91,8 +129,16 @@ namespace NGOTxtExtender
                 ExtTextManager.ClearExDisposible();
 
             }).AddTo(ExtTextManager.CompositeDisposible);
+        }
 
+        public static void StartExtPiOption(JineType jineData, Action action)
+        {
+            SingletonMonoBehaviour<JineManager>.Instance.OnChangeHistory.Where((CollectionAddEvent<JineData> x) => x.Value.id == jineData).Subscribe(async delegate (CollectionAddEvent<JineData> _)
+            {
+                action();
+                ExtTextManager.ClearExDisposible();
 
+            }).AddTo(ExtTextManager.CompositeDisposible);
         }
 
         /// <summary>
@@ -134,6 +180,61 @@ namespace NGOTxtExtender
             {
                 StartExtPiOption(optionFiveId, actionFive);
             }
+        }
+
+        public static void StartExtPiListAndSet(JineType optionOne, Action actionOne, JineType optionTwo = JineType.None, Action actionTwo = null, JineType optionThree = JineType.None, Action actionThree = null, JineType optionFour = JineType.None, Action actionFour = null, JineType optionFive = JineType.None, Action actionFive = null)
+        {
+            StartExtPiOptionList(optionOne, optionTwo, optionThree, optionFour, optionFive);
+            StartExtPiOption(optionOne, actionOne);
+            if (optionTwo != JineType.None && actionTwo != null)
+            {
+                StartExtPiOption(optionTwo, actionTwo);
+            }
+            if (optionThree != JineType.None && actionThree != null)
+            {
+                StartExtPiOption(optionThree, actionThree);
+            }
+            if (optionFour != JineType.None && actionFour != null)
+            {
+                StartExtPiOption(optionFour, actionFour);
+            }
+            if (optionFive != JineType.None && actionFive != null)
+            {
+                StartExtPiOption(optionFive, actionFive);
+            }
+        }
+
+        public static void StartTraumaList(Action isRight, Action isWrongOrNull)
+        {
+            JineType trauma = SingletonMonoBehaviour<EventManager>.Instance.Trauma;
+            if (trauma == JineType.None) { isWrongOrNull(); }
+            List<JineType> traumaList = new List<JineType>()
+            {
+                JineType.Ending_Normal_JINE004_Option001,
+                JineType.Ending_Normal_JINE004_Option002,
+                JineType.Ending_Normal_JINE004_Option003,
+                JineType.Ending_Normal_JINE004_Option004,
+                JineType.Ending_Normal_JINE004_Option005
+            };
+            int answer = new List<JineType>() 
+            {
+                JineType.Event_LongLINE001,
+                JineType.Event_LongLINE001,
+                JineType.Event_LongLINE001,
+                JineType.Event_LongLINE001,
+                JineType.Event_LongLINE001
+            }.IndexOf(trauma);
+            SingletonMonoBehaviour<JineManager>.Instance.StartOption(traumaList);
+            SingletonMonoBehaviour<JineManager>.Instance.OnChangeHistory.Subscribe(async delegate (CollectionAddEvent<JineData> piAnswer)
+            {
+                ExtTextManager.ClearExDisposible();
+                if (traumaList.IndexOf(piAnswer.Value.id) == answer)
+                {
+                    isRight();
+                }
+                else { isWrongOrNull(); }
+
+            }).AddTo(ExtTextManager.CompositeDisposible);
         }
 
         [HarmonyPrefix]

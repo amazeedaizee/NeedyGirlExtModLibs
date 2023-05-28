@@ -14,11 +14,11 @@ namespace NGOTxtExtender
         public static List<TweetMaster.Param> ExtList = new List<TweetMaster.Param>();
 
         /// <summary>
-        /// Creates a custom Tweet on Tweeter/Poketter with normal replies attached to it.
+        /// Creates a custom Tweet on Tweeter/Poketter with normal (random) replies attached to it.
         /// </summary>
         /// <param name="id"> The TweetMaster.Param's Id used to load the tweet.</param>
         /// <exception cref="NullReferenceException"></exception>
-        public static void StartExtTweetWithReply(string id)
+        public static void StartExtTweetWithRandomReps(string id)
         {
 
             TweetMaster.Param exTweetId = TweetExtender.ExtList.Find((TweetMaster.Param t) => t.Id == id);
@@ -39,13 +39,19 @@ namespace NGOTxtExtender
             SingletonMonoBehaviour<PoketterManager>.Instance.AddTweet(exType);
         }
 
+        public static void StartTweet(TweetType tweet)
+        {
+            SingletonMonoBehaviour<PoketterManager>.Instance.AddTweet(tweet);
+        }
+
         /// <summary>
-        /// Creates a normal Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <c>ParentID</c>.
+        /// Creates a normal or custom Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <c>ParentID</c>.
         /// </summary>
         /// <remarks>Note: Tweet Replies loads the first param at the bottom of the reply thread, and vice-versa.</remarks>
-        /// <param name="origTw"> The TweetType used to load the normal tweet.</param>
+        /// <param name="tweet"> The TweetType used to load the tweet. If loading custom text, either use <c>ExtTextExtender.GetUniqueIdNum()</c> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.</param>
         /// <param name="kusoRepParId">The KRepMaster.Param's <c>ParentID</c> that's used to find matching params.</param>
-        public static void StartOrigTweetWithCustomReps(TweetType origTw, string kusoRepParId)
+        /// /// <exception cref="NullReferenceException"></exception>
+        public static void StartTweetWithExtReps(TweetType tweet, string kusoRepParId)
         {
             List<KRepMaster.Param> customList = KRepExtender.ExtList.FindAll((KRepMaster.Param kr) => kr.ParentID == kusoRepParId);
             List<KusoRepType> newList = new List<KusoRepType>();
@@ -54,7 +60,19 @@ namespace NGOTxtExtender
                 KusoRepType krIndex = ExtTextManager.GetUniqueIdNum<KusoRepType>(param.Id);
                 if ((int)krIndex != 999) { newList.Add(krIndex); }
             }
-            SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(origTw, newList);
+            SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(tweet, newList);
+        }
+
+        /// <summary>
+        /// Creates a normal or custom Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <c>ParentID</c>.
+        /// </summary>
+        /// <remarks>Note: Tweet Replies loads the first param at the bottom of the reply thread, and vice-versa.</remarks>
+        /// <param name="tweet"> The TweetType used to load the tweet. If loading custom text, either use <c>ExtTextExtender.GetUniqueIdNum()</c> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.</param>
+        /// <param name="repList">The list of KusoRepType's used to load in the pre-set tweet replies. You can also place custom tweet replies in the list by either using <c>ExtTextExtender.GetUniqueIdNum()</c> or by using your unique number at the end of your ID and add 10000 to it, then cast it as a KusoRepType. </param>
+        /// /// <exception cref="NullReferenceException"></exception>
+        public static void StartTweetWithPresetReps(TweetType tweet, List<KusoRepType> repList)
+        {
+            SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(tweet, repList);
         }
 
         /// <summary>
@@ -64,11 +82,24 @@ namespace NGOTxtExtender
         /// <param name="tweetId"> The TweetMaster.Param's Id used to load the tweet.</param>
         /// <param name="kusoRepParId">The KRepMaster.Param's <c>ParentID</c> that's used to find matching params.</param>
         /// <exception cref="NullReferenceException"></exception>
-        public static void StartExtTweetWithCustomReps(string tweetId, string kusoRepParId)
+        public static void StartExtTweetWithExtReps(string tweetId, string kusoRepParId)
         {
             TweetMaster.Param tweet = ExtList.Find((TweetMaster.Param t) => t.Id == tweetId);
             TweetType twIndex = ExtTextManager.GetUniqueIdNum<TweetType>(tweet.Id);
-            StartOrigTweetWithCustomReps(twIndex, kusoRepParId);
+            StartTweetWithExtReps(twIndex, kusoRepParId);
+        }
+
+        /// <summary>
+        /// Creates a custom Tweet on Tweeter/Poketter with replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <c>ParentID</c>.
+        /// </summary>
+        /// <param name="tweetId"> The TweetMaster.Param's Id used to load the tweet.</param>
+        /// <param name="repList">The list of KusoRepType's used to load in the pre-set tweet replies. You can also place custom tweet replies in the list by either using <c>ExtTextExtender.GetUniqueIdNum()</c> or by using your unique number at the end of your ID and add 10000 to it, then cast it as a KusoRepType. </param>
+        /// /// <exception cref="NullReferenceException"></exception>
+        public static void StartExtTweetWithPresetReps(string tweetId, List<KusoRepType> repList)
+        {
+            TweetMaster.Param tweet = ExtList.Find((TweetMaster.Param t) => t.Id == tweetId);
+            TweetType twIndex = ExtTextManager.GetUniqueIdNum<TweetType>(tweet.Id);
+            StartTweetWithPresetReps(twIndex, repList);
         }
 
         [HarmonyPrefix]
