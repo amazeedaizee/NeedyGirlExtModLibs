@@ -32,8 +32,12 @@ namespace NGOTxtExtender
 
 
         }
-
-        public static async UniTask StartExtAmeJine(JineType jineData)
+        /// <summary>
+        /// Create a Jine message sent by Ame.
+        /// </summary>
+        /// <param name="jineData">The JineType used to load the message. When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <exception cref="NullReferenceException"></exception>
+        public static async UniTask StartAmeJine(JineType jineData)
         {
             await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(jineData);
         }
@@ -80,8 +84,15 @@ namespace NGOTxtExtender
             }
         }
 
-
-        public static void StartExtPiOptionList(JineType optionOne, JineType optionTwo = JineType.None, JineType optionThree = JineType.None, JineType optionFour = JineType.None, JineType optionFive = JineType.None)
+        /// <summary>
+        /// Creates a list of chooseable options on Jine. Use <c>SetPiOption</c> after based on the options listed.
+        /// </summary>
+        /// <param name="optionFive">The JineType used to load the fifth option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionFour">The JineType used to load the fourth option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionThree">The JineType used to load the third option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionTwo"> The JineType used to load the second option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionOne"> The JineType used to load the first option. When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        public static void StartPiOptionList(JineType optionOne, JineType optionTwo = JineType.None, JineType optionThree = JineType.None, JineType optionFour = JineType.None, JineType optionFive = JineType.None)
         {
             try
             {
@@ -131,7 +142,12 @@ namespace NGOTxtExtender
             }).AddTo(ExtTextManager.CompositeDisposible);
         }
 
-        public static void StartExtPiOption(JineType jineData, Action action)
+        /// <summary>
+        /// Sends one custom user-made Jine message from P-chan based on the option chosen from <c>StartExtPiOptionList</c>. Using async methods for the <c>Action</c> parameters are recommended.
+        /// </summary>
+        /// <param name="jineData">The JineType used to load the message. When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="action">The <c>Action</c> method after this message is sent.</param>
+        public static void StartPiOption(JineType jineData, Action action)
         {
             SingletonMonoBehaviour<JineManager>.Instance.OnChangeHistory.Where((CollectionAddEvent<JineData> x) => x.Value.id == jineData).Subscribe(async delegate (CollectionAddEvent<JineData> _)
             {
@@ -182,28 +198,51 @@ namespace NGOTxtExtender
             }
         }
 
-        public static void StartExtPiListAndSet(JineType optionOne, Action actionOne, JineType optionTwo = JineType.None, Action actionTwo = null, JineType optionThree = JineType.None, Action actionThree = null, JineType optionFour = JineType.None, Action actionFour = null, JineType optionFive = JineType.None, Action actionFive = null)
+
+
+        /// <summary>
+        /// Creates a list of chooseable options on Jine, then sends one custom user-made Jine message from P-chan based on the option chosen. Up to five options can be created. Using async methods for the <c>Action</c> parameters are recommended.
+        /// </summary>
+        /// <remarks> Note: If an optional option Id is not null, its related <c>Action</c> must be filled, or else the option won't appear on the list. (i.e. filling in the second option Id without including its related <c>Action</c>.)</remarks>
+        /// <exception cref="NullReferenceException"></exception>
+        /// <param name="actionFive">The <c>Action</c> method related to the fifth option. Required if the fifth option Id is not null or "".</param>
+        /// <param name="actionFour">The <c>Action</c> method related to the fourth option. Required if the fourth option Id is not null or "".</param>
+        /// <param name="actionThree">The <c>Action</c> method related to the third option. Required if the third option Id is not null or "".</param>
+        /// <param name="actionTwo">The <c>Action</c> method related to the second option. Required if the second option Id is not null or "".</param>
+        /// <param name="actionOne">The <c>Action</c> method related to the first option.</param>
+        /// <param name="optionFive">The JineType used to load the fifth option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionFour">The JineType used to load the fourth option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionThree">The JineType used to load the third option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionTwo"> The JineType used to load the second option. (optional) <br/> When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="optionOne"> The JineType used to load the first option. When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        public static void StartPiListAndSet(JineType optionOne, Action actionOne, JineType optionTwo = JineType.None, Action actionTwo = null, JineType optionThree = JineType.None, Action actionThree = null, JineType optionFour = JineType.None, Action actionFour = null, JineType optionFive = JineType.None, Action actionFive = null)
         {
-            StartExtPiOptionList(optionOne, optionTwo, optionThree, optionFour, optionFive);
-            StartExtPiOption(optionOne, actionOne);
+            StartPiOptionList(optionOne, optionTwo, optionThree, optionFour, optionFive);
+            StartPiOption(optionOne, actionOne);
             if (optionTwo != JineType.None && actionTwo != null)
             {
-                StartExtPiOption(optionTwo, actionTwo);
+                StartPiOption(optionTwo, actionTwo);
             }
             if (optionThree != JineType.None && actionThree != null)
             {
-                StartExtPiOption(optionThree, actionThree);
+                StartPiOption(optionThree, actionThree);
             }
             if (optionFour != JineType.None && actionFour != null)
             {
-                StartExtPiOption(optionFour, actionFour);
+                StartPiOption(optionFour, actionFour);
             }
             if (optionFive != JineType.None && actionFive != null)
             {
-                StartExtPiOption(optionFive, actionFive);
+                StartPiOption(optionFive, actionFive);
             }
         }
 
+        /// <summary>
+        /// Loads a separate event where you have to choose the right trauma, if applicable.
+        /// </summary>
+        /// <remarks>Using async <c>Actions</c> are recommended here. </remarks>
+        /// <param name="isRight">The <c>Action</c> that happens if you chose the right trauma. </param>
+        /// <param name="isWrongOrNull">The <c>Action</c> that happens if you chose the wrong trauma, or if she didn't tell you any of her traumas on Day 15.</param>
         public static void StartTraumaList(Action isRight, Action isWrongOrNull)
         {
             JineType trauma = SingletonMonoBehaviour<EventManager>.Instance.Trauma;
@@ -219,10 +258,10 @@ namespace NGOTxtExtender
             int answer = new List<JineType>() 
             {
                 JineType.Event_LongLINE001,
-                JineType.Event_LongLINE001,
-                JineType.Event_LongLINE001,
-                JineType.Event_LongLINE001,
-                JineType.Event_LongLINE001
+                JineType.Event_LongLINE002,
+                JineType.Event_LongLINE003,
+                JineType.Event_LongLINE004,
+                JineType.Event_LongLINE005
             }.IndexOf(trauma);
             SingletonMonoBehaviour<JineManager>.Instance.StartOption(traumaList);
             SingletonMonoBehaviour<JineManager>.Instance.OnChangeHistory.Subscribe(async delegate (CollectionAddEvent<JineData> piAnswer)

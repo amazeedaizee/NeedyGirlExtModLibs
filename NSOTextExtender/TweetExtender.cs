@@ -23,7 +23,16 @@ namespace NGOTxtExtender
 
             TweetMaster.Param exTweetId = TweetExtender.ExtList.Find((TweetMaster.Param t) => t.Id == id);
             TweetType exType = ExtTextManager.GetUniqueIdNum<TweetType>(exTweetId.Id);
-            SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(exType, null, null);
+            SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(exType);
+        }
+
+        /// <summary>
+        /// Creates a custom Tweet on Tweeter/Poketter with normal (random) replies attached to it.
+        /// </summary>
+        /// <param name="tweet"> The TweetType used to load the tweet. If loading custom text, either use <c>ExtTextExtender.GetUniqueIdNum()</c> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.</param>
+        public static void StartTweetWithRandomReps(TweetType tweet)
+        {
+            SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(tweet);
         }
 
         /// <summary>
@@ -38,7 +47,10 @@ namespace NGOTxtExtender
             TweetType exType = ExtTextManager.GetUniqueIdNum<TweetType>(exTweetId.Id);
             SingletonMonoBehaviour<PoketterManager>.Instance.AddTweet(exType);
         }
-
+        /// <summary>
+        /// Creates a Tweet on Tweeter/Poketter with no replies attached to it.
+        /// </summary>
+        /// <param name="tweet"> The TweetType used to load the tweet. If loading custom text, either use <c>ExtTextExtender.GetUniqueIdNum()</c> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.</param>
         public static void StartTweet(TweetType tweet)
         {
             SingletonMonoBehaviour<PoketterManager>.Instance.AddTweet(tweet);
