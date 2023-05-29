@@ -254,6 +254,12 @@ namespace NGOEventExtender
 
     public class StreamSettings
     {
+
+        public static string SetStreamTitle(string id)
+        {
+            LanguageType lang = SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value;
+            return NgoEx.TenTalk(id, lang);
+        }
         /// <summary>
         /// Sets the behaviour of stream chat comments in a stream.
         /// </summary>
@@ -765,24 +771,28 @@ namespace NGOEventExtender
         {
             if (haisinPoint == "deleteAll")
             {
-                if (SingletonMonoBehaviour<Live>.Instance.isUncontrollable)
-                {
+                
                     for (int i = 0; i < ____selectableComments.Count; i++)
                     {
+                        if (____selectableComments[i].playing.color != SuperchatType.White || ____selectableComments[i].isHiroizumi) { continue; }
+                        ____selectableComments[i].isHiroizumi = true;
                         AudioManager.Instance.PlaySeByType(SoundType.SE_pien, false);
                         ____selectableComments[i].honbunView.DOColor(new Color(0f, 0f, 0f, 0f), 0.4f).Play<TweenerCore<Color, Color, ColorOptions>>();
+                        ____selectableComments[i].isDeleted = true;
                     };
-                }
+                
                 return false;
             }
             if (haisinPoint == "delete")
             {
-                if (SingletonMonoBehaviour<Live>.Instance.isUncontrollable)
-                {
+                
+                    if (____selectableComments[____selectableComments.Count - 1].playing.color != SuperchatType.White || ____selectableComments[____selectableComments.Count - 1].isHiroizumi) { return false; }
+                    ____selectableComments[____selectableComments.Count - 1].isHiroizumi = true;
                     AudioManager.Instance.PlaySeByType(SoundType.SE_pien, false);
                     ____selectableComments[____selectableComments.Count - 1].honbunView.DOColor(new Color(0f, 0f, 0f, 0f), 0.4f).Play<TweenerCore<Color, Color, ColorOptions>>();
+                    ____selectableComments[____selectableComments.Count - 1].isDeleted = true;
 
-                }
+                
                 return false;
             }
             return true;
@@ -837,8 +847,8 @@ namespace NGOEventExtender
                 {
                     foreach (ExtActionStream ext in actionStreamList)
                     {
-                        string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{ext.Id}Idea");
-                        string streamed = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.FirstOrDefault(x => x == $"_{ext.Id}");
+                        string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{ext.ActionStreamId}Idea");
+                        string streamed = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.FirstOrDefault(x => x == $"_{ext.ActionStreamId}");
                         if (streamed != null)
                         {
                             continue;
@@ -848,7 +858,7 @@ namespace NGOEventExtender
                             isCustom = true;
                             currentCustomStream = ext;
                             currentFirstAnim = ext.StartingAnim;
-                            actionStreamId = ext.Id;
+                            actionStreamId = ext.ActionStreamId;
                             actionTweetType = ext.TweetResult;
                             if (ext.SearchResult != null)
                             {
@@ -884,6 +894,12 @@ namespace NGOEventExtender
             }
         }
 
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(Boot), "Awake")]
+        static void ResetCustomStreamOnBoot()
+        {
+            ResetCustomStream();
+        }
 
 
         [HarmonyReversePatch]
@@ -911,6 +927,30 @@ namespace NGOEventExtender
     [HarmonyPatch]
     public class ActionStreamExtender
     {
+        /// <summary>
+        /// Checks to see if an <c>ExtActionStream</c> is discovered as an idea. (but not streamed)
+        /// </summary>
+        /// <param name="actionStream">The <c>ExtActionStream</c> to check for.</param>
+        /// <returns></returns>
+        public static bool IsActionStreamDiscovered(ExtActionStream actionStream)
+        {
+            List<string> eventList = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory;
+            List<string> actionList = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory;
+            return eventList.Exists(x => x == actionStream.ActionStreamId + "Idea") && !actionList.Exists(x => x == "_" + actionStream.ActionStreamId);
+
+        }
+
+        /// <summary>
+        /// Checks to see if an <c>ExtActionStream</c> has been streamed already.
+        /// </summary>
+        /// <param name="actionStream">The <c>ExtActionStream</c> to check for.</param>
+        /// <returns></returns>
+        public static bool IsActionStreamStreamed(ExtActionStream actionStream)
+        {
+            List<string> actionList = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory;
+            return actionList.Exists(x => x == "_" + actionStream.ActionStreamId);
+        }
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(LoadNetaData), "ReadNetaContent")]
         static void SetCustomLabel(ref AlphaTypeToData __result, AlphaType NetaType, int level = 0)
@@ -926,7 +966,7 @@ namespace NGOEventExtender
             foreach (ExtActionStream action in actionList)
             {
                 ExtActionStream a = StreamExtender.actionStreamList.Find(ac => ac == action);
-                string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
+                string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
                 if (discovered != null)
                 {
                     __result = action.HintData;
@@ -979,8 +1019,8 @@ namespace NGOEventExtender
             }
             if (alpha == data.HintData.NetaType && alphalevel == data.HintData.level && a == data.HintData.getJouken)
             {
-                SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Add($"{data.Id}Idea");
-                Debug.Log($"{data.Id} discovered.");
+                SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.Add($"{data.ActionStreamId}Idea");
+                Debug.Log($"{data.ActionStreamId} discovered.");
                 data.isDiscovered = false;
             }
 
@@ -1025,8 +1065,8 @@ namespace NGOEventExtender
             if (StreamExtender.actionStreamId == null) { return; }
             if (StreamExtender.actionStreamList.Count == 0) { return; }
             if ((int)type > 60) { return; }
-            ExtActionStream action = StreamExtender.actionStreamList.Find(n => n.Id == StreamExtender.actionStreamId);
-            string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
+            ExtActionStream action = StreamExtender.actionStreamList.Find(n => n.ActionStreamId == StreamExtender.actionStreamId);
+            string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
             if (discovered != null && action.CommandResult != null)
             {
                 __result = action.CommandResult;
@@ -1046,7 +1086,7 @@ namespace NGOEventExtender
             }
             foreach (ExtActionStream action in actionList)
             {
-                string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.Id}Idea");
+                string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
                 if (discovered != null && action.CommandResult != null)
                 {
                     SingletonMonoBehaviour<TooltipManager>.Instance.ShowAction(ActionType.Haishin, action.CommandResult);
@@ -1277,7 +1317,7 @@ namespace NGOEventExtender
     public abstract class ExtActionStream : ExtStream
     {
         protected internal bool isDiscovered = false;
-        public abstract string Id { get; }
+        public abstract string ActionStreamId { get; }
         public abstract AlphaTypeToData HintData { get; }
 
         public abstract List<TweetType> TweetResult { get; }
