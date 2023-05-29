@@ -151,7 +151,7 @@ namespace NGOEventExtender
         /// <br/><c>"rainbow":</c> Creates a super chat rainbow.
         /// </summary>
         /// <remarks>You can also use other states such as <c>"delete"</c> and <c>"deleteAll"</c> to remove stream comments during a stream. 
-        /// <br/>However this can only be used if the stream type is set to Uncontrollable.</remarks>
+        /// <br/>"delete" and "deleteAll" will not delete superchats, in addition, any stressful comments deleted with this command will not apply -1 Stress.</remarks>
         /// <param name="state">What random chat comments are loaded. Refer to the summary for more details.</param>
         /// <returns></returns>
         public static Playing SetMobs(string state = "middle")
