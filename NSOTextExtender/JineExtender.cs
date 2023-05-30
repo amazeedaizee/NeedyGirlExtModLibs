@@ -276,6 +276,43 @@ namespace NGOTxtExtender
             }).AddTo(ExtTextManager.CompositeDisposible);
         }
 
+        /// <summary>
+        /// Starts a prompt that requires you to write a message to Ame on Jine.
+        /// </summary>
+        /// <param name="eventAfterMsg">The action that happens after the message has been sent.</param>
+        public static void StartWrittenMsg(Action eventAfterMsg)
+        {
+            SingletonMonoBehaviour<JineManager>.Instance.StartMessage();
+            SingletonMonoBehaviour<JineManager>.Instance.Message.Subscribe(async delegate (string m)
+            {
+                await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(new JineData(JineUserType.pi, JineType.None, ResponseType.Freeform, StampType.None, m, 0));
+                eventAfterMsg();
+
+            }).AddTo(ExtTextManager.CompositeDisposible);
+        }
+        /// <summary>
+        /// Starts a prompt that requires you to write a message to Ame on Jine. 
+        /// </summary>
+        /// <remarks>This version of the method checks the message using <c>checkMsgMatch</c>, where the remainder of the event changes depending on what <c>checkMsgMatch</c> returns as.</remarks>
+        /// <param name="checkMsgMatch"> A <c>Func</c> bool that does something with the written message.</param>
+        /// <param name="isRight">The <c>Action</c> that happens when <c>checkMsgMatch</c> returns true.</param>
+        /// <param name="isWrong">The <c>Action</c> that happens when <c>checkMsgMatch</c> returns false.</param>
+        public static void StartWrittenMsg(Func<string, bool> checkMsgMatch, Action isRight, Action isWrong)
+        {
+            SingletonMonoBehaviour<JineManager>.Instance.StartMessage();
+            SingletonMonoBehaviour<JineManager>.Instance.Message.Subscribe(async delegate (string n)
+            {
+                SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(new JineData(JineUserType.pi, JineType.None, ResponseType.Freeform, StampType.None, n, 0)).Forget();
+            }).AddTo(ExtTextManager.CompositeDisposible);
+            SingletonMonoBehaviour<JineManager>.Instance.OnChangeHistory.Subscribe(async delegate (CollectionAddEvent<JineData> m)
+            {
+                ExtTextManager.ClearExDisposible();
+                if (checkMsgMatch(m.Value.freeMessage)) { isRight(); }
+                else { isWrong(); }
+            }).AddTo(ExtTextManager.CompositeDisposible);
+        }
+
+
         [HarmonyPrefix]
         [HarmonyPatch(typeof(JineDataConverter), "getJineFromTypeId")]
         static bool GetRawExtendedJineData(ref LineMaster.Param __result, JineType t)
