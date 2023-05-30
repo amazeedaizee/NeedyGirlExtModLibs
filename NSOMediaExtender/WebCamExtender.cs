@@ -65,6 +65,54 @@ namespace NSOMediaExtender
         static List<string> originalStressDarkerLoveAnim = new List<string>();
         static List<string> originalHorrorAnim = new List<string>();
 
+        /// <summary>
+        /// Plays an animation of Ame reacting positively to something in the Webcam.
+        /// </summary>
+        public static void PlayPositiveAme()
+        {
+            int dark = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Yami);
+            int love = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Love);
+            Dictionary<bool, string> animId = new Dictionary<bool, string>()
+            {
+                {dark >= 80 && love >= 80,"stream_ame_positive_g"},
+                {love >= 80,"stream_ame_positive_f"},
+                {love >= 60,"stream_ame_positive_e"},
+                {dark >= 80,"stream_ame_positive_c"},
+                {dark >= 60,"stream_ame_positive_b"},
+                {true,"stream_ame_positive_a"}
+            };
+            foreach (bool b in animId.Keys)
+            {
+                if (!b) { continue; }
+                SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId[b]);
+                break;
+            }
+        }
+
+
+        /// <summary>
+        /// Plays an animation of Ame reacting negatively to something in the Webcam.
+        /// </summary>
+        public static void PlayNegativeAme()
+        {
+            int dark = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Yami);
+            int love = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Love);
+            Dictionary<bool, string> animId = new Dictionary<bool, string>()
+            {
+                {dark >= 80 && love >= 80,"stream_ame_negative_g"},
+                {love >= 80,"stream_ame_negative_f"},
+                {love >= 60,"stream_ame_negative_e"},
+                {dark >= 80,"stream_ame_negative_c"},
+                {dark >= 60,"stream_ame_negative_b"},
+                {true,"stream_ame_negative_a"}
+            };
+            foreach (bool b in animId.Keys)
+            {
+                if (!b) { continue; }
+                SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId[b]);
+                break;
+            }
+        }
 
         /// <summary>
         /// Adds an <c>AnimationClip</c> to the <c>AnimationClip</c> ExtList.
@@ -254,6 +302,7 @@ namespace NSOMediaExtender
                     originalAnim = false;
                     return await value;
                 }
+                originalAnim = true;
                 return customClip;
             }
             catch
@@ -266,9 +315,9 @@ namespace NSOMediaExtender
         [HarmonyFinalizer]
         [HarmonyPatch(typeof(LoadWebcamData), "LoadAnimation")]
         [HarmonyPatch(typeof(LoadLiveViewData), "LoadAnimation")]
-        static InvalidKeyException WhatInvalidKey()
+        static Exception WhatInvalidKey()
         { if (originalAnim) { return new InvalidKeyException(); }
-            originalAnim = true;
+            originalAnim = false;
             return null;
         }
     }

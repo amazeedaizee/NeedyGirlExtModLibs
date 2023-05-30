@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace NSOMediaExtender
     public class AddressableExtender
     {
        internal static List<string> addressBundleList = new List<string>();
+        internal static Dictionary<string, AsyncOperationHandle> addressHandles = new Dictionary<string, AsyncOperationHandle>();  
         /// <summary>
         /// Loads an external Addressable catalog file into the game. If you're relying on Addressables to load in external assets, this is required.
         /// </summary>
@@ -36,6 +38,33 @@ namespace NSOMediaExtender
             
             addressBundleList.Add(targetStrAssetPath);
         }
+
+        public static async UniTask<T> LoadAddressObj<T>(string address) where T : UnityEngine.Object
+        {
+            var handle = Addressables.LoadAssetAsync<T>(address);
+            await UniTask.WaitUntil(() => handle.IsDone);
+            try 
+            { 
+                addressHandles.Add(address,handle);
+                return handle.Result; 
+            }
+            catch { throw new Exception("An error occurred in loading the addressable."); };
+        }
+
+        public static void ReleaseAddressObj(string address) 
+        {
+            if (!addressHandles.TryGetValue(address, out var handle)) { return; }
+            Addressables.Release(handle);
+            addressHandles.Remove(address);
+        }
+
+        public static void ReleaseAllHandles()
+        {
+            if (addressHandles.Count == 0) { return; }
+            foreach (var handle in addressHandles.Values) { Addressables.Release(handle); }
+            addressHandles.Clear();
+         }
+       
 
         internal static string GetCurrentPlatform() 
         { 

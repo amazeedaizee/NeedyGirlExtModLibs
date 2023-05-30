@@ -189,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventExtender.cs" />
+    <Compile Include="EventHelper.cs" />
     <Compile Include="StreamExtender.cs" />
     <Compile Include="EndingExtender.cs" />
     <Compile Include="Initializer.cs" />

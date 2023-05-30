@@ -90,14 +90,12 @@ namespace NSOMediaExtender
                 return;
             }
 
-
         }
 
         static void SetCurrentSound(string soundName, Sound sound)
         {
             try
             {
-                Debug.Log("Name: " + soundName);
                 currentSound = sound;
                 if (currentSound != null)
                 {

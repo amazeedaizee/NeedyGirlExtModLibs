@@ -20,7 +20,6 @@ namespace NGOEventExtender
 
         public static NgoEvent currentExtDayEvent;
 
-
         public static List<NgoExtEvent> randomDayExtEvents = new List<NgoExtEvent>();
         static List<string> origDayEvent = new List<string>();
         static List<string> origFHEvent = new List<string>();
@@ -151,7 +150,7 @@ namespace NGOEventExtender
         /// </summary>
         /// <param name="ngoEvent"> The event that will be loaded.</param>
         /// <exception cref="ArgumentException"></exception>
-        public static void StartCustomEvent(NgoEvent ngoEvent)
+        public static void StartEvent(NgoEvent ngoEvent)
         {
             if (isEventing)
             {
@@ -166,7 +165,7 @@ namespace NGOEventExtender
         /// </summary>
         ///  <typeparam name="T">The event that will be loaded.</typeparam>
         /// <exception cref="ArgumentException"></exception>
-        public static void StartCustomEvent<T>() where T : NgoEvent, new()
+        public static void StartEvent<T>() where T : NgoEvent, new()
         {
             if (isEventing)
             {

@@ -2,6 +2,7 @@
 using HarmonyLib;
 using NGO;
 using ngov3;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -155,7 +156,7 @@ namespace NSOMediaExtender
 
         [HarmonyFinalizer]
         [HarmonyPatch(typeof(LoadPictures), "LoadPictureAsync")]
-        static InvalidKeyException WhatInvalidKey()
+        static Exception WhatInvalidKey()
         {
             return null;
         }
