@@ -154,7 +154,7 @@ namespace NGOEventExtender
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(JineView2D), "Awake")]
+        [HarmonyPatch(typeof(PoketterView2D), "Start")]
         static void SubToTweetIconChange(List<PoketterCell2D> ____tweetCells, ScrollRect ____scrollRect)
         {
             GameObject obj = ____scrollRect.transform.parent.transform.parent.gameObject;
