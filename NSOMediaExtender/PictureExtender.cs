@@ -153,12 +153,5 @@ namespace NSOMediaExtender
             }
             return await value;
         }
-
-        [HarmonyFinalizer]
-        [HarmonyPatch(typeof(LoadPictures), "LoadPictureAsync")]
-        static Exception WhatInvalidKey()
-        {
-            return null;
-        }
     }
 }

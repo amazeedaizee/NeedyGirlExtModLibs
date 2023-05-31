@@ -336,14 +336,5 @@ namespace NSOMediaExtender
             originalAnim = false;
             return await value;
         }
-
-        [HarmonyFinalizer]
-        [HarmonyPatch(typeof(LoadWebcamData), "LoadAnimation")]
-        [HarmonyPatch(typeof(LoadLiveViewData), "LoadAnimation")]
-        static Exception WhatInvalidKey()
-        { if (originalAnim) { return new InvalidKeyException(); }
-            originalAnim = false;
-            return null;
-        }
     }
 }
