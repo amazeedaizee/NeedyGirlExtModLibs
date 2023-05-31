@@ -18,9 +18,9 @@ namespace NGOEventExtender
     [HarmonyPatch]
     public class EventHelper
     {
-        private static ReactiveProperty<Sprite> jineIcon;
-        private static ReactiveProperty<Sprite> angelTweetIcon;
-        private static ReactiveProperty<Sprite> ameTweetIcon;
+        private static ReactiveProperty<Sprite> jineIcon = new ReactiveProperty<Sprite>();
+        private static ReactiveProperty<Sprite> angelTweetIcon = new ReactiveProperty<Sprite>();
+        private static ReactiveProperty<Sprite> ameTweetIcon= new ReactiveProperty<Sprite>();
         private static Sprite origJineIcon;
         private static Sprite origAngelTweetIcon;
         private static Sprite origAmeTweetIcon;

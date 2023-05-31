@@ -72,21 +72,29 @@ namespace NSOMediaExtender
         {
             int dark = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Yami);
             int love = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Love);
-            Dictionary<bool, string> animId = new Dictionary<bool, string>()
+            string animId;
+            if (dark >= 80 && love >= 80)
             {
-                {dark >= 80 && love >= 80,"stream_ame_positive_g"},
-                {love >= 80,"stream_ame_positive_f"},
-                {love >= 60,"stream_ame_positive_e"},
-                {dark >= 80,"stream_ame_positive_c"},
-                {dark >= 60,"stream_ame_positive_b"},
-                {true,"stream_ame_positive_a"}
-            };
-            foreach (bool b in animId.Keys)
-            {
-                if (!b) { continue; }
-                SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId[b]);
-                break;
+                animId = "stream_ame_positive_g";
             }
+            else if (love >= 60 && love >= dark)
+            {
+                animId = "stream_ame_positive_e";
+                if (love >= 80)
+                {
+                    animId = "stream_ame_positive_f";
+                }
+            }
+            else if (dark >= 60 && dark >= love)
+            {
+                animId = "stream_ame_positive_b";
+                if (dark >= 80)
+                {
+                    animId = "stream_ame_positive_c";
+                }
+            }
+            else { animId = "stream_ame_positive_a"; }
+            SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);
         }
 
 
@@ -97,21 +105,29 @@ namespace NSOMediaExtender
         {
             int dark = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Yami);
             int love = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Love);
-            Dictionary<bool, string> animId = new Dictionary<bool, string>()
+            string animId;
+            if (dark >= 80 && love >= 80)
             {
-                {dark >= 80 && love >= 80,"stream_ame_negative_g"},
-                {love >= 80,"stream_ame_negative_f"},
-                {love >= 60,"stream_ame_negative_e"},
-                {dark >= 80,"stream_ame_negative_c"},
-                {dark >= 60,"stream_ame_negative_b"},
-                {true,"stream_ame_negative_a"}
-            };
-            foreach (bool b in animId.Keys)
-            {
-                if (!b) { continue; }
-                SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId[b]);
-                break;
+                animId = "stream_ame_negative_g";
             }
+            else if (love >= 60 && love >= dark)
+            {
+                animId = "stream_ame_negative_e";
+                if (love >= 80)
+                {
+                    animId = "stream_ame_negative_f";
+                }
+            }
+            else if (dark >= 60 && dark >= love)
+            {
+                animId = "stream_ame_negative_b";
+                if (dark >= 80)
+                {
+                    animId = "stream_ame_negative_c";
+                }
+            }
+            else { animId = "stream_ame_negative_a"; }
+            SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);                         
         }
 
         /// <summary>
@@ -121,6 +137,15 @@ namespace NSOMediaExtender
         public static void AddCustomAnimClip(AnimationClip clip)
         {
             animationClipExtList.Add(clip);
+        }
+
+        /// <summary>
+        /// Adds <c>AnimationClips</c> to the <c>AnimationClip</c> ExtList.
+        /// </summary>
+        /// <param name="clips">The <c>AnimationClips</c> to add to the list. </param>
+        public static void AddCustomAnimClip(List<AnimationClip> clips)
+        {
+            animationClipExtList.AddRange(clips);
         }
 
         /// <summary>
