@@ -52,24 +52,7 @@ namespace NGOEventExtender
              }).AddTo(disposables);
         }
 
-        public static void StartEndingScreen(bool isWindowFirst)
-        {
-            if (SingletonMonoBehaviour<EventManager>.Instance.nowEnding == EndingType.Ending_None)
-            {
-                Debug.LogWarning("Could not show ending screen or open the \"the end\" window: no ending is happening right now.");
-                return;
-            }
-            switch (isWindowFirst)
-            {
-                case false:
-                    SingletonMonoBehaviour<EventManager>.Instance.CallEnding();
-                    break;
-                case true:
-                    SingletonMonoBehaviour<NotificationManager>.Instance.osimai();
-                    break;
 
-            }       
-        }
 
         public static void ChangeJineAmeIcon(Sprite sprite)
         {
@@ -159,13 +142,6 @@ namespace NGOEventExtender
             }
         }
 
-        internal static async UniTask SetOriginalJineIcons()
-        {
-            origJineIcon = await AddressableExtender.LoadAddressObj<Sprite>("icon_jine_ame");
-            origAngelTweetIcon = await AddressableExtender.LoadAddressObj<Sprite>("icon_cho");
-            origAmeTweetIcon = await AddressableExtender.LoadAddressObj<Sprite>("icon_ame");
-        }
-
         [HarmonyPostfix]
         [HarmonyPatch(typeof(EventManager), "Awake")]
         static void GetObjects()
@@ -232,7 +208,7 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(Boot),"Awake")]
         [HarmonyPatch(typeof(EventManager), "Load")]
         [HarmonyPatch(typeof(EventManager), "StartOver")]
-        [HarmonyPatch(typeof(DayPassing), "startEvent" , new Type[] {typeof(CancellationToken)})]
+        [HarmonyPatch(typeof(ngov3.DayPassing), "startEvent" , new Type[] {typeof(CancellationToken)})]
         static void ResetOnBootAndLoad()
         {
             ResetIcons();

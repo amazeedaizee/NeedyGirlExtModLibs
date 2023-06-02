@@ -49,9 +49,9 @@ namespace NSOMediaExtender
         /// <summary>
         /// Loads an asset from Addressables into the game.
         /// </summary>
-        /// <remarks>For easy releasing, you can use <c>ReleaseAddressAsset</c> or <c>ReleaseAllHandles</c>.</remarks>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="address"></param>
+        /// <remarks>For easy releasing, you can use <c>ReleaseAddressAsset</c> or <c>ReleaseAllHandles</c>, but only if it was loaded through this method.</remarks>
+        /// <typeparam name="T">The type of <c>UnityEngine.Object</c> to load. </typeparam>
+        /// <param name="address">The address of the asset Addressable.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         public static async UniTask<T> LoadAddressAsset<T>(string address) where T : UnityEngine.Object

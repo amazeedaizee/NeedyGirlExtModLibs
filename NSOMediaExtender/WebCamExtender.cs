@@ -89,20 +89,27 @@ namespace NSOMediaExtender
             SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);                         
         }
 
-        public static void PlaySpecificIdlingAme(IdleAnimationType anim, bool isScary = false)
+        public static void PlaySpecificIdlingAme(IdleAnimationType anim, bool setBaseAnim = false, bool isScary = false)
         {
-            string animId;
+            string animId = "stream_ame_idle";
             switch (anim) 
             {
                 case IdleAnimationType.Normal:
+                    animId += "_normal";
                     break;
                 case IdleAnimationType.Happy:
+                    animId += "_happy";
                     break;
                 case IdleAnimationType.Irritated:
+                    animId += "_iraira";
                     break;
-                case IdleAnimationType.Anxious: 
+                case IdleAnimationType.Anxious:
+                    animId += "_anxiety";
                     break;
             }
+            animId += SetAnimByMood(isScary);
+            if (setBaseAnim) { SingletonMonoBehaviour<WebCamManager>.Instance.SetBaseAnim(animId); }
+            else { SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId); }
         }
 
         static string SetAnimByMood(bool isScary)
@@ -131,7 +138,7 @@ namespace NSOMediaExtender
                 }
                 return "_b";
             }
-            else { return "_a"; }
+            return "_a";
           
         }
 
