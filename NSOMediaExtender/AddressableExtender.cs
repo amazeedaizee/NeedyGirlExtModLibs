@@ -25,6 +25,13 @@ namespace NSOMediaExtender
             Debug.Log("Catalog loaded.");
         }
 
+        /// <summary>
+        /// Loads an Asset Bundle related to an Addressable catalog.
+        /// </summary>
+        /// <remarks>This temporarily copies the Asset Bundle into the StreamingAssets folder of the game until the game closes. 
+        /// <br/> Note: The Asset Bundle will not delete itself in the case of the game crashing or force quitted through Task Manager. (However, it will delete itself if the game is closed properly next time.)</remarks>
+        /// <param name="path">The path to the Addressable Asset Bundle.</param>
+        /// <returns></returns>
         public static async UniTask AddAddressBundle(string path)
         {
             string[] splitPath = path.Split('\\');
@@ -39,7 +46,15 @@ namespace NSOMediaExtender
             addressBundleList.Add(targetStrAssetPath);
         }
 
-        public static async UniTask<T> LoadAddressObj<T>(string address) where T : UnityEngine.Object
+        /// <summary>
+        /// Loads an asset from Addressables into the game.
+        /// </summary>
+        /// <remarks>For easy releasing, you can use <c>ReleaseAddressAsset</c> or <c>ReleaseAllHandles</c>.</remarks>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public static async UniTask<T> LoadAddressAsset<T>(string address) where T : UnityEngine.Object
         {
             var handle = Addressables.LoadAssetAsync<T>(address);
             await UniTask.WaitUntil(() => handle.IsDone);
@@ -51,13 +66,20 @@ namespace NSOMediaExtender
             catch { throw new Exception("An error occurred in loading the addressable."); };
         }
 
-        public static void ReleaseAddressObj(string address) 
+        /// <summary>
+        /// Releases an object Addressable's handle loaded with <c>LoadAddressAsset()</c>.
+        /// </summary>
+        /// <param name="address"></param>
+        public static void ReleaseAddressAsset(string address) 
         {
             if (!addressHandles.TryGetValue(address, out var handle)) { return; }
             Addressables.Release(handle);
             addressHandles.Remove(address);
         }
 
+        /// <summary>
+        /// Releases all handles loaded with <c>LoadAddressAsset()</c>.
+        /// </summary>
         public static void ReleaseAllHandles()
         {
             if (addressHandles.Count == 0) { return; }

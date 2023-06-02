@@ -3,6 +3,7 @@ using HarmonyLib;
 using NGO;
 using ngov3;
 using ngov3.Effect;
+using NSOMediaExtender;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UniRx;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 namespace NGOEventExtender
@@ -18,9 +20,9 @@ namespace NGOEventExtender
     [HarmonyPatch]
     public class EventHelper
     {
-        private static ReactiveProperty<Sprite> jineIcon = new ReactiveProperty<Sprite>();
-        private static ReactiveProperty<Sprite> angelTweetIcon = new ReactiveProperty<Sprite>();
-        private static ReactiveProperty<Sprite> ameTweetIcon= new ReactiveProperty<Sprite>();
+        private static ReactiveProperty<Sprite> jineIcon = new ReactiveProperty<Sprite>(null);
+        private static ReactiveProperty<Sprite> angelTweetIcon = new ReactiveProperty<Sprite>(null);
+        private static ReactiveProperty<Sprite> ameTweetIcon= new ReactiveProperty<Sprite>(null);
         private static Sprite origJineIcon;
         private static Sprite origAngelTweetIcon;
         private static Sprite origAmeTweetIcon;
@@ -50,6 +52,25 @@ namespace NGOEventExtender
              }).AddTo(disposables);
         }
 
+        public static void StartEndingScreen(bool isWindowFirst)
+        {
+            if (SingletonMonoBehaviour<EventManager>.Instance.nowEnding == EndingType.Ending_None)
+            {
+                Debug.LogWarning("Could not show ending screen or open the \"the end\" window: no ending is happening right now.");
+                return;
+            }
+            switch (isWindowFirst)
+            {
+                case false:
+                    SingletonMonoBehaviour<EventManager>.Instance.CallEnding();
+                    break;
+                case true:
+                    SingletonMonoBehaviour<NotificationManager>.Instance.osimai();
+                    break;
+
+            }       
+        }
+
         public static void ChangeJineAmeIcon(Sprite sprite)
         {
             jineIcon.Value = sprite;
@@ -69,24 +90,62 @@ namespace NGOEventExtender
 
         private static void ChangeAllJineIcons(List<JineCell2D> list)
         {
+            if (origJineIcon == null) 
+            {
+   
+                for (int i = list.Count - 1; i >= 0; i--)
+                {
+                    if (list[i].gameObject.name.Contains("App_Jine_Ame_2D"))
+                    {
+                        origJineIcon = list[i].transform.GetChild(0).GetComponent<SpriteStencilSetter>()._rend.sprite;
+                    }
+                }
+                return;
+            }
+
             if (jineIcon.Value != null)
             {
+            
                 foreach (JineCell2D jine in list)
                 {
-                    jine.GetComponent<SpriteStencilSetter>()._rend.sprite = jineIcon.Value;
+                    if (jine.gameObject.name.Contains("App_Jine_Ame_2D"))
+                    {
+                        jine.transform.GetChild(0).GetComponent<SpriteStencilSetter>()._rend.sprite = jineIcon.Value;
+                    }
+
                 }
             }
             if (jineIcon.Value == null)
             {
+            
                 foreach (JineCell2D jine in list)
                 {
-                    jine.GetComponent<SpriteStencilSetter>()._rend.sprite = jineIcon.Value;
+                    if (jine.gameObject.name.Contains("App_Jine_Ame_2D"))
+                    {
+                        jine.transform.GetChild(0).GetComponent<SpriteStencilSetter>()._rend.sprite = origJineIcon;
+                    }
                 }
             }
         }
 
         private static void ChangeAllTweetIcons(List<PoketterCell2D> list)
         {
+            if (origAngelTweetIcon == null && origAmeTweetIcon == null)
+            {
+                origAngelTweetIcon = list[0]._omoteIcon;
+                origAmeTweetIcon = list[0]._uraIcon;
+                return;
+            }
+            if (angelTweetIcon.Value == null && ameTweetIcon.Value == null)
+            {
+                foreach (PoketterCell2D tweet in list)
+                {
+                    if (angelTweetIcon.Value == null) { tweet._omoteIcon = origAngelTweetIcon; }
+                    if (ameTweetIcon.Value == null) { tweet._uraIcon = origAmeTweetIcon; }
+                    tweet.SetUserIcon();
+                }
+                return;
+            }
             if (angelTweetIcon.Value != null || ameTweetIcon.Value != null)
             {
                 foreach (PoketterCell2D tweet in list)
@@ -95,16 +154,16 @@ namespace NGOEventExtender
                     if (ameTweetIcon.Value != null) { tweet._uraIcon = ameTweetIcon.Value; }
                     if (angelTweetIcon.Value == null) { tweet._omoteIcon = origAngelTweetIcon; }
                     if (ameTweetIcon.Value == null) { tweet._uraIcon = origAmeTweetIcon; }
+                    tweet.SetUserIcon();
                 }
             }
-            if (angelTweetIcon.Value == null && ameTweetIcon.Value == null)
-            {
-                foreach (PoketterCell2D tweet in list)
-                {
-                    if (angelTweetIcon.Value == null) { tweet._omoteIcon = origAngelTweetIcon; }
-                    if (ameTweetIcon.Value == null) { tweet._uraIcon = origAmeTweetIcon; }
-                }
-            }
+        }
+
+        internal static async UniTask SetOriginalJineIcons()
+        {
+            origJineIcon = await AddressableExtender.LoadAddressObj<Sprite>("icon_jine_ame");
+            origAngelTweetIcon = await AddressableExtender.LoadAddressObj<Sprite>("icon_cho");
+            origAmeTweetIcon = await AddressableExtender.LoadAddressObj<Sprite>("icon_ame");
         }
 
         [HarmonyPostfix]
@@ -122,21 +181,18 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(SpriteStencilSetter), "Awake")]
         static void SetSpriteJineIcon(ref SpriteRenderer ____rend)
         {
-            if (origJineIcon == null && ____rend.sprite.name == "icon_jine_ame") { origJineIcon = ____rend.sprite; }
-            if ( jineIcon != null && ____rend.sprite.name == "icon_jine_ame")
+            if (jineIcon.Value != null && ____rend.transform.name == "Icon2D")
             {             
                 ____rend.sprite = jineIcon.Value;
             }
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(PoketterCell2D), "Awake")]
+       [HarmonyPostfix]
+       [HarmonyPatch(typeof(PoketterCell2D), "Awake")]
         static void SetSpriteTweetIcons(ref Sprite ____omoteIcon, ref Sprite ____uraIcon)
         {
-            if (origAngelTweetIcon ==null) { origAngelTweetIcon = ____omoteIcon; }
-            if (origAmeTweetIcon ==null) { origAmeTweetIcon = ____uraIcon; }
-            if (angelTweetIcon != null) { ____omoteIcon = angelTweetIcon.Value; }
-            if (ameTweetIcon != null) { ____uraIcon = ameTweetIcon.Value; }
+            if (angelTweetIcon.Value != null) { ____omoteIcon = angelTweetIcon.Value; }
+            if (ameTweetIcon.Value != null) { ____uraIcon = ameTweetIcon.Value; }
         }
 
         [HarmonyPostfix]
@@ -149,7 +205,7 @@ namespace NGOEventExtender
                 ChangeAllJineIcons(____jineCells);
             
             }).AddTo(obj);
-            if (jineIcon.Value == null) { return; }
+          //  if (jineIcon.Value == null) { return; }
             ChangeAllJineIcons(____jineCells);
         }
 
@@ -158,13 +214,28 @@ namespace NGOEventExtender
         static void SubToTweetIconChange(List<PoketterCell2D> ____tweetCells, ScrollRect ____scrollRect)
         {
             GameObject obj = ____scrollRect.transform.parent.transform.parent.gameObject;
-            jineIcon.Subscribe((Sprite _) =>
+            angelTweetIcon.Subscribe((Sprite _) =>
             {
                 ChangeAllTweetIcons(____tweetCells);
 
             }).AddTo(obj);
-            if (angelTweetIcon.Value == null && ameTweetIcon.Value == null) { return; }
+            ameTweetIcon.Subscribe((Sprite _) =>
+            {
+                ChangeAllTweetIcons(____tweetCells);
+
+            }).AddTo(obj);
+            // if (angelTweetIcon.Value == null && ameTweetIcon.Value == null) { return; }
             ChangeAllTweetIcons(____tweetCells);
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Boot),"Awake")]
+        [HarmonyPatch(typeof(EventManager), "Load")]
+        [HarmonyPatch(typeof(EventManager), "StartOver")]
+        [HarmonyPatch(typeof(DayPassing), "startEvent" , new Type[] {typeof(CancellationToken)})]
+        static void ResetOnBootAndLoad()
+        {
+            ResetIcons();
         }
     }
 }

@@ -32,6 +32,39 @@ namespace NGOEventExtender
             SingletonMonoBehaviour<EventManager>.Instance.nowEnding = endingType;
         }
 
+
+        /// <summary>
+        /// Sets an ending flag based on the EndingType.
+        /// </summary>
+        /// <param name="ending">The EndingType used to set the ending flag. If setting a custom ending flag, use <c>GetUniqueEndNum</c>, or use your unique number at the end of your ID and add 1000 to it, then cast it as an EndingType </param>
+        public static void SetEndingFlag(EndingType ending)
+        {
+            SingletonMonoBehaviour<EventManager>.Instance.nowEnding = ending;
+        }
+
+        /// <summary>
+        /// Starts the ending blue screen that signifies achieving a new ending.
+        /// </summary>
+        /// <param name="isWindowFirst">If true, opens the "the end" window first before showing the end screen. Otherwise, shows the end screen instantly.</param>
+        public static void StartEndingScreen(bool isWindowFirst)
+        {
+            if (SingletonMonoBehaviour<EventManager>.Instance.nowEnding == EndingType.Ending_None)
+            {
+                Debug.LogWarning("Could not show ending screen or open the \"the end\" window: no ending is happening right now.");
+                return;
+            }
+            switch (isWindowFirst)
+            {
+                case false:
+                    SingletonMonoBehaviour<EventManager>.Instance.CallEnding();
+                    break;
+                case true:
+                    SingletonMonoBehaviour<NotificationManager>.Instance.osimai();
+                    break;
+
+            }
+        }
+
         /// <summary>
         /// Checks if a custom ending is currently playing.
         /// </summary>

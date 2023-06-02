@@ -158,6 +158,7 @@
     <Compile Include="AssetBundleLoader.cs" />
     <Compile Include="AudioExtender.cs" />
     <Compile Include="AddressableExtender.cs" />
+    <Compile Include="ExternalFileLoader.cs" />
     <Compile Include="PictureExtender.cs" />
     <Compile Include="ThatOneLongList.cs" />
     <Compile Include="WebCamExtender.cs" />

@@ -100,6 +100,10 @@
     <Reference Include="UniTask.TextMeshPro">
       <HintPath>..\Libraries\UniTask.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\HelloWorld\Libraries\Unity.Addressables.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>..\Libraries\Unity.ResourceManager.dll</HintPath>
     </Reference>
@@ -199,6 +203,10 @@
     <ProjectReference Include="..\NGOExtraSettings\NGOExtraSettings.csproj">
       <Project>{2494FFDF-4C25-475D-BCB9-41F2A41238BA}</Project>
       <Name>NGOExtraSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NSOMediaExtender\NSOMediaExtender.csproj">
+      <Project>{7F8F4D02-5EF5-4AB6-9990-A3AB11814095}</Project>
+      <Name>NSOMediaExtender</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

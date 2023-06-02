@@ -28,38 +28,6 @@ namespace NSOMediaExtender
         }
 
         /// <summary>
-        /// Loads a custom image file as a Sprite, and adds it to the <c>Sprite</c> Extlist. 
-        /// </summary>
-        /// <remarks>Supported image types are jpg, and png.</remarks>
-        /// <param name="path">The path to the image file.</param>
-        public static void LoadImgFileForMyPic(string path)
-        {
-            string[] getFileName = path.Split('\\');
-            string fileName = getFileName[getFileName.Count() - 1];
-            byte[] file = File.ReadAllBytes(path);
-
-            if
-            (
-                //JPEG
-                ((file[0] == 0xFF && file[1] == 0xD8) && (file[file.LongLength - 2] == 0xFF && file[file.LongLength - 1] == 0xD9))
-                //PNG
-                || (file[0] == 0x89 && file[1] == 0x50 && file[2] == 0x4E && file[3] == 0x47 && file[4] == 0x0D && file[5] == 0x0A && file[6] == 0x1A && file[7] == 0x0A)
-
-            // checking an image file by bytes first came from this StackOverflow post: https://stackoverflow.com/questions/670546/determine-if-file-is-an-image
-
-            )
-            {
-                Texture2D tex = new Texture2D(2, 2);
-                ImageConversion.LoadImage(tex, file, false);
-                tex.filterMode = FilterMode.Point;
-                Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
-                sprite.name = fileName;
-                SpritePicExtList.Add(sprite);
-            }
-        }
-
-
-        /// <summary>
         /// Creates a ResourceLocal object, the reference the game uses to load an image from Tweeter/Poketter, Jine, and MyPictures.
         /// <br/> Only use this if you're relying on Addressables to load images.
         /// </summary>

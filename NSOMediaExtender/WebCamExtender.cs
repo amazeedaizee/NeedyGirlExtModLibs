@@ -17,6 +17,11 @@ namespace NSOMediaExtender
         Normal, Stressed, Dark, Darker, StressDark, StressDarker, Like, Love, StressLike, StressLove, DarkerLove, StressDarkerLove, Horror
     }
 
+    public enum IdleAnimationType
+    {
+        Normal, Happy, Irritated, Anxious 
+    }
+
     [HarmonyPatch]
     public class WebCamExtender
     {
@@ -68,32 +73,9 @@ namespace NSOMediaExtender
         /// <summary>
         /// Plays an animation of Ame reacting positively to something in the Webcam.
         /// </summary>
-        public static void PlayPositiveAme()
+        public static void PlayPositiveAme(bool isScary=false)
         {
-            int dark = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Yami);
-            int love = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Love);
-            string animId;
-            if (dark >= 80 && love >= 80)
-            {
-                animId = "stream_ame_positive_g";
-            }
-            else if (love >= 60 && love >= dark)
-            {
-                animId = "stream_ame_positive_e";
-                if (love >= 80)
-                {
-                    animId = "stream_ame_positive_f";
-                }
-            }
-            else if (dark >= 60 && dark >= love)
-            {
-                animId = "stream_ame_positive_b";
-                if (dark >= 80)
-                {
-                    animId = "stream_ame_positive_c";
-                }
-            }
-            else { animId = "stream_ame_positive_a"; }
+            string animId = "stream_ame_positive" + SetAnimByMood(isScary);
             SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);
         }
 
@@ -101,33 +83,56 @@ namespace NSOMediaExtender
         /// <summary>
         /// Plays an animation of Ame reacting negatively to something in the Webcam.
         /// </summary>
-        public static void PlayNegativeAme()
+        public static void PlayNegativeAme(bool isScary=false)
+        {
+            string animId = "stream_ame_negative" + SetAnimByMood(isScary);
+            SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);                         
+        }
+
+        public static void PlaySpecificIdlingAme(IdleAnimationType anim, bool isScary = false)
+        {
+            string animId;
+            switch (anim) 
+            {
+                case IdleAnimationType.Normal:
+                    break;
+                case IdleAnimationType.Happy:
+                    break;
+                case IdleAnimationType.Irritated:
+                    break;
+                case IdleAnimationType.Anxious: 
+                    break;
+            }
+        }
+
+        static string SetAnimByMood(bool isScary)
         {
             int dark = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Yami);
             int love = SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Love);
-            string animId;
+            if (isScary) { return "_d"; }
             if (dark >= 80 && love >= 80)
             {
-                animId = "stream_ame_negative_g";
+                return "_g";
             }
             else if (love >= 60 && love >= dark)
             {
-                animId = "stream_ame_negative_e";
                 if (love >= 80)
                 {
-                    animId = "stream_ame_negative_f";
+                    return "_f";
                 }
+                return "_e";
+               
             }
             else if (dark >= 60 && dark >= love)
             {
-                animId = "stream_ame_negative_b";
                 if (dark >= 80)
                 {
-                    animId = "stream_ame_negative_c";
+                    return "_c";
                 }
+                return "_b";
             }
-            else { animId = "stream_ame_negative_a"; }
-            SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);                         
+            else { return "_a"; }
+          
         }
 
         /// <summary>

@@ -42,56 +42,6 @@ namespace NSOMediaExtender
 
         }
 
-        /// <summary>
-        ///  Creates a new <c>Sound</c> from an audio file, and adds it to the Custom Sound List.
-        /// </summary>
-        /// <remarks>Supported audio types include .mp3, .wav, .ogg, and more. </remarks>
-        /// <param name="path">The path to the audio file.</param>
-        /// <param name="type">The type of audio file.</param>
-        /// <returns></returns>
-        public static async UniTask NewSoundFromFile(string path, AudioType type)
-        {
-            Debug.Log(path);
-            if (!File.Exists(path))
-            {
-                Debug.LogError("This path does not exist!");
-                return;
-            }
-            string[] getFileName = path.Split('\\');
-            string fileName = getFileName[getFileName.Count() - 1];
-
-            try
-            {
-                using (var audioRequest = UnityWebRequestMultimedia.GetAudioClip(Path.Combine("file://" + path), type))
-                {
-                    audioRequest.SendWebRequest();
-                    await UniTask.WaitUntil(() => audioRequest.isDone);
-                    DownloadHandlerAudioClip dHandler = (DownloadHandlerAudioClip)audioRequest.downloadHandler;
-                    dHandler.streamAudio = true;
-                    await UniTask.WaitUntil(() => dHandler.isDone);
-                    AudioClip audio = DownloadHandlerAudioClip.GetContent(audioRequest);
-                    if (audio == null)
-                    {
-                        Debug.LogError("Could not load file!");
-                        return;
-                    }
-                    Sound sound = CreateSound(fileName, audio);
-                    if (sound != null)
-                    {
-                        customSoundList.Add(sound);
-                    }
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError("An error has occurred: " + ex);
-                return;
-            }
-
-        }
-
         static void SetCurrentSound(string soundName, Sound sound)
         {
             try

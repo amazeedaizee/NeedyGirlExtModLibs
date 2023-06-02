@@ -13,7 +13,7 @@ namespace NSOMediaExtender
         /// <br/> These specific assets include:
         /// <br/><c>AnimationClip</c> assets that starts with "stream_cho_" or "stream_ame_".
         /// <br/><c>AudioClip</c> assets that starts with "BGM_" or "SE_".
-        /// <br/><c>Sprite</c> assets that starts with "MyPic_".
+        /// <br/><c>Sprite</c> assets that starts with "MyPic_", specifically for My Pictures.
         /// </summary>
         /// <param name="path"> The path to the asset bundle.</param>
         /// <exception cref="NullReferenceException"></exception>
