@@ -10,6 +10,7 @@
     <RootNamespace>NGOEventExtender</RootNamespace>
     <AssemblyName>NGOEventExtender</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+	  <LangVersion>preview</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>

@@ -71,8 +71,9 @@ namespace NSOMediaExtender
         static List<string> originalHorrorAnim = new List<string>();
 
         /// <summary>
-        /// Plays an animation of Ame reacting positively to something in the Webcam.
-        /// </summary>
+        /// Plays an animation of Ame reacting positively to something in the Webcam. The kind of animation that's played depends on her stats.
+        /// </summary>        
+        /// <param name="isScary">If true, automatically plays the scary version of the animation, regardless of her stats.</param>
         public static void PlayPositiveAme(bool isScary=false)
         {
             string animId = "stream_ame_positive" + SetAnimByMood(isScary);
@@ -81,14 +82,22 @@ namespace NSOMediaExtender
 
 
         /// <summary>
-        /// Plays an animation of Ame reacting negatively to something in the Webcam.
+        /// Plays an animation of Ame reacting negatively to something in the Webcam. The kind of animation that's played depends on her stats.
         /// </summary>
+        /// <param name="isScary">If true, automatically plays the scary version of the animation, regardless of her stats.</param>
         public static void PlayNegativeAme(bool isScary=false)
         {
             string animId = "stream_ame_negative" + SetAnimByMood(isScary);
             SingletonMonoBehaviour<WebCamManager>.Instance.PlayAnim(animId);                         
         }
 
+
+        /// <summary>
+        /// Plays a specific idling animation of Ame. The kind of animation that's played depends on her stats.
+        /// </summary>
+        /// <param name="anim">The IdleAnimationType.</param>
+        /// <param name="setBaseAnim">If true, the current animation defaults to this one. Otherwise, only plays this animation once.</param>
+        /// <param name="isScary">If true, automatically plays the scary version of the animation, regardless of her stats.</param>
         public static void PlaySpecificIdlingAme(IdleAnimationType anim, bool setBaseAnim = false, bool isScary = false)
         {
             string animId = "stream_ame_idle";

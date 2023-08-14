@@ -16,7 +16,6 @@ namespace NSOMediaExtender
     {
         internal static List<Sprite> SpritePicExtList = new List<Sprite>();
         static List<ResourceLocal> customMyPictureList = new List<ResourceLocal>();
-        static List<ResourceLocal> originalMyPictureList = new List<ResourceLocal>();
 
         /// <summary>
         /// Adds a <c>Sprite</c> to the <c>Sprite</c> Extlist.

@@ -24,7 +24,7 @@ namespace NSOMediaExtender
         }
 
         /// <summary>
-        ///  Creates a new <c>Sound</c> from an audio file, and adds it to the Custom Sound List.
+        /// Loads a custom audio file as an Audio Clip.
         /// </summary>
         /// <remarks>Supported audio types include .mp3, .wav, .ogg, and more. </remarks>
         /// <param name="path">The path to the audio file.</param>
@@ -64,7 +64,7 @@ namespace NSOMediaExtender
         }
 
         /// <summary>
-        /// Loads a custom image file as a Sprite, and adds it to the <c>Sprite</c> Extlist. 
+        /// Loads a custom image file as a Sprite. 
         /// </summary>
         /// <remarks>Supported image types are jpg, and png.</remarks>
         /// <param name="path">The path to the image file.</param>
