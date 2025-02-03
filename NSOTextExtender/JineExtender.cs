@@ -255,7 +255,7 @@ namespace NGOTxtExtender
                 JineType.Ending_Normal_JINE004_Option004,
                 JineType.Ending_Normal_JINE004_Option005
             };
-            int answer = new List<JineType>() 
+            int answer = new List<JineType>()
             {
                 JineType.Event_LongLINE001,
                 JineType.Event_LongLINE002,
@@ -387,10 +387,6 @@ namespace NGOTxtExtender
         static bool StartExtNonNoonJine(NgoEvent __instance, CancellationToken cancellationToken = default(CancellationToken))
         {
             startEvent(__instance, cancellationToken);
-            if (SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.Stress) >= 60)
-            {
-                endEvent(__instance);
-            }
             IEnumerable<JineType> jineMainList = SetNotNoonJineList().Except(getJineHistory());
             JineType jine = jineMainList.ElementAt(UnityEngine.Random.Range(0, jineMainList.Count()));
             //Debug.Log("Available Non-Noon Jines: " + jineMainList.Count());
