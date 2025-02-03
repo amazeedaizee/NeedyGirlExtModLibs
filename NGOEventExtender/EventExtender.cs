@@ -77,6 +77,16 @@ namespace NGOEventExtender
 
         }
 
+        /// <summary>
+        /// Hijacks a queued original event and loads a custom event instead. 
+        /// <br/>If the custom event has a condition, if will only replace the original if the condition is met.
+        /// </summary>
+        ///  <remarks>
+        /// This method adds the custom event to a list, where it will track when its related original event is de-queued. 
+        /// <br/> Therefore, it's not required to call the same method with the same arguments more than once.
+        /// </remarks>
+        /// <param name="original">The event to replace.</param>
+        /// <param name="replacement">The event that will be loaded instead.</param>
         public static void HijackOriginalEvent(NgoEvent original, NgoExtEvent replacement)
         {
             if (hijackingEventList.ContainsKey(original.ToString()))

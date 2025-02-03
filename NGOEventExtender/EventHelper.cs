@@ -1,18 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
-using HarmonyLib;
-using NGO;
+﻿using HarmonyLib;
 using ngov3;
 using ngov3.Effect;
-using NSOMediaExtender;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using UniRx;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 namespace NGOEventExtender
@@ -22,24 +16,37 @@ namespace NGOEventExtender
     {
         private static ReactiveProperty<Sprite> jineIcon = new ReactiveProperty<Sprite>(null);
         private static ReactiveProperty<Sprite> angelTweetIcon = new ReactiveProperty<Sprite>(null);
-        private static ReactiveProperty<Sprite> ameTweetIcon= new ReactiveProperty<Sprite>(null);
+        private static ReactiveProperty<Sprite> ameTweetIcon = new ReactiveProperty<Sprite>(null);
         private static Sprite origJineIcon;
         private static Sprite origAngelTweetIcon;
         private static Sprite origAmeTweetIcon;
 
         public static GameObject DayPassingCover;
 
+        /// <summary>
+        /// Loads in the graphic where a number of days pass (found in Painful Future, Labor Is Evil, etc.)
+        /// </summary>
         public static void StartYearsPass()
         {
             DayPassingCover.GetComponent<IDayPassing>().yearsPass();
         }
 
+        /// <summary>
+        /// Sets the interactivity of the shortcuts and the taskbar.
+        /// </summary>
+        /// <param name="isActive"> Can you interact with the shortcuts and the taskbar? </param>
+        /// <param name="alphaIfInactive"> The alpha / opaqueness of the shortcuts if it can't be interactable. </param>
         public static void SetShortcutTaskbarState(bool isActive, float alphaIfInactive = 0.4f)
         {
             SingletonMonoBehaviour<EventManager>.Instance.SetShortcutState(isActive, alphaIfInactive);
             SingletonMonoBehaviour<TaskbarManager>.Instance.SetTaskbarInteractive(isActive);
         }
 
+        /// <summary>
+        /// Spawns in a notification that does an action you choose after. Meant for any endings on the last day.
+        /// </summary>
+        /// <param name="action"> The <c>Action</c> to play when the notiifcation is pressed. </param>
+        /// <param name="disposables"> The <c>CompositeDisposable</c> to use to dispose the subscribed notification event.</param>
         public static void SetLastDayNotif(Action action, CompositeDisposable disposables)
         {
             if (SingletonMonoBehaviour<StatusManager>.Instance.GetStatus(StatusType.DayIndex) < 30) { return; }
@@ -53,18 +60,37 @@ namespace NGOEventExtender
         }
 
 
-
+        /// <summary>
+        /// Changes Ame's JINE icon to a new Sprite. 
+        /// </summary>
+        /// <param name="sprite"> The Sprite to change Ame's icon too.</param>
         public static void ChangeJineAmeIcon(Sprite sprite)
         {
             jineIcon.Value = sprite;
         }
 
+
+        /// <summary>
+        /// Changes KAngel's Tweeter/Poketter icon to a new Sprite. 
+        /// </summary>
+        /// <param name="sprite"> The Sprite to change Ame's icon too.</param>
         public static void ChangeTweetKAngelIcon(Sprite sprite) { angelTweetIcon.Value = sprite; }
 
+
+        /// <summary>
+        /// Changes Ame's Tweeter/Poketter icon to a new Sprite.  
+        /// </summary>
+        /// <param name="sprite"> The Sprite to change Ame's icon too.</param>
         public static void ChangeTweetAmeIcon(Sprite sprite) { ameTweetIcon.Value = sprite; }
 
-        public static void ResetIcons(bool resetJineIcon = true, bool resetAngelTweetIcon = true, bool resetAmeTweetIcon=true)
-        { 
+        /// <summary>
+        /// Resets all changed Icons to its default.
+        /// </summary>
+        /// <param name="resetJineIcon">Reset Ame's Jine icon? Default is <c>true.</c></param>
+        /// <param name="resetAngelTweetIcon">Reset KAngel's Tweeter/Poketter icon? Default is <c>true.</c></param>
+        /// <param name="resetAmeTweetIcon">Reset Ame's Tweeter/Poketter  icon? Default is <c>true.</c></param>
+        public static void ResetIcons(bool resetJineIcon = true, bool resetAngelTweetIcon = true, bool resetAmeTweetIcon = true)
+        {
             if (resetJineIcon) { jineIcon.Value = null; }
             if (resetAngelTweetIcon) { angelTweetIcon.Value = null; }
             if (resetAmeTweetIcon) { ameTweetIcon.Value = null; }
@@ -73,9 +99,9 @@ namespace NGOEventExtender
 
         private static void ChangeAllJineIcons(List<JineCell2D> list)
         {
-            if (origJineIcon == null) 
+            if (origJineIcon == null)
             {
-   
+
                 for (int i = list.Count - 1; i >= 0; i--)
                 {
                     if (list[i].gameObject.name.Contains("App_Jine_Ame_2D"))
@@ -88,7 +114,7 @@ namespace NGOEventExtender
 
             if (jineIcon.Value != null)
             {
-            
+
                 foreach (JineCell2D jine in list)
                 {
                     if (jine.gameObject.name.Contains("App_Jine_Ame_2D"))
@@ -100,7 +126,7 @@ namespace NGOEventExtender
             }
             if (jineIcon.Value == null)
             {
-            
+
                 foreach (JineCell2D jine in list)
                 {
                     if (jine.gameObject.name.Contains("App_Jine_Ame_2D"))
@@ -158,13 +184,13 @@ namespace NGOEventExtender
         static void SetSpriteJineIcon(ref SpriteRenderer ____rend)
         {
             if (jineIcon.Value != null && ____rend.transform.name == "Icon2D")
-            {             
+            {
                 ____rend.sprite = jineIcon.Value;
             }
         }
 
-       [HarmonyPostfix]
-       [HarmonyPatch(typeof(PoketterCell2D), "Awake")]
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(PoketterCell2D), "Awake")]
         static void SetSpriteTweetIcons(ref Sprite ____omoteIcon, ref Sprite ____uraIcon)
         {
             if (angelTweetIcon.Value != null) { ____omoteIcon = angelTweetIcon.Value; }
@@ -176,12 +202,12 @@ namespace NGOEventExtender
         static void SubToJineIconChange(List<JineCell2D> ____jineCells, Button2D ___ToBottom)
         {
             GameObject obj = ___ToBottom.transform.parent.gameObject;
-            jineIcon.Subscribe((Sprite _) => 
+            jineIcon.Subscribe((Sprite _) =>
             {
                 ChangeAllJineIcons(____jineCells);
-            
+
             }).AddTo(obj);
-          //  if (jineIcon.Value == null) { return; }
+            //  if (jineIcon.Value == null) { return; }
             ChangeAllJineIcons(____jineCells);
         }
 
@@ -205,10 +231,10 @@ namespace NGOEventExtender
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(Boot),"Awake")]
+        [HarmonyPatch(typeof(Boot), "Awake")]
         [HarmonyPatch(typeof(EventManager), "Load")]
         [HarmonyPatch(typeof(EventManager), "StartOver")]
-        [HarmonyPatch(typeof(ngov3.DayPassing), "startEvent" , new Type[] {typeof(CancellationToken)})]
+        [HarmonyPatch(typeof(ngov3.DayPassing), "startEvent", new Type[] { typeof(CancellationToken) })]
         static void ResetOnBootAndLoad()
         {
             ResetIcons();
