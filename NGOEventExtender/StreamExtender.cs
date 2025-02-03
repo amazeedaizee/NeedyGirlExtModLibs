@@ -14,7 +14,6 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using static UnityEngine.Networking.UnityWebRequest;
 
 namespace NGOEventExtender
 {
@@ -254,7 +253,10 @@ namespace NGOEventExtender
 
     public class StreamSettings
     {
-
+        /// <summary>
+        /// Sets the stream title.
+        /// </summary>
+        /// <param name="id">The id associated with a TenComment param object.</param>
         public static string SetStreamTitle(string id)
         {
             LanguageType lang = SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value;
@@ -272,7 +274,7 @@ namespace NGOEventExtender
                     SingletonMonoBehaviour<Live>.Instance.isUncontrollable = true;
                     SingletonMonoBehaviour<Live>.Instance.isOiwai = false;
                     break;
-                    case StreamChatType.Celebration:
+                case StreamChatType.Celebration:
                     SingletonMonoBehaviour<Live>.Instance.isOiwai = true;
                     SingletonMonoBehaviour<Live>.Instance.isUncontrollable = false;
                     break;
@@ -341,6 +343,13 @@ namespace NGOEventExtender
         }
     }
 
+
+    /// <summary>
+    /// Please note: This section is a bit outdated, as the primary way of playing streams here was to inject your custom stream onto TestScenario. 
+    /// (TestScenario is played if other offical streams don't match the conditions)
+    /// This is still useful for streams with conditions or action streams with conditions, but you can also use the normal way to load streams if you want 
+    /// via: SetScenario(T)
+    /// </summary>
     [HarmonyPatch]
     public class StreamExtender
     {
@@ -358,9 +367,9 @@ namespace NGOEventExtender
         internal static string actionStreamId = null;
         internal static List<TweetType> actionTweetType = null;
 
-        static ExtStream currentCustomStream;
-        internal static List<ExtActionStream> actionStreamList = new List<ExtActionStream>();
-        static List<ExtStream> conditionalStreamList = new List<ExtStream>();
+        static ExtLiveScenario currentCustomStream;
+        internal static List<ExtActionLiveScenario> actionStreamList = new List<ExtActionLiveScenario>();
+        static List<ExtLiveScenario> conditionalStreamList = new List<ExtLiveScenario>();
 
         /// <summary>
         /// Caches the first animation to be used in a later stream. 
@@ -376,15 +385,15 @@ namespace NGOEventExtender
             HaishinFirstAnimation.LoadHaishinFirstAnimation().Forget();
         }
         /// <summary>
-        /// Starts a custom stream, based on the contents from your <c>ExtStream.</c> <br/>Make sure the <c>ExtStream</c> you use isn't static.
+        /// Starts a custom stream, based on the contents from your <c>ExtLiveScenario.</c> <br/>Make sure the <c>ExtLiveScenario</c> you use isn't static.
         /// </summary>
-        /// <typeparam name="T">The <c>ExtStream</c> data used to load your custom stream.</typeparam>
+        /// <typeparam name="T">The <c>ExtLiveScenario</c> data used to load your custom stream.</typeparam>
         /// <param name="isDarkUI"> If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.</param>
         /// <param name="isDarkAnim">If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.</param>
-        public static void StartCustomStream<T>(bool isDarkUI = false, bool isDarkAnim = false) where T : ExtStream
+        public static void StartCustomStream<T>(bool isDarkUI = false, bool isDarkAnim = false) where T : ExtLiveScenario
         {
             Type type = typeof(T);
-            ExtStream stream = Activator.CreateInstance(type) as ExtStream;
+            ExtLiveScenario stream = Activator.CreateInstance(type) as ExtLiveScenario;
 
             StartCustomStream(stream, isDarkUI, isDarkAnim);
 
@@ -397,10 +406,10 @@ namespace NGOEventExtender
         /// <remarks>Will only be saved for one upcoming stream only. (it will reset after a stream)</remarks>
         /// <typeparam name="T"> The custom stream to load later on.</typeparam>
         /// <returns></returns>
-        public static async UniTask AwaitCustomStream<T>() where T : ExtStream
+        public static async UniTask AwaitCustomStream<T>() where T : ExtLiveScenario
         {
             Type type = typeof(T);
-            ExtStream stream = Activator.CreateInstance(type) as ExtStream;
+            ExtLiveScenario stream = Activator.CreateInstance(type) as ExtLiveScenario;
             await AwaitCustomStream(stream);
         }
 
@@ -411,7 +420,7 @@ namespace NGOEventExtender
         /// <remarks>Will only be saved for one upcoming stream only. (it will reset after a stream)</remarks>
         /// <param name="stream"> The custom stream to load later on.</param>
         /// <returns></returns>
-        public static async UniTask AwaitCustomStream(ExtStream stream)
+        public static async UniTask AwaitCustomStream(ExtLiveScenario stream)
         {
             isCustom = true;
             currentCustomStream = stream;
@@ -432,12 +441,12 @@ namespace NGOEventExtender
         }
 
         /// <summary>
-        /// Starts a custom stream, based on the contents from your <c>ExtStream.</c> <br/>Make sure the <c>ExtStream</c> you use isn't static.
+        /// Starts a custom stream, based on the contents from your <c>ExtLiveScenario.</c> <br/>Make sure the <c>ExtLiveScenario</c> you use isn't static.
         /// </summary>
-        /// <param name="stream">The <c>ExtStream</c> data used to load your custom stream. Make sure the <c>ExtStream</c> you use isn't static.</param>
+        /// <param name="stream">The <c>ExtLiveScenario</c> data used to load your custom stream. Make sure the <c>ExtLiveScenario</c> you use isn't static.</param>
         /// <param name="isDarkUI"> If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.</param>
         /// <param name="isDarkAnim">If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.</param>
-        public static void StartCustomStream(ExtStream stream, bool isDarkUI = false, bool isDarkAnim = false)
+        public static void StartCustomStream(ExtLiveScenario stream, bool isDarkUI = false, bool isDarkAnim = false)
         {
 
             isCustom = true;
@@ -466,10 +475,10 @@ namespace NGOEventExtender
         /// </summary>
         /// <remarks>Your streams take priority over others, so make sure your conditions are specific.</remarks>
         /// <typeparam name="T">The custom stream to add.</typeparam>
-        public static void AddExtActionStream<T>() where T : ExtActionStream
+        public static void AddExtActionStream<T>() where T : ExtActionLiveScenario
         {
             Type type = typeof(T);
-            ExtActionStream stream = Activator.CreateInstance(type) as ExtActionStream;
+            ExtActionLiveScenario stream = Activator.CreateInstance(type) as ExtActionLiveScenario;
             actionStreamList.Add(stream);
         }
 
@@ -480,7 +489,7 @@ namespace NGOEventExtender
         /// </summary>
         /// <remarks>Your streams take priority over others, so make sure your conditions are specific.</remarks>
         /// <param name="stream">The custom stream to add.</param>
-        public static void AddExtActionStream(ExtActionStream stream)
+        public static void AddExtActionStream(ExtActionLiveScenario stream)
         {
             actionStreamList.Add(stream);
         }
@@ -491,10 +500,10 @@ namespace NGOEventExtender
         /// </summary>
         /// <remarks>Your streams take priority over others, so make sure your conditions are specific.</remarks>
         /// <typeparam name="T">The custom stream to add.</typeparam>
-        public static void AddConditionalStream<T>() where T : ExtStream
+        public static void AddConditionalStream<T>() where T : ExtLiveScenario
         {
             Type type = typeof(T);
-            ExtStream stream = Activator.CreateInstance(type) as ExtStream;
+            ExtLiveScenario stream = Activator.CreateInstance(type) as ExtLiveScenario;
             conditionalStreamList.Add(stream);
         }
 
@@ -504,14 +513,14 @@ namespace NGOEventExtender
         /// </summary>
         /// <remarks>Your streams take priority over others, so make sure your conditions are specific.</remarks>
         /// <param name="stream">The custom stream to add.</param>
-        public static void AddConditionalStream(ExtStream stream)
+        public static void AddConditionalStream(ExtLiveScenario stream)
         {
             conditionalStreamList.Add(stream);
 
         }
 
         /// <summary>
-        /// Ends a custom stream. Calculates stats if an ExtActionStream is playing, otherwise just closes the Stream window.
+        /// Ends a custom stream. Calculates stats if an ExtActionLiveScenario is playing, otherwise just closes the Stream window.
         /// </summary>
         public static void EndCustomStream()
         {
@@ -537,10 +546,10 @@ namespace NGOEventExtender
             {
                 return true;
             }
-            __instance.title = currentCustomStream.StreamTitle;
+            __instance.title = currentCustomStream.title;
             currentCustomStream.SetStreamSettings();
             Awake_Stub(__instance);
-            ___playing.AddRange(currentCustomStream.NowPlaying);
+            ___playing.AddRange(currentCustomStream.playing);
             return false;
         }
 
@@ -771,28 +780,28 @@ namespace NGOEventExtender
         {
             if (haisinPoint == "deleteAll")
             {
-                
-                    for (int i = 0; i < ____selectableComments.Count; i++)
-                    {
-                        if (____selectableComments[i].playing.color != SuperchatType.White || ____selectableComments[i].isHiroizumi) { continue; }
-                        ____selectableComments[i].isHiroizumi = true;
-                        AudioManager.Instance.PlaySeByType(SoundType.SE_pien, false);
-                        ____selectableComments[i].honbunView.DOColor(new Color(0f, 0f, 0f, 0f), 0.4f).Play<TweenerCore<Color, Color, ColorOptions>>();
-                        ____selectableComments[i].isDeleted = true;
-                    };
-                
+
+                for (int i = 0; i < ____selectableComments.Count; i++)
+                {
+                    if (____selectableComments[i].playing.color != SuperchatType.White || ____selectableComments[i].isHiroizumi) { continue; }
+                    ____selectableComments[i].isHiroizumi = true;
+                    AudioManager.Instance.PlaySeByType(SoundType.SE_pien, false);
+                    ____selectableComments[i].honbunView.DOColor(new Color(0f, 0f, 0f, 0f), 0.4f).Play<TweenerCore<Color, Color, ColorOptions>>();
+                    ____selectableComments[i].isDeleted = true;
+                };
+
                 return false;
             }
             if (haisinPoint == "delete")
             {
-                
-                    if (____selectableComments[____selectableComments.Count - 1].playing.color != SuperchatType.White || ____selectableComments[____selectableComments.Count - 1].isHiroizumi) { return false; }
-                    ____selectableComments[____selectableComments.Count - 1].isHiroizumi = true;
-                    AudioManager.Instance.PlaySeByType(SoundType.SE_pien, false);
-                    ____selectableComments[____selectableComments.Count - 1].honbunView.DOColor(new Color(0f, 0f, 0f, 0f), 0.4f).Play<TweenerCore<Color, Color, ColorOptions>>();
-                    ____selectableComments[____selectableComments.Count - 1].isDeleted = true;
 
-                
+                if (____selectableComments[____selectableComments.Count - 1].playing.color != SuperchatType.White || ____selectableComments[____selectableComments.Count - 1].isHiroizumi) { return false; }
+                ____selectableComments[____selectableComments.Count - 1].isHiroizumi = true;
+                AudioManager.Instance.PlaySeByType(SoundType.SE_pien, false);
+                ____selectableComments[____selectableComments.Count - 1].honbunView.DOColor(new Color(0f, 0f, 0f, 0f), 0.4f).Play<TweenerCore<Color, Color, ColorOptions>>();
+                ____selectableComments[____selectableComments.Count - 1].isDeleted = true;
+
+
                 return false;
             }
             return true;
@@ -809,10 +818,10 @@ namespace NGOEventExtender
                 __result = __instance.SetScenario<TestScenario>();
                 return false;
             }
-            if (conditionalStreamList.Count == 0) 
-            { 
+            if (conditionalStreamList.Count == 0)
+            {
                 ResetCustomStream();
-                return true; 
+                return true;
             }
             for (int i = 0; i < conditionalStreamList.Count; i++)
             {
@@ -845,7 +854,7 @@ namespace NGOEventExtender
             {
                 if (end == EndingType.Ending_None && !horror && actionStreamList.Count != 0)
                 {
-                    foreach (ExtActionStream ext in actionStreamList)
+                    foreach (ExtActionLiveScenario ext in actionStreamList)
                     {
                         string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{ext.ActionStreamId}Idea");
                         string streamed = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory.FirstOrDefault(x => x == $"_{ext.ActionStreamId}");
@@ -880,7 +889,7 @@ namespace NGOEventExtender
                 {
                     return;
                 }
-                foreach (ExtStream ext in conditionalStreamList)
+                foreach (ExtLiveScenario ext in conditionalStreamList)
                 {
                     bool condition = ext.SetCondition();
                     if (condition)
@@ -928,11 +937,11 @@ namespace NGOEventExtender
     public class ActionStreamExtender
     {
         /// <summary>
-        /// Checks to see if an <c>ExtActionStream</c> is discovered as an idea. (but not streamed)
+        /// Checks to see if an <c>ExtActionLiveScenario</c> is discovered as an idea. (but not streamed)
         /// </summary>
-        /// <param name="actionStream">The <c>ExtActionStream</c> to check for.</param>
+        /// <param name="actionStream">The <c>ExtActionLiveScenario</c> to check for.</param>
         /// <returns></returns>
-        public static bool IsActionStreamDiscovered(ExtActionStream actionStream)
+        public static bool IsActionStreamDiscovered(ExtActionLiveScenario actionStream)
         {
             List<string> eventList = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory;
             List<string> actionList = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory;
@@ -941,11 +950,11 @@ namespace NGOEventExtender
         }
 
         /// <summary>
-        /// Checks to see if an <c>ExtActionStream</c> has been streamed already.
+        /// Checks to see if an <c>ExtActionLiveScenario</c> has been streamed already.
         /// </summary>
-        /// <param name="actionStream">The <c>ExtActionStream</c> to check for.</param>
+        /// <param name="actionStream">The <c>ExtActionLiveScenario</c> to check for.</param>
         /// <returns></returns>
-        public static bool IsActionStreamStreamed(ExtActionStream actionStream)
+        public static bool IsActionStreamStreamed(ExtActionLiveScenario actionStream)
         {
             List<string> actionList = SingletonMonoBehaviour<EventManager>.Instance.dayActionHistory;
             return actionList.Exists(x => x == "_" + actionStream.ActionStreamId);
@@ -958,14 +967,14 @@ namespace NGOEventExtender
             AlphaLevel gotAlpha = SingletonMonoBehaviour<NetaManager>.Instance.GotAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             AlphaLevel usedAlpha = SingletonMonoBehaviour<NetaManager>.Instance.usedAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             if (StreamExtender.actionStreamList.Count == 0) { return; }
-            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == NetaType && n.HintData.level == level);
+            List<ExtActionLiveScenario> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == NetaType && n.HintData.level == level);
             if (actionList.Count == 0)
             {
                 return;
             }
-            foreach (ExtActionStream action in actionList)
+            foreach (ExtActionLiveScenario action in actionList)
             {
-                ExtActionStream a = StreamExtender.actionStreamList.Find(ac => ac == action);
+                ExtActionLiveScenario a = StreamExtender.actionStreamList.Find(ac => ac == action);
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
                 if (discovered != null)
                 {
@@ -992,17 +1001,17 @@ namespace NGOEventExtender
             {
                 return;
             }
-                ExtActionStream a = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
+            ExtActionLiveScenario a = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
             if (a == null)
             {
                 return;
             }
             if (a.SetCondition())
-                {
-                    a.isDiscovered = true;
-                    return;
-                }
-                a.isDiscovered = false;
+            {
+                a.isDiscovered = true;
+                return;
+            }
+            a.isDiscovered = false;
         }
 
         [HarmonyPostfix]
@@ -1012,7 +1021,7 @@ namespace NGOEventExtender
             AlphaType alpha = SingletonMonoBehaviour<EventManager>.Instance.gotChipAlpha.alphaType;
             int alphalevel = SingletonMonoBehaviour<EventManager>.Instance.gotChipAlpha.level;
             if (StreamExtender.actionStreamList.Count == 0) { return; }
-            ExtActionStream data = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
+            ExtActionLiveScenario data = StreamExtender.actionStreamList.FirstOrDefault(n => n.isDiscovered == true);
             if (data == null)
             {
                 return;
@@ -1032,7 +1041,7 @@ namespace NGOEventExtender
         {
             if (StreamExtender.actionTweetType != null)
             {
-                foreach(TweetType tweet in StreamExtender.actionTweetType)
+                foreach (TweetType tweet in StreamExtender.actionTweetType)
                 {
                     SingletonMonoBehaviour<PoketterManager>.Instance.AddQueueWithKusoreps(tweet);
                 }
@@ -1065,7 +1074,7 @@ namespace NGOEventExtender
             if (StreamExtender.actionStreamId == null) { return; }
             if (StreamExtender.actionStreamList.Count == 0) { return; }
             if ((int)type > 60) { return; }
-            ExtActionStream action = StreamExtender.actionStreamList.Find(n => n.ActionStreamId == StreamExtender.actionStreamId);
+            ExtActionLiveScenario action = StreamExtender.actionStreamList.Find(n => n.ActionStreamId == StreamExtender.actionStreamId);
             string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
             if (discovered != null && action.CommandResult != null)
             {
@@ -1079,12 +1088,12 @@ namespace NGOEventExtender
         static bool HighlightCustomStreamCmd(AlphaType alpha, int level)
         {
             if (StreamExtender.actionStreamList.Count == 0) { return true; }
-            List<ExtActionStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == alpha && n.HintData.level == level);
+            List<ExtActionLiveScenario> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == alpha && n.HintData.level == level);
             if (actionList.Count == 0)
             {
                 return true;
             }
-            foreach (ExtActionStream action in actionList)
+            foreach (ExtActionLiveScenario action in actionList)
             {
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
                 if (discovered != null && action.CommandResult != null)
@@ -1109,7 +1118,7 @@ namespace NGOEventExtender
             Label sexyLabel = generator.DefineLabel();
             int labelCount = 0;
             for (int i = 0; i < codes.Count; i++)
-            {                                                
+            {
                 if (codes[i].opcode == OpCodes.Ldstr)
                 {
                     if ((string)codes[i].operand == "Game")
@@ -1166,7 +1175,7 @@ namespace NGOEventExtender
                     }
                 }
                 if (codes[i].opcode == OpCodes.Ldarg_0)
-                {           
+                {
                     switch (labelCount)
                     {
                         case 1:
@@ -1196,7 +1205,7 @@ namespace NGOEventExtender
         [HarmonyPatch(typeof(FollowerDiffComponent), "SetBonus")]
         static IEnumerable<CodeInstruction> ApplySymbolsAsArgs_ShowTooltip(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
-            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);          
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
             Label yamiLabel = generator.DefineLabel();
             Label movieLabel = generator.DefineLabel();
             Label sexyLabel = generator.DefineLabel();
@@ -1206,7 +1215,7 @@ namespace NGOEventExtender
             {
                 if (codes[i].opcode == OpCodes.Ldstr)
                 {
-                    
+
                     if ((string)codes[i].operand == "AnimeTalk")
                     {
                         codes[i + 3].labels.Add(movieLabel);
@@ -1218,7 +1227,7 @@ namespace NGOEventExtender
                             new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
                             new CodeInstruction(OpCodes.Brtrue, movieLabel)
                         });
-                                         
+
                         i += 6;
                         continue;
                     }
@@ -1249,11 +1258,11 @@ namespace NGOEventExtender
                         });
                         break;
                     }
-                    if ((string)codes[i].operand == "Game") 
+                    if ((string)codes[i].operand == "Game")
                     {
                         codes[i + 22].labels.Add(gameFalse);
                         codes[i + 3].labels.Add(gameLabel);
-                        codes[i + 2].opcode= OpCodes.Brtrue;
+                        codes[i + 2].opcode = OpCodes.Brtrue;
                         codes[i + 2].operand = gameLabel;
                         codes.InsertRange(i + 3, new List<CodeInstruction>()
                         {
@@ -1262,14 +1271,14 @@ namespace NGOEventExtender
                             new CodeInstruction(OpCodes.Ldstr, "@"),
                             new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(string),nameof(string.Contains),new Type[]{typeof(string)})),
                             new CodeInstruction(OpCodes.Brfalse, gameFalse)
-                        });                      
+                        });
                         i += 6;
                         continue;
                     }
                 }
 
             }
-          
+
             return codes.AsEnumerable();
         }
     }
@@ -1277,27 +1286,18 @@ namespace NGOEventExtender
     /// <summary>
     /// The blueprint used to load in a custom stream. <br/>Make sure your variable of this class isn't static, so that your stream dialogue and your comment's language can be updated if this stream is used more than once.
     /// </summary>
-    public abstract class ExtStream
+    public abstract class ExtLiveScenario : LiveScenario
     {
 
-        /// <summary>
-        /// The custom stream's title. For localization purposes, use <c>"NgoEx.TenTalk(stringId, LanguageType)"</c>
-        /// </summary>
-        public abstract string StreamTitle { get; }
         /// <summary>
         /// The starting animation of a stream; only applies if KAngel is the first one talking.
         /// </summary>
         public virtual string StartingAnim { get => "stream_cho_akaruku"; }
         /// <summary>
-        /// The list that sets up the script of your stream.
-        /// </summary>
-        /// <remarks> Add dialogue and chat comments in the list by using methods from the <c>StreamList</c> class, or by making new <c>Playing</c> objects.</remarks>
-        public abstract List<Playing> NowPlaying { get; }
-        /// <summary>
         ///  The condition for the event. 
         ///  <br/>Event will only start if the condition returns true. 
         /// </summary>
-        /// <remarks><c>SetCondition</c> is not read if this ExtStream is used with <c>StartCustomStream.</c></remarks>
+        /// <remarks><c>SetCondition</c> is not read if this ExtLiveScenario is used with <c>StartCustomStream.</c></remarks>
         public abstract bool SetCondition();
 
         /// <summary>
@@ -1309,12 +1309,11 @@ namespace NGOEventExtender
         /// <summary>
         /// What happens after the stream script ends.
         /// </summary>
-        /// <returns></returns>
         public abstract UniTask AfterStream();
 
     }
 
-    public abstract class ExtActionStream : ExtStream
+    public abstract class ExtActionLiveScenario : ExtLiveScenario
     {
         protected internal bool isDiscovered = false;
         public abstract string ActionStreamId { get; }
