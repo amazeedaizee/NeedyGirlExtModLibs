@@ -11,7 +11,7 @@ WIP!
 
 ## Compiling With Other Versions of the Game
 
-To compile these libraries yourself, just open the project file then go to "Build Solution" in the Projects Section.
+To compile these libraries yourself, after cloning the repo, just open the project file then go to "Build Solution" in the Projects Section.
 To compile to other versions of the game, make sure in your References you use the appropriate Unity libraries with the version the game is built on and the appropriate AssemblyCSharp located in.
 It is highly recommended to get the unstripped versions of Unity libraries rather than taking everything from the Managed Folder.
 
