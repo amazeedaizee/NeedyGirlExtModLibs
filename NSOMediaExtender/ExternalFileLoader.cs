@@ -1,17 +1,13 @@
 ﻿using Cysharp.Threading.Tasks;
-using ngov3;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine.Networking;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace NSOMediaExtender
 {
-    internal class ExternalFileLoader
+    public class ExternalFileLoader
     {
         /// <summary>
         /// The exception that is thrown if an error occured in loading the requested file.
@@ -46,20 +42,20 @@ namespace NSOMediaExtender
             string[] getFileName = path.Split('\\');
             string fileName = getFileName[getFileName.Count() - 1];
             using (var audioRequest = UnityWebRequestMultimedia.GetAudioClip(Path.Combine("file://" + path), type))
+            {
+                audioRequest.SendWebRequest();
+                await UniTask.WaitUntil(() => audioRequest.isDone);
+                DownloadHandlerAudioClip dHandler = (DownloadHandlerAudioClip)audioRequest.downloadHandler;
+                dHandler.streamAudio = true;
+                await UniTask.WaitUntil(() => dHandler.isDone);
+                AudioClip audio = DownloadHandlerAudioClip.GetContent(audioRequest);
+                if (audio == null)
                 {
-                    audioRequest.SendWebRequest();
-                    await UniTask.WaitUntil(() => audioRequest.isDone);
-                    DownloadHandlerAudioClip dHandler = (DownloadHandlerAudioClip)audioRequest.downloadHandler;
-                    dHandler.streamAudio = true;
-                    await UniTask.WaitUntil(() => dHandler.isDone);
-                    AudioClip audio = DownloadHandlerAudioClip.GetContent(audioRequest);
-                    if (audio == null)
-                    {
-                        throw new FileLoadFailedException("Audio File failed to load.");
-                    }
-                    return audio;
+                    throw new FileLoadFailedException("Audio File failed to load.");
                 }
-            
+                return audio;
+            }
+
 
         }
 

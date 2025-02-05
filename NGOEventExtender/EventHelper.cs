@@ -99,6 +99,7 @@ namespace NGOEventExtender
 
         private static void ChangeAllJineIcons(List<JineCell2D> list)
         {
+            if (list == null || list.Count == 0) return;
             if (origJineIcon == null)
             {
 
@@ -139,6 +140,7 @@ namespace NGOEventExtender
 
         private static void ChangeAllTweetIcons(List<PoketterCell2D> list)
         {
+            if (list == null || list.Count == 0) return;
             if (origAngelTweetIcon == null && origAmeTweetIcon == null)
             {
                 origAngelTweetIcon = list[0]._omoteIcon;
