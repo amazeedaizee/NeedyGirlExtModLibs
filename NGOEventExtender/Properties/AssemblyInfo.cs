@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NGOEventExtender")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A modding library for Needy Girl Overdose that handles events.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("amazeedaizee")]
 [assembly: AssemblyProduct("NGOEventExtender")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyCopyright("Copyright © amazeedaizee 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

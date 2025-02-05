@@ -17,7 +17,7 @@ using UnityEngine;
 
 namespace NGOEventExtender
 {
-    public class PlayingList
+    public class PlayingBlock
     {
 
         /// <summary>
@@ -74,31 +74,15 @@ namespace NGOEventExtender
             return new Playing(false, kChat, StatusType.Tension, 0, 10, aChat, aAnimId, "", true, SuperchatType.White, false, "");
         }
 
-        /// <summary>
-        /// A Super Chat comment, which KAngel can read near the end of the stream. Gives out two responses to the same comment.
-        /// </summary>
-        /// <param name="kChatId">The KusoComment.Param's Id used to load the comment.</param>
-        /// <param name="aChatId">The TenComment.Param's Id used to load her first response.</param>
-        /// <param name="aChatTwoId">The TenComment.Param's Id used to load her second response.</param>
-        /// <param name="aAnimId">The animation that KAngel uses when she speaks her first response.</param>
-        /// <param name="aAnimTwoId">The animation that KAngel uses when she speaks her second response.</param>
-        /// <returns></returns>
-        public static Playing SuperKTalk_RepTwice(string kChatId, string aChatId, string aChatTwoId, string aAnimId = "", string aAnimTwoId = "")
-        {
-            string kChat = kChatId == "" || kChatId == null ? "" : NgoEx.TenTalk(kChatId, SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value);
-            string aChat = aChatId == "" || aChatId == null ? "" : NgoEx.TenTalk(aChatId, SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value);
-            string aChatTwo = aChatTwoId == "" || aChatTwoId == null ? "" : NgoEx.TenTalk(aChatTwoId, SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value);
-            return new Playing(false, kChat, StatusType.Tension, 0, 10, aChat + "___" + aChatTwo, $"{aAnimId}___{aAnimTwoId}", "", false, SuperchatType.White, false, "");
-        }
 
         /// <summary>
-        ///  A Super Chat comment, which KAngel can read near the end of the stream. Gives out three or more responses to the same comment.
+        ///  A Super Chat comment, which KAngel can read near the end of the stream. Gives out two or more responses to the same comment.
         /// </summary>
         /// <param name="kChatId">The KusoComment.Param's Id used to load the comment.</param>
         /// <param name="aChatId">The <c>List</c> of TenComment.Param Ids used to load her responses.</param>
         /// <param name="aAnimId">The <c>List</c> of animation Ids that KAngel does when she speaks, per response.</param>
         /// <returns></returns>
-        public static Playing SuperKTalk_RepConvo(string kChatId, List<string> aChatId, List<string> aAnimId)
+        public static Playing SuperKTalk_RepMore(string kChatId, List<string> aChatId, List<string> aAnimId)
         {
             string kChat = kChatId == "" || kChatId == null ? "" : NgoEx.Kome(kChatId, SingletonMonoBehaviour<Settings>.Instance.CurrentLanguage.Value);
             string chat = "";
@@ -1288,11 +1272,11 @@ namespace NGOEventExtender
     /// </summary>
     public abstract class ExtLiveScenario : LiveScenario
     {
-
         /// <summary>
         /// The starting animation of a stream; only applies if KAngel is the first one talking.
         /// </summary>
         public virtual string StartingAnim { get => "stream_cho_akaruku"; }
+
         /// <summary>
         ///  The condition for the event. 
         ///  <br/>Event will only start if the condition returns true. 
@@ -1310,6 +1294,7 @@ namespace NGOEventExtender
         /// What happens after the stream script ends.
         /// </summary>
         public abstract UniTask AfterStream();
+
 
     }
 

@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EnumTest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("NGOExtraSettings")]
+[assembly: AssemblyDescription("A modding library for Needy Girl Overdose that adds extra settings.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EnumTest")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyCompany("amazeedaizee")]
+[assembly: AssemblyProduct("NGOExtraSettings")]
+[assembly: AssemblyCopyright("Copyright © amazeedaizee 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
