@@ -1,0 +1,656 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOEventExtender.ExtNgoStream
+  commentId: T:NGOEventExtender.ExtNgoStream
+  id: ExtNgoStream
+  parent: NGOEventExtender
+  children:
+  - NGOEventExtender.ExtNgoStream.#ctor
+  - NGOEventExtender.ExtNgoStream.AfterStream
+  - NGOEventExtender.ExtNgoStream.NowPlaying
+  - NGOEventExtender.ExtNgoStream.SetCondition
+  - NGOEventExtender.ExtNgoStream.SetStreamSettings
+  - NGOEventExtender.ExtNgoStream.StartingAnim
+  - NGOEventExtender.ExtNgoStream.StreamTitle
+  langs:
+  - csharp
+  - vb
+  name: ExtNgoStream
+  nameWithType: ExtNgoStream
+  fullName: NGOEventExtender.ExtNgoStream
+  type: Class
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: The blueprint used to load in a custom stream. <br />Make sure your variable of this class isn't static, so that your stream dialogue and your comment's language can be updated if this stream is used more than once.
+  example: []
+  syntax:
+    content: public abstract class ExtNgoStream
+    content.vb: Public MustInherit Class ExtNgoStream
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - NGOEventExtender.ExtActionNgoStream
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: NGOEventExtender.ExtNgoStream.SetCondition
+  commentId: M:NGOEventExtender.ExtNgoStream.SetCondition
+  id: SetCondition
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: SetCondition()
+  nameWithType: ExtNgoStream.SetCondition()
+  fullName: NGOEventExtender.ExtNgoStream.SetCondition()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    The condition for the event. 
+
+    <br />Event will only start if the condition returns true.
+  remarks: <code>SetCondition</code> is not read if this ExtNgoStream is used with <code>StartCustomStream.</code>
+  example: []
+  syntax:
+    content: public abstract bool SetCondition()
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function SetCondition() As Boolean
+  overload: NGOEventExtender.ExtNgoStream.SetCondition*
+- uid: NGOEventExtender.ExtNgoStream.SetStreamSettings
+  commentId: M:NGOEventExtender.ExtNgoStream.SetStreamSettings
+  id: SetStreamSettings
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: SetStreamSettings()
+  nameWithType: ExtNgoStream.SetStreamSettings()
+  fullName: NGOEventExtender.ExtNgoStream.SetStreamSettings()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Sets any relevant attributes to the stream before it starts (music, effects, etc).
+
+    <br /> You can set more attributes to the stream by changing fields from <code>Live</code>, using a Singleton to create an instance for <code>Live</code>.
+  example: []
+  syntax:
+    content: public abstract void SetStreamSettings()
+    content.vb: Public MustOverride Sub SetStreamSettings()
+  overload: NGOEventExtender.ExtNgoStream.SetStreamSettings*
+- uid: NGOEventExtender.ExtNgoStream.AfterStream
+  commentId: M:NGOEventExtender.ExtNgoStream.AfterStream
+  id: AfterStream
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: AfterStream()
+  nameWithType: ExtNgoStream.AfterStream()
+  fullName: NGOEventExtender.ExtNgoStream.AfterStream()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: What happens after the stream script ends.
+  example: []
+  syntax:
+    content: public abstract UniTask AfterStream()
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+    content.vb: Public MustOverride Function AfterStream() As UniTask
+  overload: NGOEventExtender.ExtNgoStream.AfterStream*
+- uid: NGOEventExtender.ExtNgoStream.#ctor
+  commentId: M:NGOEventExtender.ExtNgoStream.#ctor
+  id: '#ctor'
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: ExtNgoStream()
+  nameWithType: ExtNgoStream.ExtNgoStream()
+  fullName: NGOEventExtender.ExtNgoStream.ExtNgoStream()
+  type: Constructor
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: protected ExtNgoStream()
+    content.vb: Protected Sub New()
+  overload: NGOEventExtender.ExtNgoStream.#ctor*
+  nameWithType.vb: ExtNgoStream.New()
+  fullName.vb: NGOEventExtender.ExtNgoStream.New()
+  name.vb: New()
+- uid: NGOEventExtender.ExtNgoStream.StreamTitle
+  commentId: P:NGOEventExtender.ExtNgoStream.StreamTitle
+  id: StreamTitle
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: StreamTitle
+  nameWithType: ExtNgoStream.StreamTitle
+  fullName: NGOEventExtender.ExtNgoStream.StreamTitle
+  type: Property
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: The stream title.
+  example: []
+  syntax:
+    content: public virtual string StreamTitle { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overridable ReadOnly Property StreamTitle As String
+  overload: NGOEventExtender.ExtNgoStream.StreamTitle*
+- uid: NGOEventExtender.ExtNgoStream.StartingAnim
+  commentId: P:NGOEventExtender.ExtNgoStream.StartingAnim
+  id: StartingAnim
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: StartingAnim
+  nameWithType: ExtNgoStream.StartingAnim
+  fullName: NGOEventExtender.ExtNgoStream.StartingAnim
+  type: Property
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: The starting animation of a stream; only applies if KAngel is the first one talking.
+  example: []
+  syntax:
+    content: public virtual string StartingAnim { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overridable ReadOnly Property StartingAnim As String
+  overload: NGOEventExtender.ExtNgoStream.StartingAnim*
+- uid: NGOEventExtender.ExtNgoStream.NowPlaying
+  commentId: P:NGOEventExtender.ExtNgoStream.NowPlaying
+  id: NowPlaying
+  parent: NGOEventExtender.ExtNgoStream
+  langs:
+  - csharp
+  - vb
+  name: NowPlaying
+  nameWithType: ExtNgoStream.NowPlaying
+  fullName: NGOEventExtender.ExtNgoStream.NowPlaying
+  type: Property
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: The playing list.
+  example: []
+  syntax:
+    content: public virtual List<Playing> NowPlaying { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ngov3.Playing}
+    content.vb: Public Overridable ReadOnly Property NowPlaying As List(Of Playing)
+  overload: NGOEventExtender.ExtNgoStream.NowPlaying*
+references:
+- uid: NGOEventExtender
+  commentId: N:NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.html
+  name: NGOEventExtender
+  nameWithType: NGOEventExtender
+  fullName: NGOEventExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NGOEventExtender.ExtNgoStream.SetCondition*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.SetCondition
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream_SetCondition
+  name: SetCondition
+  nameWithType: ExtNgoStream.SetCondition
+  fullName: NGOEventExtender.ExtNgoStream.SetCondition
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NGOEventExtender.ExtNgoStream.SetStreamSettings*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.SetStreamSettings
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream_SetStreamSettings
+  name: SetStreamSettings
+  nameWithType: ExtNgoStream.SetStreamSettings
+  fullName: NGOEventExtender.ExtNgoStream.SetStreamSettings
+- uid: NGOEventExtender.ExtNgoStream.AfterStream*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.AfterStream
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream_AfterStream
+  name: AfterStream
+  nameWithType: ExtNgoStream.AfterStream
+  fullName: NGOEventExtender.ExtNgoStream.AfterStream
+- uid: Cysharp.Threading.Tasks.UniTask
+  commentId: T:Cysharp.Threading.Tasks.UniTask
+  parent: Cysharp.Threading.Tasks
+  isExternal: true
+  name: UniTask
+  nameWithType: UniTask
+  fullName: Cysharp.Threading.Tasks.UniTask
+- uid: Cysharp.Threading.Tasks
+  commentId: N:Cysharp.Threading.Tasks
+  isExternal: true
+  name: Cysharp.Threading.Tasks
+  nameWithType: Cysharp.Threading.Tasks
+  fullName: Cysharp.Threading.Tasks
+  spec.csharp:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+  spec.vb:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+- uid: NGOEventExtender.ExtNgoStream.#ctor*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.#ctor
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream__ctor
+  name: ExtNgoStream
+  nameWithType: ExtNgoStream.ExtNgoStream
+  fullName: NGOEventExtender.ExtNgoStream.ExtNgoStream
+  nameWithType.vb: ExtNgoStream.New
+  fullName.vb: NGOEventExtender.ExtNgoStream.New
+  name.vb: New
+- uid: NGOEventExtender.ExtNgoStream.StreamTitle*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.StreamTitle
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream_StreamTitle
+  name: StreamTitle
+  nameWithType: ExtNgoStream.StreamTitle
+  fullName: NGOEventExtender.ExtNgoStream.StreamTitle
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NGOEventExtender.ExtNgoStream.StartingAnim*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.StartingAnim
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream_StartingAnim
+  name: StartingAnim
+  nameWithType: ExtNgoStream.StartingAnim
+  fullName: NGOEventExtender.ExtNgoStream.StartingAnim
+- uid: NGOEventExtender.ExtNgoStream.NowPlaying*
+  commentId: Overload:NGOEventExtender.ExtNgoStream.NowPlaying
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html#NGOEventExtender_ExtNgoStream_NowPlaying
+  name: NowPlaying
+  nameWithType: ExtNgoStream.NowPlaying
+  fullName: NGOEventExtender.ExtNgoStream.NowPlaying
+- uid: System.Collections.Generic.List{ngov3.Playing}
+  commentId: T:System.Collections.Generic.List{ngov3.Playing}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Playing>
+  nameWithType: List<Playing>
+  fullName: System.Collections.Generic.List<ngov3.Playing>
+  nameWithType.vb: List(Of Playing)
+  fullName.vb: System.Collections.Generic.List(Of ngov3.Playing)
+  name.vb: List(Of Playing)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ngov3.Playing
+    name: Playing
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ngov3.Playing
+    name: Playing
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

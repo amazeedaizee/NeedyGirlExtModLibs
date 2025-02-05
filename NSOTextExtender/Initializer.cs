@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace NGOTxtExtender
 {
+    /// <exclude />
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInProcess("Windose.exe")]
     public class BepInStart : BaseUnityPlugin

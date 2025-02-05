@@ -1,0 +1,738 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.WebCamExtender
+  commentId: T:NSOMediaExtender.WebCamExtender
+  id: WebCamExtender
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.WebCamExtender.#ctor
+  - NSOMediaExtender.WebCamExtender.AddCustomAnimClip(System.Collections.Generic.List{UnityEngine.AnimationClip})
+  - NSOMediaExtender.WebCamExtender.AddCustomAnimClip(UnityEngine.AnimationClip)
+  - NSOMediaExtender.WebCamExtender.AddCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  - NSOMediaExtender.WebCamExtender.PlayNegativeAme(System.Boolean)
+  - NSOMediaExtender.WebCamExtender.PlayPositiveAme(System.Boolean)
+  - NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme(NSOMediaExtender.IdleAnimationType,System.Boolean,System.Boolean)
+  - NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  langs:
+  - csharp
+  - vb
+  name: WebCamExtender
+  nameWithType: WebCamExtender
+  fullName: NSOMediaExtender.WebCamExtender
+  type: Class
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class WebCamExtender
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class WebCamExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NSOMediaExtender.WebCamExtender.PlayPositiveAme(System.Boolean)
+  commentId: M:NSOMediaExtender.WebCamExtender.PlayPositiveAme(System.Boolean)
+  id: PlayPositiveAme(System.Boolean)
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: PlayPositiveAme(bool)
+  nameWithType: WebCamExtender.PlayPositiveAme(bool)
+  fullName: NSOMediaExtender.WebCamExtender.PlayPositiveAme(bool)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Plays an animation of Ame reacting positively to something in the Webcam. The kind of animation that's played depends on her stats.
+  example: []
+  syntax:
+    content: public static void PlayPositiveAme(bool isScary = false)
+    parameters:
+    - id: isScary
+      type: System.Boolean
+      description: If true, automatically plays the scary version of the animation, regardless of her stats.
+    content.vb: Public Shared Sub PlayPositiveAme(isScary As Boolean = False)
+  overload: NSOMediaExtender.WebCamExtender.PlayPositiveAme*
+  nameWithType.vb: WebCamExtender.PlayPositiveAme(Boolean)
+  fullName.vb: NSOMediaExtender.WebCamExtender.PlayPositiveAme(Boolean)
+  name.vb: PlayPositiveAme(Boolean)
+- uid: NSOMediaExtender.WebCamExtender.PlayNegativeAme(System.Boolean)
+  commentId: M:NSOMediaExtender.WebCamExtender.PlayNegativeAme(System.Boolean)
+  id: PlayNegativeAme(System.Boolean)
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: PlayNegativeAme(bool)
+  nameWithType: WebCamExtender.PlayNegativeAme(bool)
+  fullName: NSOMediaExtender.WebCamExtender.PlayNegativeAme(bool)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Plays an animation of Ame reacting negatively to something in the Webcam. The kind of animation that's played depends on her stats.
+  example: []
+  syntax:
+    content: public static void PlayNegativeAme(bool isScary = false)
+    parameters:
+    - id: isScary
+      type: System.Boolean
+      description: If true, automatically plays the scary version of the animation, regardless of her stats.
+    content.vb: Public Shared Sub PlayNegativeAme(isScary As Boolean = False)
+  overload: NSOMediaExtender.WebCamExtender.PlayNegativeAme*
+  nameWithType.vb: WebCamExtender.PlayNegativeAme(Boolean)
+  fullName.vb: NSOMediaExtender.WebCamExtender.PlayNegativeAme(Boolean)
+  name.vb: PlayNegativeAme(Boolean)
+- uid: NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme(NSOMediaExtender.IdleAnimationType,System.Boolean,System.Boolean)
+  commentId: M:NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme(NSOMediaExtender.IdleAnimationType,System.Boolean,System.Boolean)
+  id: PlaySpecificIdlingAme(NSOMediaExtender.IdleAnimationType,System.Boolean,System.Boolean)
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: PlaySpecificIdlingAme(IdleAnimationType, bool, bool)
+  nameWithType: WebCamExtender.PlaySpecificIdlingAme(IdleAnimationType, bool, bool)
+  fullName: NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme(NSOMediaExtender.IdleAnimationType, bool, bool)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Plays a specific idling animation of Ame. The kind of animation that's played depends on her stats.
+  example: []
+  syntax:
+    content: public static void PlaySpecificIdlingAme(IdleAnimationType anim, bool setBaseAnim = false, bool isScary = false)
+    parameters:
+    - id: anim
+      type: NSOMediaExtender.IdleAnimationType
+      description: The IdleAnimationType.
+    - id: setBaseAnim
+      type: System.Boolean
+      description: If true, the current animation defaults to this one. Otherwise, only plays this animation once.
+    - id: isScary
+      type: System.Boolean
+      description: If true, automatically plays the scary version of the animation, regardless of her stats.
+    content.vb: Public Shared Sub PlaySpecificIdlingAme(anim As IdleAnimationType, setBaseAnim As Boolean = False, isScary As Boolean = False)
+  overload: NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme*
+  nameWithType.vb: WebCamExtender.PlaySpecificIdlingAme(IdleAnimationType, Boolean, Boolean)
+  fullName.vb: NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme(NSOMediaExtender.IdleAnimationType, Boolean, Boolean)
+  name.vb: PlaySpecificIdlingAme(IdleAnimationType, Boolean, Boolean)
+- uid: NSOMediaExtender.WebCamExtender.AddCustomAnimClip(UnityEngine.AnimationClip)
+  commentId: M:NSOMediaExtender.WebCamExtender.AddCustomAnimClip(UnityEngine.AnimationClip)
+  id: AddCustomAnimClip(UnityEngine.AnimationClip)
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddCustomAnimClip(AnimationClip)
+  nameWithType: WebCamExtender.AddCustomAnimClip(AnimationClip)
+  fullName: NSOMediaExtender.WebCamExtender.AddCustomAnimClip(UnityEngine.AnimationClip)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Adds an <code>AnimationClip</code> to the <code>AnimationClip</code> ExtList.
+  example: []
+  syntax:
+    content: public static void AddCustomAnimClip(AnimationClip clip)
+    parameters:
+    - id: clip
+      type: UnityEngine.AnimationClip
+      description: The <code>AnimationClip</code> to add to the list.
+    content.vb: Public Shared Sub AddCustomAnimClip(clip As AnimationClip)
+  overload: NSOMediaExtender.WebCamExtender.AddCustomAnimClip*
+- uid: NSOMediaExtender.WebCamExtender.AddCustomAnimClip(System.Collections.Generic.List{UnityEngine.AnimationClip})
+  commentId: M:NSOMediaExtender.WebCamExtender.AddCustomAnimClip(System.Collections.Generic.List{UnityEngine.AnimationClip})
+  id: AddCustomAnimClip(System.Collections.Generic.List{UnityEngine.AnimationClip})
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddCustomAnimClip(List<AnimationClip>)
+  nameWithType: WebCamExtender.AddCustomAnimClip(List<AnimationClip>)
+  fullName: NSOMediaExtender.WebCamExtender.AddCustomAnimClip(System.Collections.Generic.List<UnityEngine.AnimationClip>)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Adds <code>AnimationClips</code> to the <code>AnimationClip</code> ExtList.
+  example: []
+  syntax:
+    content: public static void AddCustomAnimClip(List<AnimationClip> clips)
+    parameters:
+    - id: clips
+      type: System.Collections.Generic.List{UnityEngine.AnimationClip}
+      description: The <code>AnimationClips</code> to add to the list.
+    content.vb: Public Shared Sub AddCustomAnimClip(clips As List(Of AnimationClip))
+  overload: NSOMediaExtender.WebCamExtender.AddCustomAnimClip*
+  nameWithType.vb: WebCamExtender.AddCustomAnimClip(List(Of AnimationClip))
+  fullName.vb: NSOMediaExtender.WebCamExtender.AddCustomAnimClip(System.Collections.Generic.List(Of UnityEngine.AnimationClip))
+  name.vb: AddCustomAnimClip(List(Of AnimationClip))
+- uid: NSOMediaExtender.WebCamExtender.AddCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  commentId: M:NSOMediaExtender.WebCamExtender.AddCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  id: AddCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddCustomIdleAnims(List<string>, WebcamType)
+  nameWithType: WebCamExtender.AddCustomIdleAnims(List<string>, WebcamType)
+  fullName: NSOMediaExtender.WebCamExtender.AddCustomIdleAnims(System.Collections.Generic.List<string>, NSOMediaExtender.WebcamType)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Adds new idle animations to Ame.
+  example: []
+  syntax:
+    content: public static void AddCustomIdleAnims(List<string> extAnims, WebcamType type)
+    parameters:
+    - id: extAnims
+      type: System.Collections.Generic.List{System.String}
+      description: The list of animations to add, based on their <code>AnimationClip</code> name.
+    - id: type
+      type: NSOMediaExtender.WebcamType
+      description: The idle animation list to add to.
+    content.vb: Public Shared Sub AddCustomIdleAnims(extAnims As List(Of String), type As WebcamType)
+  overload: NSOMediaExtender.WebCamExtender.AddCustomIdleAnims*
+  nameWithType.vb: WebCamExtender.AddCustomIdleAnims(List(Of String), WebcamType)
+  fullName.vb: NSOMediaExtender.WebCamExtender.AddCustomIdleAnims(System.Collections.Generic.List(Of String), NSOMediaExtender.WebcamType)
+  name.vb: AddCustomIdleAnims(List(Of String), WebcamType)
+- uid: NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  commentId: M:NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  id: ReplaceCustomIdleAnims(System.Collections.Generic.List{System.String},NSOMediaExtender.WebcamType)
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: ReplaceCustomIdleAnims(List<string>, WebcamType)
+  nameWithType: WebCamExtender.ReplaceCustomIdleAnims(List<string>, WebcamType)
+  fullName: NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims(System.Collections.Generic.List<string>, NSOMediaExtender.WebcamType)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Replaces default idle animations of Ame to custom ones.
+  remarks: 'Note: If two or more different mods use this method, the mod loaded last will take priority on what animations to replace.'
+  example: []
+  syntax:
+    content: public static void ReplaceCustomIdleAnims(List<string> extAnims, WebcamType type)
+    parameters:
+    - id: extAnims
+      type: System.Collections.Generic.List{System.String}
+      description: The list of animations to replace with, based on their <code>AnimationClip</code> name.
+    - id: type
+      type: NSOMediaExtender.WebcamType
+      description: The idle animation list to replace.
+    content.vb: Public Shared Sub ReplaceCustomIdleAnims(extAnims As List(Of String), type As WebcamType)
+  overload: NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims*
+  nameWithType.vb: WebCamExtender.ReplaceCustomIdleAnims(List(Of String), WebcamType)
+  fullName.vb: NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims(System.Collections.Generic.List(Of String), NSOMediaExtender.WebcamType)
+  name.vb: ReplaceCustomIdleAnims(List(Of String), WebcamType)
+- uid: NSOMediaExtender.WebCamExtender.#ctor
+  commentId: M:NSOMediaExtender.WebCamExtender.#ctor
+  id: '#ctor'
+  parent: NSOMediaExtender.WebCamExtender
+  langs:
+  - csharp
+  - vb
+  name: WebCamExtender()
+  nameWithType: WebCamExtender.WebCamExtender()
+  fullName: NSOMediaExtender.WebCamExtender.WebCamExtender()
+  type: Constructor
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public WebCamExtender()
+    content.vb: Public Sub New()
+  overload: NSOMediaExtender.WebCamExtender.#ctor*
+  nameWithType.vb: WebCamExtender.New()
+  fullName.vb: NSOMediaExtender.WebCamExtender.New()
+  name.vb: New()
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NSOMediaExtender.WebCamExtender.PlayPositiveAme*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.PlayPositiveAme
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender_PlayPositiveAme_System_Boolean_
+  name: PlayPositiveAme
+  nameWithType: WebCamExtender.PlayPositiveAme
+  fullName: NSOMediaExtender.WebCamExtender.PlayPositiveAme
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NSOMediaExtender.WebCamExtender.PlayNegativeAme*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.PlayNegativeAme
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender_PlayNegativeAme_System_Boolean_
+  name: PlayNegativeAme
+  nameWithType: WebCamExtender.PlayNegativeAme
+  fullName: NSOMediaExtender.WebCamExtender.PlayNegativeAme
+- uid: NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender_PlaySpecificIdlingAme_NSOMediaExtender_IdleAnimationType_System_Boolean_System_Boolean_
+  name: PlaySpecificIdlingAme
+  nameWithType: WebCamExtender.PlaySpecificIdlingAme
+  fullName: NSOMediaExtender.WebCamExtender.PlaySpecificIdlingAme
+- uid: NSOMediaExtender.IdleAnimationType
+  commentId: T:NSOMediaExtender.IdleAnimationType
+  parent: NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.IdleAnimationType.html
+  name: IdleAnimationType
+  nameWithType: IdleAnimationType
+  fullName: NSOMediaExtender.IdleAnimationType
+- uid: NSOMediaExtender.WebCamExtender.AddCustomAnimClip*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.AddCustomAnimClip
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender_AddCustomAnimClip_UnityEngine_AnimationClip_
+  name: AddCustomAnimClip
+  nameWithType: WebCamExtender.AddCustomAnimClip
+  fullName: NSOMediaExtender.WebCamExtender.AddCustomAnimClip
+- uid: UnityEngine.AnimationClip
+  commentId: T:UnityEngine.AnimationClip
+  parent: UnityEngine
+  isExternal: true
+  name: AnimationClip
+  nameWithType: AnimationClip
+  fullName: UnityEngine.AnimationClip
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.Collections.Generic.List{UnityEngine.AnimationClip}
+  commentId: T:System.Collections.Generic.List{UnityEngine.AnimationClip}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<AnimationClip>
+  nameWithType: List<AnimationClip>
+  fullName: System.Collections.Generic.List<UnityEngine.AnimationClip>
+  nameWithType.vb: List(Of AnimationClip)
+  fullName.vb: System.Collections.Generic.List(Of UnityEngine.AnimationClip)
+  name.vb: List(Of AnimationClip)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NSOMediaExtender.WebCamExtender.AddCustomIdleAnims*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.AddCustomIdleAnims
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender_AddCustomIdleAnims_System_Collections_Generic_List_System_String__NSOMediaExtender_WebcamType_
+  name: AddCustomIdleAnims
+  nameWithType: WebCamExtender.AddCustomIdleAnims
+  fullName: NSOMediaExtender.WebCamExtender.AddCustomIdleAnims
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NSOMediaExtender.WebcamType
+  commentId: T:NSOMediaExtender.WebcamType
+  parent: NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.WebcamType.html
+  name: WebcamType
+  nameWithType: WebcamType
+  fullName: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender_ReplaceCustomIdleAnims_System_Collections_Generic_List_System_String__NSOMediaExtender_WebcamType_
+  name: ReplaceCustomIdleAnims
+  nameWithType: WebCamExtender.ReplaceCustomIdleAnims
+  fullName: NSOMediaExtender.WebCamExtender.ReplaceCustomIdleAnims
+- uid: NSOMediaExtender.WebCamExtender.#ctor*
+  commentId: Overload:NSOMediaExtender.WebCamExtender.#ctor
+  isExternal: true
+  href: NSOMediaExtender.WebCamExtender.html#NSOMediaExtender_WebCamExtender__ctor
+  name: WebCamExtender
+  nameWithType: WebCamExtender.WebCamExtender
+  fullName: NSOMediaExtender.WebCamExtender.WebCamExtender
+  nameWithType.vb: WebCamExtender.New
+  fullName.vb: NSOMediaExtender.WebCamExtender.New
+  name.vb: New

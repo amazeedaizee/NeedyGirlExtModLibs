@@ -1,0 +1,117 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOEventExtender.CEffectState
+  commentId: T:NGOEventExtender.CEffectState
+  id: CEffectState
+  parent: NGOEventExtender
+  children:
+  - NGOEventExtender.CEffectState.In
+  - NGOEventExtender.CEffectState.Out
+  - NGOEventExtender.CEffectState.Win
+  - NGOEventExtender.CEffectState.Win_Stop
+  langs:
+  - csharp
+  - vb
+  name: CEffectState
+  nameWithType: CEffectState
+  fullName: NGOEventExtender.CEffectState
+  type: Enum
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    The states used to load in a border effect.
+
+    <ul><li><span class="term">In</span>Effect loads in and is set into its first state.</li><li><span class="term">Win_Stop</span>Animation is paused.</li><li><span class="term">Win</span>If effect is loaded in, it is set into its primary state.</li><li><span class="term">Out</span>Exits the effect.</li></ul>
+  example: []
+  syntax:
+    content: public enum CEffectState
+    content.vb: Public Enum CEffectState
+- uid: NGOEventExtender.CEffectState.In
+  commentId: F:NGOEventExtender.CEffectState.In
+  id: In
+  parent: NGOEventExtender.CEffectState
+  langs:
+  - csharp
+  - vb
+  name: In
+  nameWithType: CEffectState.In
+  fullName: NGOEventExtender.CEffectState.In
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: In = 0
+    return:
+      type: NGOEventExtender.CEffectState
+- uid: NGOEventExtender.CEffectState.Win_Stop
+  commentId: F:NGOEventExtender.CEffectState.Win_Stop
+  id: Win_Stop
+  parent: NGOEventExtender.CEffectState
+  langs:
+  - csharp
+  - vb
+  name: Win_Stop
+  nameWithType: CEffectState.Win_Stop
+  fullName: NGOEventExtender.CEffectState.Win_Stop
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Win_Stop = 1
+    return:
+      type: NGOEventExtender.CEffectState
+- uid: NGOEventExtender.CEffectState.Win
+  commentId: F:NGOEventExtender.CEffectState.Win
+  id: Win
+  parent: NGOEventExtender.CEffectState
+  langs:
+  - csharp
+  - vb
+  name: Win
+  nameWithType: CEffectState.Win
+  fullName: NGOEventExtender.CEffectState.Win
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Win = 2
+    return:
+      type: NGOEventExtender.CEffectState
+- uid: NGOEventExtender.CEffectState.Out
+  commentId: F:NGOEventExtender.CEffectState.Out
+  id: Out
+  parent: NGOEventExtender.CEffectState
+  langs:
+  - csharp
+  - vb
+  name: Out
+  nameWithType: CEffectState.Out
+  fullName: NGOEventExtender.CEffectState.Out
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Out = 3
+    return:
+      type: NGOEventExtender.CEffectState
+references:
+- uid: NGOEventExtender
+  commentId: N:NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.html
+  name: NGOEventExtender
+  nameWithType: NGOEventExtender
+  fullName: NGOEventExtender
+- uid: NGOEventExtender.CEffectState
+  commentId: T:NGOEventExtender.CEffectState
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.CEffectState.html
+  name: CEffectState
+  nameWithType: CEffectState
+  fullName: NGOEventExtender.CEffectState

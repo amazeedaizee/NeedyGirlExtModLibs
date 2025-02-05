@@ -1,0 +1,777 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOEventExtender.StreamExtender
+  commentId: T:NGOEventExtender.StreamExtender
+  id: StreamExtender
+  parent: NGOEventExtender
+  children:
+  - NGOEventExtender.StreamExtender.#ctor
+  - NGOEventExtender.StreamExtender.AddConditionalStream(NGOEventExtender.ExtNgoStream)
+  - NGOEventExtender.StreamExtender.AddConditionalStream``1
+  - NGOEventExtender.StreamExtender.AddExtActionStream(NGOEventExtender.ExtActionNgoStream)
+  - NGOEventExtender.StreamExtender.AddExtActionStream``1
+  - NGOEventExtender.StreamExtender.AwaitCustomStream(NGOEventExtender.ExtNgoStream)
+  - NGOEventExtender.StreamExtender.AwaitCustomStream``1
+  - NGOEventExtender.StreamExtender.AwaitDarkAngelTransform
+  - NGOEventExtender.StreamExtender.EndCustomStream
+  - NGOEventExtender.StreamExtender.InitializeFirstAnim(System.String)
+  - NGOEventExtender.StreamExtender.StartCustomStream(NGOEventExtender.ExtNgoStream,System.Boolean,System.Boolean)
+  - NGOEventExtender.StreamExtender.StartCustomStream``1(System.Boolean,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: StreamExtender
+  nameWithType: StreamExtender
+  fullName: NGOEventExtender.StreamExtender
+  type: Class
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class StreamExtender
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class StreamExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NGOEventExtender.StreamExtender.InitializeFirstAnim(System.String)
+  commentId: M:NGOEventExtender.StreamExtender.InitializeFirstAnim(System.String)
+  id: InitializeFirstAnim(System.String)
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: InitializeFirstAnim(string)
+  nameWithType: StreamExtender.InitializeFirstAnim(string)
+  fullName: NGOEventExtender.StreamExtender.InitializeFirstAnim(string)
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Caches the first animation to be used in a later stream. 
+
+    Recommnended if KAngel is the first one to speak in a stream.
+  remarks: <code>Action_HaishinStart</code> already does this process.
+  example: []
+  syntax:
+    content: public static UniTask InitializeFirstAnim(string anim)
+    parameters:
+    - id: anim
+      type: System.String
+      description: ''
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+      description: ''
+    content.vb: Public Shared Function InitializeFirstAnim(anim As String) As UniTask
+  overload: NGOEventExtender.StreamExtender.InitializeFirstAnim*
+  nameWithType.vb: StreamExtender.InitializeFirstAnim(String)
+  fullName.vb: NGOEventExtender.StreamExtender.InitializeFirstAnim(String)
+  name.vb: InitializeFirstAnim(String)
+- uid: NGOEventExtender.StreamExtender.StartCustomStream``1(System.Boolean,System.Boolean)
+  commentId: M:NGOEventExtender.StreamExtender.StartCustomStream``1(System.Boolean,System.Boolean)
+  id: StartCustomStream``1(System.Boolean,System.Boolean)
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: StartCustomStream<T>(bool, bool)
+  nameWithType: StreamExtender.StartCustomStream<T>(bool, bool)
+  fullName: NGOEventExtender.StreamExtender.StartCustomStream<T>(bool, bool)
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: Starts a custom stream, based on the contents from your <code>ExtNgoStream.</code><br />Make sure the <code>ExtNgoStream</code> you use isn't static.
+  example: []
+  syntax:
+    content: 'public static void StartCustomStream<T>(bool isDarkUI = false, bool isDarkAnim = false) where T : ExtNgoStream'
+    parameters:
+    - id: isDarkUI
+      type: System.Boolean
+      description: If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.
+    - id: isDarkAnim
+      type: System.Boolean
+      description: If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.
+    typeParameters:
+    - id: T
+      description: The <code>ExtNgoStream</code> data used to load your custom stream.
+    content.vb: Public Shared Sub StartCustomStream(Of T As ExtNgoStream)(isDarkUI As Boolean = False, isDarkAnim As Boolean = False)
+  overload: NGOEventExtender.StreamExtender.StartCustomStream*
+  nameWithType.vb: StreamExtender.StartCustomStream(Of T)(Boolean, Boolean)
+  fullName.vb: NGOEventExtender.StreamExtender.StartCustomStream(Of T)(Boolean, Boolean)
+  name.vb: StartCustomStream(Of T)(Boolean, Boolean)
+- uid: NGOEventExtender.StreamExtender.AwaitCustomStream``1
+  commentId: M:NGOEventExtender.StreamExtender.AwaitCustomStream``1
+  id: AwaitCustomStream``1
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AwaitCustomStream<T>()
+  nameWithType: StreamExtender.AwaitCustomStream<T>()
+  fullName: NGOEventExtender.StreamExtender.AwaitCustomStream<T>()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Saves a custom stream to be used later when the Broadcast window is opened. 
+
+    Useful if you want to start a stream without the transformation playing.
+  remarks: Will only be saved for one upcoming stream only. (it will reset after a stream)
+  example: []
+  syntax:
+    content: 'public static UniTask AwaitCustomStream<T>() where T : ExtNgoStream'
+    typeParameters:
+    - id: T
+      description: The custom stream to load later on.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+      description: ''
+    content.vb: Public Shared Function AwaitCustomStream(Of T As ExtNgoStream)() As UniTask
+  overload: NGOEventExtender.StreamExtender.AwaitCustomStream*
+  nameWithType.vb: StreamExtender.AwaitCustomStream(Of T)()
+  fullName.vb: NGOEventExtender.StreamExtender.AwaitCustomStream(Of T)()
+  name.vb: AwaitCustomStream(Of T)()
+- uid: NGOEventExtender.StreamExtender.AwaitCustomStream(NGOEventExtender.ExtNgoStream)
+  commentId: M:NGOEventExtender.StreamExtender.AwaitCustomStream(NGOEventExtender.ExtNgoStream)
+  id: AwaitCustomStream(NGOEventExtender.ExtNgoStream)
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AwaitCustomStream(ExtNgoStream)
+  nameWithType: StreamExtender.AwaitCustomStream(ExtNgoStream)
+  fullName: NGOEventExtender.StreamExtender.AwaitCustomStream(NGOEventExtender.ExtNgoStream)
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Saves a custom stream to be used later when the Broadcast window is opened. 
+
+    Useful if you want to start a stream without the transformation playing.
+  remarks: Will only be saved for one upcoming stream only. (it will reset after a stream)
+  example: []
+  syntax:
+    content: public static UniTask AwaitCustomStream(ExtNgoStream stream)
+    parameters:
+    - id: stream
+      type: NGOEventExtender.ExtNgoStream
+      description: The custom stream to load later on.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+      description: ''
+    content.vb: Public Shared Function AwaitCustomStream(stream As ExtNgoStream) As UniTask
+  overload: NGOEventExtender.StreamExtender.AwaitCustomStream*
+- uid: NGOEventExtender.StreamExtender.AwaitDarkAngelTransform
+  commentId: M:NGOEventExtender.StreamExtender.AwaitDarkAngelTransform
+  id: AwaitDarkAngelTransform
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AwaitDarkAngelTransform()
+  nameWithType: StreamExtender.AwaitDarkAngelTransform()
+  fullName: NGOEventExtender.StreamExtender.AwaitDarkAngelTransform()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: Sets the Dark Angel transformation scene to play instead of the normal transformation scene the next time the Transform! window appears.
+  remarks: Will only play for one upcoming Transform! scene only. (it will reset after a stream)
+  example: []
+  syntax:
+    content: public static void AwaitDarkAngelTransform()
+    content.vb: Public Shared Sub AwaitDarkAngelTransform()
+  overload: NGOEventExtender.StreamExtender.AwaitDarkAngelTransform*
+- uid: NGOEventExtender.StreamExtender.StartCustomStream(NGOEventExtender.ExtNgoStream,System.Boolean,System.Boolean)
+  commentId: M:NGOEventExtender.StreamExtender.StartCustomStream(NGOEventExtender.ExtNgoStream,System.Boolean,System.Boolean)
+  id: StartCustomStream(NGOEventExtender.ExtNgoStream,System.Boolean,System.Boolean)
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: StartCustomStream(ExtNgoStream, bool, bool)
+  nameWithType: StreamExtender.StartCustomStream(ExtNgoStream, bool, bool)
+  fullName: NGOEventExtender.StreamExtender.StartCustomStream(NGOEventExtender.ExtNgoStream, bool, bool)
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: Starts a custom stream, based on the contents from your <code>ExtNgoStream.</code><br />Make sure the <code>ExtNgoStream</code> you use isn't static.
+  example: []
+  syntax:
+    content: public static void StartCustomStream(ExtNgoStream stream, bool isDarkUI = false, bool isDarkAnim = false)
+    parameters:
+    - id: stream
+      type: NGOEventExtender.ExtNgoStream
+      description: The <code>ExtNgoStream</code> data used to load your custom stream. Make sure the <code>ExtNgoStream</code> you use isn't static.
+    - id: isDarkUI
+      type: System.Boolean
+      description: If true, loads in the Dark UI for the stream, otherwise uses the default stream UI.
+    - id: isDarkAnim
+      type: System.Boolean
+      description: If true, uses the Dark Angel transformation before a stream, otherwise uses the default KAngel transformation.
+    content.vb: Public Shared Sub StartCustomStream(stream As ExtNgoStream, isDarkUI As Boolean = False, isDarkAnim As Boolean = False)
+  overload: NGOEventExtender.StreamExtender.StartCustomStream*
+  nameWithType.vb: StreamExtender.StartCustomStream(ExtNgoStream, Boolean, Boolean)
+  fullName.vb: NGOEventExtender.StreamExtender.StartCustomStream(NGOEventExtender.ExtNgoStream, Boolean, Boolean)
+  name.vb: StartCustomStream(ExtNgoStream, Boolean, Boolean)
+- uid: NGOEventExtender.StreamExtender.AddExtActionStream``1
+  commentId: M:NGOEventExtender.StreamExtender.AddExtActionStream``1
+  id: AddExtActionStream``1
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddExtActionStream<T>()
+  nameWithType: StreamExtender.AddExtActionStream<T>()
+  fullName: NGOEventExtender.StreamExtender.AddExtActionStream<T>()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Adds a custom normal stream to the game, where it will only play if its conditions are met.
+
+    <br /> (Normal: the streams you can choose during a night.)
+
+    <br /> Useful if you want to replace a queued stream with your own.
+  remarks: Your streams take priority over others, so make sure your conditions are specific.
+  example: []
+  syntax:
+    content: 'public static void AddExtActionStream<T>() where T : ExtActionNgoStream'
+    typeParameters:
+    - id: T
+      description: The custom stream to add.
+    content.vb: Public Shared Sub AddExtActionStream(Of T As ExtActionNgoStream)()
+  overload: NGOEventExtender.StreamExtender.AddExtActionStream*
+  nameWithType.vb: StreamExtender.AddExtActionStream(Of T)()
+  fullName.vb: NGOEventExtender.StreamExtender.AddExtActionStream(Of T)()
+  name.vb: AddExtActionStream(Of T)()
+- uid: NGOEventExtender.StreamExtender.AddExtActionStream(NGOEventExtender.ExtActionNgoStream)
+  commentId: M:NGOEventExtender.StreamExtender.AddExtActionStream(NGOEventExtender.ExtActionNgoStream)
+  id: AddExtActionStream(NGOEventExtender.ExtActionNgoStream)
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddExtActionStream(ExtActionNgoStream)
+  nameWithType: StreamExtender.AddExtActionStream(ExtActionNgoStream)
+  fullName: NGOEventExtender.StreamExtender.AddExtActionStream(NGOEventExtender.ExtActionNgoStream)
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Adds a custom normal stream to the game, where it will only play if its conditions are met.
+
+    <br /> (Normal: the streams you can choose during a night.)
+
+    <br /> Useful if you want to replace a queued stream with your own.
+  remarks: Your streams take priority over others, so make sure your conditions are specific.
+  example: []
+  syntax:
+    content: public static void AddExtActionStream(ExtActionNgoStream stream)
+    parameters:
+    - id: stream
+      type: NGOEventExtender.ExtActionNgoStream
+      description: The custom stream to add.
+    content.vb: Public Shared Sub AddExtActionStream(stream As ExtActionNgoStream)
+  overload: NGOEventExtender.StreamExtender.AddExtActionStream*
+- uid: NGOEventExtender.StreamExtender.AddConditionalStream``1
+  commentId: M:NGOEventExtender.StreamExtender.AddConditionalStream``1
+  id: AddConditionalStream``1
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddConditionalStream<T>()
+  nameWithType: StreamExtender.AddConditionalStream<T>()
+  fullName: NGOEventExtender.StreamExtender.AddConditionalStream<T>()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Adds a custom stream to the game, where it will only play if its conditions are met.
+
+    <br /> Useful if you want to replace a queued stream with your own.
+  remarks: Your streams take priority over others, so make sure your conditions are specific.
+  example: []
+  syntax:
+    content: 'public static void AddConditionalStream<T>() where T : ExtNgoStream'
+    typeParameters:
+    - id: T
+      description: The custom stream to add.
+    content.vb: Public Shared Sub AddConditionalStream(Of T As ExtNgoStream)()
+  overload: NGOEventExtender.StreamExtender.AddConditionalStream*
+  nameWithType.vb: StreamExtender.AddConditionalStream(Of T)()
+  fullName.vb: NGOEventExtender.StreamExtender.AddConditionalStream(Of T)()
+  name.vb: AddConditionalStream(Of T)()
+- uid: NGOEventExtender.StreamExtender.AddConditionalStream(NGOEventExtender.ExtNgoStream)
+  commentId: M:NGOEventExtender.StreamExtender.AddConditionalStream(NGOEventExtender.ExtNgoStream)
+  id: AddConditionalStream(NGOEventExtender.ExtNgoStream)
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: AddConditionalStream(ExtNgoStream)
+  nameWithType: StreamExtender.AddConditionalStream(ExtNgoStream)
+  fullName: NGOEventExtender.StreamExtender.AddConditionalStream(NGOEventExtender.ExtNgoStream)
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Adds a custom stream to the game, where it will only play if its conditions are met.
+
+    <br /> Useful if you want to replace a queued stream with your own.
+  remarks: Your streams take priority over others, so make sure your conditions are specific.
+  example: []
+  syntax:
+    content: public static void AddConditionalStream(ExtNgoStream stream)
+    parameters:
+    - id: stream
+      type: NGOEventExtender.ExtNgoStream
+      description: The custom stream to add.
+    content.vb: Public Shared Sub AddConditionalStream(stream As ExtNgoStream)
+  overload: NGOEventExtender.StreamExtender.AddConditionalStream*
+- uid: NGOEventExtender.StreamExtender.EndCustomStream
+  commentId: M:NGOEventExtender.StreamExtender.EndCustomStream
+  id: EndCustomStream
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: EndCustomStream()
+  nameWithType: StreamExtender.EndCustomStream()
+  fullName: NGOEventExtender.StreamExtender.EndCustomStream()
+  type: Method
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: Ends a custom stream. Calculates stats if an ExtActionNgoStream is playing, otherwise just closes the Stream window.
+  example: []
+  syntax:
+    content: public static void EndCustomStream()
+    content.vb: Public Shared Sub EndCustomStream()
+  overload: NGOEventExtender.StreamExtender.EndCustomStream*
+- uid: NGOEventExtender.StreamExtender.#ctor
+  commentId: M:NGOEventExtender.StreamExtender.#ctor
+  id: '#ctor'
+  parent: NGOEventExtender.StreamExtender
+  langs:
+  - csharp
+  - vb
+  name: StreamExtender()
+  nameWithType: StreamExtender.StreamExtender()
+  fullName: NGOEventExtender.StreamExtender.StreamExtender()
+  type: Constructor
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: public StreamExtender()
+    content.vb: Public Sub New()
+  overload: NGOEventExtender.StreamExtender.#ctor*
+  nameWithType.vb: StreamExtender.New()
+  fullName.vb: NGOEventExtender.StreamExtender.New()
+  name.vb: New()
+references:
+- uid: NGOEventExtender
+  commentId: N:NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.html
+  name: NGOEventExtender
+  nameWithType: NGOEventExtender
+  fullName: NGOEventExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NGOEventExtender.StreamExtender.InitializeFirstAnim*
+  commentId: Overload:NGOEventExtender.StreamExtender.InitializeFirstAnim
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_InitializeFirstAnim_System_String_
+  name: InitializeFirstAnim
+  nameWithType: StreamExtender.InitializeFirstAnim
+  fullName: NGOEventExtender.StreamExtender.InitializeFirstAnim
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Cysharp.Threading.Tasks.UniTask
+  commentId: T:Cysharp.Threading.Tasks.UniTask
+  parent: Cysharp.Threading.Tasks
+  isExternal: true
+  name: UniTask
+  nameWithType: UniTask
+  fullName: Cysharp.Threading.Tasks.UniTask
+- uid: Cysharp.Threading.Tasks
+  commentId: N:Cysharp.Threading.Tasks
+  isExternal: true
+  name: Cysharp.Threading.Tasks
+  nameWithType: Cysharp.Threading.Tasks
+  fullName: Cysharp.Threading.Tasks
+  spec.csharp:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+  spec.vb:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+- uid: NGOEventExtender.StreamExtender.StartCustomStream*
+  commentId: Overload:NGOEventExtender.StreamExtender.StartCustomStream
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_StartCustomStream__1_System_Boolean_System_Boolean_
+  name: StartCustomStream
+  nameWithType: StreamExtender.StartCustomStream
+  fullName: NGOEventExtender.StreamExtender.StartCustomStream
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NGOEventExtender.StreamExtender.AwaitCustomStream*
+  commentId: Overload:NGOEventExtender.StreamExtender.AwaitCustomStream
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_AwaitCustomStream__1
+  name: AwaitCustomStream
+  nameWithType: StreamExtender.AwaitCustomStream
+  fullName: NGOEventExtender.StreamExtender.AwaitCustomStream
+- uid: NGOEventExtender.ExtNgoStream
+  commentId: T:NGOEventExtender.ExtNgoStream
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.ExtNgoStream.html
+  name: ExtNgoStream
+  nameWithType: ExtNgoStream
+  fullName: NGOEventExtender.ExtNgoStream
+- uid: NGOEventExtender.StreamExtender.AwaitDarkAngelTransform*
+  commentId: Overload:NGOEventExtender.StreamExtender.AwaitDarkAngelTransform
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_AwaitDarkAngelTransform
+  name: AwaitDarkAngelTransform
+  nameWithType: StreamExtender.AwaitDarkAngelTransform
+  fullName: NGOEventExtender.StreamExtender.AwaitDarkAngelTransform
+- uid: NGOEventExtender.StreamExtender.AddExtActionStream*
+  commentId: Overload:NGOEventExtender.StreamExtender.AddExtActionStream
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_AddExtActionStream__1
+  name: AddExtActionStream
+  nameWithType: StreamExtender.AddExtActionStream
+  fullName: NGOEventExtender.StreamExtender.AddExtActionStream
+- uid: NGOEventExtender.ExtActionNgoStream
+  commentId: T:NGOEventExtender.ExtActionNgoStream
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.ExtActionNgoStream.html
+  name: ExtActionNgoStream
+  nameWithType: ExtActionNgoStream
+  fullName: NGOEventExtender.ExtActionNgoStream
+- uid: NGOEventExtender.StreamExtender.AddConditionalStream*
+  commentId: Overload:NGOEventExtender.StreamExtender.AddConditionalStream
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_AddConditionalStream__1
+  name: AddConditionalStream
+  nameWithType: StreamExtender.AddConditionalStream
+  fullName: NGOEventExtender.StreamExtender.AddConditionalStream
+- uid: NGOEventExtender.StreamExtender.EndCustomStream*
+  commentId: Overload:NGOEventExtender.StreamExtender.EndCustomStream
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender_EndCustomStream
+  name: EndCustomStream
+  nameWithType: StreamExtender.EndCustomStream
+  fullName: NGOEventExtender.StreamExtender.EndCustomStream
+- uid: NGOEventExtender.StreamExtender.#ctor*
+  commentId: Overload:NGOEventExtender.StreamExtender.#ctor
+  isExternal: true
+  href: NGOEventExtender.StreamExtender.html#NGOEventExtender_StreamExtender__ctor
+  name: StreamExtender
+  nameWithType: StreamExtender.StreamExtender
+  fullName: NGOEventExtender.StreamExtender.StreamExtender
+  nameWithType.vb: StreamExtender.New
+  fullName.vb: NGOEventExtender.StreamExtender.New
+  name.vb: New

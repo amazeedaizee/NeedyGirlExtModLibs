@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace NGOExtraSettings
 {
+    /// <exclude />
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInProcess("Windose.exe")]
     public class MyPatches : BaseUnityPlugin

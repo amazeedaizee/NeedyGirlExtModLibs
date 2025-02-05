@@ -1,0 +1,408 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.AudioExtender
+  commentId: T:NSOMediaExtender.AudioExtender
+  id: AudioExtender
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.AudioExtender.#ctor
+  - NSOMediaExtender.AudioExtender.NewSoundFromClip(UnityEngine.AudioClip)
+  - NSOMediaExtender.AudioExtender.PlayCustomSound(System.String)
+  langs:
+  - csharp
+  - vb
+  name: AudioExtender
+  nameWithType: AudioExtender
+  fullName: NSOMediaExtender.AudioExtender
+  type: Class
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class AudioExtender
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class AudioExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NSOMediaExtender.AudioExtender.PlayCustomSound(System.String)
+  commentId: M:NSOMediaExtender.AudioExtender.PlayCustomSound(System.String)
+  id: PlayCustomSound(System.String)
+  parent: NSOMediaExtender.AudioExtender
+  langs:
+  - csharp
+  - vb
+  name: PlayCustomSound(string)
+  nameWithType: AudioExtender.PlayCustomSound(string)
+  fullName: NSOMediaExtender.AudioExtender.PlayCustomSound(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Plays a custom <code>Sound</code> from the Custom Sound List.
+  example: []
+  syntax:
+    content: public static void PlayCustomSound(string Id)
+    parameters:
+    - id: Id
+      type: System.String
+      description: The <code>Sound</code> that you want to play, using their Id.
+    content.vb: Public Shared Sub PlayCustomSound(Id As String)
+  overload: NSOMediaExtender.AudioExtender.PlayCustomSound*
+  nameWithType.vb: AudioExtender.PlayCustomSound(String)
+  fullName.vb: NSOMediaExtender.AudioExtender.PlayCustomSound(String)
+  name.vb: PlayCustomSound(String)
+- uid: NSOMediaExtender.AudioExtender.NewSoundFromClip(UnityEngine.AudioClip)
+  commentId: M:NSOMediaExtender.AudioExtender.NewSoundFromClip(UnityEngine.AudioClip)
+  id: NewSoundFromClip(UnityEngine.AudioClip)
+  parent: NSOMediaExtender.AudioExtender
+  langs:
+  - csharp
+  - vb
+  name: NewSoundFromClip(AudioClip)
+  nameWithType: AudioExtender.NewSoundFromClip(AudioClip)
+  fullName: NSOMediaExtender.AudioExtender.NewSoundFromClip(UnityEngine.AudioClip)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Creates a new <code>Sound</code> from an <code>AudioClip</code>, and adds it to the Custom Sound List.
+  example: []
+  syntax:
+    content: public static void NewSoundFromClip(AudioClip clip)
+    parameters:
+    - id: clip
+      type: UnityEngine.AudioClip
+      description: The <code>AudioClip</code> used to make the <code>Sound.</code>
+    content.vb: Public Shared Sub NewSoundFromClip(clip As AudioClip)
+  overload: NSOMediaExtender.AudioExtender.NewSoundFromClip*
+- uid: NSOMediaExtender.AudioExtender.#ctor
+  commentId: M:NSOMediaExtender.AudioExtender.#ctor
+  id: '#ctor'
+  parent: NSOMediaExtender.AudioExtender
+  langs:
+  - csharp
+  - vb
+  name: AudioExtender()
+  nameWithType: AudioExtender.AudioExtender()
+  fullName: NSOMediaExtender.AudioExtender.AudioExtender()
+  type: Constructor
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public AudioExtender()
+    content.vb: Public Sub New()
+  overload: NSOMediaExtender.AudioExtender.#ctor*
+  nameWithType.vb: AudioExtender.New()
+  fullName.vb: NSOMediaExtender.AudioExtender.New()
+  name.vb: New()
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NSOMediaExtender.AudioExtender.PlayCustomSound*
+  commentId: Overload:NSOMediaExtender.AudioExtender.PlayCustomSound
+  isExternal: true
+  href: NSOMediaExtender.AudioExtender.html#NSOMediaExtender_AudioExtender_PlayCustomSound_System_String_
+  name: PlayCustomSound
+  nameWithType: AudioExtender.PlayCustomSound
+  fullName: NSOMediaExtender.AudioExtender.PlayCustomSound
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NSOMediaExtender.AudioExtender.NewSoundFromClip*
+  commentId: Overload:NSOMediaExtender.AudioExtender.NewSoundFromClip
+  isExternal: true
+  href: NSOMediaExtender.AudioExtender.html#NSOMediaExtender_AudioExtender_NewSoundFromClip_UnityEngine_AudioClip_
+  name: NewSoundFromClip
+  nameWithType: AudioExtender.NewSoundFromClip
+  fullName: NSOMediaExtender.AudioExtender.NewSoundFromClip
+- uid: UnityEngine.AudioClip
+  commentId: T:UnityEngine.AudioClip
+  parent: UnityEngine
+  isExternal: true
+  name: AudioClip
+  nameWithType: AudioClip
+  fullName: UnityEngine.AudioClip
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: NSOMediaExtender.AudioExtender.#ctor*
+  commentId: Overload:NSOMediaExtender.AudioExtender.#ctor
+  isExternal: true
+  href: NSOMediaExtender.AudioExtender.html#NSOMediaExtender_AudioExtender__ctor
+  name: AudioExtender
+  nameWithType: AudioExtender.AudioExtender
+  fullName: NSOMediaExtender.AudioExtender.AudioExtender
+  nameWithType.vb: AudioExtender.New
+  fullName.vb: NSOMediaExtender.AudioExtender.New
+  name.vb: New

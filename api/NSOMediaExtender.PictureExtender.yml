@@ -1,0 +1,439 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.PictureExtender
+  commentId: T:NSOMediaExtender.PictureExtender
+  id: PictureExtender
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.PictureExtender.#ctor
+  - NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics(UnityEngine.Sprite)
+  - NSOMediaExtender.PictureExtender.CreateExtResWithAddress(System.String)
+  - NSOMediaExtender.PictureExtender.ExtSpriteToResLocal
+  langs:
+  - csharp
+  - vb
+  name: PictureExtender
+  nameWithType: PictureExtender
+  fullName: NSOMediaExtender.PictureExtender
+  type: Class
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class PictureExtender
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class PictureExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics(UnityEngine.Sprite)
+  commentId: M:NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics(UnityEngine.Sprite)
+  id: AddExtSpriteForMyPics(UnityEngine.Sprite)
+  parent: NSOMediaExtender.PictureExtender
+  langs:
+  - csharp
+  - vb
+  name: AddExtSpriteForMyPics(Sprite)
+  nameWithType: PictureExtender.AddExtSpriteForMyPics(Sprite)
+  fullName: NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics(UnityEngine.Sprite)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Adds a <code>Sprite</code> to the <code>Sprite</code> Extlist.
+  example: []
+  syntax:
+    content: public static void AddExtSpriteForMyPics(Sprite sprite)
+    parameters:
+    - id: sprite
+      type: UnityEngine.Sprite
+      description: The sprite to load.
+    content.vb: Public Shared Sub AddExtSpriteForMyPics(sprite As Sprite)
+  overload: NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics*
+- uid: NSOMediaExtender.PictureExtender.CreateExtResWithAddress(System.String)
+  commentId: M:NSOMediaExtender.PictureExtender.CreateExtResWithAddress(System.String)
+  id: CreateExtResWithAddress(System.String)
+  parent: NSOMediaExtender.PictureExtender
+  langs:
+  - csharp
+  - vb
+  name: CreateExtResWithAddress(string)
+  nameWithType: PictureExtender.CreateExtResWithAddress(string)
+  fullName: NSOMediaExtender.PictureExtender.CreateExtResWithAddress(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: >-
+    Creates a ResourceLocal object, the reference the game uses to load an image from Tweeter/Poketter, Jine, and MyPictures.
+
+    <br /> Only use this if you're relying on Addressables to load images.
+  example: []
+  syntax:
+    content: public static void CreateExtResWithAddress(string address)
+    parameters:
+    - id: address
+      type: System.String
+      description: The image's addressable Id, which the game will use to load the image.
+    content.vb: Public Shared Sub CreateExtResWithAddress(address As String)
+  overload: NSOMediaExtender.PictureExtender.CreateExtResWithAddress*
+  nameWithType.vb: PictureExtender.CreateExtResWithAddress(String)
+  fullName.vb: NSOMediaExtender.PictureExtender.CreateExtResWithAddress(String)
+  name.vb: CreateExtResWithAddress(String)
+- uid: NSOMediaExtender.PictureExtender.ExtSpriteToResLocal
+  commentId: M:NSOMediaExtender.PictureExtender.ExtSpriteToResLocal
+  id: ExtSpriteToResLocal
+  parent: NSOMediaExtender.PictureExtender
+  langs:
+  - csharp
+  - vb
+  name: ExtSpriteToResLocal()
+  nameWithType: PictureExtender.ExtSpriteToResLocal()
+  fullName: NSOMediaExtender.PictureExtender.ExtSpriteToResLocal()
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Uses the <code>Sprite</code> ExtList to create related ResourceLocal objects, the reference the game uses to load an image from Tweeter/Poketter, Jine, and MyPictures.
+  example: []
+  syntax:
+    content: public static void ExtSpriteToResLocal()
+    content.vb: Public Shared Sub ExtSpriteToResLocal()
+  overload: NSOMediaExtender.PictureExtender.ExtSpriteToResLocal*
+- uid: NSOMediaExtender.PictureExtender.#ctor
+  commentId: M:NSOMediaExtender.PictureExtender.#ctor
+  id: '#ctor'
+  parent: NSOMediaExtender.PictureExtender
+  langs:
+  - csharp
+  - vb
+  name: PictureExtender()
+  nameWithType: PictureExtender.PictureExtender()
+  fullName: NSOMediaExtender.PictureExtender.PictureExtender()
+  type: Constructor
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public PictureExtender()
+    content.vb: Public Sub New()
+  overload: NSOMediaExtender.PictureExtender.#ctor*
+  nameWithType.vb: PictureExtender.New()
+  fullName.vb: NSOMediaExtender.PictureExtender.New()
+  name.vb: New()
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics*
+  commentId: Overload:NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics
+  isExternal: true
+  href: NSOMediaExtender.PictureExtender.html#NSOMediaExtender_PictureExtender_AddExtSpriteForMyPics_UnityEngine_Sprite_
+  name: AddExtSpriteForMyPics
+  nameWithType: PictureExtender.AddExtSpriteForMyPics
+  fullName: NSOMediaExtender.PictureExtender.AddExtSpriteForMyPics
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: NSOMediaExtender.PictureExtender.CreateExtResWithAddress*
+  commentId: Overload:NSOMediaExtender.PictureExtender.CreateExtResWithAddress
+  isExternal: true
+  href: NSOMediaExtender.PictureExtender.html#NSOMediaExtender_PictureExtender_CreateExtResWithAddress_System_String_
+  name: CreateExtResWithAddress
+  nameWithType: PictureExtender.CreateExtResWithAddress
+  fullName: NSOMediaExtender.PictureExtender.CreateExtResWithAddress
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NSOMediaExtender.PictureExtender.ExtSpriteToResLocal*
+  commentId: Overload:NSOMediaExtender.PictureExtender.ExtSpriteToResLocal
+  isExternal: true
+  href: NSOMediaExtender.PictureExtender.html#NSOMediaExtender_PictureExtender_ExtSpriteToResLocal
+  name: ExtSpriteToResLocal
+  nameWithType: PictureExtender.ExtSpriteToResLocal
+  fullName: NSOMediaExtender.PictureExtender.ExtSpriteToResLocal
+- uid: NSOMediaExtender.PictureExtender.#ctor*
+  commentId: Overload:NSOMediaExtender.PictureExtender.#ctor
+  isExternal: true
+  href: NSOMediaExtender.PictureExtender.html#NSOMediaExtender_PictureExtender__ctor
+  name: PictureExtender
+  nameWithType: PictureExtender.PictureExtender
+  fullName: NSOMediaExtender.PictureExtender.PictureExtender
+  nameWithType.vb: PictureExtender.New
+  fullName.vb: NSOMediaExtender.PictureExtender.New
+  name.vb: New

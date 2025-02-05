@@ -1,0 +1,1105 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOTxtExtender.JineExtender
+  commentId: T:NGOTxtExtender.JineExtender
+  id: JineExtender
+  parent: NGOTxtExtender
+  children:
+  - NGOTxtExtender.JineExtender.#ctor
+  - NGOTxtExtender.JineExtender.ExtList
+  - NGOTxtExtender.JineExtender.ResetExtReplyList
+  - NGOTxtExtender.JineExtender.StartAmeJine(NGO.JineType)
+  - NGOTxtExtender.JineExtender.StartExtAmeJine(System.String)
+  - NGOTxtExtender.JineExtender.StartExtPiListAndSet(System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action)
+  - NGOTxtExtender.JineExtender.StartExtPiOption(System.String,System.Action)
+  - NGOTxtExtender.JineExtender.StartExtPiOptionList(System.String,System.String,System.String,System.String,System.String)
+  - NGOTxtExtender.JineExtender.StartPiListAndSet(NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action)
+  - NGOTxtExtender.JineExtender.StartPiOption(NGO.JineType,System.Action)
+  - NGOTxtExtender.JineExtender.StartPiOptionList(NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType)
+  - NGOTxtExtender.JineExtender.StartTraumaList(System.Action,System.Action)
+  - NGOTxtExtender.JineExtender.StartWrittenMsg(System.Action)
+  - NGOTxtExtender.JineExtender.StartWrittenMsg(System.Func{System.String,System.Boolean},System.Action,System.Action)
+  langs:
+  - csharp
+  - vb
+  name: JineExtender
+  nameWithType: JineExtender
+  fullName: NGOTxtExtender.JineExtender
+  type: Class
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class JineExtender
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class JineExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NGOTxtExtender.JineExtender.ExtList
+  commentId: F:NGOTxtExtender.JineExtender.ExtList
+  id: ExtList
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: ExtList
+  nameWithType: JineExtender.ExtList
+  fullName: NGOTxtExtender.JineExtender.ExtList
+  type: Field
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: public static List<LineMaster.Param> ExtList
+    return:
+      type: System.Collections.Generic.List{LineMaster.Param}
+    content.vb: Public Shared ExtList As List(Of LineMaster.Param)
+- uid: NGOTxtExtender.JineExtender.StartExtAmeJine(System.String)
+  commentId: M:NGOTxtExtender.JineExtender.StartExtAmeJine(System.String)
+  id: StartExtAmeJine(System.String)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtAmeJine(string)
+  nameWithType: JineExtender.StartExtAmeJine(string)
+  fullName: NGOTxtExtender.JineExtender.StartExtAmeJine(string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Create a custom user-made Jine message sent by Ame.
+  example: []
+  syntax:
+    content: public static UniTask StartExtAmeJine(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: The LineMaster.Param's Id used to load the message.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+    content.vb: Public Shared Function StartExtAmeJine(id As String) As UniTask
+  overload: NGOTxtExtender.JineExtender.StartExtAmeJine*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: JineExtender.StartExtAmeJine(String)
+  fullName.vb: NGOTxtExtender.JineExtender.StartExtAmeJine(String)
+  name.vb: StartExtAmeJine(String)
+- uid: NGOTxtExtender.JineExtender.StartAmeJine(NGO.JineType)
+  commentId: M:NGOTxtExtender.JineExtender.StartAmeJine(NGO.JineType)
+  id: StartAmeJine(NGO.JineType)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartAmeJine(JineType)
+  nameWithType: JineExtender.StartAmeJine(JineType)
+  fullName: NGOTxtExtender.JineExtender.StartAmeJine(NGO.JineType)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Create a Jine message sent by Ame.
+  example: []
+  syntax:
+    content: public static UniTask StartAmeJine(JineType jineData)
+    parameters:
+    - id: jineData
+      type: NGO.JineType
+      description: The JineType used to load the message. When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+    content.vb: Public Shared Function StartAmeJine(jineData As JineType) As UniTask
+  overload: NGOTxtExtender.JineExtender.StartAmeJine*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+- uid: NGOTxtExtender.JineExtender.StartExtPiOptionList(System.String,System.String,System.String,System.String,System.String)
+  commentId: M:NGOTxtExtender.JineExtender.StartExtPiOptionList(System.String,System.String,System.String,System.String,System.String)
+  id: StartExtPiOptionList(System.String,System.String,System.String,System.String,System.String)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtPiOptionList(string, string, string, string, string)
+  nameWithType: JineExtender.StartExtPiOptionList(string, string, string, string, string)
+  fullName: NGOTxtExtender.JineExtender.StartExtPiOptionList(string, string, string, string, string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a list of chooseable options on Jine. Use <code>SetExtPiOption</code> after based on the options listed.
+  example: []
+  syntax:
+    content: public static void StartExtPiOptionList(string optionOneId, string optionTwoId = null, string optionThreeId = null, string optionFourId = null, string optionFiveId = null)
+    parameters:
+    - id: optionOneId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the first option.
+    - id: optionTwoId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the second option. (optional)
+    - id: optionThreeId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the third option. (optional)
+    - id: optionFourId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the fourth option. (optional)
+    - id: optionFiveId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the fifth option. (optional)
+    content.vb: Public Shared Sub StartExtPiOptionList(optionOneId As String, optionTwoId As String = Nothing, optionThreeId As String = Nothing, optionFourId As String = Nothing, optionFiveId As String = Nothing)
+  overload: NGOTxtExtender.JineExtender.StartExtPiOptionList*
+  nameWithType.vb: JineExtender.StartExtPiOptionList(String, String, String, String, String)
+  fullName.vb: NGOTxtExtender.JineExtender.StartExtPiOptionList(String, String, String, String, String)
+  name.vb: StartExtPiOptionList(String, String, String, String, String)
+- uid: NGOTxtExtender.JineExtender.StartPiOptionList(NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType)
+  commentId: M:NGOTxtExtender.JineExtender.StartPiOptionList(NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType)
+  id: StartPiOptionList(NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType,NGO.JineType)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartPiOptionList(JineType, JineType, JineType, JineType, JineType)
+  nameWithType: JineExtender.StartPiOptionList(JineType, JineType, JineType, JineType, JineType)
+  fullName: NGOTxtExtender.JineExtender.StartPiOptionList(NGO.JineType, NGO.JineType, NGO.JineType, NGO.JineType, NGO.JineType)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a list of chooseable options on Jine. Use <code>SetPiOption</code> after based on the options listed.
+  example: []
+  syntax:
+    content: public static void StartPiOptionList(JineType optionOne, JineType optionTwo = JineType.None, JineType optionThree = JineType.None, JineType optionFour = JineType.None, JineType optionFive = JineType.None)
+    parameters:
+    - id: optionOne
+      type: NGO.JineType
+      description: The JineType used to load the first option. When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: optionTwo
+      type: NGO.JineType
+      description: The JineType used to load the second option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: optionThree
+      type: NGO.JineType
+      description: The JineType used to load the third option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: optionFour
+      type: NGO.JineType
+      description: The JineType used to load the fourth option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: optionFive
+      type: NGO.JineType
+      description: The JineType used to load the fifth option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    content.vb: Public Shared Sub StartPiOptionList(optionOne As JineType, optionTwo As JineType = JineType.None, optionThree As JineType = JineType.None, optionFour As JineType = JineType.None, optionFive As JineType = JineType.None)
+  overload: NGOTxtExtender.JineExtender.StartPiOptionList*
+- uid: NGOTxtExtender.JineExtender.StartExtPiOption(System.String,System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartExtPiOption(System.String,System.Action)
+  id: StartExtPiOption(System.String,System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtPiOption(string, Action)
+  nameWithType: JineExtender.StartExtPiOption(string, Action)
+  fullName: NGOTxtExtender.JineExtender.StartExtPiOption(string, System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Sends one custom user-made Jine message from P-chan based on the option chosen from <code>StartExtPiOptionList</code>. Using async methods for the <code>Action</code> parameters are recommended.
+  example: []
+  syntax:
+    content: public static void StartExtPiOption(string id, Action action)
+    parameters:
+    - id: id
+      type: System.String
+      description: The LineMaster.Param's Id used to load the message.
+    - id: action
+      type: System.Action
+      description: The <code>Action</code> method after this message is sent.
+    content.vb: Public Shared Sub StartExtPiOption(id As String, action As Action)
+  overload: NGOTxtExtender.JineExtender.StartExtPiOption*
+  nameWithType.vb: JineExtender.StartExtPiOption(String, Action)
+  fullName.vb: NGOTxtExtender.JineExtender.StartExtPiOption(String, System.Action)
+  name.vb: StartExtPiOption(String, Action)
+- uid: NGOTxtExtender.JineExtender.StartPiOption(NGO.JineType,System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartPiOption(NGO.JineType,System.Action)
+  id: StartPiOption(NGO.JineType,System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartPiOption(JineType, Action)
+  nameWithType: JineExtender.StartPiOption(JineType, Action)
+  fullName: NGOTxtExtender.JineExtender.StartPiOption(NGO.JineType, System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Sends one custom user-made Jine message from P-chan based on the option chosen from <code>StartExtPiOptionList</code>. Using async methods for the <code>Action</code> parameters are recommended.
+  example: []
+  syntax:
+    content: public static void StartPiOption(JineType jineData, Action action)
+    parameters:
+    - id: jineData
+      type: NGO.JineType
+      description: The JineType used to load the message. When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: action
+      type: System.Action
+      description: The <code>Action</code> method after this message is sent.
+    content.vb: Public Shared Sub StartPiOption(jineData As JineType, action As Action)
+  overload: NGOTxtExtender.JineExtender.StartPiOption*
+- uid: NGOTxtExtender.JineExtender.StartExtPiListAndSet(System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartExtPiListAndSet(System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action)
+  id: StartExtPiListAndSet(System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action,System.String,System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtPiListAndSet(string, Action, string, Action, string, Action, string, Action, string, Action)
+  nameWithType: JineExtender.StartExtPiListAndSet(string, Action, string, Action, string, Action, string, Action, string, Action)
+  fullName: NGOTxtExtender.JineExtender.StartExtPiListAndSet(string, System.Action, string, System.Action, string, System.Action, string, System.Action, string, System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a list of chooseable options on Jine, then sends one custom user-made Jine message from P-chan based on the option chosen. Up to five options can be created. Using async methods for the <code>Action</code> parameters are recommended.
+  remarks: "Note: If an optional option Id is not null, its related <code>Action</code> must be filled, or else the option won't appear on the list. (i.e. filling in the second option Id without including its related <code>Action</code>.)"
+  example: []
+  syntax:
+    content: public static void StartExtPiListAndSet(string optionOneId, Action actionOne, string optionTwoId = null, Action actionTwo = null, string optionThreeId = null, Action actionThree = null, string optionFourId = null, Action actionFour = null, string optionFiveId = null, Action actionFive = null)
+    parameters:
+    - id: optionOneId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the first option.
+    - id: actionOne
+      type: System.Action
+      description: The <code>Action</code> method related to the first option.
+    - id: optionTwoId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the second option. (optional)
+    - id: actionTwo
+      type: System.Action
+      description: The <code>Action</code> method related to the second option. Required if the second option Id is not null or "".
+    - id: optionThreeId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the third option. (optional)
+    - id: actionThree
+      type: System.Action
+      description: The <code>Action</code> method related to the third option. Required if the third option Id is not null or "".
+    - id: optionFourId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the fourth option. (optional)
+    - id: actionFour
+      type: System.Action
+      description: The <code>Action</code> method related to the fourth option. Required if the fourth option Id is not null or "".
+    - id: optionFiveId
+      type: System.String
+      description: The LineMaster.Param's Id used to load the fifth option. (optional)
+    - id: actionFive
+      type: System.Action
+      description: The <code>Action</code> method related to the fifth option. Required if the fifth option Id is not null or "".
+    content.vb: Public Shared Sub StartExtPiListAndSet(optionOneId As String, actionOne As Action, optionTwoId As String = Nothing, actionTwo As Action = Nothing, optionThreeId As String = Nothing, actionThree As Action = Nothing, optionFourId As String = Nothing, actionFour As Action = Nothing, optionFiveId As String = Nothing, actionFive As Action = Nothing)
+  overload: NGOTxtExtender.JineExtender.StartExtPiListAndSet*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: JineExtender.StartExtPiListAndSet(String, Action, String, Action, String, Action, String, Action, String, Action)
+  fullName.vb: NGOTxtExtender.JineExtender.StartExtPiListAndSet(String, System.Action, String, System.Action, String, System.Action, String, System.Action, String, System.Action)
+  name.vb: StartExtPiListAndSet(String, Action, String, Action, String, Action, String, Action, String, Action)
+- uid: NGOTxtExtender.JineExtender.StartPiListAndSet(NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartPiListAndSet(NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action)
+  id: StartPiListAndSet(NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action,NGO.JineType,System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartPiListAndSet(JineType, Action, JineType, Action, JineType, Action, JineType, Action, JineType, Action)
+  nameWithType: JineExtender.StartPiListAndSet(JineType, Action, JineType, Action, JineType, Action, JineType, Action, JineType, Action)
+  fullName: NGOTxtExtender.JineExtender.StartPiListAndSet(NGO.JineType, System.Action, NGO.JineType, System.Action, NGO.JineType, System.Action, NGO.JineType, System.Action, NGO.JineType, System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a list of chooseable options on Jine, then sends one custom user-made Jine message from P-chan based on the option chosen. Up to five options can be created. Using async methods for the <code>Action</code> parameters are recommended.
+  remarks: "Note: If an optional option Id is not null, its related <code>Action</code> must be filled, or else the option won't appear on the list. (i.e. filling in the second option Id without including its related <code>Action</code>.)"
+  example: []
+  syntax:
+    content: public static void StartPiListAndSet(JineType optionOne, Action actionOne, JineType optionTwo = JineType.None, Action actionTwo = null, JineType optionThree = JineType.None, Action actionThree = null, JineType optionFour = JineType.None, Action actionFour = null, JineType optionFive = JineType.None, Action actionFive = null)
+    parameters:
+    - id: optionOne
+      type: NGO.JineType
+      description: The JineType used to load the first option. When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: actionOne
+      type: System.Action
+      description: The <code>Action</code> method related to the first option.
+    - id: optionTwo
+      type: NGO.JineType
+      description: The JineType used to load the second option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: actionTwo
+      type: System.Action
+      description: The <code>Action</code> method related to the second option. Required if the second option Id is not null or "".
+    - id: optionThree
+      type: NGO.JineType
+      description: The JineType used to load the third option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: actionThree
+      type: System.Action
+      description: The <code>Action</code> method related to the third option. Required if the third option Id is not null or "".
+    - id: optionFour
+      type: NGO.JineType
+      description: The JineType used to load the fourth option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: actionFour
+      type: System.Action
+      description: The <code>Action</code> method related to the fourth option. Required if the fourth option Id is not null or "".
+    - id: optionFive
+      type: NGO.JineType
+      description: The JineType used to load the fifth option. (optional) <br /> When loading in a custom message, either use <code>ExtTextExtender.GetUniqueIdNum()</code>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType.
+    - id: actionFive
+      type: System.Action
+      description: The <code>Action</code> method related to the fifth option. Required if the fifth option Id is not null or "".
+    content.vb: Public Shared Sub StartPiListAndSet(optionOne As JineType, actionOne As Action, optionTwo As JineType = JineType.None, actionTwo As Action = Nothing, optionThree As JineType = JineType.None, actionThree As Action = Nothing, optionFour As JineType = JineType.None, actionFour As Action = Nothing, optionFive As JineType = JineType.None, actionFive As Action = Nothing)
+  overload: NGOTxtExtender.JineExtender.StartPiListAndSet*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+- uid: NGOTxtExtender.JineExtender.StartTraumaList(System.Action,System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartTraumaList(System.Action,System.Action)
+  id: StartTraumaList(System.Action,System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartTraumaList(Action, Action)
+  nameWithType: JineExtender.StartTraumaList(Action, Action)
+  fullName: NGOTxtExtender.JineExtender.StartTraumaList(System.Action, System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Loads a separate event where you have to choose the right trauma, if applicable.
+  remarks: Using async <code>Actions</code> are recommended here.
+  example: []
+  syntax:
+    content: public static void StartTraumaList(Action isRight, Action isWrongOrNull)
+    parameters:
+    - id: isRight
+      type: System.Action
+      description: The <code>Action</code> that happens if you chose the right trauma.
+    - id: isWrongOrNull
+      type: System.Action
+      description: The <code>Action</code> that happens if you chose the wrong trauma, or if she didn't tell you any of her traumas on Day 15.
+    content.vb: Public Shared Sub StartTraumaList(isRight As Action, isWrongOrNull As Action)
+  overload: NGOTxtExtender.JineExtender.StartTraumaList*
+- uid: NGOTxtExtender.JineExtender.StartWrittenMsg(System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartWrittenMsg(System.Action)
+  id: StartWrittenMsg(System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartWrittenMsg(Action)
+  nameWithType: JineExtender.StartWrittenMsg(Action)
+  fullName: NGOTxtExtender.JineExtender.StartWrittenMsg(System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Starts a prompt that requires you to write a message to Ame on Jine.
+  example: []
+  syntax:
+    content: public static void StartWrittenMsg(Action eventAfterMsg)
+    parameters:
+    - id: eventAfterMsg
+      type: System.Action
+      description: The action that happens after the message has been sent.
+    content.vb: Public Shared Sub StartWrittenMsg(eventAfterMsg As Action)
+  overload: NGOTxtExtender.JineExtender.StartWrittenMsg*
+- uid: NGOTxtExtender.JineExtender.StartWrittenMsg(System.Func{System.String,System.Boolean},System.Action,System.Action)
+  commentId: M:NGOTxtExtender.JineExtender.StartWrittenMsg(System.Func{System.String,System.Boolean},System.Action,System.Action)
+  id: StartWrittenMsg(System.Func{System.String,System.Boolean},System.Action,System.Action)
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: StartWrittenMsg(Func<string, bool>, Action, Action)
+  nameWithType: JineExtender.StartWrittenMsg(Func<string, bool>, Action, Action)
+  fullName: NGOTxtExtender.JineExtender.StartWrittenMsg(System.Func<string, bool>, System.Action, System.Action)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Starts a prompt that requires you to write a message to Ame on Jine.
+  remarks: This version of the method checks the message using <code>checkMsgMatch</code>, where the remainder of the event changes depending on what <code>checkMsgMatch</code> returns as.
+  example: []
+  syntax:
+    content: public static void StartWrittenMsg(Func<string, bool> checkMsgMatch, Action isRight, Action isWrong)
+    parameters:
+    - id: checkMsgMatch
+      type: System.Func{System.String,System.Boolean}
+      description: A <code>Func</code> bool that does something with the written message.
+    - id: isRight
+      type: System.Action
+      description: The <code>Action</code> that happens when <code>checkMsgMatch</code> returns true.
+    - id: isWrong
+      type: System.Action
+      description: The <code>Action</code> that happens when <code>checkMsgMatch</code> returns false.
+    content.vb: Public Shared Sub StartWrittenMsg(checkMsgMatch As Func(Of String, Boolean), isRight As Action, isWrong As Action)
+  overload: NGOTxtExtender.JineExtender.StartWrittenMsg*
+  nameWithType.vb: JineExtender.StartWrittenMsg(Func(Of String, Boolean), Action, Action)
+  fullName.vb: NGOTxtExtender.JineExtender.StartWrittenMsg(System.Func(Of String, Boolean), System.Action, System.Action)
+  name.vb: StartWrittenMsg(Func(Of String, Boolean), Action, Action)
+- uid: NGOTxtExtender.JineExtender.ResetExtReplyList
+  commentId: M:NGOTxtExtender.JineExtender.ResetExtReplyList
+  id: ResetExtReplyList
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: ResetExtReplyList()
+  nameWithType: JineExtender.ResetExtReplyList()
+  fullName: NGOTxtExtender.JineExtender.ResetExtReplyList()
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Re-initializes custom Jine Replies.
+  example: []
+  syntax:
+    content: public static void ResetExtReplyList()
+    content.vb: Public Shared Sub ResetExtReplyList()
+  overload: NGOTxtExtender.JineExtender.ResetExtReplyList*
+- uid: NGOTxtExtender.JineExtender.#ctor
+  commentId: M:NGOTxtExtender.JineExtender.#ctor
+  id: '#ctor'
+  parent: NGOTxtExtender.JineExtender
+  langs:
+  - csharp
+  - vb
+  name: JineExtender()
+  nameWithType: JineExtender.JineExtender()
+  fullName: NGOTxtExtender.JineExtender.JineExtender()
+  type: Constructor
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: public JineExtender()
+    content.vb: Public Sub New()
+  overload: NGOTxtExtender.JineExtender.#ctor*
+  nameWithType.vb: JineExtender.New()
+  fullName.vb: NGOTxtExtender.JineExtender.New()
+  name.vb: New()
+references:
+- uid: NGOTxtExtender
+  commentId: N:NGOTxtExtender
+  isExternal: true
+  href: NGOTxtExtender.html
+  name: NGOTxtExtender
+  nameWithType: NGOTxtExtender
+  fullName: NGOTxtExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List{LineMaster.Param}
+  commentId: T:System.Collections.Generic.List{LineMaster.Param}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<LineMaster.Param>
+  nameWithType: List<LineMaster.Param>
+  fullName: System.Collections.Generic.List<LineMaster.Param>
+  nameWithType.vb: List(Of LineMaster.Param)
+  fullName.vb: System.Collections.Generic.List(Of LineMaster.Param)
+  name.vb: List(Of LineMaster.Param)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: LineMaster
+    name: LineMaster
+    isExternal: true
+  - name: .
+  - uid: LineMaster.Param
+    name: Param
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LineMaster
+    name: LineMaster
+    isExternal: true
+  - name: .
+  - uid: LineMaster.Param
+    name: Param
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.NullReferenceException
+  commentId: T:System.NullReferenceException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullreferenceexception
+  name: NullReferenceException
+  nameWithType: NullReferenceException
+  fullName: System.NullReferenceException
+- uid: NGOTxtExtender.JineExtender.StartExtAmeJine*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartExtAmeJine
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartExtAmeJine_System_String_
+  name: StartExtAmeJine
+  nameWithType: JineExtender.StartExtAmeJine
+  fullName: NGOTxtExtender.JineExtender.StartExtAmeJine
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Cysharp.Threading.Tasks.UniTask
+  commentId: T:Cysharp.Threading.Tasks.UniTask
+  parent: Cysharp.Threading.Tasks
+  isExternal: true
+  name: UniTask
+  nameWithType: UniTask
+  fullName: Cysharp.Threading.Tasks.UniTask
+- uid: Cysharp.Threading.Tasks
+  commentId: N:Cysharp.Threading.Tasks
+  isExternal: true
+  name: Cysharp.Threading.Tasks
+  nameWithType: Cysharp.Threading.Tasks
+  fullName: Cysharp.Threading.Tasks
+  spec.csharp:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+  spec.vb:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+- uid: NGOTxtExtender.JineExtender.StartAmeJine*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartAmeJine
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartAmeJine_NGO_JineType_
+  name: StartAmeJine
+  nameWithType: JineExtender.StartAmeJine
+  fullName: NGOTxtExtender.JineExtender.StartAmeJine
+- uid: NGO.JineType
+  commentId: T:NGO.JineType
+  parent: NGO
+  isExternal: true
+  name: JineType
+  nameWithType: JineType
+  fullName: NGO.JineType
+- uid: NGO
+  commentId: N:NGO
+  isExternal: true
+  name: NGO
+  nameWithType: NGO
+  fullName: NGO
+- uid: NGOTxtExtender.JineExtender.StartExtPiOptionList*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartExtPiOptionList
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartExtPiOptionList_System_String_System_String_System_String_System_String_System_String_
+  name: StartExtPiOptionList
+  nameWithType: JineExtender.StartExtPiOptionList
+  fullName: NGOTxtExtender.JineExtender.StartExtPiOptionList
+- uid: NGOTxtExtender.JineExtender.StartPiOptionList*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartPiOptionList
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartPiOptionList_NGO_JineType_NGO_JineType_NGO_JineType_NGO_JineType_NGO_JineType_
+  name: StartPiOptionList
+  nameWithType: JineExtender.StartPiOptionList
+  fullName: NGOTxtExtender.JineExtender.StartPiOptionList
+- uid: NGOTxtExtender.JineExtender.StartExtPiOption*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartExtPiOption
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartExtPiOption_System_String_System_Action_
+  name: StartExtPiOption
+  nameWithType: JineExtender.StartExtPiOption
+  fullName: NGOTxtExtender.JineExtender.StartExtPiOption
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: NGOTxtExtender.JineExtender.StartPiOption*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartPiOption
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartPiOption_NGO_JineType_System_Action_
+  name: StartPiOption
+  nameWithType: JineExtender.StartPiOption
+  fullName: NGOTxtExtender.JineExtender.StartPiOption
+- uid: NGOTxtExtender.JineExtender.StartExtPiListAndSet*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartExtPiListAndSet
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartExtPiListAndSet_System_String_System_Action_System_String_System_Action_System_String_System_Action_System_String_System_Action_System_String_System_Action_
+  name: StartExtPiListAndSet
+  nameWithType: JineExtender.StartExtPiListAndSet
+  fullName: NGOTxtExtender.JineExtender.StartExtPiListAndSet
+- uid: NGOTxtExtender.JineExtender.StartPiListAndSet*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartPiListAndSet
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartPiListAndSet_NGO_JineType_System_Action_NGO_JineType_System_Action_NGO_JineType_System_Action_NGO_JineType_System_Action_NGO_JineType_System_Action_
+  name: StartPiListAndSet
+  nameWithType: JineExtender.StartPiListAndSet
+  fullName: NGOTxtExtender.JineExtender.StartPiListAndSet
+- uid: NGOTxtExtender.JineExtender.StartTraumaList*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartTraumaList
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartTraumaList_System_Action_System_Action_
+  name: StartTraumaList
+  nameWithType: JineExtender.StartTraumaList
+  fullName: NGOTxtExtender.JineExtender.StartTraumaList
+- uid: NGOTxtExtender.JineExtender.StartWrittenMsg*
+  commentId: Overload:NGOTxtExtender.JineExtender.StartWrittenMsg
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_StartWrittenMsg_System_Action_
+  name: StartWrittenMsg
+  nameWithType: JineExtender.StartWrittenMsg
+  fullName: NGOTxtExtender.JineExtender.StartWrittenMsg
+- uid: System.Func{System.String,System.Boolean}
+  commentId: T:System.Func{System.String,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<string, bool>
+  nameWithType: Func<string, bool>
+  fullName: System.Func<string, bool>
+  nameWithType.vb: Func(Of String, Boolean)
+  fullName.vb: System.Func(Of String, Boolean)
+  name.vb: Func(Of String, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: NGOTxtExtender.JineExtender.ResetExtReplyList*
+  commentId: Overload:NGOTxtExtender.JineExtender.ResetExtReplyList
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_ResetExtReplyList
+  name: ResetExtReplyList
+  nameWithType: JineExtender.ResetExtReplyList
+  fullName: NGOTxtExtender.JineExtender.ResetExtReplyList
+- uid: NGOTxtExtender.JineExtender.#ctor*
+  commentId: Overload:NGOTxtExtender.JineExtender.#ctor
+  isExternal: true
+  href: NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender__ctor
+  name: JineExtender
+  nameWithType: JineExtender.JineExtender
+  fullName: NGOTxtExtender.JineExtender.JineExtender
+  nameWithType.vb: JineExtender.New
+  fullName.vb: NGOTxtExtender.JineExtender.New
+  name.vb: New

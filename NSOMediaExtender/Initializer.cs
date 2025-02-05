@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace NSOMediaExtender
 {
+    /// <exclude />
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInProcess("Windose.exe")]
     public class MyPatches : BaseUnityPlugin

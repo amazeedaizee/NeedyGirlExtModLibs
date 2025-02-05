@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace NGOEventExtender
 {
+    /// <exclude />
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInDependency("needy.girl.txt_extender", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInProcess("Windose.exe")]

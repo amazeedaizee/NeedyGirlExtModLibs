@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.IdleAnimationType
+  commentId: T:NSOMediaExtender.IdleAnimationType
+  id: IdleAnimationType
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.IdleAnimationType.Anxious
+  - NSOMediaExtender.IdleAnimationType.Happy
+  - NSOMediaExtender.IdleAnimationType.Irritated
+  - NSOMediaExtender.IdleAnimationType.Normal
+  langs:
+  - csharp
+  - vb
+  name: IdleAnimationType
+  nameWithType: IdleAnimationType
+  fullName: NSOMediaExtender.IdleAnimationType
+  type: Enum
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public enum IdleAnimationType
+    content.vb: Public Enum IdleAnimationType
+- uid: NSOMediaExtender.IdleAnimationType.Normal
+  commentId: F:NSOMediaExtender.IdleAnimationType.Normal
+  id: Normal
+  parent: NSOMediaExtender.IdleAnimationType
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: IdleAnimationType.Normal
+  fullName: NSOMediaExtender.IdleAnimationType.Normal
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Normal = 0
+    return:
+      type: NSOMediaExtender.IdleAnimationType
+- uid: NSOMediaExtender.IdleAnimationType.Happy
+  commentId: F:NSOMediaExtender.IdleAnimationType.Happy
+  id: Happy
+  parent: NSOMediaExtender.IdleAnimationType
+  langs:
+  - csharp
+  - vb
+  name: Happy
+  nameWithType: IdleAnimationType.Happy
+  fullName: NSOMediaExtender.IdleAnimationType.Happy
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Happy = 1
+    return:
+      type: NSOMediaExtender.IdleAnimationType
+- uid: NSOMediaExtender.IdleAnimationType.Irritated
+  commentId: F:NSOMediaExtender.IdleAnimationType.Irritated
+  id: Irritated
+  parent: NSOMediaExtender.IdleAnimationType
+  langs:
+  - csharp
+  - vb
+  name: Irritated
+  nameWithType: IdleAnimationType.Irritated
+  fullName: NSOMediaExtender.IdleAnimationType.Irritated
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Irritated = 2
+    return:
+      type: NSOMediaExtender.IdleAnimationType
+- uid: NSOMediaExtender.IdleAnimationType.Anxious
+  commentId: F:NSOMediaExtender.IdleAnimationType.Anxious
+  id: Anxious
+  parent: NSOMediaExtender.IdleAnimationType
+  langs:
+  - csharp
+  - vb
+  name: Anxious
+  nameWithType: IdleAnimationType.Anxious
+  fullName: NSOMediaExtender.IdleAnimationType.Anxious
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Anxious = 3
+    return:
+      type: NSOMediaExtender.IdleAnimationType
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: NSOMediaExtender.IdleAnimationType
+  commentId: T:NSOMediaExtender.IdleAnimationType
+  parent: NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.IdleAnimationType.html
+  name: IdleAnimationType
+  nameWithType: IdleAnimationType
+  fullName: NSOMediaExtender.IdleAnimationType

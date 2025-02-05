@@ -1,0 +1,285 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.WebcamType
+  commentId: T:NSOMediaExtender.WebcamType
+  id: WebcamType
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.WebcamType.Dark
+  - NSOMediaExtender.WebcamType.Darker
+  - NSOMediaExtender.WebcamType.DarkerLove
+  - NSOMediaExtender.WebcamType.Horror
+  - NSOMediaExtender.WebcamType.Like
+  - NSOMediaExtender.WebcamType.Love
+  - NSOMediaExtender.WebcamType.Normal
+  - NSOMediaExtender.WebcamType.StressDark
+  - NSOMediaExtender.WebcamType.StressDarker
+  - NSOMediaExtender.WebcamType.StressDarkerLove
+  - NSOMediaExtender.WebcamType.StressLike
+  - NSOMediaExtender.WebcamType.StressLove
+  - NSOMediaExtender.WebcamType.Stressed
+  langs:
+  - csharp
+  - vb
+  name: WebcamType
+  nameWithType: WebcamType
+  fullName: NSOMediaExtender.WebcamType
+  type: Enum
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: The idle animations Ame does based on her Task Manager Stats, with the exception of <code>Horror</code>.
+  example: []
+  syntax:
+    content: public enum WebcamType
+    content.vb: Public Enum WebcamType
+- uid: NSOMediaExtender.WebcamType.Normal
+  commentId: F:NSOMediaExtender.WebcamType.Normal
+  id: Normal
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: WebcamType.Normal
+  fullName: NSOMediaExtender.WebcamType.Normal
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Normal = 0
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.Stressed
+  commentId: F:NSOMediaExtender.WebcamType.Stressed
+  id: Stressed
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Stressed
+  nameWithType: WebcamType.Stressed
+  fullName: NSOMediaExtender.WebcamType.Stressed
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Stressed = 1
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.Dark
+  commentId: F:NSOMediaExtender.WebcamType.Dark
+  id: Dark
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Dark
+  nameWithType: WebcamType.Dark
+  fullName: NSOMediaExtender.WebcamType.Dark
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Dark = 2
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.Darker
+  commentId: F:NSOMediaExtender.WebcamType.Darker
+  id: Darker
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Darker
+  nameWithType: WebcamType.Darker
+  fullName: NSOMediaExtender.WebcamType.Darker
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Darker = 3
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.StressDark
+  commentId: F:NSOMediaExtender.WebcamType.StressDark
+  id: StressDark
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: StressDark
+  nameWithType: WebcamType.StressDark
+  fullName: NSOMediaExtender.WebcamType.StressDark
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: StressDark = 4
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.StressDarker
+  commentId: F:NSOMediaExtender.WebcamType.StressDarker
+  id: StressDarker
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: StressDarker
+  nameWithType: WebcamType.StressDarker
+  fullName: NSOMediaExtender.WebcamType.StressDarker
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: StressDarker = 5
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.Like
+  commentId: F:NSOMediaExtender.WebcamType.Like
+  id: Like
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Like
+  nameWithType: WebcamType.Like
+  fullName: NSOMediaExtender.WebcamType.Like
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Like = 6
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.Love
+  commentId: F:NSOMediaExtender.WebcamType.Love
+  id: Love
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Love
+  nameWithType: WebcamType.Love
+  fullName: NSOMediaExtender.WebcamType.Love
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Love = 7
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.StressLike
+  commentId: F:NSOMediaExtender.WebcamType.StressLike
+  id: StressLike
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: StressLike
+  nameWithType: WebcamType.StressLike
+  fullName: NSOMediaExtender.WebcamType.StressLike
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: StressLike = 8
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.StressLove
+  commentId: F:NSOMediaExtender.WebcamType.StressLove
+  id: StressLove
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: StressLove
+  nameWithType: WebcamType.StressLove
+  fullName: NSOMediaExtender.WebcamType.StressLove
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: StressLove = 9
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.DarkerLove
+  commentId: F:NSOMediaExtender.WebcamType.DarkerLove
+  id: DarkerLove
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: DarkerLove
+  nameWithType: WebcamType.DarkerLove
+  fullName: NSOMediaExtender.WebcamType.DarkerLove
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: DarkerLove = 10
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.StressDarkerLove
+  commentId: F:NSOMediaExtender.WebcamType.StressDarkerLove
+  id: StressDarkerLove
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: StressDarkerLove
+  nameWithType: WebcamType.StressDarkerLove
+  fullName: NSOMediaExtender.WebcamType.StressDarkerLove
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: StressDarkerLove = 11
+    return:
+      type: NSOMediaExtender.WebcamType
+- uid: NSOMediaExtender.WebcamType.Horror
+  commentId: F:NSOMediaExtender.WebcamType.Horror
+  id: Horror
+  parent: NSOMediaExtender.WebcamType
+  langs:
+  - csharp
+  - vb
+  name: Horror
+  nameWithType: WebcamType.Horror
+  fullName: NSOMediaExtender.WebcamType.Horror
+  type: Field
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: Horror = 12
+    return:
+      type: NSOMediaExtender.WebcamType
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: NSOMediaExtender.WebcamType
+  commentId: T:NSOMediaExtender.WebcamType
+  parent: NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.WebcamType.html
+  name: WebcamType
+  nameWithType: WebcamType
+  fullName: NSOMediaExtender.WebcamType

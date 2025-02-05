@@ -1,0 +1,323 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOEventExtender.StreamBackground
+  commentId: T:NGOEventExtender.StreamBackground
+  id: StreamBackground
+  parent: NGOEventExtender
+  children:
+  - NGOEventExtender.StreamBackground.BigHouse
+  - NGOEventExtender.StreamBackground.Black
+  - NGOEventExtender.StreamBackground.Default
+  - NGOEventExtender.StreamBackground.Gold
+  - NGOEventExtender.StreamBackground.Guru
+  - NGOEventExtender.StreamBackground.Horror
+  - NGOEventExtender.StreamBackground.MileFive
+  - NGOEventExtender.StreamBackground.MileFour
+  - NGOEventExtender.StreamBackground.MileOne
+  - NGOEventExtender.StreamBackground.MileThree
+  - NGOEventExtender.StreamBackground.MileTwo
+  - NGOEventExtender.StreamBackground.None
+  - NGOEventExtender.StreamBackground.Roof
+  - NGOEventExtender.StreamBackground.Silver
+  - NGOEventExtender.StreamBackground.Void
+  langs:
+  - csharp
+  - vb
+  name: StreamBackground
+  nameWithType: StreamBackground
+  fullName: NGOEventExtender.StreamBackground
+  type: Enum
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: In-game sprites that are used for a stream's background. You can load these into a custom stream using <code>SetExtStreamBG</code>.
+  example: []
+  syntax:
+    content: public enum StreamBackground
+    content.vb: Public Enum StreamBackground
+- uid: NGOEventExtender.StreamBackground.Default
+  commentId: F:NGOEventExtender.StreamBackground.Default
+  id: Default
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: StreamBackground.Default
+  fullName: NGOEventExtender.StreamBackground.Default
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Default = 0
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Silver
+  commentId: F:NGOEventExtender.StreamBackground.Silver
+  id: Silver
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Silver
+  nameWithType: StreamBackground.Silver
+  fullName: NGOEventExtender.StreamBackground.Silver
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Silver = 1
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Gold
+  commentId: F:NGOEventExtender.StreamBackground.Gold
+  id: Gold
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Gold
+  nameWithType: StreamBackground.Gold
+  fullName: NGOEventExtender.StreamBackground.Gold
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Gold = 2
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.MileOne
+  commentId: F:NGOEventExtender.StreamBackground.MileOne
+  id: MileOne
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: MileOne
+  nameWithType: StreamBackground.MileOne
+  fullName: NGOEventExtender.StreamBackground.MileOne
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: MileOne = 3
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.MileTwo
+  commentId: F:NGOEventExtender.StreamBackground.MileTwo
+  id: MileTwo
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: MileTwo
+  nameWithType: StreamBackground.MileTwo
+  fullName: NGOEventExtender.StreamBackground.MileTwo
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: MileTwo = 4
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.MileThree
+  commentId: F:NGOEventExtender.StreamBackground.MileThree
+  id: MileThree
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: MileThree
+  nameWithType: StreamBackground.MileThree
+  fullName: NGOEventExtender.StreamBackground.MileThree
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: MileThree = 5
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.MileFour
+  commentId: F:NGOEventExtender.StreamBackground.MileFour
+  id: MileFour
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: MileFour
+  nameWithType: StreamBackground.MileFour
+  fullName: NGOEventExtender.StreamBackground.MileFour
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: MileFour = 6
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.MileFive
+  commentId: F:NGOEventExtender.StreamBackground.MileFive
+  id: MileFive
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: MileFive
+  nameWithType: StreamBackground.MileFive
+  fullName: NGOEventExtender.StreamBackground.MileFive
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: MileFive = 7
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Guru
+  commentId: F:NGOEventExtender.StreamBackground.Guru
+  id: Guru
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Guru
+  nameWithType: StreamBackground.Guru
+  fullName: NGOEventExtender.StreamBackground.Guru
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Guru = 8
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Horror
+  commentId: F:NGOEventExtender.StreamBackground.Horror
+  id: Horror
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Horror
+  nameWithType: StreamBackground.Horror
+  fullName: NGOEventExtender.StreamBackground.Horror
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Horror = 9
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.BigHouse
+  commentId: F:NGOEventExtender.StreamBackground.BigHouse
+  id: BigHouse
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: BigHouse
+  nameWithType: StreamBackground.BigHouse
+  fullName: NGOEventExtender.StreamBackground.BigHouse
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: BigHouse = 10
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Roof
+  commentId: F:NGOEventExtender.StreamBackground.Roof
+  id: Roof
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Roof
+  nameWithType: StreamBackground.Roof
+  fullName: NGOEventExtender.StreamBackground.Roof
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Roof = 11
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Black
+  commentId: F:NGOEventExtender.StreamBackground.Black
+  id: Black
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Black
+  nameWithType: StreamBackground.Black
+  fullName: NGOEventExtender.StreamBackground.Black
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Black = 12
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.Void
+  commentId: F:NGOEventExtender.StreamBackground.Void
+  id: Void
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: Void
+  nameWithType: StreamBackground.Void
+  fullName: NGOEventExtender.StreamBackground.Void
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Void = 13
+    return:
+      type: NGOEventExtender.StreamBackground
+- uid: NGOEventExtender.StreamBackground.None
+  commentId: F:NGOEventExtender.StreamBackground.None
+  id: None
+  parent: NGOEventExtender.StreamBackground
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: StreamBackground.None
+  fullName: NGOEventExtender.StreamBackground.None
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: None = 1000
+    return:
+      type: NGOEventExtender.StreamBackground
+references:
+- uid: NGOEventExtender
+  commentId: N:NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.html
+  name: NGOEventExtender
+  nameWithType: NGOEventExtender
+  fullName: NGOEventExtender
+- uid: NGOEventExtender.StreamBackground
+  commentId: T:NGOEventExtender.StreamBackground
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.StreamBackground.html
+  name: StreamBackground
+  nameWithType: StreamBackground
+  fullName: NGOEventExtender.StreamBackground

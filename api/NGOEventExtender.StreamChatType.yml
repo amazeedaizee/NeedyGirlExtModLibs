@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOEventExtender.StreamChatType
+  commentId: T:NGOEventExtender.StreamChatType
+  id: StreamChatType
+  parent: NGOEventExtender
+  children:
+  - NGOEventExtender.StreamChatType.Celebration
+  - NGOEventExtender.StreamChatType.Normal
+  - NGOEventExtender.StreamChatType.Uncontrollable
+  langs:
+  - csharp
+  - vb
+  name: StreamChatType
+  nameWithType: StreamChatType
+  fullName: NGOEventExtender.StreamChatType
+  type: Enum
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  summary: >-
+    Different behaviour of how stream chat comments show in a stream.
+
+    <br /><code>Normal:</code> Comments can be selected and deleted.
+
+    <br /><code>Uncontrollable:</code> Comments are unselectable and are grayed out.
+
+    <br /><code>Celebration:</code> Comments are unselectable and are either super chats or grayed out randomly.
+  example: []
+  syntax:
+    content: public enum StreamChatType
+    content.vb: Public Enum StreamChatType
+- uid: NGOEventExtender.StreamChatType.Normal
+  commentId: F:NGOEventExtender.StreamChatType.Normal
+  id: Normal
+  parent: NGOEventExtender.StreamChatType
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: StreamChatType.Normal
+  fullName: NGOEventExtender.StreamChatType.Normal
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Normal = 0
+    return:
+      type: NGOEventExtender.StreamChatType
+- uid: NGOEventExtender.StreamChatType.Uncontrollable
+  commentId: F:NGOEventExtender.StreamChatType.Uncontrollable
+  id: Uncontrollable
+  parent: NGOEventExtender.StreamChatType
+  langs:
+  - csharp
+  - vb
+  name: Uncontrollable
+  nameWithType: StreamChatType.Uncontrollable
+  fullName: NGOEventExtender.StreamChatType.Uncontrollable
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Uncontrollable = 1
+    return:
+      type: NGOEventExtender.StreamChatType
+- uid: NGOEventExtender.StreamChatType.Celebration
+  commentId: F:NGOEventExtender.StreamChatType.Celebration
+  id: Celebration
+  parent: NGOEventExtender.StreamChatType
+  langs:
+  - csharp
+  - vb
+  name: Celebration
+  nameWithType: StreamChatType.Celebration
+  fullName: NGOEventExtender.StreamChatType.Celebration
+  type: Field
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: Celebration = 2
+    return:
+      type: NGOEventExtender.StreamChatType
+references:
+- uid: NGOEventExtender
+  commentId: N:NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.html
+  name: NGOEventExtender
+  nameWithType: NGOEventExtender
+  fullName: NGOEventExtender
+- uid: NGOEventExtender.StreamChatType
+  commentId: T:NGOEventExtender.StreamChatType
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.StreamChatType.html
+  name: StreamChatType
+  nameWithType: StreamChatType
+  fullName: NGOEventExtender.StreamChatType

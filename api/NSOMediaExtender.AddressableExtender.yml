@@ -1,0 +1,601 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.AddressableExtender
+  commentId: T:NSOMediaExtender.AddressableExtender
+  id: AddressableExtender
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.AddressableExtender.#ctor
+  - NSOMediaExtender.AddressableExtender.AddAddressBundle(System.String)
+  - NSOMediaExtender.AddressableExtender.AddExternalCatalog(System.String)
+  - NSOMediaExtender.AddressableExtender.LoadAddressAsset``1(System.String)
+  - NSOMediaExtender.AddressableExtender.ReleaseAddressAsset(System.String)
+  - NSOMediaExtender.AddressableExtender.ReleaseAllHandles
+  langs:
+  - csharp
+  - vb
+  name: AddressableExtender
+  nameWithType: AddressableExtender
+  fullName: NSOMediaExtender.AddressableExtender
+  type: Class
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public class AddressableExtender
+    content.vb: Public Class AddressableExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: NSOMediaExtender.AddressableExtender.AddExternalCatalog(System.String)
+  commentId: M:NSOMediaExtender.AddressableExtender.AddExternalCatalog(System.String)
+  id: AddExternalCatalog(System.String)
+  parent: NSOMediaExtender.AddressableExtender
+  langs:
+  - csharp
+  - vb
+  name: AddExternalCatalog(string)
+  nameWithType: AddressableExtender.AddExternalCatalog(string)
+  fullName: NSOMediaExtender.AddressableExtender.AddExternalCatalog(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Loads an external Addressable catalog file into the game. If you're relying on Addressables to load in external assets, this is required.
+  example: []
+  syntax:
+    content: public static UniTask AddExternalCatalog(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: The path to the external catalog.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+      description: ''
+    content.vb: Public Shared Function AddExternalCatalog(path As String) As UniTask
+  overload: NSOMediaExtender.AddressableExtender.AddExternalCatalog*
+  nameWithType.vb: AddressableExtender.AddExternalCatalog(String)
+  fullName.vb: NSOMediaExtender.AddressableExtender.AddExternalCatalog(String)
+  name.vb: AddExternalCatalog(String)
+- uid: NSOMediaExtender.AddressableExtender.AddAddressBundle(System.String)
+  commentId: M:NSOMediaExtender.AddressableExtender.AddAddressBundle(System.String)
+  id: AddAddressBundle(System.String)
+  parent: NSOMediaExtender.AddressableExtender
+  langs:
+  - csharp
+  - vb
+  name: AddAddressBundle(string)
+  nameWithType: AddressableExtender.AddAddressBundle(string)
+  fullName: NSOMediaExtender.AddressableExtender.AddAddressBundle(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Loads an Asset Bundle related to an Addressable catalog.
+  remarks: >-
+    This temporarily copies the Asset Bundle into the StreamingAssets folder of the game until the game closes. 
+                <br /> Note: The Asset Bundle will not delete itself in the case of the game crashing or force quitted through Task Manager. (However, it will delete itself if the game is closed properly next time.)
+  example: []
+  syntax:
+    content: public static UniTask AddAddressBundle(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: The path to the Addressable Asset Bundle.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask
+      description: ''
+    content.vb: Public Shared Function AddAddressBundle(path As String) As UniTask
+  overload: NSOMediaExtender.AddressableExtender.AddAddressBundle*
+  nameWithType.vb: AddressableExtender.AddAddressBundle(String)
+  fullName.vb: NSOMediaExtender.AddressableExtender.AddAddressBundle(String)
+  name.vb: AddAddressBundle(String)
+- uid: NSOMediaExtender.AddressableExtender.LoadAddressAsset``1(System.String)
+  commentId: M:NSOMediaExtender.AddressableExtender.LoadAddressAsset``1(System.String)
+  id: LoadAddressAsset``1(System.String)
+  parent: NSOMediaExtender.AddressableExtender
+  langs:
+  - csharp
+  - vb
+  name: LoadAddressAsset<T>(string)
+  nameWithType: AddressableExtender.LoadAddressAsset<T>(string)
+  fullName: NSOMediaExtender.AddressableExtender.LoadAddressAsset<T>(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Loads an asset from Addressables into the game.
+  remarks: For easy releasing, you can use <code>ReleaseAddressAsset</code> or <code>ReleaseAllHandles</code>, but only if it was loaded through this method.
+  example: []
+  syntax:
+    content: 'public static UniTask<T> LoadAddressAsset<T>(string address) where T : Object'
+    parameters:
+    - id: address
+      type: System.String
+      description: The address of the asset Addressable.
+    typeParameters:
+    - id: T
+      description: The type of <code>UnityEngine.Object</code> to load.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask{{T}}
+      description: ''
+    content.vb: Public Shared Function LoadAddressAsset(Of T As [Object])(address As String) As UniTask(Of T)
+  overload: NSOMediaExtender.AddressableExtender.LoadAddressAsset*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: ''
+  nameWithType.vb: AddressableExtender.LoadAddressAsset(Of T)(String)
+  fullName.vb: NSOMediaExtender.AddressableExtender.LoadAddressAsset(Of T)(String)
+  name.vb: LoadAddressAsset(Of T)(String)
+- uid: NSOMediaExtender.AddressableExtender.ReleaseAddressAsset(System.String)
+  commentId: M:NSOMediaExtender.AddressableExtender.ReleaseAddressAsset(System.String)
+  id: ReleaseAddressAsset(System.String)
+  parent: NSOMediaExtender.AddressableExtender
+  langs:
+  - csharp
+  - vb
+  name: ReleaseAddressAsset(string)
+  nameWithType: AddressableExtender.ReleaseAddressAsset(string)
+  fullName: NSOMediaExtender.AddressableExtender.ReleaseAddressAsset(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Releases an object Addressable's handle loaded with <code>LoadAddressAsset()</code>.
+  example: []
+  syntax:
+    content: public static void ReleaseAddressAsset(string address)
+    parameters:
+    - id: address
+      type: System.String
+      description: ''
+    content.vb: Public Shared Sub ReleaseAddressAsset(address As String)
+  overload: NSOMediaExtender.AddressableExtender.ReleaseAddressAsset*
+  nameWithType.vb: AddressableExtender.ReleaseAddressAsset(String)
+  fullName.vb: NSOMediaExtender.AddressableExtender.ReleaseAddressAsset(String)
+  name.vb: ReleaseAddressAsset(String)
+- uid: NSOMediaExtender.AddressableExtender.ReleaseAllHandles
+  commentId: M:NSOMediaExtender.AddressableExtender.ReleaseAllHandles
+  id: ReleaseAllHandles
+  parent: NSOMediaExtender.AddressableExtender
+  langs:
+  - csharp
+  - vb
+  name: ReleaseAllHandles()
+  nameWithType: AddressableExtender.ReleaseAllHandles()
+  fullName: NSOMediaExtender.AddressableExtender.ReleaseAllHandles()
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Releases all handles loaded with <code>LoadAddressAsset()</code>.
+  example: []
+  syntax:
+    content: public static void ReleaseAllHandles()
+    content.vb: Public Shared Sub ReleaseAllHandles()
+  overload: NSOMediaExtender.AddressableExtender.ReleaseAllHandles*
+- uid: NSOMediaExtender.AddressableExtender.#ctor
+  commentId: M:NSOMediaExtender.AddressableExtender.#ctor
+  id: '#ctor'
+  parent: NSOMediaExtender.AddressableExtender
+  langs:
+  - csharp
+  - vb
+  name: AddressableExtender()
+  nameWithType: AddressableExtender.AddressableExtender()
+  fullName: NSOMediaExtender.AddressableExtender.AddressableExtender()
+  type: Constructor
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public AddressableExtender()
+    content.vb: Public Sub New()
+  overload: NSOMediaExtender.AddressableExtender.#ctor*
+  nameWithType.vb: AddressableExtender.New()
+  fullName.vb: NSOMediaExtender.AddressableExtender.New()
+  name.vb: New()
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NSOMediaExtender.AddressableExtender.AddExternalCatalog*
+  commentId: Overload:NSOMediaExtender.AddressableExtender.AddExternalCatalog
+  isExternal: true
+  href: NSOMediaExtender.AddressableExtender.html#NSOMediaExtender_AddressableExtender_AddExternalCatalog_System_String_
+  name: AddExternalCatalog
+  nameWithType: AddressableExtender.AddExternalCatalog
+  fullName: NSOMediaExtender.AddressableExtender.AddExternalCatalog
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Cysharp.Threading.Tasks.UniTask
+  commentId: T:Cysharp.Threading.Tasks.UniTask
+  parent: Cysharp.Threading.Tasks
+  isExternal: true
+  name: UniTask
+  nameWithType: UniTask
+  fullName: Cysharp.Threading.Tasks.UniTask
+- uid: Cysharp.Threading.Tasks
+  commentId: N:Cysharp.Threading.Tasks
+  isExternal: true
+  name: Cysharp.Threading.Tasks
+  nameWithType: Cysharp.Threading.Tasks
+  fullName: Cysharp.Threading.Tasks
+  spec.csharp:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+  spec.vb:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+- uid: NSOMediaExtender.AddressableExtender.AddAddressBundle*
+  commentId: Overload:NSOMediaExtender.AddressableExtender.AddAddressBundle
+  isExternal: true
+  href: NSOMediaExtender.AddressableExtender.html#NSOMediaExtender_AddressableExtender_AddAddressBundle_System_String_
+  name: AddAddressBundle
+  nameWithType: AddressableExtender.AddAddressBundle
+  fullName: NSOMediaExtender.AddressableExtender.AddAddressBundle
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: NSOMediaExtender.AddressableExtender.LoadAddressAsset*
+  commentId: Overload:NSOMediaExtender.AddressableExtender.LoadAddressAsset
+  isExternal: true
+  href: NSOMediaExtender.AddressableExtender.html#NSOMediaExtender_AddressableExtender_LoadAddressAsset__1_System_String_
+  name: LoadAddressAsset
+  nameWithType: AddressableExtender.LoadAddressAsset
+  fullName: NSOMediaExtender.AddressableExtender.LoadAddressAsset
+- uid: Cysharp.Threading.Tasks.UniTask{{T}}
+  commentId: T:Cysharp.Threading.Tasks.UniTask{``0}
+  parent: Cysharp.Threading.Tasks
+  definition: Cysharp.Threading.Tasks.UniTask`1
+  name: UniTask<T>
+  nameWithType: UniTask<T>
+  fullName: Cysharp.Threading.Tasks.UniTask<T>
+  nameWithType.vb: UniTask(Of T)
+  fullName.vb: Cysharp.Threading.Tasks.UniTask(Of T)
+  name.vb: UniTask(Of T)
+  spec.csharp:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Cysharp.Threading.Tasks.UniTask`1
+  commentId: T:Cysharp.Threading.Tasks.UniTask`1
+  isExternal: true
+  name: UniTask<T>
+  nameWithType: UniTask<T>
+  fullName: Cysharp.Threading.Tasks.UniTask<T>
+  nameWithType.vb: UniTask(Of T)
+  fullName.vb: Cysharp.Threading.Tasks.UniTask(Of T)
+  name.vb: UniTask(Of T)
+  spec.csharp:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NSOMediaExtender.AddressableExtender.ReleaseAddressAsset*
+  commentId: Overload:NSOMediaExtender.AddressableExtender.ReleaseAddressAsset
+  isExternal: true
+  href: NSOMediaExtender.AddressableExtender.html#NSOMediaExtender_AddressableExtender_ReleaseAddressAsset_System_String_
+  name: ReleaseAddressAsset
+  nameWithType: AddressableExtender.ReleaseAddressAsset
+  fullName: NSOMediaExtender.AddressableExtender.ReleaseAddressAsset
+- uid: NSOMediaExtender.AddressableExtender.ReleaseAllHandles*
+  commentId: Overload:NSOMediaExtender.AddressableExtender.ReleaseAllHandles
+  isExternal: true
+  href: NSOMediaExtender.AddressableExtender.html#NSOMediaExtender_AddressableExtender_ReleaseAllHandles
+  name: ReleaseAllHandles
+  nameWithType: AddressableExtender.ReleaseAllHandles
+  fullName: NSOMediaExtender.AddressableExtender.ReleaseAllHandles
+- uid: NSOMediaExtender.AddressableExtender.#ctor*
+  commentId: Overload:NSOMediaExtender.AddressableExtender.#ctor
+  isExternal: true
+  href: NSOMediaExtender.AddressableExtender.html#NSOMediaExtender_AddressableExtender__ctor
+  name: AddressableExtender
+  nameWithType: AddressableExtender.AddressableExtender
+  fullName: NSOMediaExtender.AddressableExtender.AddressableExtender
+  nameWithType.vb: AddressableExtender.New
+  fullName.vb: NSOMediaExtender.AddressableExtender.New
+  name.vb: New

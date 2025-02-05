@@ -1,0 +1,617 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOTxtExtender.ExtTextManager
+  commentId: T:NGOTxtExtender.ExtTextManager
+  id: ExtTextManager
+  parent: NGOTxtExtender
+  children:
+  - NGOTxtExtender.ExtTextManager.#ctor
+  - NGOTxtExtender.ExtTextManager.AddToExtList``1(System.Collections.Generic.List{``0})
+  - NGOTxtExtender.ExtTextManager.ClearExDisposible
+  - NGOTxtExtender.ExtTextManager.CompositeDisposible
+  - NGOTxtExtender.ExtTextManager.GetUniqueIdNum``1(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ExtTextManager
+  nameWithType: ExtTextManager
+  fullName: NGOTxtExtender.ExtTextManager
+  type: Class
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class ExtTextManager
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class ExtTextManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NGOTxtExtender.ExtTextManager.CompositeDisposible
+  commentId: F:NGOTxtExtender.ExtTextManager.CompositeDisposible
+  id: CompositeDisposible
+  parent: NGOTxtExtender.ExtTextManager
+  langs:
+  - csharp
+  - vb
+  name: CompositeDisposible
+  nameWithType: ExtTextManager.CompositeDisposible
+  fullName: NGOTxtExtender.ExtTextManager.CompositeDisposible
+  type: Field
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: public static CompositeDisposable CompositeDisposible
+    return:
+      type: UniRx.CompositeDisposable
+    content.vb: Public Shared CompositeDisposible As CompositeDisposable
+- uid: NGOTxtExtender.ExtTextManager.ClearExDisposible
+  commentId: M:NGOTxtExtender.ExtTextManager.ClearExDisposible
+  id: ClearExDisposible
+  parent: NGOTxtExtender.ExtTextManager
+  langs:
+  - csharp
+  - vb
+  name: ClearExDisposible()
+  nameWithType: ExtTextManager.ClearExDisposible()
+  fullName: NGOTxtExtender.ExtTextManager.ClearExDisposible()
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Clears the Extend Manager's CompositeDisposable.
+  example: []
+  syntax:
+    content: >-
+      [HarmonyPostfix]
+
+      [HarmonyPatch(typeof(NgoEvent), "endEvent")]
+
+      public static void ClearExDisposible()
+    content.vb: >-
+      <HarmonyPostfix>
+
+      <HarmonyPatch(GetType(NgoEvent), "endEvent")>
+
+      Public Shared Sub ClearExDisposible()
+  overload: NGOTxtExtender.ExtTextManager.ClearExDisposible*
+  attributes:
+  - type: HarmonyLib.HarmonyPostfix
+    ctor: HarmonyLib.HarmonyPostfix.#ctor
+    arguments: []
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor(System.Type,System.String)
+    arguments:
+    - type: System.Type
+      value: ngov3.NgoEvent
+    - type: System.String
+      value: endEvent
+- uid: NGOTxtExtender.ExtTextManager.GetUniqueIdNum``1(System.String)
+  commentId: M:NGOTxtExtender.ExtTextManager.GetUniqueIdNum``1(System.String)
+  id: GetUniqueIdNum``1(System.String)
+  parent: NGOTxtExtender.ExtTextManager
+  langs:
+  - csharp
+  - vb
+  name: GetUniqueIdNum<T>(string)
+  nameWithType: ExtTextManager.GetUniqueIdNum<T>(string)
+  fullName: NGOTxtExtender.ExtTextManager.GetUniqueIdNum<T>(string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: "   Gets the unique Id Number at the end of a param's Id, and converts it to a supported enumtype.\r\n<ul><li><code>JineType</code></li><li><code>KusoRepType</code></li><li><code>TooltipType</code></li><li><code>TweetType</code></li></ul>"
+  example: []
+  syntax:
+    content: 'public static T GetUniqueIdNum<T>(string id) where T : Enum'
+    parameters:
+    - id: id
+      type: System.String
+      description: The param's Id to be used for conversion.
+    typeParameters:
+    - id: T
+      description: The enumtype to convert to.
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function GetUniqueIdNum(Of T As [Enum])(id As String) As T
+  overload: NGOTxtExtender.ExtTextManager.GetUniqueIdNum*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if the type is either not supported or is not an enumtype.
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the unique Id Number failed to parse.
+  nameWithType.vb: ExtTextManager.GetUniqueIdNum(Of T)(String)
+  fullName.vb: NGOTxtExtender.ExtTextManager.GetUniqueIdNum(Of T)(String)
+  name.vb: GetUniqueIdNum(Of T)(String)
+- uid: NGOTxtExtender.ExtTextManager.AddToExtList``1(System.Collections.Generic.List{``0})
+  commentId: M:NGOTxtExtender.ExtTextManager.AddToExtList``1(System.Collections.Generic.List{``0})
+  id: AddToExtList``1(System.Collections.Generic.List{``0})
+  parent: NGOTxtExtender.ExtTextManager
+  langs:
+  - csharp
+  - vb
+  name: AddToExtList<T>(List<T>)
+  nameWithType: ExtTextManager.AddToExtList<T>(List<T>)
+  fullName: NGOTxtExtender.ExtTextManager.AddToExtList<T>(System.Collections.Generic.List<T>)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: >-
+    Adds a specific type of list to the corresponding <code>ExtList</code>.
+
+    Type must be a valid Master.Param.
+  remarks: This method is required to load custom text into the game.
+  example: []
+  syntax:
+    content: 'public static void AddToExtList<T>(List<T> list) where T : class'
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: The list to be added to the corresponding <code>ExtList</code>.
+    typeParameters:
+    - id: T
+      description: The type of list to add. Must be a valid Master.Param
+    content.vb: Public Shared Sub AddToExtList(Of T As Class)(list As List(Of T))
+  overload: NGOTxtExtender.ExtTextManager.AddToExtList*
+  nameWithType.vb: ExtTextManager.AddToExtList(Of T)(List(Of T))
+  fullName.vb: NGOTxtExtender.ExtTextManager.AddToExtList(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: AddToExtList(Of T)(List(Of T))
+- uid: NGOTxtExtender.ExtTextManager.#ctor
+  commentId: M:NGOTxtExtender.ExtTextManager.#ctor
+  id: '#ctor'
+  parent: NGOTxtExtender.ExtTextManager
+  langs:
+  - csharp
+  - vb
+  name: ExtTextManager()
+  nameWithType: ExtTextManager.ExtTextManager()
+  fullName: NGOTxtExtender.ExtTextManager.ExtTextManager()
+  type: Constructor
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: public ExtTextManager()
+    content.vb: Public Sub New()
+  overload: NGOTxtExtender.ExtTextManager.#ctor*
+  nameWithType.vb: ExtTextManager.New()
+  fullName.vb: NGOTxtExtender.ExtTextManager.New()
+  name.vb: New()
+references:
+- uid: NGOTxtExtender
+  commentId: N:NGOTxtExtender
+  isExternal: true
+  href: NGOTxtExtender.html
+  name: NGOTxtExtender
+  nameWithType: NGOTxtExtender
+  fullName: NGOTxtExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UniRx.CompositeDisposable
+  commentId: T:UniRx.CompositeDisposable
+  parent: UniRx
+  isExternal: true
+  name: CompositeDisposable
+  nameWithType: CompositeDisposable
+  fullName: UniRx.CompositeDisposable
+- uid: UniRx
+  commentId: N:UniRx
+  isExternal: true
+  name: UniRx
+  nameWithType: UniRx
+  fullName: UniRx
+- uid: NGOTxtExtender.ExtTextManager.ClearExDisposible*
+  commentId: Overload:NGOTxtExtender.ExtTextManager.ClearExDisposible
+  isExternal: true
+  href: NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_ClearExDisposible
+  name: ClearExDisposible
+  nameWithType: ExtTextManager.ClearExDisposible
+  fullName: NGOTxtExtender.ExtTextManager.ClearExDisposible
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: NGOTxtExtender.ExtTextManager.GetUniqueIdNum*
+  commentId: Overload:NGOTxtExtender.ExtTextManager.GetUniqueIdNum
+  isExternal: true
+  href: NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_GetUniqueIdNum__1_System_String_
+  name: GetUniqueIdNum
+  nameWithType: ExtTextManager.GetUniqueIdNum
+  fullName: NGOTxtExtender.ExtTextManager.GetUniqueIdNum
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NGOTxtExtender.ExtTextManager.AddToExtList*
+  commentId: Overload:NGOTxtExtender.ExtTextManager.AddToExtList
+  isExternal: true
+  href: NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_AddToExtList__1_System_Collections_Generic_List___0__
+  name: AddToExtList
+  nameWithType: ExtTextManager.AddToExtList
+  fullName: NGOTxtExtender.ExtTextManager.AddToExtList
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NGOTxtExtender.ExtTextManager.#ctor*
+  commentId: Overload:NGOTxtExtender.ExtTextManager.#ctor
+  isExternal: true
+  href: NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager__ctor
+  name: ExtTextManager
+  nameWithType: ExtTextManager.ExtTextManager
+  fullName: NGOTxtExtender.ExtTextManager.ExtTextManager
+  nameWithType.vb: ExtTextManager.New
+  fullName.vb: NGOTxtExtender.ExtTextManager.New
+  name.vb: New

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EventExtender | Needy Girl ModLib Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EventExtender | Needy Girl ModLib Docs ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Needy Girl ModLib Docs">
+            Needy Girl ModLib Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NGOEventExtender.EventExtender">
+
+
+
+  <h1 id="NGOEventExtender_EventExtender" data-uid="NGOEventExtender.EventExtender" class="text-break">
+Class EventExtender  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NGOEventExtender.html">NGOEventExtender</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NGOEventExtender.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HarmonyPatch]
+public class EventExtender</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">EventExtender</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NGOEventExtender_EventExtender__ctor_" data-uid="NGOEventExtender.EventExtender.#ctor*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender__ctor" data-uid="NGOEventExtender.EventExtender.#ctor">
+  EventExtender()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EventExtender()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="NGOEventExtender_EventExtender_currentExtDayEvent" data-uid="NGOEventExtender.EventExtender.currentExtDayEvent">
+  currentExtDayEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NgoEvent currentExtDayEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NgoEvent</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="NGOEventExtender_EventExtender_isEventing" data-uid="NGOEventExtender.EventExtender.isEventing">
+  isEventing
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool isEventing</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="NGOEventExtender_EventExtender_ngoEvent" data-uid="NGOEventExtender.EventExtender.ngoEvent">
+  ngoEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NgoEvent ngoEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NgoEvent</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="NGOEventExtender_EventExtender_randomDayExtEvents" data-uid="NGOEventExtender.EventExtender.randomDayExtEvents">
+  randomDayExtEvents
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;NgoExtEvent&gt; randomDayExtEvents</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="NGOEventExtender_EventExtender_resetDayCustomEvent" data-uid="NGOEventExtender.EventExtender.resetDayCustomEvent">
+  resetDayCustomEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool resetDayCustomEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NGOEventExtender_EventExtender_CanHeadpat_" data-uid="NGOEventExtender.EventExtender.CanHeadpat*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_CanHeadpat_System_Boolean_" data-uid="NGOEventExtender.EventExtender.CanHeadpat(System.Boolean)">
+  CanHeadpat(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enables or disables the ability to headpat Ame's head. Useful if you don't want Ame's head to be interactable during events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CanHeadpat(bool isPat)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isPat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Can Ame's head be patted or not?</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NGOEventExtender_EventExtender_CanHeadpat_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Ability to pat will be reset to true during the boot screen, reloading a day or going to the next day.</p>
+</div>
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_HijackOriginalEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_HijackOriginalEvent_ngov3_NgoEvent_NGOEventExtender_NgoExtEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent(ngov3.NgoEvent,NGOEventExtender.NgoExtEvent)">
+  HijackOriginalEvent(NgoEvent, NgoExtEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hijacks a queued original event and loads a custom event instead.
+<br>If the custom event has a condition, if will only replace the original if the condition is met.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HijackOriginalEvent(NgoEvent original, NgoExtEvent replacement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>original</code> <span class="xref">NgoEvent</span></dt>
+    <dd><p>The event to replace.</p>
+</dd>
+    <dt><code>replacement</code> <a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a></dt>
+    <dd><p>The event that will be loaded instead.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NGOEventExtender_EventExtender_HijackOriginalEvent_ngov3_NgoEvent_NGOEventExtender_NgoExtEvent__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds the custom event to a list, where it will track when its related original event is de-queued.
+<br> Therefore, it's not required to call the same method with the same arguments more than once.</p>
+</div>
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_HijackOriginalEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_HijackOriginalEvent_ngov3_NgoEvent_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent__" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent(ngov3.NgoEvent,System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})">
+  HijackOriginalEvent(NgoEvent, List&lt;NgoExtEvent&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hijacks a queued original event and loads a custom event instead.
+<br>If the custom event has a condition, if will only replace the original if the condition is met.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HijackOriginalEvent(NgoEvent original, List&lt;NgoExtEvent&gt; replacements)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>original</code> <span class="xref">NgoEvent</span></dt>
+    <dd><p>The event to replace.</p>
+</dd>
+    <dt><code>replacements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd><p>The list of events that will be loaded instead.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NGOEventExtender_EventExtender_HijackOriginalEvent_ngov3_NgoEvent_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds the custom events to a list, where it will track when its related original event is de-queued. <br>
+Therefore, it's not required to call the same method with the same arguments more than once.</p>
+</div>
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_HijackOriginalEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_HijackOriginalEvent__1_NGOEventExtender_NgoExtEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent``1(NGOEventExtender.NgoExtEvent)">
+  HijackOriginalEvent&lt;T&gt;(NgoExtEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hijacks a queued original event and loads a custom event instead.
+<br>If the custom event has a condition, if will only replace the original if the condition is met.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HijackOriginalEvent&lt;T&gt;(NgoExtEvent replacement) where T : NgoEvent</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>replacement</code> <a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a></dt>
+    <dd><p>The event that will be loaded instead.</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The event to replace.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="NGOEventExtender_EventExtender_HijackOriginalEvent__1_NGOEventExtender_NgoExtEvent__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds the custom event to a list, where it will track when its related original event is de-queued.
+<br> Therefore, it's not required to call the same method with the same arguments more than once.</p>
+</div>
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_HijackOriginalEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_HijackOriginalEvent__1_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent__" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent``1(System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})">
+  HijackOriginalEvent&lt;T&gt;(List&lt;NgoExtEvent&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hijacks a queued original event and loads a custom event instead.
+<br>If the custom event has a condition, if will only replace the original if the condition is met.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HijackOriginalEvent&lt;T&gt;(List&lt;NgoExtEvent&gt; replacements) where T : NgoEvent</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>replacements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd><p>The list of events that will be loaded instead.</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The event to replace.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="NGOEventExtender_EventExtender_HijackOriginalEvent__1_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds the custom events to a list, where it will track when its related original event is de-queued. <br>
+Therefore, it's not required to call the same method with the same arguments more than once.</p>
+</div>
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_HijackOriginalEvent_" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_HijackOriginalEvent__2" data-uid="NGOEventExtender.EventExtender.HijackOriginalEvent``2">
+  HijackOriginalEvent&lt;T, ExT&gt;()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hijacks a queued original event and loads a custom event instead.
+<br>If the custom event has a condition, if will only replace the original if the condition is met.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HijackOriginalEvent&lt;T, ExT&gt;() where T : NgoEvent where ExT : NgoExtEvent</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The event to replace.</p>
+</dd>
+    <dt><code>ExT</code></dt>
+    <dd><p>The event that will be loaded instead.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="NGOEventExtender_EventExtender_HijackOriginalEvent__2_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds the custom event to a list, where it will track when its related original event is de-queued.
+<br> Therefore, it's not required to call the same method with the same arguments more than once.</p>
+</div>
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_SetRandomDayExtEvents_" data-uid="NGOEventExtender.EventExtender.SetRandomDayExtEvents*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_SetRandomDayExtEvents_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent__" data-uid="NGOEventExtender.EventExtender.SetRandomDayExtEvents(System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})">
+  SetRandomDayExtEvents(List&lt;NgoExtEvent&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets custom Random Day Events. How these events are loaded are based on the event's title.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetRandomDayExtEvents(List&lt;NgoExtEvent&gt; extEventList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>extEventList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd><p>The list of custom random day events to load.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_SetSpecialDayExtEvent_" data-uid="NGOEventExtender.EventExtender.SetSpecialDayExtEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_SetSpecialDayExtEvent_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent__" data-uid="NGOEventExtender.EventExtender.SetSpecialDayExtEvent(System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})">
+  SetSpecialDayExtEvent(List&lt;NgoExtEvent&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets custom Special Day Events.
+<br>In-game Special Day Events (fixed/milestones) take priority over your events, so your conditions have to be unique.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSpecialDayExtEvent(List&lt;NgoExtEvent&gt; extEventList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>extEventList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd><p>The list of custom special day events to load.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_SetSpecialMidnightExtEvent_" data-uid="NGOEventExtender.EventExtender.SetSpecialMidnightExtEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_SetSpecialMidnightExtEvent_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent__" data-uid="NGOEventExtender.EventExtender.SetSpecialMidnightExtEvent(System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})">
+  SetSpecialMidnightExtEvent(List&lt;NgoExtEvent&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets custom Special Midnight Events. (the time after Sleep To Tomorrow is pressed, but before the day transitions to the next day.)
+<br>In-game Special Midnight Events take priority over your events, so your conditions have to be unique.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSpecialMidnightExtEvent(List&lt;NgoExtEvent&gt; extEventList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>extEventList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd><p>The list of custom special day events to load.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_SetSpecialNightExtEvent_" data-uid="NGOEventExtender.EventExtender.SetSpecialNightExtEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_SetSpecialNightExtEvent_System_Collections_Generic_List_NGOEventExtender_NgoExtEvent__" data-uid="NGOEventExtender.EventExtender.SetSpecialNightExtEvent(System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})">
+  SetSpecialNightExtEvent(List&lt;NgoExtEvent&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets custom Special Night Events.
+<br>In-game Special Night Events take priority over your events, so your conditions have to be unique.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSpecialNightExtEvent(List&lt;NgoExtEvent&gt; extEventList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>extEventList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NGOEventExtender.NgoExtEvent.html">NgoExtEvent</a>&gt;</dt>
+    <dd><p>The list of custom special day events to load.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NGOEventExtender_EventExtender_StartEvent_" data-uid="NGOEventExtender.EventExtender.StartEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_StartEvent_ngov3_NgoEvent_" data-uid="NGOEventExtender.EventExtender.StartEvent(ngov3.NgoEvent)">
+  StartEvent(NgoEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts a custom event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void StartEvent(NgoEvent ngoEvent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ngoEvent</code> <span class="xref">NgoEvent</span></dt>
+    <dd><p>The event that will be loaded.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="NGOEventExtender_EventExtender_StartEvent_" data-uid="NGOEventExtender.EventExtender.StartEvent*"></a>
+
+  <h3 id="NGOEventExtender_EventExtender_StartEvent__1" data-uid="NGOEventExtender.EventExtender.StartEvent``1">
+  StartEvent&lt;T&gt;()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts a custom event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void StartEvent&lt;T&gt;() where T : NgoEvent, new()</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The event that will be loaded.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

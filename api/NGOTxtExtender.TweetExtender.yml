@@ -1,0 +1,820 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOTxtExtender.TweetExtender
+  commentId: T:NGOTxtExtender.TweetExtender
+  id: TweetExtender
+  parent: NGOTxtExtender
+  children:
+  - NGOTxtExtender.TweetExtender.#ctor
+  - NGOTxtExtender.TweetExtender.ExtList
+  - NGOTxtExtender.TweetExtender.StartExtTweet(System.String)
+  - NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps(System.String,System.String)
+  - NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps(System.String,System.Collections.Generic.List{ngov3.KusoRepType})
+  - NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps(System.String)
+  - NGOTxtExtender.TweetExtender.StartTweet(ngov3.TweetType)
+  - NGOTxtExtender.TweetExtender.StartTweetWithExtReps(ngov3.TweetType,System.String)
+  - NGOTxtExtender.TweetExtender.StartTweetWithPresetReps(ngov3.TweetType,System.Collections.Generic.List{ngov3.KusoRepType})
+  - NGOTxtExtender.TweetExtender.StartTweetWithRandomReps(ngov3.TweetType)
+  langs:
+  - csharp
+  - vb
+  name: TweetExtender
+  nameWithType: TweetExtender
+  fullName: NGOTxtExtender.TweetExtender
+  type: Class
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: >-
+      [HarmonyPatch]
+
+      public class TweetExtender
+    content.vb: >-
+      <HarmonyPatch>
+
+      Public Class TweetExtender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: HarmonyLib.HarmonyPatch
+    ctor: HarmonyLib.HarmonyPatch.#ctor
+    arguments: []
+- uid: NGOTxtExtender.TweetExtender.ExtList
+  commentId: F:NGOTxtExtender.TweetExtender.ExtList
+  id: ExtList
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: ExtList
+  nameWithType: TweetExtender.ExtList
+  fullName: NGOTxtExtender.TweetExtender.ExtList
+  type: Field
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: public static List<TweetMaster.Param> ExtList
+    return:
+      type: System.Collections.Generic.List{TweetMaster.Param}
+    content.vb: Public Shared ExtList As List(Of TweetMaster.Param)
+- uid: NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps(System.String)
+  commentId: M:NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps(System.String)
+  id: StartExtTweetWithRandomReps(System.String)
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtTweetWithRandomReps(string)
+  nameWithType: TweetExtender.StartExtTweetWithRandomReps(string)
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps(string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a custom Tweet on Tweeter/Poketter with normal (random) replies attached to it.
+  example: []
+  syntax:
+    content: public static void StartExtTweetWithRandomReps(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: The TweetMaster.Param's Id used to load the tweet.
+    content.vb: Public Shared Sub StartExtTweetWithRandomReps(id As String)
+  overload: NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: TweetExtender.StartExtTweetWithRandomReps(String)
+  fullName.vb: NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps(String)
+  name.vb: StartExtTweetWithRandomReps(String)
+- uid: NGOTxtExtender.TweetExtender.StartTweetWithRandomReps(ngov3.TweetType)
+  commentId: M:NGOTxtExtender.TweetExtender.StartTweetWithRandomReps(ngov3.TweetType)
+  id: StartTweetWithRandomReps(ngov3.TweetType)
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartTweetWithRandomReps(TweetType)
+  nameWithType: TweetExtender.StartTweetWithRandomReps(TweetType)
+  fullName: NGOTxtExtender.TweetExtender.StartTweetWithRandomReps(ngov3.TweetType)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a custom Tweet on Tweeter/Poketter with normal (random) replies attached to it.
+  example: []
+  syntax:
+    content: public static void StartTweetWithRandomReps(TweetType tweet)
+    parameters:
+    - id: tweet
+      type: ngov3.TweetType
+      description: The TweetType used to load the tweet. If loading custom text, either use <code>ExtTextExtender.GetUniqueIdNum()</code> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.
+    content.vb: Public Shared Sub StartTweetWithRandomReps(tweet As TweetType)
+  overload: NGOTxtExtender.TweetExtender.StartTweetWithRandomReps*
+- uid: NGOTxtExtender.TweetExtender.StartExtTweet(System.String)
+  commentId: M:NGOTxtExtender.TweetExtender.StartExtTweet(System.String)
+  id: StartExtTweet(System.String)
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtTweet(string)
+  nameWithType: TweetExtender.StartExtTweet(string)
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweet(string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a custom Tweet on Tweeter/Poketter with no replies attached to it.
+  example: []
+  syntax:
+    content: public static void StartExtTweet(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: The TweetMaster.Param's Id used to load the tweet.
+    content.vb: Public Shared Sub StartExtTweet(id As String)
+  overload: NGOTxtExtender.TweetExtender.StartExtTweet*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: TweetExtender.StartExtTweet(String)
+  fullName.vb: NGOTxtExtender.TweetExtender.StartExtTweet(String)
+  name.vb: StartExtTweet(String)
+- uid: NGOTxtExtender.TweetExtender.StartTweet(ngov3.TweetType)
+  commentId: M:NGOTxtExtender.TweetExtender.StartTweet(ngov3.TweetType)
+  id: StartTweet(ngov3.TweetType)
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartTweet(TweetType)
+  nameWithType: TweetExtender.StartTweet(TweetType)
+  fullName: NGOTxtExtender.TweetExtender.StartTweet(ngov3.TweetType)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a Tweet on Tweeter/Poketter with no replies attached to it.
+  example: []
+  syntax:
+    content: public static void StartTweet(TweetType tweet)
+    parameters:
+    - id: tweet
+      type: ngov3.TweetType
+      description: The TweetType used to load the tweet. If loading custom text, either use <code>ExtTextExtender.GetUniqueIdNum()</code> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.
+    content.vb: Public Shared Sub StartTweet(tweet As TweetType)
+  overload: NGOTxtExtender.TweetExtender.StartTweet*
+- uid: NGOTxtExtender.TweetExtender.StartTweetWithExtReps(ngov3.TweetType,System.String)
+  commentId: M:NGOTxtExtender.TweetExtender.StartTweetWithExtReps(ngov3.TweetType,System.String)
+  id: StartTweetWithExtReps(ngov3.TweetType,System.String)
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartTweetWithExtReps(TweetType, string)
+  nameWithType: TweetExtender.StartTweetWithExtReps(TweetType, string)
+  fullName: NGOTxtExtender.TweetExtender.StartTweetWithExtReps(ngov3.TweetType, string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a normal or custom Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <code>ParentID</code>.
+  remarks: 'Note: Tweet Replies loads the first param at the bottom of the reply thread, and vice-versa.'
+  example: []
+  syntax:
+    content: public static void StartTweetWithExtReps(TweetType tweet, string kusoRepParId)
+    parameters:
+    - id: tweet
+      type: ngov3.TweetType
+      description: The TweetType used to load the tweet. If loading custom text, either use <code>ExtTextExtender.GetUniqueIdNum()</code> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.
+    - id: kusoRepParId
+      type: System.String
+      description: The KRepMaster.Param's <code>ParentID</code> that's used to find matching params.
+    content.vb: Public Shared Sub StartTweetWithExtReps(tweet As TweetType, kusoRepParId As String)
+  overload: NGOTxtExtender.TweetExtender.StartTweetWithExtReps*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: TweetExtender.StartTweetWithExtReps(TweetType, String)
+  fullName.vb: NGOTxtExtender.TweetExtender.StartTweetWithExtReps(ngov3.TweetType, String)
+  name.vb: StartTweetWithExtReps(TweetType, String)
+- uid: NGOTxtExtender.TweetExtender.StartTweetWithPresetReps(ngov3.TweetType,System.Collections.Generic.List{ngov3.KusoRepType})
+  commentId: M:NGOTxtExtender.TweetExtender.StartTweetWithPresetReps(ngov3.TweetType,System.Collections.Generic.List{ngov3.KusoRepType})
+  id: StartTweetWithPresetReps(ngov3.TweetType,System.Collections.Generic.List{ngov3.KusoRepType})
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartTweetWithPresetReps(TweetType, List<KusoRepType>)
+  nameWithType: TweetExtender.StartTweetWithPresetReps(TweetType, List<KusoRepType>)
+  fullName: NGOTxtExtender.TweetExtender.StartTweetWithPresetReps(ngov3.TweetType, System.Collections.Generic.List<ngov3.KusoRepType>)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a normal or custom Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <code>ParentID</code>.
+  remarks: 'Note: Tweet Replies loads the first param at the bottom of the reply thread, and vice-versa.'
+  example: []
+  syntax:
+    content: public static void StartTweetWithPresetReps(TweetType tweet, List<KusoRepType> repList)
+    parameters:
+    - id: tweet
+      type: ngov3.TweetType
+      description: The TweetType used to load the tweet. If loading custom text, either use <code>ExtTextExtender.GetUniqueIdNum()</code> or use your unique number at the end of your ID and add 10000 to it, then cast it as a TweetType.
+    - id: repList
+      type: System.Collections.Generic.List{ngov3.KusoRepType}
+      description: The list of KusoRepType's used to load in the pre-set tweet replies. You can also place custom tweet replies in the list by either using <code>ExtTextExtender.GetUniqueIdNum()</code> or by using your unique number at the end of your ID and add 10000 to it, then cast it as a KusoRepType.
+    content.vb: Public Shared Sub StartTweetWithPresetReps(tweet As TweetType, repList As List(Of KusoRepType))
+  overload: NGOTxtExtender.TweetExtender.StartTweetWithPresetReps*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: TweetExtender.StartTweetWithPresetReps(TweetType, List(Of KusoRepType))
+  fullName.vb: NGOTxtExtender.TweetExtender.StartTweetWithPresetReps(ngov3.TweetType, System.Collections.Generic.List(Of ngov3.KusoRepType))
+  name.vb: StartTweetWithPresetReps(TweetType, List(Of KusoRepType))
+- uid: NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps(System.String,System.String)
+  commentId: M:NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps(System.String,System.String)
+  id: StartExtTweetWithExtReps(System.String,System.String)
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtTweetWithExtReps(string, string)
+  nameWithType: TweetExtender.StartExtTweetWithExtReps(string, string)
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps(string, string)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a custom Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <code>ParentID</code>.
+  remarks: 'Note: Tweet Replies loads the first param at the bottom of the reply thread, and vice-versa.'
+  example: []
+  syntax:
+    content: public static void StartExtTweetWithExtReps(string tweetId, string kusoRepParId)
+    parameters:
+    - id: tweetId
+      type: System.String
+      description: The TweetMaster.Param's Id used to load the tweet.
+    - id: kusoRepParId
+      type: System.String
+      description: The KRepMaster.Param's <code>ParentID</code> that's used to find matching params.
+    content.vb: Public Shared Sub StartExtTweetWithExtReps(tweetId As String, kusoRepParId As String)
+  overload: NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: TweetExtender.StartExtTweetWithExtReps(String, String)
+  fullName.vb: NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps(String, String)
+  name.vb: StartExtTweetWithExtReps(String, String)
+- uid: NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps(System.String,System.Collections.Generic.List{ngov3.KusoRepType})
+  commentId: M:NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps(System.String,System.Collections.Generic.List{ngov3.KusoRepType})
+  id: StartExtTweetWithPresetReps(System.String,System.Collections.Generic.List{ngov3.KusoRepType})
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: StartExtTweetWithPresetReps(string, List<KusoRepType>)
+  nameWithType: TweetExtender.StartExtTweetWithPresetReps(string, List<KusoRepType>)
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps(string, System.Collections.Generic.List<ngov3.KusoRepType>)
+  type: Method
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  summary: Creates a custom Tweet on Tweeter/Poketter with replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <code>ParentID</code>.
+  example: []
+  syntax:
+    content: public static void StartExtTweetWithPresetReps(string tweetId, List<KusoRepType> repList)
+    parameters:
+    - id: tweetId
+      type: System.String
+      description: The TweetMaster.Param's Id used to load the tweet.
+    - id: repList
+      type: System.Collections.Generic.List{ngov3.KusoRepType}
+      description: The list of KusoRepType's used to load in the pre-set tweet replies. You can also place custom tweet replies in the list by either using <code>ExtTextExtender.GetUniqueIdNum()</code> or by using your unique number at the end of your ID and add 10000 to it, then cast it as a KusoRepType.
+    content.vb: Public Shared Sub StartExtTweetWithPresetReps(tweetId As String, repList As List(Of KusoRepType))
+  overload: NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps*
+  exceptions:
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: ''
+  nameWithType.vb: TweetExtender.StartExtTweetWithPresetReps(String, List(Of KusoRepType))
+  fullName.vb: NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps(String, System.Collections.Generic.List(Of ngov3.KusoRepType))
+  name.vb: StartExtTweetWithPresetReps(String, List(Of KusoRepType))
+- uid: NGOTxtExtender.TweetExtender.#ctor
+  commentId: M:NGOTxtExtender.TweetExtender.#ctor
+  id: '#ctor'
+  parent: NGOTxtExtender.TweetExtender
+  langs:
+  - csharp
+  - vb
+  name: TweetExtender()
+  nameWithType: TweetExtender.TweetExtender()
+  fullName: NGOTxtExtender.TweetExtender.TweetExtender()
+  type: Constructor
+  assemblies:
+  - NGOTxtExtender
+  namespace: NGOTxtExtender
+  syntax:
+    content: public TweetExtender()
+    content.vb: Public Sub New()
+  overload: NGOTxtExtender.TweetExtender.#ctor*
+  nameWithType.vb: TweetExtender.New()
+  fullName.vb: NGOTxtExtender.TweetExtender.New()
+  name.vb: New()
+references:
+- uid: NGOTxtExtender
+  commentId: N:NGOTxtExtender
+  isExternal: true
+  href: NGOTxtExtender.html
+  name: NGOTxtExtender
+  nameWithType: NGOTxtExtender
+  fullName: NGOTxtExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List{TweetMaster.Param}
+  commentId: T:System.Collections.Generic.List{TweetMaster.Param}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<TweetMaster.Param>
+  nameWithType: List<TweetMaster.Param>
+  fullName: System.Collections.Generic.List<TweetMaster.Param>
+  nameWithType.vb: List(Of TweetMaster.Param)
+  fullName.vb: System.Collections.Generic.List(Of TweetMaster.Param)
+  name.vb: List(Of TweetMaster.Param)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: TweetMaster
+    name: TweetMaster
+    isExternal: true
+  - name: .
+  - uid: TweetMaster.Param
+    name: Param
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TweetMaster
+    name: TweetMaster
+    isExternal: true
+  - name: .
+  - uid: TweetMaster.Param
+    name: Param
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.NullReferenceException
+  commentId: T:System.NullReferenceException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullreferenceexception
+  name: NullReferenceException
+  nameWithType: NullReferenceException
+  fullName: System.NullReferenceException
+- uid: NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartExtTweetWithRandomReps_System_String_
+  name: StartExtTweetWithRandomReps
+  nameWithType: TweetExtender.StartExtTweetWithRandomReps
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweetWithRandomReps
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NGOTxtExtender.TweetExtender.StartTweetWithRandomReps*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartTweetWithRandomReps
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartTweetWithRandomReps_ngov3_TweetType_
+  name: StartTweetWithRandomReps
+  nameWithType: TweetExtender.StartTweetWithRandomReps
+  fullName: NGOTxtExtender.TweetExtender.StartTweetWithRandomReps
+- uid: ngov3.TweetType
+  commentId: T:ngov3.TweetType
+  parent: ngov3
+  isExternal: true
+  name: TweetType
+  nameWithType: TweetType
+  fullName: ngov3.TweetType
+- uid: ngov3
+  commentId: N:ngov3
+  isExternal: true
+  name: ngov3
+  nameWithType: ngov3
+  fullName: ngov3
+- uid: NGOTxtExtender.TweetExtender.StartExtTweet*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartExtTweet
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartExtTweet_System_String_
+  name: StartExtTweet
+  nameWithType: TweetExtender.StartExtTweet
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweet
+- uid: NGOTxtExtender.TweetExtender.StartTweet*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartTweet
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartTweet_ngov3_TweetType_
+  name: StartTweet
+  nameWithType: TweetExtender.StartTweet
+  fullName: NGOTxtExtender.TweetExtender.StartTweet
+- uid: NGOTxtExtender.TweetExtender.StartTweetWithExtReps*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartTweetWithExtReps
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartTweetWithExtReps_ngov3_TweetType_System_String_
+  name: StartTweetWithExtReps
+  nameWithType: TweetExtender.StartTweetWithExtReps
+  fullName: NGOTxtExtender.TweetExtender.StartTweetWithExtReps
+- uid: NGOTxtExtender.TweetExtender.StartTweetWithPresetReps*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartTweetWithPresetReps
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartTweetWithPresetReps_ngov3_TweetType_System_Collections_Generic_List_ngov3_KusoRepType__
+  name: StartTweetWithPresetReps
+  nameWithType: TweetExtender.StartTweetWithPresetReps
+  fullName: NGOTxtExtender.TweetExtender.StartTweetWithPresetReps
+- uid: System.Collections.Generic.List{ngov3.KusoRepType}
+  commentId: T:System.Collections.Generic.List{ngov3.KusoRepType}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<KusoRepType>
+  nameWithType: List<KusoRepType>
+  fullName: System.Collections.Generic.List<ngov3.KusoRepType>
+  nameWithType.vb: List(Of KusoRepType)
+  fullName.vb: System.Collections.Generic.List(Of ngov3.KusoRepType)
+  name.vb: List(Of KusoRepType)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ngov3.KusoRepType
+    name: KusoRepType
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ngov3.KusoRepType
+    name: KusoRepType
+    isExternal: true
+  - name: )
+- uid: NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartExtTweetWithExtReps_System_String_System_String_
+  name: StartExtTweetWithExtReps
+  nameWithType: TweetExtender.StartExtTweetWithExtReps
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweetWithExtReps
+- uid: NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps*
+  commentId: Overload:NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartExtTweetWithPresetReps_System_String_System_Collections_Generic_List_ngov3_KusoRepType__
+  name: StartExtTweetWithPresetReps
+  nameWithType: TweetExtender.StartExtTweetWithPresetReps
+  fullName: NGOTxtExtender.TweetExtender.StartExtTweetWithPresetReps
+- uid: NGOTxtExtender.TweetExtender.#ctor*
+  commentId: Overload:NGOTxtExtender.TweetExtender.#ctor
+  isExternal: true
+  href: NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender__ctor
+  name: TweetExtender
+  nameWithType: TweetExtender.TweetExtender
+  fullName: NGOTxtExtender.TweetExtender.TweetExtender
+  nameWithType.vb: TweetExtender.New
+  fullName.vb: NGOTxtExtender.TweetExtender.New
+  name.vb: New

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "./",
+          "files": [
+            "NGOEventExtender/bin/Debug/NGOEventExtender.dll",
+            "NGOExtraSettings//bin/Debug/NGOExtraSettings.dll",
+	    "NSOMediaExtender/bin/Debug/NSOMediaExtender.dll",
+            "NSOTextExtender/bin/Debug/NGOTxtExtender.dll"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "Needy Girl ModLib Docs",
+      "_appTitle": "Needy Girl ModLib Docs",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}

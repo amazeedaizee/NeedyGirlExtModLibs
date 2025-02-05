@@ -1,0 +1,498 @@
+{
+  "source_base_path": "F:/desktop stuff/hmm/bepin/NeedyGirlExtender",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.ActionStreamExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.ActionStreamExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.BepInStart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.BepInStart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.CEffectState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.CEffectState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.EndingExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.EndingExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.EventExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.EventExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.EventHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.EventHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.ExtActionNgoStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.ExtActionNgoStream.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.ExtNgoStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.ExtNgoStream.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.NgoExtEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.NgoExtEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.PlayingBlock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.PlayingBlock.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.StreamBackground.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.StreamBackground.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.StreamChatType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.StreamChatType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.StreamExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.StreamExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.StreamSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.StreamSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOExtraSettings.ExtraSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOExtraSettings.ExtraSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOExtraSettings.MyPatches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOExtraSettings.MyPatches.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOExtraSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOExtraSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.BepInStart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.BepInStart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.EgosaExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.EgosaExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.ExtTextManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.ExtTextManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.JineExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.JineExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.KRepExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.KRepExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.KitsuneExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.KitsuneExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.KusoComExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.KusoComExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.MobComExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.MobComExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.SysTxtExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.SysTxtExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.TenComExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.TenComExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.TooltxtExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.TooltxtExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.TweetExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.TweetExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NGOTxtExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOTxtExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.AddressableExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.AddressableExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.AssetBundleLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.AssetBundleLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.AudioExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.AudioExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.IdleAnimationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.IdleAnimationType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.MyPatches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.MyPatches.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.PictureExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.PictureExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.WebCamExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.WebCamExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.WebcamType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.WebcamType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

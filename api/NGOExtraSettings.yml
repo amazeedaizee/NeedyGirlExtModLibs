@@ -1,0 +1,32 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOExtraSettings
+  commentId: N:NGOExtraSettings
+  id: NGOExtraSettings
+  children:
+  - NGOExtraSettings.ExtraSettings
+  - NGOExtraSettings.MyPatches
+  langs:
+  - csharp
+  - vb
+  name: NGOExtraSettings
+  nameWithType: NGOExtraSettings
+  fullName: NGOExtraSettings
+  type: Namespace
+  assemblies:
+  - NGOExtraSettings
+references:
+- uid: NGOExtraSettings.MyPatches
+  commentId: T:NGOExtraSettings.MyPatches
+  isExternal: true
+  href: NGOExtraSettings.MyPatches.html
+  name: MyPatches
+  nameWithType: MyPatches
+  fullName: NGOExtraSettings.MyPatches
+- uid: NGOExtraSettings.ExtraSettings
+  commentId: T:NGOExtraSettings.ExtraSettings
+  isExternal: true
+  href: NGOExtraSettings.ExtraSettings.html
+  name: ExtraSettings
+  nameWithType: ExtraSettings
+  fullName: NGOExtraSettings.ExtraSettings
