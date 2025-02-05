@@ -328,12 +328,7 @@ namespace NGOEventExtender
     }
 
 
-    /// <summary>
-    /// Please note: This section is a bit outdated, as the primary way of playing streams here was to inject your custom stream onto TestScenario. 
-    /// (TestScenario is played if other offical streams don't match the conditions)
-    /// This is still useful for streams with conditions or action streams with conditions, but you can also use the normal way to load streams if you want 
-    /// via: SetScenario(T)
-    /// </summary>
+
     [HarmonyPatch]
     public class StreamExtender
     {
