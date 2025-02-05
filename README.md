@@ -4,7 +4,7 @@ A group of libraries for that might help in modding Needy Girl Overdose/Needy St
 
 Some libraries are slightly outdated, but most of these can be used to make modding the game easier.
 
-Currently tested with **version 1.1.1**
+Currently tested with **version 1.1.1** of the game
 
 ## Compiling With Other Versions of the Game
 
