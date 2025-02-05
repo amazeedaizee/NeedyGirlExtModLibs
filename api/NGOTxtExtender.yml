@@ -4,7 +4,6 @@ items:
   commentId: N:NGOTxtExtender
   id: NGOTxtExtender
   children:
-  - NGOTxtExtender.BepInStart
   - NGOTxtExtender.EgosaExtender
   - NGOTxtExtender.ExtTextManager
   - NGOTxtExtender.JineExtender
@@ -61,13 +60,6 @@ references:
   name: ExtTextManager
   nameWithType: ExtTextManager
   fullName: NGOTxtExtender.ExtTextManager
-- uid: NGOTxtExtender.BepInStart
-  commentId: T:NGOTxtExtender.BepInStart
-  isExternal: true
-  href: NGOTxtExtender.BepInStart.html
-  name: BepInStart
-  nameWithType: BepInStart
-  fullName: NGOTxtExtender.BepInStart
 - uid: NGOTxtExtender.MobComExtender
   commentId: T:NGOTxtExtender.MobComExtender
   isExternal: true

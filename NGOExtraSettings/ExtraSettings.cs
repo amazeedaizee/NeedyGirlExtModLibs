@@ -5,9 +5,11 @@ using UnityEngine;
 
 namespace NGOExtraSettings
 {
-    /// <exclude />
+
     [BepInPlugin(pluginGuid, pluginName, pluginVersion)]
     [BepInProcess("Windose.exe")]
+
+    /// <exclude />
     public class MyPatches : BaseUnityPlugin
     {
         public const string pluginGuid = "needy.girl.extra_settings";
