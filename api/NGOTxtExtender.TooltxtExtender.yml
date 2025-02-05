@@ -6,7 +6,6 @@ items:
   parent: NGOTxtExtender
   children:
   - NGOTxtExtender.TooltxtExtender.#ctor
-  - NGOTxtExtender.TooltxtExtender.ExtList
   - NGOTxtExtender.TooltxtExtender.ShowExtTooltip(System.Boolean,System.String)
   - NGOTxtExtender.TooltxtExtender.ShowTooltip(System.Boolean,TooltipType)
   langs:
@@ -42,25 +41,6 @@ items:
   - type: HarmonyLib.HarmonyPatch
     ctor: HarmonyLib.HarmonyPatch.#ctor
     arguments: []
-- uid: NGOTxtExtender.TooltxtExtender.ExtList
-  commentId: F:NGOTxtExtender.TooltxtExtender.ExtList
-  id: ExtList
-  parent: NGOTxtExtender.TooltxtExtender
-  langs:
-  - csharp
-  - vb
-  name: ExtList
-  nameWithType: TooltxtExtender.ExtList
-  fullName: NGOTxtExtender.TooltxtExtender.ExtList
-  type: Field
-  assemblies:
-  - NGOTxtExtender
-  namespace: NGOTxtExtender
-  syntax:
-    content: public static List<TooltipMaster.Param> ExtList
-    return:
-      type: System.Collections.Generic.List{TooltipMaster.Param}
-    content.vb: Public Shared ExtList As List(Of TooltipMaster.Param)
 - uid: NGOTxtExtender.TooltxtExtender.ShowExtTooltip(System.Boolean,System.String)
   commentId: M:NGOTxtExtender.TooltxtExtender.ShowExtTooltip(System.Boolean,System.String)
   id: ShowExtTooltip(System.Boolean,System.String)
@@ -387,112 +367,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Collections.Generic.List{TooltipMaster.Param}
-  commentId: T:System.Collections.Generic.List{TooltipMaster.Param}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<TooltipMaster.Param>
-  nameWithType: List<TooltipMaster.Param>
-  fullName: System.Collections.Generic.List<TooltipMaster.Param>
-  nameWithType.vb: List(Of TooltipMaster.Param)
-  fullName.vb: System.Collections.Generic.List(Of TooltipMaster.Param)
-  name.vb: List(Of TooltipMaster.Param)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: TooltipMaster
-    name: TooltipMaster
-    isExternal: true
-  - name: .
-  - uid: TooltipMaster.Param
-    name: Param
-    isExternal: true
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: TooltipMaster
-    name: TooltipMaster
-    isExternal: true
-  - name: .
-  - uid: TooltipMaster.Param
-    name: Param
-    isExternal: true
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: NGOTxtExtender.TooltxtExtender.ShowExtTooltip*
   commentId: Overload:NGOTxtExtender.TooltxtExtender.ShowExtTooltip
   isExternal: true

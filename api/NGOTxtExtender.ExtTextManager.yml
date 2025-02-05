@@ -7,8 +7,6 @@ items:
   children:
   - NGOTxtExtender.ExtTextManager.#ctor
   - NGOTxtExtender.ExtTextManager.AddToExtList``1(System.Collections.Generic.List{``0})
-  - NGOTxtExtender.ExtTextManager.ClearExDisposible
-  - NGOTxtExtender.ExtTextManager.CompositeDisposible
   - NGOTxtExtender.ExtTextManager.GetUniqueIdNum``1(System.String)
   langs:
   - csharp
@@ -43,66 +41,6 @@ items:
   - type: HarmonyLib.HarmonyPatch
     ctor: HarmonyLib.HarmonyPatch.#ctor
     arguments: []
-- uid: NGOTxtExtender.ExtTextManager.CompositeDisposible
-  commentId: F:NGOTxtExtender.ExtTextManager.CompositeDisposible
-  id: CompositeDisposible
-  parent: NGOTxtExtender.ExtTextManager
-  langs:
-  - csharp
-  - vb
-  name: CompositeDisposible
-  nameWithType: ExtTextManager.CompositeDisposible
-  fullName: NGOTxtExtender.ExtTextManager.CompositeDisposible
-  type: Field
-  assemblies:
-  - NGOTxtExtender
-  namespace: NGOTxtExtender
-  syntax:
-    content: public static CompositeDisposable CompositeDisposible
-    return:
-      type: UniRx.CompositeDisposable
-    content.vb: Public Shared CompositeDisposible As CompositeDisposable
-- uid: NGOTxtExtender.ExtTextManager.ClearExDisposible
-  commentId: M:NGOTxtExtender.ExtTextManager.ClearExDisposible
-  id: ClearExDisposible
-  parent: NGOTxtExtender.ExtTextManager
-  langs:
-  - csharp
-  - vb
-  name: ClearExDisposible()
-  nameWithType: ExtTextManager.ClearExDisposible()
-  fullName: NGOTxtExtender.ExtTextManager.ClearExDisposible()
-  type: Method
-  assemblies:
-  - NGOTxtExtender
-  namespace: NGOTxtExtender
-  summary: Clears the Extend Manager's CompositeDisposable.
-  example: []
-  syntax:
-    content: >-
-      [HarmonyPostfix]
-
-      [HarmonyPatch(typeof(NgoEvent), "endEvent")]
-
-      public static void ClearExDisposible()
-    content.vb: >-
-      <HarmonyPostfix>
-
-      <HarmonyPatch(GetType(NgoEvent), "endEvent")>
-
-      Public Shared Sub ClearExDisposible()
-  overload: NGOTxtExtender.ExtTextManager.ClearExDisposible*
-  attributes:
-  - type: HarmonyLib.HarmonyPostfix
-    ctor: HarmonyLib.HarmonyPostfix.#ctor
-    arguments: []
-  - type: HarmonyLib.HarmonyPatch
-    ctor: HarmonyLib.HarmonyPatch.#ctor(System.Type,System.String)
-    arguments:
-    - type: System.Type
-      value: ngov3.NgoEvent
-    - type: System.String
-      value: endEvent
 - uid: NGOTxtExtender.ExtTextManager.GetUniqueIdNum``1(System.String)
   commentId: M:NGOTxtExtender.ExtTextManager.GetUniqueIdNum``1(System.String)
   id: GetUniqueIdNum``1(System.String)
@@ -442,26 +380,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: UniRx.CompositeDisposable
-  commentId: T:UniRx.CompositeDisposable
-  parent: UniRx
-  isExternal: true
-  name: CompositeDisposable
-  nameWithType: CompositeDisposable
-  fullName: UniRx.CompositeDisposable
-- uid: UniRx
-  commentId: N:UniRx
-  isExternal: true
-  name: UniRx
-  nameWithType: UniRx
-  fullName: UniRx
-- uid: NGOTxtExtender.ExtTextManager.ClearExDisposible*
-  commentId: Overload:NGOTxtExtender.ExtTextManager.ClearExDisposible
-  isExternal: true
-  href: NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_ClearExDisposible
-  name: ClearExDisposible
-  nameWithType: ExtTextManager.ClearExDisposible
-  fullName: NGOTxtExtender.ExtTextManager.ClearExDisposible
 - uid: System.ArgumentException
   commentId: T:System.ArgumentException
   isExternal: true

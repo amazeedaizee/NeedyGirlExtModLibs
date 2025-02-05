@@ -55,72 +55,6 @@ references:
   commentId: Overload:NGOEventExtender.ActionStreamExtender.IsActionStreamStreamed
   fullName: NGOEventExtender.ActionStreamExtender.IsActionStreamStreamed
   nameWithType: ActionStreamExtender.IsActionStreamStreamed
-- uid: NGOEventExtender.BepInStart
-  name: BepInStart
-  href: api/NGOEventExtender.BepInStart.html
-  commentId: T:NGOEventExtender.BepInStart
-  fullName: NGOEventExtender.BepInStart
-  nameWithType: BepInStart
-- uid: NGOEventExtender.BepInStart.#ctor
-  name: BepInStart()
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart__ctor
-  commentId: M:NGOEventExtender.BepInStart.#ctor
-  name.vb: New()
-  fullName: NGOEventExtender.BepInStart.BepInStart()
-  fullName.vb: NGOEventExtender.BepInStart.New()
-  nameWithType: BepInStart.BepInStart()
-  nameWithType.vb: BepInStart.New()
-- uid: NGOEventExtender.BepInStart.#ctor*
-  name: BepInStart
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart__ctor_
-  commentId: Overload:NGOEventExtender.BepInStart.#ctor
-  name.vb: New
-  fullName: NGOEventExtender.BepInStart.BepInStart
-  fullName.vb: NGOEventExtender.BepInStart.New
-  nameWithType: BepInStart.BepInStart
-  nameWithType.vb: BepInStart.New
-- uid: NGOEventExtender.BepInStart.Awake
-  name: Awake()
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_Awake
-  commentId: M:NGOEventExtender.BepInStart.Awake
-  fullName: NGOEventExtender.BepInStart.Awake()
-  nameWithType: BepInStart.Awake()
-- uid: NGOEventExtender.BepInStart.Awake*
-  name: Awake
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_Awake_
-  commentId: Overload:NGOEventExtender.BepInStart.Awake
-  fullName: NGOEventExtender.BepInStart.Awake
-  nameWithType: BepInStart.Awake
-- uid: NGOEventExtender.BepInStart.Start
-  name: Start()
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_Start
-  commentId: M:NGOEventExtender.BepInStart.Start
-  fullName: NGOEventExtender.BepInStart.Start()
-  nameWithType: BepInStart.Start()
-- uid: NGOEventExtender.BepInStart.Start*
-  name: Start
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_Start_
-  commentId: Overload:NGOEventExtender.BepInStart.Start
-  fullName: NGOEventExtender.BepInStart.Start
-  nameWithType: BepInStart.Start
-- uid: NGOEventExtender.BepInStart.pluginGuid
-  name: pluginGuid
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_pluginGuid
-  commentId: F:NGOEventExtender.BepInStart.pluginGuid
-  fullName: NGOEventExtender.BepInStart.pluginGuid
-  nameWithType: BepInStart.pluginGuid
-- uid: NGOEventExtender.BepInStart.pluginName
-  name: pluginName
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_pluginName
-  commentId: F:NGOEventExtender.BepInStart.pluginName
-  fullName: NGOEventExtender.BepInStart.pluginName
-  nameWithType: BepInStart.pluginName
-- uid: NGOEventExtender.BepInStart.pluginVersion
-  name: pluginVersion
-  href: api/NGOEventExtender.BepInStart.html#NGOEventExtender_BepInStart_pluginVersion
-  commentId: F:NGOEventExtender.BepInStart.pluginVersion
-  fullName: NGOEventExtender.BepInStart.pluginVersion
-  nameWithType: BepInStart.pluginVersion
 - uid: NGOEventExtender.CEffectState
   name: CEffectState
   href: api/NGOEventExtender.CEffectState.html
@@ -190,12 +124,6 @@ references:
   commentId: Overload:NGOEventExtender.EndingExtender.AddExtEndings
   fullName: NGOEventExtender.EndingExtender.AddExtEndings
   nameWithType: EndingExtender.AddExtEndings
-- uid: NGOEventExtender.EndingExtender.ExtEndList
-  name: ExtEndList
-  href: api/NGOEventExtender.EndingExtender.html#NGOEventExtender_EndingExtender_ExtEndList
-  commentId: F:NGOEventExtender.EndingExtender.ExtEndList
-  fullName: NGOEventExtender.EndingExtender.ExtEndList
-  nameWithType: EndingExtender.ExtEndList
 - uid: NGOEventExtender.EndingExtender.GetCustomEndingName(NGO.EndingType)
   name: GetCustomEndingName(EndingType)
   href: api/NGOEventExtender.EndingExtender.html#NGOEventExtender_EndingExtender_GetCustomEndingName_NGO_EndingType_
@@ -439,36 +367,6 @@ references:
   fullName.vb: NGOEventExtender.EventExtender.StartEvent(Of T)()
   nameWithType: EventExtender.StartEvent<T>()
   nameWithType.vb: EventExtender.StartEvent(Of T)()
-- uid: NGOEventExtender.EventExtender.currentExtDayEvent
-  name: currentExtDayEvent
-  href: api/NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_currentExtDayEvent
-  commentId: F:NGOEventExtender.EventExtender.currentExtDayEvent
-  fullName: NGOEventExtender.EventExtender.currentExtDayEvent
-  nameWithType: EventExtender.currentExtDayEvent
-- uid: NGOEventExtender.EventExtender.isEventing
-  name: isEventing
-  href: api/NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_isEventing
-  commentId: F:NGOEventExtender.EventExtender.isEventing
-  fullName: NGOEventExtender.EventExtender.isEventing
-  nameWithType: EventExtender.isEventing
-- uid: NGOEventExtender.EventExtender.ngoEvent
-  name: ngoEvent
-  href: api/NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_ngoEvent
-  commentId: F:NGOEventExtender.EventExtender.ngoEvent
-  fullName: NGOEventExtender.EventExtender.ngoEvent
-  nameWithType: EventExtender.ngoEvent
-- uid: NGOEventExtender.EventExtender.randomDayExtEvents
-  name: randomDayExtEvents
-  href: api/NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_randomDayExtEvents
-  commentId: F:NGOEventExtender.EventExtender.randomDayExtEvents
-  fullName: NGOEventExtender.EventExtender.randomDayExtEvents
-  nameWithType: EventExtender.randomDayExtEvents
-- uid: NGOEventExtender.EventExtender.resetDayCustomEvent
-  name: resetDayCustomEvent
-  href: api/NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_resetDayCustomEvent
-  commentId: F:NGOEventExtender.EventExtender.resetDayCustomEvent
-  fullName: NGOEventExtender.EventExtender.resetDayCustomEvent
-  nameWithType: EventExtender.resetDayCustomEvent
 - uid: NGOEventExtender.EventHelper
   name: EventHelper
   href: api/NGOEventExtender.EventHelper.html
@@ -529,12 +427,6 @@ references:
   commentId: Overload:NGOEventExtender.EventHelper.ChangeTweetKAngelIcon
   fullName: NGOEventExtender.EventHelper.ChangeTweetKAngelIcon
   nameWithType: EventHelper.ChangeTweetKAngelIcon
-- uid: NGOEventExtender.EventHelper.DayPassingCover
-  name: DayPassingCover
-  href: api/NGOEventExtender.EventHelper.html#NGOEventExtender_EventHelper_DayPassingCover
-  commentId: F:NGOEventExtender.EventHelper.DayPassingCover
-  fullName: NGOEventExtender.EventHelper.DayPassingCover
-  nameWithType: EventHelper.DayPassingCover
 - uid: NGOEventExtender.EventHelper.ResetIcons(System.Boolean,System.Boolean,System.Boolean)
   name: ResetIcons(bool, bool, bool)
   href: api/NGOEventExtender.EventHelper.html#NGOEventExtender_EventHelper_ResetIcons_System_Boolean_System_Boolean_System_Boolean_
@@ -1435,168 +1327,12 @@ references:
   fullName.vb: NGOExtraSettings.ExtraSettings.SaveToExtSettings(Of T)(String, T)
   nameWithType: ExtraSettings.SaveToExtSettings<T>(string, T)
   nameWithType.vb: ExtraSettings.SaveToExtSettings(Of T)(String, T)
-- uid: NGOExtraSettings.MyPatches
-  name: MyPatches
-  href: api/NGOExtraSettings.MyPatches.html
-  commentId: T:NGOExtraSettings.MyPatches
-  fullName: NGOExtraSettings.MyPatches
-  nameWithType: MyPatches
-- uid: NGOExtraSettings.MyPatches.#ctor
-  name: MyPatches()
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches__ctor
-  commentId: M:NGOExtraSettings.MyPatches.#ctor
-  name.vb: New()
-  fullName: NGOExtraSettings.MyPatches.MyPatches()
-  fullName.vb: NGOExtraSettings.MyPatches.New()
-  nameWithType: MyPatches.MyPatches()
-  nameWithType.vb: MyPatches.New()
-- uid: NGOExtraSettings.MyPatches.#ctor*
-  name: MyPatches
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches__ctor_
-  commentId: Overload:NGOExtraSettings.MyPatches.#ctor
-  name.vb: New
-  fullName: NGOExtraSettings.MyPatches.MyPatches
-  fullName.vb: NGOExtraSettings.MyPatches.New
-  nameWithType: MyPatches.MyPatches
-  nameWithType.vb: MyPatches.New
-- uid: NGOExtraSettings.MyPatches.Awake
-  name: Awake()
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_Awake
-  commentId: M:NGOExtraSettings.MyPatches.Awake
-  fullName: NGOExtraSettings.MyPatches.Awake()
-  nameWithType: MyPatches.Awake()
-- uid: NGOExtraSettings.MyPatches.Awake*
-  name: Awake
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_Awake_
-  commentId: Overload:NGOExtraSettings.MyPatches.Awake
-  fullName: NGOExtraSettings.MyPatches.Awake
-  nameWithType: MyPatches.Awake
-- uid: NGOExtraSettings.MyPatches.PInfo
-  name: PInfo
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_PInfo
-  commentId: P:NGOExtraSettings.MyPatches.PInfo
-  fullName: NGOExtraSettings.MyPatches.PInfo
-  nameWithType: MyPatches.PInfo
-- uid: NGOExtraSettings.MyPatches.PInfo*
-  name: PInfo
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_PInfo_
-  commentId: Overload:NGOExtraSettings.MyPatches.PInfo
-  fullName: NGOExtraSettings.MyPatches.PInfo
-  nameWithType: MyPatches.PInfo
-- uid: NGOExtraSettings.MyPatches.Start
-  name: Start()
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_Start
-  commentId: M:NGOExtraSettings.MyPatches.Start
-  fullName: NGOExtraSettings.MyPatches.Start()
-  nameWithType: MyPatches.Start()
-- uid: NGOExtraSettings.MyPatches.Start*
-  name: Start
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_Start_
-  commentId: Overload:NGOExtraSettings.MyPatches.Start
-  fullName: NGOExtraSettings.MyPatches.Start
-  nameWithType: MyPatches.Start
-- uid: NGOExtraSettings.MyPatches.pluginGuid
-  name: pluginGuid
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_pluginGuid
-  commentId: F:NGOExtraSettings.MyPatches.pluginGuid
-  fullName: NGOExtraSettings.MyPatches.pluginGuid
-  nameWithType: MyPatches.pluginGuid
-- uid: NGOExtraSettings.MyPatches.pluginName
-  name: pluginName
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_pluginName
-  commentId: F:NGOExtraSettings.MyPatches.pluginName
-  fullName: NGOExtraSettings.MyPatches.pluginName
-  nameWithType: MyPatches.pluginName
-- uid: NGOExtraSettings.MyPatches.pluginVersion
-  name: pluginVersion
-  href: api/NGOExtraSettings.MyPatches.html#NGOExtraSettings_MyPatches_pluginVersion
-  commentId: F:NGOExtraSettings.MyPatches.pluginVersion
-  fullName: NGOExtraSettings.MyPatches.pluginVersion
-  nameWithType: MyPatches.pluginVersion
 - uid: NGOTxtExtender
   name: NGOTxtExtender
   href: api/NGOTxtExtender.html
   commentId: N:NGOTxtExtender
   fullName: NGOTxtExtender
   nameWithType: NGOTxtExtender
-- uid: NGOTxtExtender.BepInStart
-  name: BepInStart
-  href: api/NGOTxtExtender.BepInStart.html
-  commentId: T:NGOTxtExtender.BepInStart
-  fullName: NGOTxtExtender.BepInStart
-  nameWithType: BepInStart
-- uid: NGOTxtExtender.BepInStart.#ctor
-  name: BepInStart()
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart__ctor
-  commentId: M:NGOTxtExtender.BepInStart.#ctor
-  name.vb: New()
-  fullName: NGOTxtExtender.BepInStart.BepInStart()
-  fullName.vb: NGOTxtExtender.BepInStart.New()
-  nameWithType: BepInStart.BepInStart()
-  nameWithType.vb: BepInStart.New()
-- uid: NGOTxtExtender.BepInStart.#ctor*
-  name: BepInStart
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart__ctor_
-  commentId: Overload:NGOTxtExtender.BepInStart.#ctor
-  name.vb: New
-  fullName: NGOTxtExtender.BepInStart.BepInStart
-  fullName.vb: NGOTxtExtender.BepInStart.New
-  nameWithType: BepInStart.BepInStart
-  nameWithType.vb: BepInStart.New
-- uid: NGOTxtExtender.BepInStart.Awake
-  name: Awake()
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_Awake
-  commentId: M:NGOTxtExtender.BepInStart.Awake
-  fullName: NGOTxtExtender.BepInStart.Awake()
-  nameWithType: BepInStart.Awake()
-- uid: NGOTxtExtender.BepInStart.Awake*
-  name: Awake
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_Awake_
-  commentId: Overload:NGOTxtExtender.BepInStart.Awake
-  fullName: NGOTxtExtender.BepInStart.Awake
-  nameWithType: BepInStart.Awake
-- uid: NGOTxtExtender.BepInStart.PInfo
-  name: PInfo
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_PInfo
-  commentId: P:NGOTxtExtender.BepInStart.PInfo
-  fullName: NGOTxtExtender.BepInStart.PInfo
-  nameWithType: BepInStart.PInfo
-- uid: NGOTxtExtender.BepInStart.PInfo*
-  name: PInfo
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_PInfo_
-  commentId: Overload:NGOTxtExtender.BepInStart.PInfo
-  fullName: NGOTxtExtender.BepInStart.PInfo
-  nameWithType: BepInStart.PInfo
-- uid: NGOTxtExtender.BepInStart.Start
-  name: Start()
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_Start
-  commentId: M:NGOTxtExtender.BepInStart.Start
-  fullName: NGOTxtExtender.BepInStart.Start()
-  nameWithType: BepInStart.Start()
-- uid: NGOTxtExtender.BepInStart.Start*
-  name: Start
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_Start_
-  commentId: Overload:NGOTxtExtender.BepInStart.Start
-  fullName: NGOTxtExtender.BepInStart.Start
-  nameWithType: BepInStart.Start
-- uid: NGOTxtExtender.BepInStart.pluginGuid
-  name: pluginGuid
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_pluginGuid
-  commentId: F:NGOTxtExtender.BepInStart.pluginGuid
-  fullName: NGOTxtExtender.BepInStart.pluginGuid
-  nameWithType: BepInStart.pluginGuid
-- uid: NGOTxtExtender.BepInStart.pluginName
-  name: pluginName
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_pluginName
-  commentId: F:NGOTxtExtender.BepInStart.pluginName
-  fullName: NGOTxtExtender.BepInStart.pluginName
-  nameWithType: BepInStart.pluginName
-- uid: NGOTxtExtender.BepInStart.pluginVersion
-  name: pluginVersion
-  href: api/NGOTxtExtender.BepInStart.html#NGOTxtExtender_BepInStart_pluginVersion
-  commentId: F:NGOTxtExtender.BepInStart.pluginVersion
-  fullName: NGOTxtExtender.BepInStart.pluginVersion
-  nameWithType: BepInStart.pluginVersion
 - uid: NGOTxtExtender.EgosaExtender
   name: EgosaExtender
   href: api/NGOTxtExtender.EgosaExtender.html
@@ -1621,12 +1357,6 @@ references:
   fullName.vb: NGOTxtExtender.EgosaExtender.New
   nameWithType: EgosaExtender.EgosaExtender
   nameWithType.vb: EgosaExtender.New
-- uid: NGOTxtExtender.EgosaExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.EgosaExtender.html#NGOTxtExtender_EgosaExtender_ExtList
-  commentId: F:NGOTxtExtender.EgosaExtender.ExtList
-  fullName: NGOTxtExtender.EgosaExtender.ExtList
-  nameWithType: EgosaExtender.ExtList
 - uid: NGOTxtExtender.EgosaExtender.IsCustomSearch(System.Boolean,System.String,System.String)
   name: IsCustomSearch(bool, string, string)
   href: api/NGOTxtExtender.EgosaExtender.html#NGOTxtExtender_EgosaExtender_IsCustomSearch_System_Boolean_System_String_System_String_
@@ -1723,24 +1453,6 @@ references:
   fullName.vb: NGOTxtExtender.ExtTextManager.AddToExtList(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: ExtTextManager.AddToExtList<T>(List<T>)
   nameWithType.vb: ExtTextManager.AddToExtList(Of T)(List(Of T))
-- uid: NGOTxtExtender.ExtTextManager.ClearExDisposible
-  name: ClearExDisposible()
-  href: api/NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_ClearExDisposible
-  commentId: M:NGOTxtExtender.ExtTextManager.ClearExDisposible
-  fullName: NGOTxtExtender.ExtTextManager.ClearExDisposible()
-  nameWithType: ExtTextManager.ClearExDisposible()
-- uid: NGOTxtExtender.ExtTextManager.ClearExDisposible*
-  name: ClearExDisposible
-  href: api/NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_ClearExDisposible_
-  commentId: Overload:NGOTxtExtender.ExtTextManager.ClearExDisposible
-  fullName: NGOTxtExtender.ExtTextManager.ClearExDisposible
-  nameWithType: ExtTextManager.ClearExDisposible
-- uid: NGOTxtExtender.ExtTextManager.CompositeDisposible
-  name: CompositeDisposible
-  href: api/NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_CompositeDisposible
-  commentId: F:NGOTxtExtender.ExtTextManager.CompositeDisposible
-  fullName: NGOTxtExtender.ExtTextManager.CompositeDisposible
-  nameWithType: ExtTextManager.CompositeDisposible
 - uid: NGOTxtExtender.ExtTextManager.GetUniqueIdNum*
   name: GetUniqueIdNum
   href: api/NGOTxtExtender.ExtTextManager.html#NGOTxtExtender_ExtTextManager_GetUniqueIdNum_
@@ -1780,12 +1492,6 @@ references:
   fullName.vb: NGOTxtExtender.JineExtender.New
   nameWithType: JineExtender.JineExtender
   nameWithType.vb: JineExtender.New
-- uid: NGOTxtExtender.JineExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_ExtList
-  commentId: F:NGOTxtExtender.JineExtender.ExtList
-  fullName: NGOTxtExtender.JineExtender.ExtList
-  nameWithType: JineExtender.ExtList
 - uid: NGOTxtExtender.JineExtender.ResetExtReplyList
   name: ResetExtReplyList()
   href: api/NGOTxtExtender.JineExtender.html#NGOTxtExtender_JineExtender_ResetExtReplyList
@@ -1963,12 +1669,6 @@ references:
   fullName.vb: NGOTxtExtender.KRepExtender.New
   nameWithType: KRepExtender.KRepExtender
   nameWithType.vb: KRepExtender.New
-- uid: NGOTxtExtender.KRepExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.KRepExtender.html#NGOTxtExtender_KRepExtender_ExtList
-  commentId: F:NGOTxtExtender.KRepExtender.ExtList
-  fullName: NGOTxtExtender.KRepExtender.ExtList
-  nameWithType: KRepExtender.ExtList
 - uid: NGOTxtExtender.KRepExtender.ResetExtKReps
   name: ResetExtKReps()
   href: api/NGOTxtExtender.KRepExtender.html#NGOTxtExtender_KRepExtender_ResetExtKReps
@@ -2005,18 +1705,6 @@ references:
   fullName.vb: NGOTxtExtender.KitsuneExtender.New
   nameWithType: KitsuneExtender.KitsuneExtender
   nameWithType.vb: KitsuneExtender.New
-- uid: NGOTxtExtender.KitsuneExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.KitsuneExtender.html#NGOTxtExtender_KitsuneExtender_ExtList
-  commentId: F:NGOTxtExtender.KitsuneExtender.ExtList
-  fullName: NGOTxtExtender.KitsuneExtender.ExtList
-  nameWithType: KitsuneExtender.ExtList
-- uid: NGOTxtExtender.KitsuneExtender.ExtList_Title
-  name: ExtList_Title
-  href: api/NGOTxtExtender.KitsuneExtender.html#NGOTxtExtender_KitsuneExtender_ExtList_Title
-  commentId: F:NGOTxtExtender.KitsuneExtender.ExtList_Title
-  fullName: NGOTxtExtender.KitsuneExtender.ExtList_Title
-  nameWithType: KitsuneExtender.ExtList_Title
 - uid: NGOTxtExtender.KitsuneExtender.IsCustomKitsuneThread(System.Boolean,System.String,System.Boolean)
   name: IsCustomKitsuneThread(bool, string, bool)
   href: api/NGOTxtExtender.KitsuneExtender.html#NGOTxtExtender_KitsuneExtender_IsCustomKitsuneThread_System_Boolean_System_String_System_Boolean_
@@ -2047,24 +1735,6 @@ references:
   commentId: Overload:NGOTxtExtender.KitsuneExtender.OpenCustomKituneWindow
   fullName: NGOTxtExtender.KitsuneExtender.OpenCustomKituneWindow
   nameWithType: KitsuneExtender.OpenCustomKituneWindow
-- uid: NGOTxtExtender.KitsuneExtender.canPost
-  name: canPost
-  href: api/NGOTxtExtender.KitsuneExtender.html#NGOTxtExtender_KitsuneExtender_canPost
-  commentId: F:NGOTxtExtender.KitsuneExtender.canPost
-  fullName: NGOTxtExtender.KitsuneExtender.canPost
-  nameWithType: KitsuneExtender.canPost
-- uid: NGOTxtExtender.KitsuneExtender.customTopic
-  name: customTopic
-  href: api/NGOTxtExtender.KitsuneExtender.html#NGOTxtExtender_KitsuneExtender_customTopic
-  commentId: F:NGOTxtExtender.KitsuneExtender.customTopic
-  fullName: NGOTxtExtender.KitsuneExtender.customTopic
-  nameWithType: KitsuneExtender.customTopic
-- uid: NGOTxtExtender.KitsuneExtender.isCustomThread
-  name: isCustomThread
-  href: api/NGOTxtExtender.KitsuneExtender.html#NGOTxtExtender_KitsuneExtender_isCustomThread
-  commentId: F:NGOTxtExtender.KitsuneExtender.isCustomThread
-  fullName: NGOTxtExtender.KitsuneExtender.isCustomThread
-  nameWithType: KitsuneExtender.isCustomThread
 - uid: NGOTxtExtender.KusoComExtender
   name: KusoComExtender
   href: api/NGOTxtExtender.KusoComExtender.html
@@ -2089,12 +1759,6 @@ references:
   fullName.vb: NGOTxtExtender.KusoComExtender.New
   nameWithType: KusoComExtender.KusoComExtender
   nameWithType.vb: KusoComExtender.New
-- uid: NGOTxtExtender.KusoComExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.KusoComExtender.html#NGOTxtExtender_KusoComExtender_ExtList
-  commentId: F:NGOTxtExtender.KusoComExtender.ExtList
-  fullName: NGOTxtExtender.KusoComExtender.ExtList
-  nameWithType: KusoComExtender.ExtList
 - uid: NGOTxtExtender.MobComExtender
   name: MobComExtender
   href: api/NGOTxtExtender.MobComExtender.html
@@ -2119,12 +1783,6 @@ references:
   fullName.vb: NGOTxtExtender.MobComExtender.New
   nameWithType: MobComExtender.MobComExtender
   nameWithType.vb: MobComExtender.New
-- uid: NGOTxtExtender.MobComExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.MobComExtender.html#NGOTxtExtender_MobComExtender_ExtList
-  commentId: F:NGOTxtExtender.MobComExtender.ExtList
-  fullName: NGOTxtExtender.MobComExtender.ExtList
-  nameWithType: MobComExtender.ExtList
 - uid: NGOTxtExtender.SysTxtExtender
   name: SysTxtExtender
   href: api/NGOTxtExtender.SysTxtExtender.html
@@ -2149,12 +1807,6 @@ references:
   fullName.vb: NGOTxtExtender.SysTxtExtender.New
   nameWithType: SysTxtExtender.SysTxtExtender
   nameWithType.vb: SysTxtExtender.New
-- uid: NGOTxtExtender.SysTxtExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.SysTxtExtender.html#NGOTxtExtender_SysTxtExtender_ExtList
-  commentId: F:NGOTxtExtender.SysTxtExtender.ExtList
-  fullName: NGOTxtExtender.SysTxtExtender.ExtList
-  nameWithType: SysTxtExtender.ExtList
 - uid: NGOTxtExtender.SysTxtExtender.OpenCustomNote(System.String,System.String)
   name: OpenCustomNote(string, string)
   href: api/NGOTxtExtender.SysTxtExtender.html#NGOTxtExtender_SysTxtExtender_OpenCustomNote_System_String_System_String_
@@ -2194,12 +1846,6 @@ references:
   fullName.vb: NGOTxtExtender.TenComExtender.New
   nameWithType: TenComExtender.TenComExtender
   nameWithType.vb: TenComExtender.New
-- uid: NGOTxtExtender.TenComExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.TenComExtender.html#NGOTxtExtender_TenComExtender_ExtList
-  commentId: F:NGOTxtExtender.TenComExtender.ExtList
-  fullName: NGOTxtExtender.TenComExtender.ExtList
-  nameWithType: TenComExtender.ExtList
 - uid: NGOTxtExtender.TooltxtExtender
   name: TooltxtExtender
   href: api/NGOTxtExtender.TooltxtExtender.html
@@ -2224,12 +1870,6 @@ references:
   fullName.vb: NGOTxtExtender.TooltxtExtender.New
   nameWithType: TooltxtExtender.TooltxtExtender
   nameWithType.vb: TooltxtExtender.New
-- uid: NGOTxtExtender.TooltxtExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.TooltxtExtender.html#NGOTxtExtender_TooltxtExtender_ExtList
-  commentId: F:NGOTxtExtender.TooltxtExtender.ExtList
-  fullName: NGOTxtExtender.TooltxtExtender.ExtList
-  nameWithType: TooltxtExtender.ExtList
 - uid: NGOTxtExtender.TooltxtExtender.ShowExtTooltip(System.Boolean,System.String)
   name: ShowExtTooltip(bool, string)
   href: api/NGOTxtExtender.TooltxtExtender.html#NGOTxtExtender_TooltxtExtender_ShowExtTooltip_System_Boolean_System_String_
@@ -2284,12 +1924,6 @@ references:
   fullName.vb: NGOTxtExtender.TweetExtender.New
   nameWithType: TweetExtender.TweetExtender
   nameWithType.vb: TweetExtender.New
-- uid: NGOTxtExtender.TweetExtender.ExtList
-  name: ExtList
-  href: api/NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_ExtList
-  commentId: F:NGOTxtExtender.TweetExtender.ExtList
-  fullName: NGOTxtExtender.TweetExtender.ExtList
-  nameWithType: TweetExtender.ExtList
 - uid: NGOTxtExtender.TweetExtender.StartExtTweet(System.String)
   name: StartExtTweet(string)
   href: api/NGOTxtExtender.TweetExtender.html#NGOTxtExtender_TweetExtender_StartExtTweet_System_String_
@@ -2626,84 +2260,6 @@ references:
   commentId: F:NSOMediaExtender.IdleAnimationType.Normal
   fullName: NSOMediaExtender.IdleAnimationType.Normal
   nameWithType: IdleAnimationType.Normal
-- uid: NSOMediaExtender.MyPatches
-  name: MyPatches
-  href: api/NSOMediaExtender.MyPatches.html
-  commentId: T:NSOMediaExtender.MyPatches
-  fullName: NSOMediaExtender.MyPatches
-  nameWithType: MyPatches
-- uid: NSOMediaExtender.MyPatches.#ctor
-  name: MyPatches()
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches__ctor
-  commentId: M:NSOMediaExtender.MyPatches.#ctor
-  name.vb: New()
-  fullName: NSOMediaExtender.MyPatches.MyPatches()
-  fullName.vb: NSOMediaExtender.MyPatches.New()
-  nameWithType: MyPatches.MyPatches()
-  nameWithType.vb: MyPatches.New()
-- uid: NSOMediaExtender.MyPatches.#ctor*
-  name: MyPatches
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches__ctor_
-  commentId: Overload:NSOMediaExtender.MyPatches.#ctor
-  name.vb: New
-  fullName: NSOMediaExtender.MyPatches.MyPatches
-  fullName.vb: NSOMediaExtender.MyPatches.New
-  nameWithType: MyPatches.MyPatches
-  nameWithType.vb: MyPatches.New
-- uid: NSOMediaExtender.MyPatches.Awake
-  name: Awake()
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_Awake
-  commentId: M:NSOMediaExtender.MyPatches.Awake
-  fullName: NSOMediaExtender.MyPatches.Awake()
-  nameWithType: MyPatches.Awake()
-- uid: NSOMediaExtender.MyPatches.Awake*
-  name: Awake
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_Awake_
-  commentId: Overload:NSOMediaExtender.MyPatches.Awake
-  fullName: NSOMediaExtender.MyPatches.Awake
-  nameWithType: MyPatches.Awake
-- uid: NSOMediaExtender.MyPatches.PInfo
-  name: PInfo
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_PInfo
-  commentId: P:NSOMediaExtender.MyPatches.PInfo
-  fullName: NSOMediaExtender.MyPatches.PInfo
-  nameWithType: MyPatches.PInfo
-- uid: NSOMediaExtender.MyPatches.PInfo*
-  name: PInfo
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_PInfo_
-  commentId: Overload:NSOMediaExtender.MyPatches.PInfo
-  fullName: NSOMediaExtender.MyPatches.PInfo
-  nameWithType: MyPatches.PInfo
-- uid: NSOMediaExtender.MyPatches.Start
-  name: Start()
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_Start
-  commentId: M:NSOMediaExtender.MyPatches.Start
-  fullName: NSOMediaExtender.MyPatches.Start()
-  nameWithType: MyPatches.Start()
-- uid: NSOMediaExtender.MyPatches.Start*
-  name: Start
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_Start_
-  commentId: Overload:NSOMediaExtender.MyPatches.Start
-  fullName: NSOMediaExtender.MyPatches.Start
-  nameWithType: MyPatches.Start
-- uid: NSOMediaExtender.MyPatches.pluginGuid
-  name: pluginGuid
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_pluginGuid
-  commentId: F:NSOMediaExtender.MyPatches.pluginGuid
-  fullName: NSOMediaExtender.MyPatches.pluginGuid
-  nameWithType: MyPatches.pluginGuid
-- uid: NSOMediaExtender.MyPatches.pluginName
-  name: pluginName
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_pluginName
-  commentId: F:NSOMediaExtender.MyPatches.pluginName
-  fullName: NSOMediaExtender.MyPatches.pluginName
-  nameWithType: MyPatches.pluginName
-- uid: NSOMediaExtender.MyPatches.pluginVersion
-  name: pluginVersion
-  href: api/NSOMediaExtender.MyPatches.html#NSOMediaExtender_MyPatches_pluginVersion
-  commentId: F:NSOMediaExtender.MyPatches.pluginVersion
-  fullName: NSOMediaExtender.MyPatches.pluginVersion
-  nameWithType: MyPatches.pluginVersion
 - uid: NSOMediaExtender.PictureExtender
   name: PictureExtender
   href: api/NSOMediaExtender.PictureExtender.html

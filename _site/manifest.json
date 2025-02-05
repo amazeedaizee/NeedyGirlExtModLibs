@@ -32,16 +32,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/NGOEventExtender.BepInStart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/NGOEventExtender.BepInStart.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/NGOEventExtender.CEffectState.yml",
       "output": {
         ".html": {
@@ -182,30 +172,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/NGOExtraSettings.MyPatches.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/NGOExtraSettings.MyPatches.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/NGOExtraSettings.yml",
       "output": {
         ".html": {
           "relative_path": "api/NGOExtraSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/NGOTxtExtender.BepInStart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/NGOTxtExtender.BepInStart.html"
         }
       },
       "version": ""
@@ -366,16 +336,6 @@
       "output": {
         ".html": {
           "relative_path": "api/NSOMediaExtender.IdleAnimationType.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/NSOMediaExtender.MyPatches.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/NSOMediaExtender.MyPatches.html"
         }
       },
       "version": ""

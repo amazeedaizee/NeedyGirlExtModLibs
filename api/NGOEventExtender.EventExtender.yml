@@ -18,11 +18,6 @@ items:
   - NGOEventExtender.EventExtender.SetSpecialNightExtEvent(System.Collections.Generic.List{NGOEventExtender.NgoExtEvent})
   - NGOEventExtender.EventExtender.StartEvent(ngov3.NgoEvent)
   - NGOEventExtender.EventExtender.StartEvent``1
-  - NGOEventExtender.EventExtender.currentExtDayEvent
-  - NGOEventExtender.EventExtender.isEventing
-  - NGOEventExtender.EventExtender.ngoEvent
-  - NGOEventExtender.EventExtender.randomDayExtEvents
-  - NGOEventExtender.EventExtender.resetDayCustomEvent
   langs:
   - csharp
   - vb
@@ -56,101 +51,6 @@ items:
   - type: HarmonyLib.HarmonyPatch
     ctor: HarmonyLib.HarmonyPatch.#ctor
     arguments: []
-- uid: NGOEventExtender.EventExtender.ngoEvent
-  commentId: F:NGOEventExtender.EventExtender.ngoEvent
-  id: ngoEvent
-  parent: NGOEventExtender.EventExtender
-  langs:
-  - csharp
-  - vb
-  name: ngoEvent
-  nameWithType: EventExtender.ngoEvent
-  fullName: NGOEventExtender.EventExtender.ngoEvent
-  type: Field
-  assemblies:
-  - NGOEventExtender
-  namespace: NGOEventExtender
-  syntax:
-    content: public static NgoEvent ngoEvent
-    return:
-      type: ngov3.NgoEvent
-    content.vb: Public Shared ngoEvent As NgoEvent
-- uid: NGOEventExtender.EventExtender.isEventing
-  commentId: F:NGOEventExtender.EventExtender.isEventing
-  id: isEventing
-  parent: NGOEventExtender.EventExtender
-  langs:
-  - csharp
-  - vb
-  name: isEventing
-  nameWithType: EventExtender.isEventing
-  fullName: NGOEventExtender.EventExtender.isEventing
-  type: Field
-  assemblies:
-  - NGOEventExtender
-  namespace: NGOEventExtender
-  syntax:
-    content: public static bool isEventing
-    return:
-      type: System.Boolean
-    content.vb: Public Shared isEventing As Boolean
-- uid: NGOEventExtender.EventExtender.resetDayCustomEvent
-  commentId: F:NGOEventExtender.EventExtender.resetDayCustomEvent
-  id: resetDayCustomEvent
-  parent: NGOEventExtender.EventExtender
-  langs:
-  - csharp
-  - vb
-  name: resetDayCustomEvent
-  nameWithType: EventExtender.resetDayCustomEvent
-  fullName: NGOEventExtender.EventExtender.resetDayCustomEvent
-  type: Field
-  assemblies:
-  - NGOEventExtender
-  namespace: NGOEventExtender
-  syntax:
-    content: public static bool resetDayCustomEvent
-    return:
-      type: System.Boolean
-    content.vb: Public Shared resetDayCustomEvent As Boolean
-- uid: NGOEventExtender.EventExtender.currentExtDayEvent
-  commentId: F:NGOEventExtender.EventExtender.currentExtDayEvent
-  id: currentExtDayEvent
-  parent: NGOEventExtender.EventExtender
-  langs:
-  - csharp
-  - vb
-  name: currentExtDayEvent
-  nameWithType: EventExtender.currentExtDayEvent
-  fullName: NGOEventExtender.EventExtender.currentExtDayEvent
-  type: Field
-  assemblies:
-  - NGOEventExtender
-  namespace: NGOEventExtender
-  syntax:
-    content: public static NgoEvent currentExtDayEvent
-    return:
-      type: ngov3.NgoEvent
-    content.vb: Public Shared currentExtDayEvent As NgoEvent
-- uid: NGOEventExtender.EventExtender.randomDayExtEvents
-  commentId: F:NGOEventExtender.EventExtender.randomDayExtEvents
-  id: randomDayExtEvents
-  parent: NGOEventExtender.EventExtender
-  langs:
-  - csharp
-  - vb
-  name: randomDayExtEvents
-  nameWithType: EventExtender.randomDayExtEvents
-  fullName: NGOEventExtender.EventExtender.randomDayExtEvents
-  type: Field
-  assemblies:
-  - NGOEventExtender
-  namespace: NGOEventExtender
-  syntax:
-    content: public static List<NgoExtEvent> randomDayExtEvents
-    return:
-      type: System.Collections.Generic.List{NGOEventExtender.NgoExtEvent}
-    content.vb: Public Shared randomDayExtEvents As List(Of NgoExtEvent)
 - uid: NGOEventExtender.EventExtender.HijackOriginalEvent``2
   commentId: M:NGOEventExtender.EventExtender.HijackOriginalEvent``2
   id: HijackOriginalEvent``2
@@ -800,6 +700,21 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NGOEventExtender.EventExtender.HijackOriginalEvent*
+  commentId: Overload:NGOEventExtender.EventExtender.HijackOriginalEvent
+  isExternal: true
+  href: NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_HijackOriginalEvent__2
+  name: HijackOriginalEvent
+  nameWithType: EventExtender.HijackOriginalEvent
+  fullName: NGOEventExtender.EventExtender.HijackOriginalEvent
+- uid: NGOEventExtender.NgoExtEvent
+  commentId: T:NGOEventExtender.NgoExtEvent
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.NgoExtEvent.html
+  name: NgoExtEvent
+  nameWithType: NgoExtEvent
+  fullName: NGOEventExtender.NgoExtEvent
 - uid: ngov3.NgoEvent
   commentId: T:ngov3.NgoEvent
   parent: ngov3
@@ -813,17 +728,6 @@ references:
   name: ngov3
   nameWithType: ngov3
   fullName: ngov3
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: System.Collections.Generic.List{NGOEventExtender.NgoExtEvent}
   commentId: T:System.Collections.Generic.List{NGOEventExtender.NgoExtEvent}
   parent: System.Collections.Generic
@@ -924,21 +828,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: NGOEventExtender.EventExtender.HijackOriginalEvent*
-  commentId: Overload:NGOEventExtender.EventExtender.HijackOriginalEvent
-  isExternal: true
-  href: NGOEventExtender.EventExtender.html#NGOEventExtender_EventExtender_HijackOriginalEvent__2
-  name: HijackOriginalEvent
-  nameWithType: EventExtender.HijackOriginalEvent
-  fullName: NGOEventExtender.EventExtender.HijackOriginalEvent
-- uid: NGOEventExtender.NgoExtEvent
-  commentId: T:NGOEventExtender.NgoExtEvent
-  parent: NGOEventExtender
-  isExternal: true
-  href: NGOEventExtender.NgoExtEvent.html
-  name: NgoExtEvent
-  nameWithType: NgoExtEvent
-  fullName: NGOEventExtender.NgoExtEvent
 - uid: NGOEventExtender.EventExtender.CanHeadpat*
   commentId: Overload:NGOEventExtender.EventExtender.CanHeadpat
   isExternal: true
@@ -946,6 +835,17 @@ references:
   name: CanHeadpat
   nameWithType: EventExtender.CanHeadpat
   fullName: NGOEventExtender.EventExtender.CanHeadpat
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: System.ArgumentException
   commentId: T:System.ArgumentException
   isExternal: true

@@ -6,7 +6,6 @@ items:
   parent: NGOTxtExtender
   children:
   - NGOTxtExtender.MobComExtender.#ctor
-  - NGOTxtExtender.MobComExtender.ExtList
   langs:
   - csharp
   - vb
@@ -40,25 +39,6 @@ items:
   - type: HarmonyLib.HarmonyPatch
     ctor: HarmonyLib.HarmonyPatch.#ctor
     arguments: []
-- uid: NGOTxtExtender.MobComExtender.ExtList
-  commentId: F:NGOTxtExtender.MobComExtender.ExtList
-  id: ExtList
-  parent: NGOTxtExtender.MobComExtender
-  langs:
-  - csharp
-  - vb
-  name: ExtList
-  nameWithType: MobComExtender.ExtList
-  fullName: NGOTxtExtender.MobComExtender.ExtList
-  type: Field
-  assemblies:
-  - NGOTxtExtender
-  namespace: NGOTxtExtender
-  syntax:
-    content: public static List<MobCommentMaster.Param> ExtList
-    return:
-      type: System.Collections.Generic.List{MobCommentMaster.Param}
-    content.vb: Public Shared ExtList As List(Of MobCommentMaster.Param)
 - uid: NGOTxtExtender.MobComExtender.#ctor
   commentId: M:NGOTxtExtender.MobComExtender.#ctor
   id: '#ctor'
@@ -325,112 +305,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Collections.Generic.List{MobCommentMaster.Param}
-  commentId: T:System.Collections.Generic.List{MobCommentMaster.Param}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<MobCommentMaster.Param>
-  nameWithType: List<MobCommentMaster.Param>
-  fullName: System.Collections.Generic.List<MobCommentMaster.Param>
-  nameWithType.vb: List(Of MobCommentMaster.Param)
-  fullName.vb: System.Collections.Generic.List(Of MobCommentMaster.Param)
-  name.vb: List(Of MobCommentMaster.Param)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: MobCommentMaster
-    name: MobCommentMaster
-    isExternal: true
-  - name: .
-  - uid: MobCommentMaster.Param
-    name: Param
-    isExternal: true
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: MobCommentMaster
-    name: MobCommentMaster
-    isExternal: true
-  - name: .
-  - uid: MobCommentMaster.Param
-    name: Param
-    isExternal: true
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: NGOTxtExtender.MobComExtender.#ctor*
   commentId: Overload:NGOTxtExtender.MobComExtender.#ctor
   isExternal: true

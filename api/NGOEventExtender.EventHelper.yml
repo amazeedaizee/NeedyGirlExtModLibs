@@ -9,7 +9,6 @@ items:
   - NGOEventExtender.EventHelper.ChangeJineAmeIcon(UnityEngine.Sprite)
   - NGOEventExtender.EventHelper.ChangeTweetAmeIcon(UnityEngine.Sprite)
   - NGOEventExtender.EventHelper.ChangeTweetKAngelIcon(UnityEngine.Sprite)
-  - NGOEventExtender.EventHelper.DayPassingCover
   - NGOEventExtender.EventHelper.ResetIcons(System.Boolean,System.Boolean,System.Boolean)
   - NGOEventExtender.EventHelper.SetLastDayNotif(System.Action,UniRx.CompositeDisposable)
   - NGOEventExtender.EventHelper.SetShortcutTaskbarState(System.Boolean,System.Single)
@@ -47,25 +46,6 @@ items:
   - type: HarmonyLib.HarmonyPatch
     ctor: HarmonyLib.HarmonyPatch.#ctor
     arguments: []
-- uid: NGOEventExtender.EventHelper.DayPassingCover
-  commentId: F:NGOEventExtender.EventHelper.DayPassingCover
-  id: DayPassingCover
-  parent: NGOEventExtender.EventHelper
-  langs:
-  - csharp
-  - vb
-  name: DayPassingCover
-  nameWithType: EventHelper.DayPassingCover
-  fullName: NGOEventExtender.EventHelper.DayPassingCover
-  type: Field
-  assemblies:
-  - NGOEventExtender
-  namespace: NGOEventExtender
-  syntax:
-    content: public static GameObject DayPassingCover
-    return:
-      type: UnityEngine.GameObject
-    content.vb: Public Shared DayPassingCover As GameObject
 - uid: NGOEventExtender.EventHelper.StartYearsPass
   commentId: M:NGOEventExtender.EventHelper.StartYearsPass
   id: StartYearsPass
@@ -514,19 +494,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: UnityEngine.GameObject
-  commentId: T:UnityEngine.GameObject
-  parent: UnityEngine
-  isExternal: true
-  name: GameObject
-  nameWithType: GameObject
-  fullName: UnityEngine.GameObject
-- uid: UnityEngine
-  commentId: N:UnityEngine
-  isExternal: true
-  name: UnityEngine
-  nameWithType: UnityEngine
-  fullName: UnityEngine
 - uid: NGOEventExtender.EventHelper.StartYearsPass*
   commentId: Overload:NGOEventExtender.EventHelper.StartYearsPass
   isExternal: true
@@ -605,6 +572,12 @@ references:
   name: Sprite
   nameWithType: Sprite
   fullName: UnityEngine.Sprite
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
 - uid: NGOEventExtender.EventHelper.ChangeTweetKAngelIcon*
   commentId: Overload:NGOEventExtender.EventHelper.ChangeTweetKAngelIcon
   isExternal: true

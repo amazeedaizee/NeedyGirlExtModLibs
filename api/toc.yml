@@ -7,9 +7,6 @@ items:
   - uid: NGOEventExtender.ActionStreamExtender
     name: ActionStreamExtender
     type: Class
-  - uid: NGOEventExtender.BepInStart
-    name: BepInStart
-    type: Class
   - uid: NGOEventExtender.CEffectState
     name: CEffectState
     type: Enum
@@ -53,16 +50,10 @@ items:
   - uid: NGOExtraSettings.ExtraSettings
     name: ExtraSettings
     type: Class
-  - uid: NGOExtraSettings.MyPatches
-    name: MyPatches
-    type: Class
 - uid: NGOTxtExtender
   name: NGOTxtExtender
   type: Namespace
   items:
-  - uid: NGOTxtExtender.BepInStart
-    name: BepInStart
-    type: Class
   - uid: NGOTxtExtender.EgosaExtender
     name: EgosaExtender
     type: Class
@@ -112,9 +103,6 @@ items:
   - uid: NSOMediaExtender.IdleAnimationType
     name: IdleAnimationType
     type: Enum
-  - uid: NSOMediaExtender.MyPatches
-    name: MyPatches
-    type: Class
   - uid: NSOMediaExtender.PictureExtender
     name: PictureExtender
     type: Class

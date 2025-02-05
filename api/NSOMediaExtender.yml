@@ -8,7 +8,6 @@ items:
   - NSOMediaExtender.AssetBundleLoader
   - NSOMediaExtender.AudioExtender
   - NSOMediaExtender.IdleAnimationType
-  - NSOMediaExtender.MyPatches
   - NSOMediaExtender.PictureExtender
   - NSOMediaExtender.WebCamExtender
   - NSOMediaExtender.WebcamType
@@ -73,13 +72,6 @@ references:
   name: WebCamExtender
   nameWithType: WebCamExtender
   fullName: NSOMediaExtender.WebCamExtender
-- uid: NSOMediaExtender.MyPatches
-  commentId: T:NSOMediaExtender.MyPatches
-  isExternal: true
-  href: NSOMediaExtender.MyPatches.html
-  name: MyPatches
-  nameWithType: MyPatches
-  fullName: NSOMediaExtender.MyPatches
 - uid: NSOMediaExtender
   commentId: N:NSOMediaExtender
   isExternal: true

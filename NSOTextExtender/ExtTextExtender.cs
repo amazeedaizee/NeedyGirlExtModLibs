@@ -20,7 +20,7 @@ namespace NGOTxtExtender
         /// </summary>
         [HarmonyPostfix]
         [HarmonyPatch(typeof(NgoEvent), "endEvent")]
-        public static void ClearExDisposible()
+        internal static void ClearExDisposible()
         {
             CompositeDisposible.Clear();
         }

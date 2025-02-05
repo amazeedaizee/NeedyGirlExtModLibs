@@ -5,7 +5,6 @@ items:
   id: NGOEventExtender
   children:
   - NGOEventExtender.ActionStreamExtender
-  - NGOEventExtender.BepInStart
   - NGOEventExtender.CEffectState
   - NGOEventExtender.EndingExtender
   - NGOEventExtender.EventExtender
@@ -125,13 +124,6 @@ references:
   name: EndingExtender
   nameWithType: EndingExtender
   fullName: NGOEventExtender.EndingExtender
-- uid: NGOEventExtender.BepInStart
-  commentId: T:NGOEventExtender.BepInStart
-  isExternal: true
-  href: NGOEventExtender.BepInStart.html
-  name: BepInStart
-  nameWithType: BepInStart
-  fullName: NGOEventExtender.BepInStart
 - uid: NGOEventExtender
   commentId: N:NGOEventExtender
   isExternal: true
