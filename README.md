@@ -6,7 +6,7 @@ Some libraries are slightly outdated, but most of these can be used to make modd
 
 Currently tested with **version 1.1.1**
 
-## Compiling With Older Versions of Game
+## Compiling With Other Versions of the Game
 
 To compile these libraries yourself, just open the project file then go to "Build Solution" in the Projects Section.
 To compile to other versions of the game, make sure in your References you use the appropriate Unity libraries with the version the game is built on and the appropriate AssemblyCSharp located in.
