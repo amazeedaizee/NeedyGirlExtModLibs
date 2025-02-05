@@ -12,15 +12,15 @@ namespace NGOEventExtender
     [HarmonyPatch]
     public class EventExtender
     {
-        public static NgoEvent ngoEvent = new NgoEvent();
-        public static bool isEventing = false;
-        public static bool resetDayCustomEvent = false;
+        static NgoEvent ngoEvent = new NgoEvent();
+        static bool isEventing = false;
+        static bool resetDayCustomEvent = false;
 
         static bool isHeadPat = true;
 
-        public static NgoEvent currentExtDayEvent;
+        static NgoEvent currentExtDayEvent;
 
-        public static List<NgoExtEvent> randomDayExtEvents = new List<NgoExtEvent>();
+        static List<NgoExtEvent> randomDayExtEvents = new List<NgoExtEvent>();
         static List<string> origDayEvent = new List<string>();
         static List<string> origFHEvent = new List<string>();
         static List<string> origFLEvent = new List<string>();

@@ -14,13 +14,13 @@ namespace NGOTxtExtender
     {
         //public static string jsonOne = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKitsuneParam.json"));
         //public static string jsonTwo = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKitsuneTitleParam.json"));
-        public static List<KituneMaster.Param> ExtList = new List<KituneMaster.Param>();
-        public static List<KituneSuretaiMaster.Param> ExtList_Title = new List<KituneSuretaiMaster.Param>();
+        static List<KituneMaster.Param> ExtList = new List<KituneMaster.Param>();
+        static List<KituneSuretaiMaster.Param> ExtList_Title = new List<KituneSuretaiMaster.Param>();
 
 
-        public static bool isCustomThread;
-        public static bool canPost;
-        public static string customTopic = "";
+        static bool isCustomThread;
+        static bool canPost;
+        static string customTopic = "";
         static List<KituneMaster.Param> originalKitune = new List<KituneMaster.Param>();
         static List<KituneSuretaiMaster.Param> originalKituneTitles = new List<KituneSuretaiMaster.Param>();
 
@@ -85,7 +85,7 @@ namespace NGOTxtExtender
         {
             if (ExtList.Count != 0 && !__result.Exists(k => k.Id == ExtList[0].Id))
             {
-               __result.AddRange(ExtList);
+                __result.AddRange(ExtList);
             }
         }
 

@@ -3,7 +3,6 @@ using ngov3;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
-using UnityEngine;
 
 namespace NGOTxtExtender
 {
@@ -11,7 +10,7 @@ namespace NGOTxtExtender
     public class MobComExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtMobComParam_Pure.json"));
-        public static List<MobCommentMaster.Param> ExtList = new List<MobCommentMaster.Param>();
+        static List<MobCommentMaster.Param> ExtList = new List<MobCommentMaster.Param>();
         static List<MobCommentMaster.Param> originalMobs = new List<MobCommentMaster.Param>();
 
         [HarmonyPostfix]
@@ -20,7 +19,7 @@ namespace NGOTxtExtender
         {
             if (ExtList.Count != 0 && !__result.param.Exists(m => m.Id == ExtList[0].Id))
             {
-               __result.param.AddRange(ExtList);
+                __result.param.AddRange(ExtList);
             }
         }
 
@@ -68,7 +67,7 @@ namespace NGOTxtExtender
     public class KusoComExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKusoComment.json"));
-        public static List<KusoCommentMaster.Param> ExtList = new List<KusoCommentMaster.Param>();
+        static List<KusoCommentMaster.Param> ExtList = new List<KusoCommentMaster.Param>();
         static List<KusoCommentMaster.Param> originalKusoCom = new List<KusoCommentMaster.Param>();
 
         [HarmonyPostfix]

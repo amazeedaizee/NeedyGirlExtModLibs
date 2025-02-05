@@ -12,7 +12,7 @@ namespace NGOTxtExtender
     [HarmonyPatch]
     public class ExtTextManager
     {
-        public static CompositeDisposable CompositeDisposible = new CompositeDisposable();
+        static CompositeDisposable CompositeDisposible = new CompositeDisposable();
 
 
         /// <summary>

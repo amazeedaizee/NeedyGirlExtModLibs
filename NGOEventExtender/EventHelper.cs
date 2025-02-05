@@ -21,7 +21,7 @@ namespace NGOEventExtender
         private static Sprite origAngelTweetIcon;
         private static Sprite origAmeTweetIcon;
 
-        public static GameObject DayPassingCover;
+        static GameObject DayPassingCover;
 
         /// <summary>
         /// Loads in the graphic where a number of days pass (found in Painful Future, Labor Is Evil, etc.)

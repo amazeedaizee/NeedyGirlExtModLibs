@@ -2,12 +2,10 @@
 using HarmonyLib;
 using ngov3;
 using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using UniRx;
 using UnityEngine;
@@ -19,7 +17,7 @@ namespace NGOTxtExtender
     public class EgosaExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtEgosaParam_Pure.json"));
-        public static List<EgosaMaster.Param> ExtList = new List<EgosaMaster.Param>();
+        static List<EgosaMaster.Param> ExtList = new List<EgosaMaster.Param>();
         static List<EgosaMaster.Param> originalEgosa = new List<EgosaMaster.Param>();
 
         static bool isCustomReply = false;
@@ -106,7 +104,7 @@ namespace NGOTxtExtender
             }
         }
 
-       static string EgosaFromId(string id, LanguageType lang)
+        static string EgosaFromId(string id, LanguageType lang)
         {
             EgosaMaster.Param param = NgoEx.getEgosas().FirstOrDefault((EgosaMaster.Param x) => x.Id == id);
             switch (lang)
@@ -163,14 +161,14 @@ namespace NGOTxtExtender
             {
                 if (code[i].opcode == OpCodes.Callvirt && (MethodInfo)code[i].operand == AccessTools.Method(typeof(Image), "set_sprite", new Type[] { typeof(Sprite) }))
                 {
-                    if (!labelsSet) 
+                    if (!labelsSet)
                     {
                         code[i + 1].labels.Add(horrorEndingLabel);
                         numField = code[i + 4].operand;
                         continue;
                     }
-                    else 
-                    { 
+                    else
+                    {
                         code.InsertRange(i + 1, new List<CodeInstruction>()
                             {
                                 new CodeInstruction(OpCodes.Ldarg_0),
@@ -190,12 +188,12 @@ namespace NGOTxtExtender
                                 new CodeInstruction(OpCodes.Ldstr, ""),
                                 new CodeInstruction(OpCodes.Stsfld, AccessTools.Field(typeof(EgosaExtender), "eyeId")),
                                 new CodeInstruction(OpCodes.Br_S, endBlinkLabel)
-                
+
                             });
                         break;
                     }
-                   
-                   
+
+
                 }
                 if (!labelsSet && code[i].opcode == OpCodes.Call && (MethodInfo)code[i].operand == AccessTools.Method(typeof(ImageViewer), "Blink", new Type[] { typeof(string) }))
                 {
@@ -240,8 +238,8 @@ namespace NGOTxtExtender
             }
         }
 
-       [HarmonyReversePatch]
-       [HarmonyPatch(typeof(ImageViewer), "Blink")]
+        [HarmonyReversePatch]
+        [HarmonyPatch(typeof(ImageViewer), "Blink")]
         static void Blink(ImageViewer instance, string nakami)
         {
             throw new NotImplementedException();

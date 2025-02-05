@@ -11,7 +11,7 @@ namespace NGOTxtExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtTweetParam_Num.json"));
         //public static List<TweetMaster.Param> ExtList = JsonConvert.DeserializeObject<List<TweetMaster.Param>>(json);
-        public static List<TweetMaster.Param> ExtList = new List<TweetMaster.Param>();
+        static List<TweetMaster.Param> ExtList = new List<TweetMaster.Param>();
 
         /// <summary>
         /// Creates a custom Tweet on Tweeter/Poketter with normal (random) replies attached to it.

@@ -16,7 +16,7 @@ namespace NGOTxtExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtJineParam_Num.json"));
         //public static List<LineMaster.Param> ExtList = JsonConvert.DeserializeObject<List<LineMaster.Param>>(json);
-        public static List<LineMaster.Param> ExtList = new List<LineMaster.Param>();
+        static List<LineMaster.Param> ExtList = new List<LineMaster.Param>();
 
         /// <summary>
         /// Create a custom user-made Jine message sent by Ame.

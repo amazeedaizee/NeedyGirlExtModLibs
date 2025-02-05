@@ -8,7 +8,7 @@ namespace NGOTxtExtender
     public class TooltxtExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtTooltip.json"));
-        public static List<TooltipMaster.Param> ExtList = new List<TooltipMaster.Param>();
+        static List<TooltipMaster.Param> ExtList = new List<TooltipMaster.Param>();
 
 
         /// <summary>
