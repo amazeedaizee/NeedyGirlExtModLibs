@@ -4,6 +4,8 @@ A group of libraries for that might help in modding Needy Girl Overdose/Needy St
 
 Some libraries are slightly outdated, but most of these can be used to make modding the game easier.
 
+Currently tested with **version 1.1.1**
+
 ## Compiling With Older Versions of Game
 
 To compile these libraries yourself, just open the project file then go to "Build Solution" in the Projects Section.
