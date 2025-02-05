@@ -17,7 +17,7 @@ namespace NGOTxtExtender
     public class EgosaExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtEgosaParam_Pure.json"));
-        static List<EgosaMaster.Param> ExtList = new List<EgosaMaster.Param>();
+        internal static List<EgosaMaster.Param> ExtList = new List<EgosaMaster.Param>();
         static List<EgosaMaster.Param> originalEgosa = new List<EgosaMaster.Param>();
 
         static bool isCustomReply = false;

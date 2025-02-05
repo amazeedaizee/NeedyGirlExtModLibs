@@ -15,7 +15,7 @@ namespace NGOEventExtender
     [HarmonyPatch]
     public class EndingExtender
     {
-        static List<EndingMaster.Param> ExtEndList = new List<EndingMaster.Param>();
+        internal static List<EndingMaster.Param> ExtEndList = new List<EndingMaster.Param>();
         static List<EndingType> originalList = new List<EndingType>()
         {EndingType.Ending_Grand, EndingType.Ending_Happy, EndingType.Ending_Meta, EndingType.Ending_Normal, EndingType.Ending_Bad, EndingType.Ending_Work, EndingType.Ending_Needy, EndingType.Ending_Yami, EndingType.Ending_Av, EndingType.Ending_Healthy, EndingType.Ending_Lust, EndingType.Ending_Ntr, EndingType.Ending_Sukisuki, EndingType.Ending_Stressful, EndingType.Ending_Sucide, EndingType.Ending_Jine, EndingType.Ending_KowaiInternet, EndingType.Ending_Yarisute, EndingType.Ending_Kyouso, EndingType.Ending_Jisatu, EndingType.Ending_Jikka, EndingType.Ending_Ginga, EndingType.Ending_DarkAngel, EndingType.Ending_Ideon};
         static List<EndingType> extEndHistory = new List<EndingType>();

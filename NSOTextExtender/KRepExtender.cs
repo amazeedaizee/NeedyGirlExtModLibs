@@ -11,7 +11,7 @@ namespace NGOTxtExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKRepParam_Num.json"));
         //public static List<KRepMaster.Param> ExtList = JsonConvert.DeserializeObject<List<KRepMaster.Param>>(json);
-        static List<KRepMaster.Param> ExtList = new List<KRepMaster.Param>();
+        internal static List<KRepMaster.Param> ExtList = new List<KRepMaster.Param>();
 
         static List<KusoRepType> extKRepSmallList = new List<KusoRepType>();
         static List<KusoRepType> extKRepMiddleList = new List<KusoRepType>();

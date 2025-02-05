@@ -10,7 +10,7 @@ namespace NGOTxtExtender
     public class MobComExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtMobComParam_Pure.json"));
-        static List<MobCommentMaster.Param> ExtList = new List<MobCommentMaster.Param>();
+        internal static List<MobCommentMaster.Param> ExtList = new List<MobCommentMaster.Param>();
         static List<MobCommentMaster.Param> originalMobs = new List<MobCommentMaster.Param>();
 
         [HarmonyPostfix]
@@ -49,7 +49,7 @@ namespace NGOTxtExtender
     public class TenComExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtTenComment.json"));
-        public static List<TenCommentMaster.Param> ExtList = new List<TenCommentMaster.Param>();
+        internal static List<TenCommentMaster.Param> ExtList = new List<TenCommentMaster.Param>();
         static List<TenCommentMaster.Param> originalTenCom = new List<TenCommentMaster.Param>();
 
         [HarmonyPostfix]
@@ -67,7 +67,7 @@ namespace NGOTxtExtender
     public class KusoComExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKusoComment.json"));
-        static List<KusoCommentMaster.Param> ExtList = new List<KusoCommentMaster.Param>();
+        internal static List<KusoCommentMaster.Param> ExtList = new List<KusoCommentMaster.Param>();
         static List<KusoCommentMaster.Param> originalKusoCom = new List<KusoCommentMaster.Param>();
 
         [HarmonyPostfix]

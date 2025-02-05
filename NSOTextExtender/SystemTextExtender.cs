@@ -10,7 +10,7 @@ namespace NGOTxtExtender
     public class SysTxtExtender
     {
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtSystemText.json"));
-        static List<SystemTextMaster.Param> ExtList = new List<SystemTextMaster.Param>();
+        internal static List<SystemTextMaster.Param> ExtList = new List<SystemTextMaster.Param>();
         static List<SystemTextMaster.Param> originalList = new List<SystemTextMaster.Param>();
         static List<SystemTextMaster.Param> combinedList = new List<SystemTextMaster.Param>();
 

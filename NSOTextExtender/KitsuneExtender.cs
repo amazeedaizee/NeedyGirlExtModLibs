@@ -14,8 +14,8 @@ namespace NGOTxtExtender
     {
         //public static string jsonOne = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKitsuneParam.json"));
         //public static string jsonTwo = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtKitsuneTitleParam.json"));
-        static List<KituneMaster.Param> ExtList = new List<KituneMaster.Param>();
-        static List<KituneSuretaiMaster.Param> ExtList_Title = new List<KituneSuretaiMaster.Param>();
+        internal static List<KituneMaster.Param> ExtList = new List<KituneMaster.Param>();
+        internal static List<KituneSuretaiMaster.Param> ExtList_Title = new List<KituneSuretaiMaster.Param>();
 
 
         static bool isCustomThread;
