@@ -530,10 +530,10 @@ namespace NGOEventExtender
             {
                 return true;
             }
-            __instance.title = currentCustomStream.title;
+            __instance.title = currentCustomStream.StreamTitle;
             currentCustomStream.SetStreamSettings();
             Awake_Stub(__instance);
-            ___playing.AddRange(currentCustomStream.playing);
+            ___playing.AddRange(currentCustomStream.NowPlaying);
             return false;
         }
 
@@ -1270,13 +1270,21 @@ namespace NGOEventExtender
     /// <summary>
     /// The blueprint used to load in a custom stream. <br/>Make sure your variable of this class isn't static, so that your stream dialogue and your comment's language can be updated if this stream is used more than once.
     /// </summary>
-    public abstract class ExtLiveScenario : LiveScenario
+    public abstract class ExtLiveScenario
     {
+        /// <summary>
+        /// The stream title.
+        /// </summary>
+        public virtual string StreamTitle { get; }
         /// <summary>
         /// The starting animation of a stream; only applies if KAngel is the first one talking.
         /// </summary>
         public virtual string StartingAnim { get => "stream_cho_akaruku"; }
 
+        /// <summary>
+        /// The playing list.
+        /// </summary>
+        public virtual List<Playing> NowPlaying { get; }
         /// <summary>
         ///  The condition for the event. 
         ///  <br/>Event will only start if the condition returns true. 

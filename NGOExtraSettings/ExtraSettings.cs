@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using HarmonyLib;
 using System;
+using UnityEngine;
 
 namespace NGOExtraSettings
 {
@@ -19,6 +20,7 @@ namespace NGOExtraSettings
 
             Harmony harmony = new Harmony(pluginGuid);
             harmony.PatchAll();
+            this.gameObject.hideFlags = HideFlags.HideAndDontSave;
         }
 
         public void Start()

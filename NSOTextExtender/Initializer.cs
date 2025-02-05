@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using UnityEngine;
 
 namespace NGOTxtExtender
 {
@@ -18,6 +19,7 @@ namespace NGOTxtExtender
 
             Harmony harmony = new Harmony(pluginGuid);
             harmony.PatchAll();
+            this.gameObject.hideFlags = HideFlags.HideAndDontSave;
         }
 
         public void Start()

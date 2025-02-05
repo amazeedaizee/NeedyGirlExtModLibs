@@ -2,6 +2,7 @@
 using HarmonyLib;
 using ngov3;
 using System.Reflection;
+using UnityEngine;
 
 namespace NGOEventExtender
 {
@@ -21,7 +22,7 @@ namespace NGOEventExtender
             MethodInfo original = AccessTools.FirstMethod(typeof(Live), x => x.Name.Contains("SetScenario"));
             MethodInfo patch = AccessTools.Method(typeof(StreamExtender), "InitializeConditionalStream");
             harmony.Patch(original, new HarmonyMethod(patch));
-
+            this.gameObject.hideFlags = HideFlags.HideAndDontSave;
         }
 
         public void Start()
