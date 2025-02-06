@@ -32,7 +32,7 @@ namespace NGOTxtExtender
         /// Creates a Tooltip with either original or custom text.
         /// </summary>
         /// <param name="isCat">Shows the Cat Tooltip if true. Otherwise, shows the normal speech bubble tooltip.</param>
-        /// <param name="tooltxtData"> The TooltipType used to load text. If loading custom text, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a TooltipType.</param>
+        /// <param name="tooltxtData"> The TooltipType used to load text. If loading custom text, use <c>ExtTextExtender.GetUniqueIdNum()</c>, or use your unique number at the end of your ID and add 10000 to it, then cast it as a TooltipType.</param>
         public static void ShowTooltip(bool isCat, TooltipType tooltxtData)
         {
             if (isCat)
