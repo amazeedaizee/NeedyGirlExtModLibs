@@ -7,6 +7,8 @@ Some libraries are slightly outdated, but most of these can be used to make modd
 Currently tested with **version 1.1.1** of the game
 
 ## Documentation
+https://amazeedaizee.github.io/NeedyGirlExtModLibs/
+
 WIP!
 
 ## Compiling With Other Versions of the Game
