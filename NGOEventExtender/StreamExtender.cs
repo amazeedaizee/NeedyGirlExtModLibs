@@ -916,7 +916,9 @@ namespace NGOEventExtender
     public class ActionStreamExtender
     {
         internal static uint ExTenComTypeId = 1;
+#if (v1_2_1_OR_GREATER)
         internal static List<ExtAlphaTypeToData> ExTenComTypes = new List<ExtAlphaTypeToData>() { };
+#endif
         /// <summary>
         /// Checks to see if an <c>ExtActionNgoStream</c> is discovered as an idea. (but not streamed)
         /// </summary>
@@ -1268,7 +1270,7 @@ namespace NGOEventExtender
             return codes.AsEnumerable();
         }
 
-#if (v1_2_0_OR_GREATER)
+#if (v1_2_1_OR_GREATER)
         [HarmonyPrefix]
         [HarmonyPatch(typeof(NgoEx), nameof(NgoEx.TenTalk), new Type[] { typeof(TenCommentType), typeof(LanguageType) })]
         static bool GrabExtAlphaTenName(ref string __result, TenCommentType type, LanguageType lang)
@@ -1330,7 +1332,7 @@ namespace NGOEventExtender
     {
         protected internal bool isDiscovered = false;
         public abstract string ActionStreamId { get; }
-#if (v1_2_0_OR_GREATER)
+#if (v1_2_1_OR_GREATER)
         public abstract ExtAlphaTypeToData HintData { get; }
 #else
         public abstract AlphaTypeToData HintData { get; }
@@ -1345,7 +1347,7 @@ namespace NGOEventExtender
 
     }
 
-#if (v1_2_0_OR_GREATER)
+#if (v1_2_1_OR_GREATER)
     public class ExtAlphaTypeToData : AlphaTypeToData
     {
         internal new TenCommentType netaName = (TenCommentType)10000;
