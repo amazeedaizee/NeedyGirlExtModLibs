@@ -22,6 +22,9 @@ items:
   - uid: NGOEventExtender.ExtActionNgoStream
     name: ExtActionNgoStream
     type: Class
+  - uid: NGOEventExtender.ExtAlphaTypeToData
+    name: ExtAlphaTypeToData
+    type: Class
   - uid: NGOEventExtender.ExtNgoStream
     name: ExtNgoStream
     type: Class
@@ -99,6 +102,12 @@ items:
     type: Class
   - uid: NSOMediaExtender.AudioExtender
     name: AudioExtender
+    type: Class
+  - uid: NSOMediaExtender.ExternalFileLoader
+    name: ExternalFileLoader
+    type: Class
+  - uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    name: ExternalFileLoader.FileLoadFailedException
     type: Class
   - uid: NSOMediaExtender.IdleAnimationType
     name: IdleAnimationType

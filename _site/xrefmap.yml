@@ -571,6 +571,42 @@ references:
   commentId: F:NGOEventExtender.ExtActionNgoStream.isDiscovered
   fullName: NGOEventExtender.ExtActionNgoStream.isDiscovered
   nameWithType: ExtActionNgoStream.isDiscovered
+- uid: NGOEventExtender.ExtAlphaTypeToData
+  name: ExtAlphaTypeToData
+  href: api/NGOEventExtender.ExtAlphaTypeToData.html
+  commentId: T:NGOEventExtender.ExtAlphaTypeToData
+  fullName: NGOEventExtender.ExtAlphaTypeToData
+  nameWithType: ExtAlphaTypeToData
+- uid: NGOEventExtender.ExtAlphaTypeToData.#ctor(TenCommentMaster.Param)
+  name: ExtAlphaTypeToData(Param)
+  href: api/NGOEventExtender.ExtAlphaTypeToData.html#NGOEventExtender_ExtAlphaTypeToData__ctor_TenCommentMaster_Param_
+  commentId: M:NGOEventExtender.ExtAlphaTypeToData.#ctor(TenCommentMaster.Param)
+  name.vb: New(Param)
+  fullName: NGOEventExtender.ExtAlphaTypeToData.ExtAlphaTypeToData(TenCommentMaster.Param)
+  fullName.vb: NGOEventExtender.ExtAlphaTypeToData.New(TenCommentMaster.Param)
+  nameWithType: ExtAlphaTypeToData.ExtAlphaTypeToData(TenCommentMaster.Param)
+  nameWithType.vb: ExtAlphaTypeToData.New(TenCommentMaster.Param)
+- uid: NGOEventExtender.ExtAlphaTypeToData.#ctor*
+  name: ExtAlphaTypeToData
+  href: api/NGOEventExtender.ExtAlphaTypeToData.html#NGOEventExtender_ExtAlphaTypeToData__ctor_
+  commentId: Overload:NGOEventExtender.ExtAlphaTypeToData.#ctor
+  name.vb: New
+  fullName: NGOEventExtender.ExtAlphaTypeToData.ExtAlphaTypeToData
+  fullName.vb: NGOEventExtender.ExtAlphaTypeToData.New
+  nameWithType: ExtAlphaTypeToData.ExtAlphaTypeToData
+  nameWithType.vb: ExtAlphaTypeToData.New
+- uid: NGOEventExtender.ExtAlphaTypeToData.paramId
+  name: paramId
+  href: api/NGOEventExtender.ExtAlphaTypeToData.html#NGOEventExtender_ExtAlphaTypeToData_paramId
+  commentId: P:NGOEventExtender.ExtAlphaTypeToData.paramId
+  fullName: NGOEventExtender.ExtAlphaTypeToData.paramId
+  nameWithType: ExtAlphaTypeToData.paramId
+- uid: NGOEventExtender.ExtAlphaTypeToData.paramId*
+  name: paramId
+  href: api/NGOEventExtender.ExtAlphaTypeToData.html#NGOEventExtender_ExtAlphaTypeToData_paramId_
+  commentId: Overload:NGOEventExtender.ExtAlphaTypeToData.paramId
+  fullName: NGOEventExtender.ExtAlphaTypeToData.paramId
+  nameWithType: ExtAlphaTypeToData.paramId
 - uid: NGOEventExtender.ExtNgoStream
   name: ExtNgoStream
   href: api/NGOEventExtender.ExtNgoStream.html
@@ -2230,6 +2266,102 @@ references:
   commentId: Overload:NSOMediaExtender.AudioExtender.PlayCustomSound
   fullName: NSOMediaExtender.AudioExtender.PlayCustomSound
   nameWithType: AudioExtender.PlayCustomSound
+- uid: NSOMediaExtender.ExternalFileLoader
+  name: ExternalFileLoader
+  href: api/NSOMediaExtender.ExternalFileLoader.html
+  commentId: T:NSOMediaExtender.ExternalFileLoader
+  fullName: NSOMediaExtender.ExternalFileLoader
+  nameWithType: ExternalFileLoader
+- uid: NSOMediaExtender.ExternalFileLoader.#ctor
+  name: ExternalFileLoader()
+  href: api/NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader__ctor
+  commentId: M:NSOMediaExtender.ExternalFileLoader.#ctor
+  name.vb: New()
+  fullName: NSOMediaExtender.ExternalFileLoader.ExternalFileLoader()
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.New()
+  nameWithType: ExternalFileLoader.ExternalFileLoader()
+  nameWithType.vb: ExternalFileLoader.New()
+- uid: NSOMediaExtender.ExternalFileLoader.#ctor*
+  name: ExternalFileLoader
+  href: api/NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader__ctor_
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.#ctor
+  name.vb: New
+  fullName: NSOMediaExtender.ExternalFileLoader.ExternalFileLoader
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.New
+  nameWithType: ExternalFileLoader.ExternalFileLoader
+  nameWithType.vb: ExternalFileLoader.New
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  name: ExternalFileLoader.FileLoadFailedException
+  href: api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html
+  commentId: T:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  nameWithType: ExternalFileLoader.FileLoadFailedException
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor
+  name: FileLoadFailedException()
+  href: api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html#NSOMediaExtender_ExternalFileLoader_FileLoadFailedException__ctor
+  commentId: M:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor
+  name.vb: New()
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.FileLoadFailedException()
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.New()
+  nameWithType: ExternalFileLoader.FileLoadFailedException.FileLoadFailedException()
+  nameWithType.vb: ExternalFileLoader.FileLoadFailedException.New()
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor(System.String)
+  name: FileLoadFailedException(string)
+  href: api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html#NSOMediaExtender_ExternalFileLoader_FileLoadFailedException__ctor_System_String_
+  commentId: M:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.FileLoadFailedException(string)
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.New(String)
+  nameWithType: ExternalFileLoader.FileLoadFailedException.FileLoadFailedException(string)
+  nameWithType.vb: ExternalFileLoader.FileLoadFailedException.New(String)
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor(System.String,System.Exception)
+  name: FileLoadFailedException(string, Exception)
+  href: api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html#NSOMediaExtender_ExternalFileLoader_FileLoadFailedException__ctor_System_String_System_Exception_
+  commentId: M:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.FileLoadFailedException(string, System.Exception)
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.New(String, System.Exception)
+  nameWithType: ExternalFileLoader.FileLoadFailedException.FileLoadFailedException(string, Exception)
+  nameWithType.vb: ExternalFileLoader.FileLoadFailedException.New(String, Exception)
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor*
+  name: FileLoadFailedException
+  href: api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html#NSOMediaExtender_ExternalFileLoader_FileLoadFailedException__ctor_
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.#ctor
+  name.vb: New
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.FileLoadFailedException
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.New
+  nameWithType: ExternalFileLoader.FileLoadFailedException.FileLoadFailedException
+  nameWithType.vb: ExternalFileLoader.FileLoadFailedException.New
+- uid: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(System.String,UnityEngine.AudioType)
+  name: LoadAudioFromFile(string, AudioType)
+  href: api/NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader_LoadAudioFromFile_System_String_UnityEngine_AudioType_
+  commentId: M:NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(System.String,UnityEngine.AudioType)
+  name.vb: LoadAudioFromFile(String, AudioType)
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(string, UnityEngine.AudioType)
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(String, UnityEngine.AudioType)
+  nameWithType: ExternalFileLoader.LoadAudioFromFile(string, AudioType)
+  nameWithType.vb: ExternalFileLoader.LoadAudioFromFile(String, AudioType)
+- uid: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile*
+  name: LoadAudioFromFile
+  href: api/NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader_LoadAudioFromFile_
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile
+  nameWithType: ExternalFileLoader.LoadAudioFromFile
+- uid: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(System.String)
+  name: LoadImageFromFile(string)
+  href: api/NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader_LoadImageFromFile_System_String_
+  commentId: M:NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(System.String)
+  name.vb: LoadImageFromFile(String)
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(string)
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(String)
+  nameWithType: ExternalFileLoader.LoadImageFromFile(string)
+  nameWithType.vb: ExternalFileLoader.LoadImageFromFile(String)
+- uid: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile*
+  name: LoadImageFromFile
+  href: api/NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader_LoadImageFromFile_
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.LoadImageFromFile
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile
+  nameWithType: ExternalFileLoader.LoadImageFromFile
 - uid: NSOMediaExtender.IdleAnimationType
   name: IdleAnimationType
   href: api/NSOMediaExtender.IdleAnimationType.html

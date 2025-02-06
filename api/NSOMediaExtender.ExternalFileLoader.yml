@@ -1,0 +1,564 @@
+### YamlMime:ManagedReference
+items:
+- uid: NSOMediaExtender.ExternalFileLoader
+  commentId: T:NSOMediaExtender.ExternalFileLoader
+  id: ExternalFileLoader
+  parent: NSOMediaExtender
+  children:
+  - NSOMediaExtender.ExternalFileLoader.#ctor
+  - NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(System.String,UnityEngine.AudioType)
+  - NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ExternalFileLoader
+  nameWithType: ExternalFileLoader
+  fullName: NSOMediaExtender.ExternalFileLoader
+  type: Class
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public class ExternalFileLoader
+    content.vb: Public Class ExternalFileLoader
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(System.String,UnityEngine.AudioType)
+  commentId: M:NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(System.String,UnityEngine.AudioType)
+  id: LoadAudioFromFile(System.String,UnityEngine.AudioType)
+  parent: NSOMediaExtender.ExternalFileLoader
+  langs:
+  - csharp
+  - vb
+  name: LoadAudioFromFile(string, AudioType)
+  nameWithType: ExternalFileLoader.LoadAudioFromFile(string, AudioType)
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(string, UnityEngine.AudioType)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Loads a custom audio file as an Audio Clip.
+  remarks: Supported audio types include .mp3, .wav, .ogg, and more.
+  example: []
+  syntax:
+    content: public static UniTask<AudioClip> LoadAudioFromFile(string path, AudioType type)
+    parameters:
+    - id: path
+      type: System.String
+      description: The path to the audio file.
+    - id: type
+      type: UnityEngine.AudioType
+      description: The type of audio file.
+    return:
+      type: Cysharp.Threading.Tasks.UniTask{UnityEngine.AudioClip}
+      description: ''
+    content.vb: Public Shared Function LoadAudioFromFile(path As String, type As AudioType) As UniTask(Of AudioClip)
+  overload: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  - type: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    commentId: T:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    description: ''
+  - type: System.IO.FileNotFoundException
+    commentId: T:System.IO.FileNotFoundException
+    description: ''
+  nameWithType.vb: ExternalFileLoader.LoadAudioFromFile(String, AudioType)
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile(String, UnityEngine.AudioType)
+  name.vb: LoadAudioFromFile(String, AudioType)
+- uid: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(System.String)
+  commentId: M:NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(System.String)
+  id: LoadImageFromFile(System.String)
+  parent: NSOMediaExtender.ExternalFileLoader
+  langs:
+  - csharp
+  - vb
+  name: LoadImageFromFile(string)
+  nameWithType: ExternalFileLoader.LoadImageFromFile(string)
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(string)
+  type: Method
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  summary: Loads a custom image file as a Sprite.
+  remarks: Supported image types are jpg, and png.
+  example: []
+  syntax:
+    content: public static Sprite LoadImageFromFile(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: The path to the image file.
+    return:
+      type: UnityEngine.Sprite
+    content.vb: Public Shared Function LoadImageFromFile(path As String) As Sprite
+  overload: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  - type: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    commentId: T:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    description: ''
+  - type: System.IO.FileNotFoundException
+    commentId: T:System.IO.FileNotFoundException
+    description: ''
+  nameWithType.vb: ExternalFileLoader.LoadImageFromFile(String)
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile(String)
+  name.vb: LoadImageFromFile(String)
+- uid: NSOMediaExtender.ExternalFileLoader.#ctor
+  commentId: M:NSOMediaExtender.ExternalFileLoader.#ctor
+  id: '#ctor'
+  parent: NSOMediaExtender.ExternalFileLoader
+  langs:
+  - csharp
+  - vb
+  name: ExternalFileLoader()
+  nameWithType: ExternalFileLoader.ExternalFileLoader()
+  fullName: NSOMediaExtender.ExternalFileLoader.ExternalFileLoader()
+  type: Constructor
+  assemblies:
+  - NSOMediaExtender
+  namespace: NSOMediaExtender
+  syntax:
+    content: public ExternalFileLoader()
+    content.vb: Public Sub New()
+  overload: NSOMediaExtender.ExternalFileLoader.#ctor*
+  nameWithType.vb: ExternalFileLoader.New()
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.New()
+  name.vb: New()
+references:
+- uid: NSOMediaExtender
+  commentId: N:NSOMediaExtender
+  isExternal: true
+  href: NSOMediaExtender.html
+  name: NSOMediaExtender
+  nameWithType: NSOMediaExtender
+  fullName: NSOMediaExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  commentId: T:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  isExternal: true
+  href: NSOMediaExtender.ExternalFileLoader.html
+  name: ExternalFileLoader.FileLoadFailedException
+  nameWithType: ExternalFileLoader.FileLoadFailedException
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  spec.csharp:
+  - uid: NSOMediaExtender.ExternalFileLoader
+    name: ExternalFileLoader
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.html
+  - name: .
+  - uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    name: FileLoadFailedException
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html
+  spec.vb:
+  - uid: NSOMediaExtender.ExternalFileLoader
+    name: ExternalFileLoader
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.html
+  - name: .
+  - uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    name: FileLoadFailedException
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html
+- uid: System.IO.FileNotFoundException
+  commentId: T:System.IO.FileNotFoundException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception
+  name: FileNotFoundException
+  nameWithType: FileNotFoundException
+  fullName: System.IO.FileNotFoundException
+- uid: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile*
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile
+  isExternal: true
+  href: NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader_LoadAudioFromFile_System_String_UnityEngine_AudioType_
+  name: LoadAudioFromFile
+  nameWithType: ExternalFileLoader.LoadAudioFromFile
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadAudioFromFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UnityEngine.AudioType
+  commentId: T:UnityEngine.AudioType
+  parent: UnityEngine
+  isExternal: true
+  name: AudioType
+  nameWithType: AudioType
+  fullName: UnityEngine.AudioType
+- uid: Cysharp.Threading.Tasks.UniTask{UnityEngine.AudioClip}
+  commentId: T:Cysharp.Threading.Tasks.UniTask{UnityEngine.AudioClip}
+  parent: Cysharp.Threading.Tasks
+  definition: Cysharp.Threading.Tasks.UniTask`1
+  name: UniTask<AudioClip>
+  nameWithType: UniTask<AudioClip>
+  fullName: Cysharp.Threading.Tasks.UniTask<UnityEngine.AudioClip>
+  nameWithType.vb: UniTask(Of AudioClip)
+  fullName.vb: Cysharp.Threading.Tasks.UniTask(Of UnityEngine.AudioClip)
+  name.vb: UniTask(Of AudioClip)
+  spec.csharp:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: <
+  - uid: UnityEngine.AudioClip
+    name: AudioClip
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.AudioClip
+    name: AudioClip
+    isExternal: true
+  - name: )
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: Cysharp.Threading.Tasks.UniTask`1
+  commentId: T:Cysharp.Threading.Tasks.UniTask`1
+  isExternal: true
+  name: UniTask<T>
+  nameWithType: UniTask<T>
+  fullName: Cysharp.Threading.Tasks.UniTask<T>
+  nameWithType.vb: UniTask(Of T)
+  fullName.vb: Cysharp.Threading.Tasks.UniTask(Of T)
+  name.vb: UniTask(Of T)
+  spec.csharp:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Cysharp.Threading.Tasks.UniTask`1
+    name: UniTask
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Cysharp.Threading.Tasks
+  commentId: N:Cysharp.Threading.Tasks
+  isExternal: true
+  name: Cysharp.Threading.Tasks
+  nameWithType: Cysharp.Threading.Tasks
+  fullName: Cysharp.Threading.Tasks
+  spec.csharp:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+  spec.vb:
+  - uid: Cysharp
+    name: Cysharp
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading
+    name: Threading
+    isExternal: true
+  - name: .
+  - uid: Cysharp.Threading.Tasks
+    name: Tasks
+    isExternal: true
+- uid: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile*
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.LoadImageFromFile
+  isExternal: true
+  href: NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader_LoadImageFromFile_System_String_
+  name: LoadImageFromFile
+  nameWithType: ExternalFileLoader.LoadImageFromFile
+  fullName: NSOMediaExtender.ExternalFileLoader.LoadImageFromFile
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: NSOMediaExtender.ExternalFileLoader.#ctor*
+  commentId: Overload:NSOMediaExtender.ExternalFileLoader.#ctor
+  isExternal: true
+  href: NSOMediaExtender.ExternalFileLoader.html#NSOMediaExtender_ExternalFileLoader__ctor
+  name: ExternalFileLoader
+  nameWithType: ExternalFileLoader.ExternalFileLoader
+  fullName: NSOMediaExtender.ExternalFileLoader.ExternalFileLoader
+  nameWithType.vb: ExternalFileLoader.New
+  fullName.vb: NSOMediaExtender.ExternalFileLoader.New
+  name.vb: New

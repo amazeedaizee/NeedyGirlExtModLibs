@@ -512,6 +512,7 @@ references:
   fullName: NSOMediaExtender.AddressableExtender.AddAddressBundle
 - uid: System.Exception
   commentId: T:System.Exception
+  parent: System
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.exception
   name: Exception

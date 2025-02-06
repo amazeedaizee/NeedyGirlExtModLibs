@@ -1,0 +1,487 @@
+### YamlMime:ManagedReference
+items:
+- uid: NGOEventExtender.ExtAlphaTypeToData
+  commentId: T:NGOEventExtender.ExtAlphaTypeToData
+  id: ExtAlphaTypeToData
+  parent: NGOEventExtender
+  children:
+  - NGOEventExtender.ExtAlphaTypeToData.#ctor(TenCommentMaster.Param)
+  - NGOEventExtender.ExtAlphaTypeToData.paramId
+  langs:
+  - csharp
+  - vb
+  name: ExtAlphaTypeToData
+  nameWithType: ExtAlphaTypeToData
+  fullName: NGOEventExtender.ExtAlphaTypeToData
+  type: Class
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: 'public class ExtAlphaTypeToData : AlphaTypeToData'
+    content.vb: Public Class ExtAlphaTypeToData Inherits AlphaTypeToData
+  inheritance:
+  - System.Object
+  - ngov3.NetaTypeToData
+  - ngov3.AlphaTypeToData
+  inheritedMembers:
+  - ngov3.AlphaTypeToData.NetaType
+  - ngov3.AlphaTypeToData.level
+  - ngov3.NetaTypeToData.NetaGenreJP
+  - ngov3.NetaTypeToData.NetaNameJP
+  - ngov3.NetaTypeToData.NetaNameEN
+  - ngov3.NetaTypeToData.NetaGenreEN
+  - ngov3.NetaTypeToData.NetaGenreCN
+  - ngov3.NetaTypeToData.NetaNameCN
+  - ngov3.NetaTypeToData.NetaGenreTW
+  - ngov3.NetaTypeToData.NetaNameTW
+  - ngov3.NetaTypeToData.NetaGenreKO
+  - ngov3.NetaTypeToData.NetaNameKO
+  - ngov3.NetaTypeToData.getJouken
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: NGOEventExtender.ExtAlphaTypeToData.#ctor(TenCommentMaster.Param)
+  commentId: M:NGOEventExtender.ExtAlphaTypeToData.#ctor(TenCommentMaster.Param)
+  id: '#ctor(TenCommentMaster.Param)'
+  parent: NGOEventExtender.ExtAlphaTypeToData
+  langs:
+  - csharp
+  - vb
+  name: ExtAlphaTypeToData(Param)
+  nameWithType: ExtAlphaTypeToData.ExtAlphaTypeToData(TenCommentMaster.Param)
+  fullName: NGOEventExtender.ExtAlphaTypeToData.ExtAlphaTypeToData(TenCommentMaster.Param)
+  type: Constructor
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: public ExtAlphaTypeToData(TenCommentMaster.Param param)
+    parameters:
+    - id: param
+      type: TenCommentMaster.Param
+    content.vb: Public Sub New(param As TenCommentMaster.Param)
+  overload: NGOEventExtender.ExtAlphaTypeToData.#ctor*
+  nameWithType.vb: ExtAlphaTypeToData.New(TenCommentMaster.Param)
+  fullName.vb: NGOEventExtender.ExtAlphaTypeToData.New(TenCommentMaster.Param)
+  name.vb: New(Param)
+- uid: NGOEventExtender.ExtAlphaTypeToData.paramId
+  commentId: P:NGOEventExtender.ExtAlphaTypeToData.paramId
+  id: paramId
+  parent: NGOEventExtender.ExtAlphaTypeToData
+  langs:
+  - csharp
+  - vb
+  name: paramId
+  nameWithType: ExtAlphaTypeToData.paramId
+  fullName: NGOEventExtender.ExtAlphaTypeToData.paramId
+  type: Property
+  assemblies:
+  - NGOEventExtender
+  namespace: NGOEventExtender
+  syntax:
+    content: public TenCommentMaster.Param paramId { get; }
+    parameters: []
+    return:
+      type: TenCommentMaster.Param
+    content.vb: Public ReadOnly Property paramId As TenCommentMaster.Param
+  overload: NGOEventExtender.ExtAlphaTypeToData.paramId*
+references:
+- uid: NGOEventExtender
+  commentId: N:NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.html
+  name: NGOEventExtender
+  nameWithType: NGOEventExtender
+  fullName: NGOEventExtender
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ngov3.NetaTypeToData
+  commentId: T:ngov3.NetaTypeToData
+  parent: ngov3
+  isExternal: true
+  name: NetaTypeToData
+  nameWithType: NetaTypeToData
+  fullName: ngov3.NetaTypeToData
+- uid: ngov3.AlphaTypeToData
+  commentId: T:ngov3.AlphaTypeToData
+  parent: ngov3
+  isExternal: true
+  name: AlphaTypeToData
+  nameWithType: AlphaTypeToData
+  fullName: ngov3.AlphaTypeToData
+- uid: ngov3.AlphaTypeToData.NetaType
+  commentId: F:ngov3.AlphaTypeToData.NetaType
+  parent: ngov3.AlphaTypeToData
+  isExternal: true
+  name: NetaType
+  nameWithType: AlphaTypeToData.NetaType
+  fullName: ngov3.AlphaTypeToData.NetaType
+- uid: ngov3.AlphaTypeToData.level
+  commentId: F:ngov3.AlphaTypeToData.level
+  parent: ngov3.AlphaTypeToData
+  isExternal: true
+  name: level
+  nameWithType: AlphaTypeToData.level
+  fullName: ngov3.AlphaTypeToData.level
+- uid: ngov3.NetaTypeToData.NetaGenreJP
+  commentId: F:ngov3.NetaTypeToData.NetaGenreJP
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaGenreJP
+  nameWithType: NetaTypeToData.NetaGenreJP
+  fullName: ngov3.NetaTypeToData.NetaGenreJP
+- uid: ngov3.NetaTypeToData.NetaNameJP
+  commentId: F:ngov3.NetaTypeToData.NetaNameJP
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaNameJP
+  nameWithType: NetaTypeToData.NetaNameJP
+  fullName: ngov3.NetaTypeToData.NetaNameJP
+- uid: ngov3.NetaTypeToData.NetaNameEN
+  commentId: F:ngov3.NetaTypeToData.NetaNameEN
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaNameEN
+  nameWithType: NetaTypeToData.NetaNameEN
+  fullName: ngov3.NetaTypeToData.NetaNameEN
+- uid: ngov3.NetaTypeToData.NetaGenreEN
+  commentId: F:ngov3.NetaTypeToData.NetaGenreEN
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaGenreEN
+  nameWithType: NetaTypeToData.NetaGenreEN
+  fullName: ngov3.NetaTypeToData.NetaGenreEN
+- uid: ngov3.NetaTypeToData.NetaGenreCN
+  commentId: F:ngov3.NetaTypeToData.NetaGenreCN
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaGenreCN
+  nameWithType: NetaTypeToData.NetaGenreCN
+  fullName: ngov3.NetaTypeToData.NetaGenreCN
+- uid: ngov3.NetaTypeToData.NetaNameCN
+  commentId: F:ngov3.NetaTypeToData.NetaNameCN
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaNameCN
+  nameWithType: NetaTypeToData.NetaNameCN
+  fullName: ngov3.NetaTypeToData.NetaNameCN
+- uid: ngov3.NetaTypeToData.NetaGenreTW
+  commentId: F:ngov3.NetaTypeToData.NetaGenreTW
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaGenreTW
+  nameWithType: NetaTypeToData.NetaGenreTW
+  fullName: ngov3.NetaTypeToData.NetaGenreTW
+- uid: ngov3.NetaTypeToData.NetaNameTW
+  commentId: F:ngov3.NetaTypeToData.NetaNameTW
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaNameTW
+  nameWithType: NetaTypeToData.NetaNameTW
+  fullName: ngov3.NetaTypeToData.NetaNameTW
+- uid: ngov3.NetaTypeToData.NetaGenreKO
+  commentId: F:ngov3.NetaTypeToData.NetaGenreKO
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaGenreKO
+  nameWithType: NetaTypeToData.NetaGenreKO
+  fullName: ngov3.NetaTypeToData.NetaGenreKO
+- uid: ngov3.NetaTypeToData.NetaNameKO
+  commentId: F:ngov3.NetaTypeToData.NetaNameKO
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: NetaNameKO
+  nameWithType: NetaTypeToData.NetaNameKO
+  fullName: ngov3.NetaTypeToData.NetaNameKO
+- uid: ngov3.NetaTypeToData.getJouken
+  commentId: F:ngov3.NetaTypeToData.getJouken
+  parent: ngov3.NetaTypeToData
+  isExternal: true
+  name: getJouken
+  nameWithType: NetaTypeToData.getJouken
+  fullName: ngov3.NetaTypeToData.getJouken
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ngov3
+  commentId: N:ngov3
+  isExternal: true
+  name: ngov3
+  nameWithType: ngov3
+  fullName: ngov3
+- uid: NGOEventExtender.ExtAlphaTypeToData.#ctor*
+  commentId: Overload:NGOEventExtender.ExtAlphaTypeToData.#ctor
+  isExternal: true
+  href: NGOEventExtender.ExtAlphaTypeToData.html#NGOEventExtender_ExtAlphaTypeToData__ctor_TenCommentMaster_Param_
+  name: ExtAlphaTypeToData
+  nameWithType: ExtAlphaTypeToData.ExtAlphaTypeToData
+  fullName: NGOEventExtender.ExtAlphaTypeToData.ExtAlphaTypeToData
+  nameWithType.vb: ExtAlphaTypeToData.New
+  fullName.vb: NGOEventExtender.ExtAlphaTypeToData.New
+  name.vb: New
+- uid: TenCommentMaster.Param
+  commentId: T:TenCommentMaster.Param
+  isExternal: true
+  name: TenCommentMaster.Param
+  nameWithType: TenCommentMaster.Param
+  fullName: TenCommentMaster.Param
+  spec.csharp:
+  - uid: TenCommentMaster
+    name: TenCommentMaster
+    isExternal: true
+  - name: .
+  - uid: TenCommentMaster.Param
+    name: Param
+    isExternal: true
+  spec.vb:
+  - uid: TenCommentMaster
+    name: TenCommentMaster
+    isExternal: true
+  - name: .
+  - uid: TenCommentMaster.Param
+    name: Param
+    isExternal: true
+- uid: NGOEventExtender.ExtAlphaTypeToData.paramId*
+  commentId: Overload:NGOEventExtender.ExtAlphaTypeToData.paramId
+  isExternal: true
+  href: NGOEventExtender.ExtAlphaTypeToData.html#NGOEventExtender_ExtAlphaTypeToData_paramId
+  name: paramId
+  nameWithType: ExtAlphaTypeToData.paramId
+  fullName: NGOEventExtender.ExtAlphaTypeToData.paramId

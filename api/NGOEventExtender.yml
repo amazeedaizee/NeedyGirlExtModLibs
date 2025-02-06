@@ -10,6 +10,7 @@ items:
   - NGOEventExtender.EventExtender
   - NGOEventExtender.EventHelper
   - NGOEventExtender.ExtActionNgoStream
+  - NGOEventExtender.ExtAlphaTypeToData
   - NGOEventExtender.ExtNgoStream
   - NGOEventExtender.NgoExtEvent
   - NGOEventExtender.PlayingBlock
@@ -117,6 +118,14 @@ references:
   name: ExtActionNgoStream
   nameWithType: ExtActionNgoStream
   fullName: NGOEventExtender.ExtActionNgoStream
+- uid: NGOEventExtender.ExtAlphaTypeToData
+  commentId: T:NGOEventExtender.ExtAlphaTypeToData
+  parent: NGOEventExtender
+  isExternal: true
+  href: NGOEventExtender.ExtAlphaTypeToData.html
+  name: ExtAlphaTypeToData
+  nameWithType: ExtAlphaTypeToData
+  fullName: NGOEventExtender.ExtAlphaTypeToData
 - uid: NGOEventExtender.EndingExtender
   commentId: T:NGOEventExtender.EndingExtender
   isExternal: true

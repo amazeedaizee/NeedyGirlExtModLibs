@@ -7,6 +7,8 @@ items:
   - NSOMediaExtender.AddressableExtender
   - NSOMediaExtender.AssetBundleLoader
   - NSOMediaExtender.AudioExtender
+  - NSOMediaExtender.ExternalFileLoader
+  - NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
   - NSOMediaExtender.IdleAnimationType
   - NSOMediaExtender.PictureExtender
   - NSOMediaExtender.WebCamExtender
@@ -42,6 +44,40 @@ references:
   name: AddressableExtender
   nameWithType: AddressableExtender
   fullName: NSOMediaExtender.AddressableExtender
+- uid: NSOMediaExtender.ExternalFileLoader
+  commentId: T:NSOMediaExtender.ExternalFileLoader
+  isExternal: true
+  href: NSOMediaExtender.ExternalFileLoader.html
+  name: ExternalFileLoader
+  nameWithType: ExternalFileLoader
+  fullName: NSOMediaExtender.ExternalFileLoader
+- uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  commentId: T:NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  isExternal: true
+  href: NSOMediaExtender.ExternalFileLoader.html
+  name: ExternalFileLoader.FileLoadFailedException
+  nameWithType: ExternalFileLoader.FileLoadFailedException
+  fullName: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+  spec.csharp:
+  - uid: NSOMediaExtender.ExternalFileLoader
+    name: ExternalFileLoader
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.html
+  - name: .
+  - uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    name: FileLoadFailedException
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html
+  spec.vb:
+  - uid: NSOMediaExtender.ExternalFileLoader
+    name: ExternalFileLoader
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.html
+  - name: .
+  - uid: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException
+    name: FileLoadFailedException
+    isExternal: true
+    href: NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html
 - uid: NSOMediaExtender.PictureExtender
   commentId: T:NSOMediaExtender.PictureExtender
   isExternal: true

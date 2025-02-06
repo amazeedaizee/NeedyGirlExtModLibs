@@ -82,6 +82,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NGOEventExtender.ExtAlphaTypeToData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NGOEventExtender.ExtAlphaTypeToData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NGOEventExtender.ExtNgoStream.yml",
       "output": {
         ".html": {
@@ -326,6 +336,26 @@
       "output": {
         ".html": {
           "relative_path": "api/NSOMediaExtender.AudioExtender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.ExternalFileLoader.FileLoadFailedException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NSOMediaExtender.ExternalFileLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NSOMediaExtender.ExternalFileLoader.html"
         }
       },
       "version": ""

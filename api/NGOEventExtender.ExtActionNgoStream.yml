@@ -118,11 +118,11 @@ items:
   - NGOEventExtender
   namespace: NGOEventExtender
   syntax:
-    content: public abstract AlphaTypeToData HintData { get; }
+    content: public abstract ExtAlphaTypeToData HintData { get; }
     parameters: []
     return:
-      type: ngov3.AlphaTypeToData
-    content.vb: Public MustOverride ReadOnly Property HintData As AlphaTypeToData
+      type: NGOEventExtender.ExtAlphaTypeToData
+    content.vb: Public MustOverride ReadOnly Property HintData As ExtAlphaTypeToData
   overload: NGOEventExtender.ExtActionNgoStream.HintData*
 - uid: NGOEventExtender.ExtActionNgoStream.TweetResult
   commentId: P:NGOEventExtender.ExtActionNgoStream.TweetResult
@@ -576,19 +576,14 @@ references:
   name: HintData
   nameWithType: ExtActionNgoStream.HintData
   fullName: NGOEventExtender.ExtActionNgoStream.HintData
-- uid: ngov3.AlphaTypeToData
-  commentId: T:ngov3.AlphaTypeToData
-  parent: ngov3
+- uid: NGOEventExtender.ExtAlphaTypeToData
+  commentId: T:NGOEventExtender.ExtAlphaTypeToData
+  parent: NGOEventExtender
   isExternal: true
-  name: AlphaTypeToData
-  nameWithType: AlphaTypeToData
-  fullName: ngov3.AlphaTypeToData
-- uid: ngov3
-  commentId: N:ngov3
-  isExternal: true
-  name: ngov3
-  nameWithType: ngov3
-  fullName: ngov3
+  href: NGOEventExtender.ExtAlphaTypeToData.html
+  name: ExtAlphaTypeToData
+  nameWithType: ExtAlphaTypeToData
+  fullName: NGOEventExtender.ExtAlphaTypeToData
 - uid: NGOEventExtender.ExtActionNgoStream.TweetResult*
   commentId: Overload:NGOEventExtender.ExtActionNgoStream.TweetResult
   isExternal: true
