@@ -915,6 +915,8 @@ namespace NGOEventExtender
     [HarmonyPatch]
     public class ActionStreamExtender
     {
+        internal static uint ExTenComTypeId = 1;
+        internal static List<ExtAlphaTypeToData> ExTenComTypes = new List<ExtAlphaTypeToData>() { };
         /// <summary>
         /// Checks to see if an <c>ExtActionNgoStream</c> is discovered as an idea. (but not streamed)
         /// </summary>
@@ -946,9 +948,11 @@ namespace NGOEventExtender
             AlphaLevel gotAlpha = SingletonMonoBehaviour<NetaManager>.Instance.GotAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             AlphaLevel usedAlpha = SingletonMonoBehaviour<NetaManager>.Instance.usedAlpha.FirstOrDefault(al => al.alphaType == NetaType && al.level == level);
             if (StreamExtender.actionStreamList.Count == 0) { return; }
+
             List<ExtActionNgoStream> actionList = StreamExtender.actionStreamList.FindAll(n => n.HintData.NetaType == NetaType && n.HintData.level == level);
             if (actionList.Count == 0)
             {
+                Debug.Log("1");
                 return;
             }
             foreach (ExtActionNgoStream action in actionList)
@@ -957,15 +961,18 @@ namespace NGOEventExtender
                 string discovered = SingletonMonoBehaviour<EventManager>.Instance.eventsHistory.FirstOrDefault(x => x == $"{action.ActionStreamId}Idea");
                 if (discovered != null)
                 {
+                    Debug.Log("2");
                     __result = action.HintData;
                     return;
                 }
                 if (action.SetCondition() && gotAlpha == null)
                 {
+                    Debug.Log("3");
                     a.isDiscovered = true;
                     __result = action.HintData;
                     return;
                 }
+                Debug.Log("4");
                 a.isDiscovered = false;
 
             }
@@ -1260,6 +1267,24 @@ namespace NGOEventExtender
 
             return codes.AsEnumerable();
         }
+
+#if (v1_2_0_OR_GREATER)
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(NgoEx), nameof(NgoEx.TenTalk), new Type[] { typeof(TenCommentType), typeof(LanguageType) })]
+        static bool GrabExtAlphaTenName(ref string __result, TenCommentType type, LanguageType lang)
+        {
+            if (type >= (TenCommentType)10000)
+            {
+                var param = ExTenComTypes.Find(a => a.netaName == type).paramId.Id;
+                if (param != null)
+                    __result = NgoEx.TenTalk(param, lang);
+                else __result = "";
+                return false;
+            }
+
+            return true;
+        }
+#endif
     }
 
     /// <summary>
@@ -1305,7 +1330,12 @@ namespace NGOEventExtender
     {
         protected internal bool isDiscovered = false;
         public abstract string ActionStreamId { get; }
+#if (v1_2_0_OR_GREATER)
+        public abstract ExtAlphaTypeToData HintData { get; }
+#else
         public abstract AlphaTypeToData HintData { get; }
+#endif
+
 
         public abstract List<TweetType> TweetResult { get; }
 
@@ -1314,5 +1344,32 @@ namespace NGOEventExtender
         public virtual CmdMaster.Param CommandResult { get => null; }
 
     }
+
+#if (v1_2_0_OR_GREATER)
+    public class ExtAlphaTypeToData : AlphaTypeToData
+    {
+        internal new TenCommentType netaName = (TenCommentType)10000;
+        public TenCommentMaster.Param paramId { get; private set; }
+
+        public ExtAlphaTypeToData(TenCommentMaster.Param param)
+        {
+            paramId = param;
+            var arr = param.Id.Split('_');
+            if (arr.Length > 1)
+            {
+
+                if (ActionStreamExtender.ExTenComTypes.Count == 0 || !ActionStreamExtender.ExTenComTypes.Contains(this))
+                {
+                    ActionStreamExtender.ExTenComTypeId++;
+                    netaName = (TenCommentType)(10000 + ActionStreamExtender.ExTenComTypeId);
+                    ActionStreamExtender.ExTenComTypes.Add(this);
+                }
+                ExtTextManager.AddToExtList(new List<TenCommentMaster.Param> { param });
+            }
+
+        }
+    }
+
+#endif
 
 }
