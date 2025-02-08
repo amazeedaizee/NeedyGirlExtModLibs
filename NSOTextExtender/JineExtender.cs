@@ -346,8 +346,8 @@ namespace NGOTxtExtender
             return true;
         }
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(JineDataConverter), nameof(JineDataConverter.convertJineDataToDrawable))]
+        //[HarmonyPrefix]
+        //[HarmonyPatch(typeof(JineDataConverter), nameof(JineDataConverter.convertJineDataToDrawable))]
         static void CacheExtJineData(ref JineData raw)
         {
             if (raw.id >= (JineType)10000)
