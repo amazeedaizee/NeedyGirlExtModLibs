@@ -57,6 +57,15 @@ namespace NGOTxtExtender
         }
 
         /// <summary>
+        /// Creates a written message Tweet on Tweeter/Poketter with no replies attached to it.
+        /// </summary>
+        /// <param name="msg"> The message used to load the tweet.</param>
+        public static void StartMsgTweet(string msg)
+        {
+            SingletonMonoBehaviour<PoketterManager>.Instance.AddTweet(new TweetData(msg));
+        }
+
+        /// <summary>
         /// Creates a normal or custom Tweet on Tweeter/Poketter with custom replies attached to it. These replies are pre-set and are not randomized. Tweet replies are loaded based on their <c>ParentID</c>.
         /// </summary>
         /// <remarks>Note: Tweet Replies loads the first param at the bottom of the reply thread, and vice-versa.</remarks>
