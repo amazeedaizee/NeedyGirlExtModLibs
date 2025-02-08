@@ -17,6 +17,7 @@ namespace NGOTxtExtender
         //public static string json = File.ReadAllText(Path.Combine(Path.GetDirectoryName(MyPatches.PInfo.Location), "ExtJineParam_Num.json"));
         //public static List<LineMaster.Param> ExtList = JsonConvert.DeserializeObject<List<LineMaster.Param>>(json);
         internal static List<LineMaster.Param> ExtList = new List<LineMaster.Param>();
+        static JineData ExtJineDataCache = new JineData();
 
         /// <summary>
         /// Create a custom user-made Jine message sent by Ame.
@@ -35,11 +36,25 @@ namespace NGOTxtExtender
         /// <summary>
         /// Create a Jine message sent by Ame.
         /// </summary>
-        /// <param name="jineData">The JineType used to load the message. When loading in a custom message, either use <c>ExtTextExtender.GetUniqueIdNum()</c>, ot use your unique number at the end of your ID and add 10000 to it, then cast it as a JineType. </param>
+        /// <param name="jineData">The JineType used to load the message. When loading in a custom message, use <c>JineExtender.StartExtAmeJine()</c> instead.</param>
+
         /// <exception cref="NullReferenceException"></exception>
         public static async UniTask StartAmeJine(JineType jineData)
         {
             await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(jineData);
+
+        }
+
+        /// <summary>
+        /// Create a Jine message sent by Ame. Unlike other messages, this doesn't rely on LineMaster.Param.
+        /// </summary>
+        /// <param name="msg">The message string.</param>
+        /// <param name="pauseMs">The amount of time in milliseconds the event is paused for (or when the user clicks on the screen)</param>
+        /// <exception cref="NullReferenceException"></exception>
+        public static async UniTask StartFixedAmeJine(string msg, int pauseMs)
+        {
+            await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistoryFromString(msg);
+            await NgoEvent.DelaySkippable(pauseMs);
         }
 
         /// <summary>
@@ -312,6 +327,10 @@ namespace NGOTxtExtender
             }).AddTo(ExtTextManager.CompositeDisposible);
         }
 
+        static JineData CreateExtJineData(JineUserType user, string id)
+        {
+            return new JineData(user, (JineType)10000, ResponseType.IdMessage, StampType.None, id, 0);
+        }
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(JineDataConverter), "getJineFromTypeId")]
@@ -325,6 +344,16 @@ namespace NGOTxtExtender
                 return false;
             }
             return true;
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(JineDataConverter), nameof(JineDataConverter.convertJineDataToDrawable))]
+        static void CacheExtJineData(ref JineData raw)
+        {
+            if (raw.id >= (JineType)10000)
+            {
+                ExtJineDataCache = raw;
+            }
         }
 
         /*public static void PiTest()
