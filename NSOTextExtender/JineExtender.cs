@@ -33,6 +33,23 @@ namespace NGOTxtExtender
 
 
         }
+
+        /// <summary>
+        /// Create a custom user-made Jine message sent by Ame. Here she can react to a message, 
+        /// </summary>
+        /// <remarks>ArgumentType in your LineMaster.Param should use "UserMessage". Remember to use string interpolation in your dialogue! ({0})</remarks>
+        /// <param name="id">The LineMaster.Param's Id used to load the message.</param>
+        /// <param name="msg">The message Ame reacts to</param>
+        /// <exception cref="NullReferenceException"></exception>
+        public static async UniTask StartExtAmeJineWithMsg(string id, string msg)
+        {
+
+            LineMaster.Param exJineId = JineExtender.ExtList.Find((LineMaster.Param j) => j.Id == id);
+            JineType jineData = ExtTextManager.GetUniqueIdNum<JineType>(exJineId.Id);
+            await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(new JineData(JineUserType.ame, jineData, ResponseType.IdMessage, StampType.None, msg));
+
+
+        }
         /// <summary>
         /// Create a Jine message sent by Ame.
         /// </summary>
@@ -302,6 +319,21 @@ namespace NGOTxtExtender
             {
                 await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(new JineData(JineUserType.pi, JineType.None, ResponseType.Freeform, StampType.None, m, 0));
                 eventAfterMsg();
+
+            }).AddTo(ExtTextManager.CompositeDisposible);
+        }
+
+        /// <summary>
+        /// Starts a prompt that requires you to write a message to Ame on Jine. The action does something with the message.
+        /// </summary>
+        /// <param name="eventAfterMsg">The action that happens after the message has been sent.</param>
+        public static void StartWrittenMsgAndReact(Action<string> eventAfterMsg)
+        {
+            SingletonMonoBehaviour<JineManager>.Instance.StartMessage();
+            SingletonMonoBehaviour<JineManager>.Instance.Message.Subscribe(async delegate (string m)
+            {
+                await SingletonMonoBehaviour<JineManager>.Instance.AddJineHistory(new JineData(JineUserType.pi, JineType.None, ResponseType.Freeform, StampType.None, m, 0));
+                eventAfterMsg(m);
 
             }).AddTo(ExtTextManager.CompositeDisposible);
         }
