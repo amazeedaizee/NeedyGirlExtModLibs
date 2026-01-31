@@ -1,3 +1,4 @@
+### [A small update on my mods](https://gist.github.com/amazeedaizee/b065103e312e6339ddce15854445dc27)
 # Needy Girl Extra Modding Libraries
 
 A group of libraries for that might help in modding Needy Girl Overdose/Needy Streamer Overload via BepInEx plugins.
@@ -23,6 +24,12 @@ It is highly recommended to get the unstripped versions of Unity libraries rathe
 **For version 1.2.1+:** (2022.3.15)
 
 **For any version before 1.2.1:** (2021.2.1)
+
+## Disclosure
+
+This library was unfortunately created using Visual Studio 2022 with Intellicode (Ai-powered autocomplete)
+
+[More info](https://gist.github.com/amazeedaizee/b065103e312e6339ddce15854445dc27)
 
 
 ## Licensing
